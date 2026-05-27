@@ -1,0 +1,170 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE, IMPULSE_POSTS, IMPULSE_TOPICS, SOCIAL } from '@/data/site';
+
+const description =
+  'Fokus Impulse — Blogbeiträge, Gedanken, Audio und Video für innere Ordnung, Klarheit und gelingendes Miteinander. Impulse von Daniela Britta Hamberger.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Fokus Impulse', item: `${SITE.url}/impulse` },
+  ],
+};
+---
+<BaseLayout
+  title="Fokus Impulse"
+  description={description}
+  schema={breadcrumb}
+>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="text-align: left;">
+        <a href="/">Start</a><span>/</span><span>Fokus Impulse</span>
+      </nav>
+      <span class="eyebrow">Fokus Impulse</span>
+      <h1>Blogbeiträge, Gedanken,<br /><em>Audio und Video</em></h1>
+      <p class="lead">
+        Für innere Ordnung, Klarheit und gelingendes Miteinander.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <p>
+        Hier teile ich Gedanken, Texte und Impulse zu Themen, die mich bewegen und meine
+        Arbeit prägen: innere Stabilität, Achtsamkeit, Stressresilienz, Wertschätzung,
+        Empathie, Naturverbundenheit, Bewusstsein und gelingendes Miteinander.
+      </p>
+      <p>
+        Manche Beiträge entstehen aus meiner Arbeit als Mentorin, andere aus meinen
+        Buchprojekten oder aus Beobachtungen im Alltag.
+      </p>
+      <p>
+        Es geht um kleine Impulse, die etwas öffnen können: einen neuen Gedanken, einen
+        Perspektivwechsel, einen Moment von Verbindung oder die Erinnerung daran, dass
+        Veränderung oft leise beginnt.
+      </p>
+
+      <div class="topics">
+        {IMPULSE_TOPICS.map((t) => (
+          <span class="topic">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream-deep" id="beitraege">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Aktuelle Beiträge</span>
+        <h2>Neueste <em>Impulse</em></h2>
+      </header>
+
+      <div class="post-grid">
+        {IMPULSE_POSTS.map((p) => (
+          <article class="post-card">
+            <header>
+              <span class="tag tag-outline">{p.category}</span>
+              <time>{p.date}</time>
+            </header>
+            <h3>{p.title}</h3>
+            <p>{p.excerpt}</p>
+            <a href={p.href} class="post-link">Weiterlesen →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream" id="audio">
+    <div class="container-narrow">
+      <h2>Audio &amp; Video</h2>
+      <p>
+        Audio-Impulse und Videos erscheinen hier künftig — kurze Übungen, Gedanken und
+        Reflexionen zum Anhören und Ansehen. Schau gerne regelmäßig vorbei.
+      </p>
+      <p>
+        <span class="tag tag-outline">In Vorbereitung</span>
+      </p>
+      <div class="btn-group">
+        <a href={SOCIAL.instagram} target="_blank" rel="noopener" class="btn btn-outline">Instagram besuchen</a>
+        <a href={SOCIAL.linkedin} target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 2rem 0;
+  }
+  .topic {
+    display: inline-block;
+    padding: 0.4em 0.85em;
+    background: transparent;
+    border: 1px solid var(--color-bordeaux);
+    color: var(--color-bordeaux);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+  }
+  .post-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-m);
+    padding: 1.5rem;
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+  .post-card:hover {
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+  }
+  .post-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+  }
+  .post-card time {
+    color: var(--color-ink-muted);
+    font-size: 0.82rem;
+  }
+  .post-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .post-card p {
+    font-size: 0.92rem;
+    color: var(--color-ink-soft);
+    margin-bottom: 1.25rem;
+    flex: 1;
+  }
+  .post-link {
+    align-self: flex-start;
+    color: var(--color-bordeaux);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--color-gold);
+    padding-bottom: 0.15em;
+    transition: all var(--transition);
+  }
+  .post-link:hover { color: var(--color-gold-deep); }
+</style>

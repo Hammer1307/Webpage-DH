@@ -1,150 +1,176 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE } from '@/data/site';
+import { SITE, IMAGES } from '@/data/site';
+
+const description =
+  'KlarheitsReset — eine intensive 1:1 Session (2,5–3 Std., ab 490 €) für Menschen, die sich konzentriert mit einem konkreten Thema auseinandersetzen möchten. Online oder vor Ort.';
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: '1:1 Begleitung', item: `${SITE.url}/1-zu-1-begleitung` },
+      { '@type': 'ListItem', position: 3, name: 'KlarheitsReset', item: `${SITE.url}/klarheitsreset` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'KlarheitsReset — Intensive 1:1 Session',
+    provider: { '@type': 'Person', name: SITE.name },
+    description: 'Intensive 1:1 Session (2,5–3 Std.) für tiefere Klärung eines konkreten Themas.',
+    offers: { '@type': 'Offer', price: '490', priceCurrency: 'EUR', description: 'ab 490 €' },
+  },
+];
 ---
 <BaseLayout
-  title={`KlarheitsReset · ${SITE.brand}`}
-  description="Intensive Einzelsession von 2,5–3 Stunden, wenn ein konkretes Thema dringend Klarheit braucht. Tiefe Arbeit in einer Sitzung."
+  title="KlarheitsReset — Intensive 1:1 Session"
+  description={description}
+  schema={schemas}
 >
-
-  <section class="page-hero">
-    <div class="container ph-grid">
-      <div class="ph-text">
-        <nav class="breadcrumb"><a href="/">Start</a><span>/</span><a href="/1-zu-1-begleitung">1:1 Begleitung</a><span>/</span><span>KlarheitsReset</span></nav>
-        <span class="eyebrow">Intensive Einzelsession · 2,5–3 Std.</span>
-        <h1><em>KlarheitsReset.</em><br />Wenn etwas dringend<br />klarer werden darf.</h1>
-        <p class="lead">
-          Eine konzentrierte Einzelsitzung, die Tiefe und Verbindlichkeit
-          verbindet. Für Momente, in denen du nicht warten kannst.
-        </p>
-        <div class="meta-card">
-          <div><span class="ml">Dauer</span><span class="mv">2,5–3 Std.</span></div>
-          <div><span class="ml">Format</span><span class="mv">Vor Ort & online</span></div>
-          <div><span class="ml">Investition</span><span class="mv">ab 490 €</span></div>
-        </div>
-      </div>
+  <section class="kr-hero">
+    <div class="container-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Start</a><span>/</span>
+        <a href="/1-zu-1-begleitung">1:1 Begleitung</a><span>/</span>
+        <span>KlarheitsReset</span>
+      </nav>
+      <span class="tag tag-gold">1:1 Intensiv-Session</span>
+      <h1>Klarheits<em>Reset</em></h1>
+      <h2 class="kr-subhead">Wenn du spürst, dass sich etwas klären muss.</h2>
     </div>
   </section>
 
-  <section class="when">
-    <div class="container">
-      <div class="when-grid">
-        <div class="when-text">
-          <span class="eyebrow">Wann ein KlarheitsReset hilft</span>
-          <h2>Wenn ein <em>Anliegen</em> seine Klärung sucht</h2>
-          <p>
-            Manchmal braucht es keine Begleitung über Wochen, sondern ein konzentriertes
-            Hinschauen. Eine Tiefe, die Raum schafft. Eine Haltung, die nichts erzwingt —
-            und doch etwas bewegt.
-          </p>
-          <p>
-            Im KlarheitsReset arbeiten wir an einem konkreten Thema. Nicht oberflächlich,
-            sondern so, dass du am Ende der Sitzung wirklich anders nach Hause gehst.
-          </p>
-        </div>
-        <ul class="when-list">
-          <li class="when-head">Typische Situationen</li>
-          <li><span class="dot"></span>Du stehst vor einer Entscheidung, die sich nicht greifen lässt.</li>
-          <li><span class="dot"></span>Ein Konflikt zehrt an dir und du suchst eine neue Perspektive.</li>
-          <li><span class="dot"></span>Etwas Altes meldet sich — und blockiert das Neue.</li>
-          <li><span class="dot"></span>Du brauchst keine Reihe von Sitzungen, sondern einen klaren Schritt.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <blockquote class="kr-quote">
+        <p>Du denkst viel nach, aber kommst innerlich nicht weiter?</p>
+        <p>Du fühlst dich erschöpft, unruhig oder blockiert?</p>
+        <p>Du stehst vor einer Entscheidung und wünschst dir mehr Klarheit?</p>
+      </blockquote>
 
-  <section class="phases">
-    <div class="container container-narrow">
-      <header class="section-head">
-        <span class="eyebrow">Der Ablauf</span>
-        <h2>Drei <em>Phasen</em> in einer Session</h2>
-      </header>
-      <div class="phase-grid">
-        <article class="phase-card">
-          <div class="phase-num">01</div>
-          <h3>Ankommen</h3>
-          <p>Wir starten mit einer kurzen Stille und einem behutsamen Einstieg. Du erzählst, worum es geht.</p>
-        </article>
-        <article class="phase-card">
-          <div class="phase-num">02</div>
-          <h3>Vertiefen</h3>
-          <p>Mit einer passenden Methode — Aufstellung, bioenergetische Arbeit, Hypnose-Elemente — gehen wir dorthin, wo das Thema seinen Ursprung hat.</p>
-        </article>
-        <article class="phase-card">
-          <div class="phase-num">03</div>
-          <h3>Klären & Verankern</h3>
-          <p>Wir destillieren, was klar geworden ist. Du nimmst eine konkrete Bewegung mit in deinen Alltag.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="hinweis">
-    <div class="container container-narrow">
       <p>
-        <strong>Wichtig:</strong> Ein KlarheitsReset ersetzt keine Therapie. Diese
-        Arbeit richtet sich an psychisch stabile Menschen, die einen bewussten,
-        wachen Schritt in ihrem Leben gehen möchten.
+        Der KlarheitsReset ist eine intensive 1:1 Session für Menschen, die sich konzentriert
+        mit einem konkreten Thema auseinandersetzen möchten.
+      </p>
+      <p>
+        In einem geschützten Rahmen sortieren wir deine aktuelle Situation, betrachten innere
+        Muster und öffnen Raum für neue Perspektiven. Je nach Anliegen arbeiten wir mit
+        Gespräch, mentaler Klärung, kreativen Methoden, hypnotherapeutischen Impulsen und
+        intuitiver Prozessarbeit.
+      </p>
+
+      <div class="kr-facts">
+        <div class="fact">
+          <h4>Dauer</h4>
+          <p>ca. 2,5–3 Stunden</p>
+        </div>
+        <div class="fact">
+          <h4>Format</h4>
+          <p>online oder vor Ort<br />nach Absprache</p>
+        </div>
+        <div class="fact">
+          <h4>Investition</h4>
+          <p>ab 490 €</p>
+        </div>
+        <div class="fact">
+          <h4>Vorab</h4>
+          <p>kostenfreies Orientierungs­gespräch (20 Min.)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bordeaux">
+    <div class="container-narrow" style="text-align: center;">
+      <h2>Bereit für mehr Klarheit?</h2>
+      <p style="margin: 1rem auto 2rem; max-width: 50ch;">
+        Starte mit einem kostenfreien Orientierungsgespräch. Wir schauen gemeinsam, ob der
+        KlarheitsReset das Richtige für dich ist.
+      </p>
+      <div class="btn-group btn-group-center">
+        <a href="/kontakt" class="btn btn-gold">KlarheitsReset anfragen</a>
+        <a href="/kontakt" class="btn btn-outline" style="color: var(--color-cream); border-color: var(--color-gold-pale);">Kostenfreies Gespräch buchen</a>
+      </div>
+      <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.75;">
+        Unverbindlich · Online oder vor Ort · Antwort innerhalb von 1–2 Werktagen
       </p>
     </div>
   </section>
-
-  <section class="final-cta">
-    <div class="container final-cta-inner">
-      <span class="eyebrow">Anfragen</span>
-      <h2>Bereit für deinen <em>KlarheitsReset</em>?</h2>
-      <p>Vor jeder Session sprechen wir kurz miteinander, damit wir gemeinsam einschätzen können, ob das Format passt.</p>
-      <a href="/kontakt" class="btn btn-primary">KlarheitsReset anfragen</a>
-    </div>
-  </section>
+</BaseLayout>
 
 <style>
-.page-hero { padding-top: clamp(2rem, 5vw, 4rem); padding-bottom: clamp(3rem, 7vw, 5rem); background: var(--color-cream); }
-.ph-grid { max-width: 42rem; margin-inline: auto; text-align: center; }
-.breadcrumb { display: flex; gap: 0.5rem; font-size: 0.78rem; color: var(--color-ink-muted); margin-bottom: 1.5rem; justify-content: center; flex-wrap: wrap; }
-.breadcrumb a { color: var(--color-ink-muted); }
-.breadcrumb a:hover { color: var(--color-sage-deep); }
-.ph-text h1 { font-size: clamp(2.4rem, 4.5vw, 4rem); line-height: 1.02; letter-spacing: -0.03em; margin: 1rem 0 1.5rem; font-weight: 400; }
-.ph-text h1 em { color: var(--color-sage-deep); font-style: italic; }
-.ph-text .lead { font-family: var(--font-display); font-style: italic; font-size: 1.35rem; color: var(--color-ink-soft); margin-bottom: 2rem; max-width: 36ch; margin-inline: auto; }
-.meta-card { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-l); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1.5rem; max-width: 32rem; margin: 0 auto; text-align: left; }
-.ml { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-ink-muted); margin-bottom: 0.25rem; }
-.mv { display: block; font-family: var(--font-display); font-size: 1.1rem; color: var(--color-ink); }
+  .kr-hero {
+    background: var(--color-cream-deep);
+    padding: clamp(4rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 3.5rem);
+    text-align: center;
+    border-bottom: 1px solid var(--color-line-gold);
+  }
+  .kr-hero .breadcrumb { text-align: left; }
+  .kr-hero .tag { margin-bottom: 1.5rem; }
+  .kr-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin: 0.5rem 0 1rem;
+  }
+  .kr-hero h1 em {
+    font-style: italic;
+    color: var(--color-gold-deep);
+  }
+  .kr-subhead {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--step-2);
+    color: var(--color-ink);
+    margin: 0 auto;
+    max-width: 30ch;
+    font-weight: 400;
+  }
 
-.when { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-paper); }
-.when-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; max-width: 56rem; margin: 0 auto; }
-.section-head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
-.section-head h2 { margin-top: 0.5rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; font-weight: 400; letter-spacing: -0.02em; }
-.section-head em { color: var(--color-sage-deep); font-style: italic; }
-.when-text h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0.5rem 0 1rem; font-weight: 400; letter-spacing: -0.02em; }
-.when-text em { color: var(--color-sage-deep); font-style: italic; }
-.when-text p { color: var(--color-ink-soft); line-height: 1.65; margin-bottom: 1rem; }
-.when-list { background: var(--color-cream-soft); border-radius: var(--radius-l); padding: 1.75rem; list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
-.when-head { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: var(--color-sage-deep); margin-bottom: 0.3rem; }
-.when-list li:not(.when-head) { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--color-ink-soft); line-height: 1.55; font-size: 0.92rem; }
-.dot { width: 7px; height: 7px; background: var(--color-clay); border-radius: 50%; margin-top: 0.5rem; flex-shrink: 0; }
+  .kr-quote {
+    background: var(--color-cream-soft);
+    border-left: 3px solid var(--color-gold);
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0 2.5rem;
+    border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  }
+  .kr-quote p {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--color-bordeaux);
+    font-size: 1.1rem;
+    margin: 0 0 0.75rem;
+  }
+  .kr-quote p:last-child { margin-bottom: 0; }
 
-.phases { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-cream); }
-.phase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1.25rem; }
-.phase-card { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 1.75rem; }
-.phase-num { font-family: var(--font-display); font-size: 1.5rem; color: var(--color-clay); font-style: italic; margin-bottom: 0.85rem; }
-.phase-card h3 { font-size: 1.2rem; font-family: var(--font-body); font-weight: 600; margin-bottom: 0.5rem; }
-.phase-card p { color: var(--color-ink-soft); font-size: 0.92rem; line-height: 1.55; }
-
-.hinweis { padding-block: clamp(3rem, 5vw, 4rem); background: var(--color-cream-deep); }
-.hinweis p { color: var(--color-ink-soft); font-size: 0.92rem; line-height: 1.6; text-align: center; }
-.hinweis strong { color: var(--color-ink); }
-
-.final-cta { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-ink); color: var(--color-cream); }
-.final-cta-inner { text-align: center; max-width: 36rem; margin: 0 auto; }
-.final-cta .eyebrow { color: var(--color-clay-soft); }
-.final-cta .eyebrow::before { background: var(--color-clay-soft); }
-.final-cta h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 0.5rem 0 1rem; color: var(--color-cream); font-weight: 400; }
-.final-cta em { color: var(--color-clay-soft); font-style: italic; }
-.final-cta p { color: rgba(245, 239, 230, 0.8); margin-bottom: 2rem; line-height: 1.5; }
-.final-cta .btn-primary { background: var(--color-cream); color: var(--color-ink); }
-.final-cta .btn-primary:hover { background: white; }
-
-@media (max-width: 800px) { .when-grid { grid-template-columns: 1fr; } .meta-card { grid-template-columns: 1fr; gap: 0.5rem; } }
+  .kr-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem;
+    margin: 2.5rem 0 0;
+  }
+  .fact {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    padding: 1.25rem 1.25rem;
+    border-radius: var(--radius-m);
+    border-top: 3px solid var(--color-gold);
+  }
+  .fact h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gold-deep);
+    font-family: var(--font-body);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .fact p {
+    color: var(--color-bordeaux);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.4;
+  }
 </style>
-</BaseLayout>

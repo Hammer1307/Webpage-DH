@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://danielahamberger.de',
+  site: 'https://danielabrittahamberger.de',
   trailingSlash: 'never',
   build: {
     format: 'file',

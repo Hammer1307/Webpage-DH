@@ -1,43 +1,41 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE } from '@/data/site';
+import { SITE, IMAGES, TEAM_FORMATS } from '@/data/site';
+
+const description =
+  'Workshops und Teamcoaching für gelingendes Miteinander — Impulsvortrag, TeamBalance, TeamReset, Team-Starterpaket und intensives Teamcoaching mit Daniela Britta Hamberger.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Teams & Workshops', item: `${SITE.url}/teams-workshops` },
+  ],
+};
 ---
 <BaseLayout
-  title={`Teams & Workshops · ${SITE.brand}`}
-  description="Wenn ihr als Team wieder klarer, wertschätzender und menschlicher zusammenarbeiten möchtet — Impulsvorträge, TeamBalance-Workshops und TeamReset-Begleitprogramme."
+  title="Teams & Workshops"
+  description={description}
+  schema={breadcrumb}
 >
+  <img class="image-accent" src={IMAGES.teamsWorkshop} alt="" loading="eager" />
 
-  <section class="page-hero">
-    <div class="container ph-grid">
-      <div class="ph-text">
-        <nav class="breadcrumb"><a href="/">Start</a><span>/</span><span>Teams & Workshops</span></nav>
-        <span class="eyebrow">Für euch als Team</span>
-        <h1>Klarer.<br /><em>Wertschätzender.</em><br />Menschlicher.</h1>
-        <p class="lead">Workshops und Begleitprogramme für Teams, die wieder zueinander finden möchten.</p>
-        <p class="ph-welcome">
-          Ich begleite euch dabei, euer Miteinander bewusst wahrzunehmen,
-          Kommunikation zu reflektieren und neue Wege für eine offenere,
-          menschlichere Zusammenarbeit zu entwickeln.
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Start</a><span>/</span><span>Teams &amp; Workshops</span>
+      </nav>
+      <header class="page-intro">
+        <span class="eyebrow">Workshops &amp; Teamcoaching</span>
+        <h1>Für gelingendes <em>Miteinander</em></h1>
+        <p class="lead">
+          Wenn ihr wieder klarer, wertschätzender und menschlicher miteinander arbeiten möchtet
         </p>
-      </div>
-      <div class="ph-photo">
-        <img
-          src="https://cdn.gamma.app/bwtiitetcy0uj9u/generated-images/r4vrtpz15ujsQ9iu.png"
-          alt="Teams & Workshops"
-          loading="eager"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="kennt-ihr-das">
-    <div class="container container-narrow">
-      <header class="section-head section-head-left">
-        <span class="eyebrow">Vielleicht kennt ihr das</span>
-        <h2>Wenn das Miteinander <em>schwerer wird</em></h2>
       </header>
 
-      <ul class="recognition-list">
+      <h2>Vielleicht kennt ihr das:</h2>
+      <ul class="check-list">
         <li>Ihr arbeitet zusammen, aber nicht immer wirklich miteinander.</li>
         <li>Kommunikation wird schneller, aber nicht klarer.</li>
         <li>Missverständnisse wiederholen sich.</li>
@@ -46,29 +44,23 @@ import { SITE } from '@/data/site';
         <li>Jeder funktioniert — aber das gemeinsame Gefühl geht verloren.</li>
       </ul>
 
-      <div class="haltungs-block">
-        <p>
-          Genau hier setzen meine Teamformate an. Ich begleite euch dabei,
-          euer Miteinander bewusster wahrzunehmen, Kommunikation zu reflektieren
-          und neue Wege für mehr <em>Klarheit, Vertrauen, Empathie und
-          Wertschätzung</em> zu entwickeln.
-        </p>
-        <p>
-          Dabei geht es nicht darum, dass alle gleich werden. Es geht darum,
-          <em>Unterschiedlichkeit besser zu verstehen</em>, Brücken zu bauen
-          und wieder mehr Verbindung im Team entstehen zu lassen.
-        </p>
-      </div>
+      <p>
+        Genau hier setzen meine Teamformate an. Ich begleite euch dabei, euer Miteinander
+        bewusster wahrzunehmen, Kommunikation zu reflektieren und neue Wege für mehr Klarheit,
+        Vertrauen, Empathie und Wertschätzung zu entwickeln.
+      </p>
+      <p>
+        Dabei geht es nicht darum, dass alle gleich werden. Es geht darum, Unterschiedlichkeit
+        besser zu verstehen, Brücken zu bauen und wieder mehr Verbindung im Team entstehen
+        zu lassen.
+      </p>
     </div>
   </section>
 
-  <section class="entstehen-darf">
-    <div class="container container-narrow">
-      <header class="section-head section-head-left">
-        <span class="eyebrow">Was in euren Teamprozessen entstehen darf</span>
-        <h2>Räume für ein Team, <em>das trägt</em></h2>
-      </header>
-      <ul class="benefit-list">
+  <section class="section section-cream-deep">
+    <div class="container-narrow">
+      <h2 class="text-center">Was in euren Teamprozessen entstehen darf</h2>
+      <ul class="benefits-grid">
         <li>mehr Vertrauen und Offenheit</li>
         <li>klarere Kommunikation</li>
         <li>mehr Wertschätzung im Alltag</li>
@@ -81,443 +73,167 @@ import { SITE } from '@/data/site';
     </div>
   </section>
 
-  <section class="formats">
+  <section class="section section-cream">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">Die Formate</span>
-        <h2>Drei <em>Wege</em>, mit eurem Team zu arbeiten</h2>
+        <span class="eyebrow">Teamformate</span>
+        <h2>Fünf Wege, mit eurem Team <em>zu arbeiten</em></h2>
       </header>
 
       <div class="format-grid">
-        <article class="format-card">
-          <h3>Impulsvortrag: »Miteinander wirkt«</h3>
-          <p class="format-subtitle">60–90 Minuten für Teams, Einrichtungen und Organisationen</p>
-          <p>
-            Manchmal braucht es keinen ganzen Workshop, sondern einen starken
-            Impuls, der etwas öffnet. Geeignet für Teamtage, pädagogische
-            Konferenzen, Gesundheitstage oder interne Veranstaltungen.
-          </p>
-          <div class="topics-block">
-            <strong>Mögliche Themen:</strong>
-            <ul>
-              <li>Wertschätzung im Arbeitsalltag</li>
-              <li>Sprache, die verbindet</li>
-              <li>Achtsamkeit und Stressresilienz im Team</li>
-              <li>Kommunikation auf Augenhöhe</li>
-              <li>Perspektivwechsel als Schlüssel</li>
-              <li>Innere Stabilität im beruflichen Alltag</li>
-              <li>Menschlichkeit als Kraft im Team</li>
-            </ul>
-          </div>
-          <dl class="meta">
-            <div><dt>Dauer</dt><dd>60–90 Min</dd></div>
-            <div><dt>Investition</dt><dd>ab 750 € zzgl. MwSt.</dd></div>
-          </dl>
-          <a href="/kontakt" class="link-arrow">Impulsvortrag anfragen</a>
-        </article>
+        {TEAM_FORMATS.map((f) => (
+          <article class:list={['format-card', { 'card-featured': f.featured }]}>
+            <span class="tag tag-outline format-badge">{f.label}</span>
+            <h3>{f.name}</h3>
+            <p class="format-duration">{f.duration}</p>
+            <p class="format-desc">{f.description}</p>
+            {f.topics && <p class="format-meta">{f.topics}</p>}
+            {f.suitableFor && <p class="format-meta">{f.suitableFor}</p>}
+            <div class="format-foot">
+              <p class="format-price">
+                <span class="label">Investition</span>
+                <strong>{f.price}</strong>
+              </p>
+              <a href={f.href} class="btn btn-outline">{f.cta}</a>
+            </div>
+          </article>
+        ))}
+      </div>
 
-        <article class="format-card featured">
-          <span class="featured-badge">Empfohlen</span>
-          <h3>TeamBalance Workshop</h3>
-          <p class="format-subtitle">3–3,5 Stunden für Klarheit, Wertschätzung und stabile Zusammenarbeit</p>
-          <p>
-            Ihr schaut gemeinsam auf euer Miteinander: Was läuft gut? Wo
-            entstehen Reibungen? Welche Rollen, Erwartungen oder unausgesprochenen
-            Themen wirken im Hintergrund?
-          </p>
-          <p>
-            Wir arbeiten mit Reflexion, Austausch, Achtsamkeitstools,
-            Perspektivwechsel, <em>spielerischen Elementen</em> und konkreten
-            Übungen für euren Alltag. Gerade dort, wo vorher Spannung war,
-            entsteht oft wieder Humor, Verbindung und ein neuer gemeinsamer Blick.
-          </p>
-          <div class="topics-block">
-            <strong>Geeignet für:</strong>
-            <p class="inline-list">pädagogische Teams, soziale Einrichtungen, Projektteams, Praxisteams, kleinere Organisationen.</p>
-          </div>
-          <dl class="meta">
-            <div><dt>Dauer</dt><dd>3–3,5 Std.</dd></div>
-            <div><dt>Investition</dt><dd>ab 1.500 € zzgl. MwSt.</dd></div>
-          </dl>
-          <a href="/teambalance" class="link-arrow">TeamBalance entdecken</a>
-        </article>
-
-        <article class="format-card">
-          <h3>TeamReset</h3>
-          <p class="format-subtitle">Für Teams, die sich neu sortieren und bewusster ausrichten möchten</p>
-          <p>
-            Geeignet, wenn ihr spürt, dass euer Miteinander einen echten Neustart
-            braucht. Vielleicht seid ihr ein neu entstehendes Team. Vielleicht
-            gibt es alte Spannungen. Vielleicht ist Vertrauen verloren gegangen.
-          </p>
-          <p>
-            Im TeamReset geht es darum, nicht nur über Zusammenarbeit zu sprechen,
-            sondern <em>einen gemeinsamen Prozess anzustoßen</em>.
-          </p>
-          <div class="topics-block">
-            <strong>Möglicher Ablauf:</strong>
-            <ul>
-              <li>Vorgespräch zur Zielklärung</li>
-              <li>Analyse eurer aktuellen Teamdynamik</li>
-              <li>intensive Team-Session oder Workshop</li>
-              <li>Follow-up nach ca. 2–3 Wochen</li>
-              <li>erneuter Check-in nach weiteren 2–3 Wochen</li>
-            </ul>
-          </div>
-          <dl class="meta">
-            <div><dt>Format</dt><dd>mehrere Wochen</dd></div>
-            <div><dt>Investition</dt><dd>individuelles Angebot</dd></div>
-          </dl>
-          <a href="/kontakt" class="link-arrow">TeamReset anfragen</a>
-        </article>
+      <div class="cta-band">
+        <h3>Interesse an einem Teamformat?</h3>
+        <p>
+          Ich freue mich auf ein erstes Gespräch. Gemeinsam schauen wir, welches Format zu
+          eurem Team und eurem Anliegen passt.
+        </p>
+        <a href="/kontakt" class="btn btn-primary">Teamformat anfragen</a>
       </div>
     </div>
   </section>
 
-  <section class="final-cta">
-    <div class="container final-cta-inner">
-      <span class="eyebrow">Bereit für ein Gespräch</span>
-      <h2>Sprechen wir über <em>euer Team</em>.</h2>
-      <p>Ein kostenfreies Erstgespräch klärt, ob und in welcher Form eine Zusammenarbeit Sinn macht.</p>
-      <a href="/kontakt" class="btn btn-primary">Anfrage senden</a>
+  <section class="section section-cream-deep">
+    <div class="container-text">
+      <blockquote class="disclaimer">
+        <strong>Wichtiger Hinweis:</strong> Meine Arbeit versteht sich als ganzheitliche
+        Begleitung. Sie ersetzt keine ärztliche, psychotherapeutische oder heilkundliche
+        Diagnose oder Behandlung.
+      </blockquote>
     </div>
   </section>
+</BaseLayout>
 
 <style>
-.page-hero {
-  padding-top: clamp(2.5rem, 5vw, 4.5rem);
-  padding-bottom: clamp(3.5rem, 8vw, 7rem);
-  background: var(--color-cream);
-}
-.ph-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: stretch;
-}
-.ph-text {
-  max-width: 34rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.breadcrumb {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  color: var(--color-ink-muted);
-  margin-bottom: 1.5rem;
-}
-.breadcrumb a { color: var(--color-ink-muted); }
-.breadcrumb a:hover { color: var(--color-sage-deep); }
-.ph-text h1 {
-  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  margin: 1rem 0 1.5rem;
-  font-weight: 400;
-}
-.ph-text h1 em {
-  color: var(--color-sage-deep);
-  font-style: italic;
-}
-.ph-text .lead {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.35rem;
-  color: var(--color-sage-deep);
-  margin-bottom: 1.5rem;
-  max-width: none;
-}
-.ph-welcome {
-  color: var(--color-ink-soft);
-  line-height: 1.65;
-  font-size: 1.02rem;
-  max-width: 32rem;
-}
-.ph-photo {
-  height: 100%;
-  min-height: 28rem;
-  display: flex;
-  align-items: stretch;
-}
-.ph-photo img {
-  width: 100%;
-  height: 100%;
-  min-height: 28rem;
-  object-fit: cover;
-  border-radius: var(--radius-l);
-  box-shadow: var(--shadow-lift);
-  display: block;
-}
-
-.kennt-ihr-das {
-  padding-block: clamp(4rem, 8vw, 7rem);
-  background: var(--color-paper);
-}
-.section-head {
-  text-align: center;
-  max-width: 42rem;
-  margin: 0 auto 3rem;
-}
-.section-head-left {
-  text-align: left;
-  margin-inline: 0;
-  margin-bottom: 2rem;
-}
-.section-head h2 {
-  margin-top: 0.5rem;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
-.section-head em { color: var(--color-sage-deep); font-style: italic; }
-.recognition-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
-}
-.recognition-list li {
-  padding: 1.1rem 1.5rem 1.1rem 3rem;
-  background: var(--color-cream-soft);
-  border-left: 3px solid var(--color-clay);
-  border-radius: 0 var(--radius-m) var(--radius-m) 0;
-  color: var(--color-ink);
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.45;
-  position: relative;
-}
-.recognition-list li::before {
-  content: '·';
-  position: absolute;
-  left: 1.5rem;
-  color: var(--color-clay);
-  font-size: 2rem;
-  line-height: 1;
-  top: 0.85rem;
-}
-.haltungs-block p {
-  color: var(--color-ink-soft);
-  line-height: 1.75;
-  margin-bottom: 1.25rem;
-  font-size: 1.05rem;
-}
-.haltungs-block em { color: var(--color-sage-deep); font-style: italic; }
-
-.entstehen-darf {
-  padding-block: clamp(4rem, 8vw, 7rem);
-  background: var(--color-cream);
-}
-.benefit-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  gap: 0.6rem;
-}
-.benefit-list li {
-  padding: 0.85rem 1.25rem 0.85rem 2.25rem;
-  color: var(--color-ink-soft);
-  background: var(--color-paper);
-  border-radius: var(--radius-m);
-  font-size: 0.95rem;
-  line-height: 1.45;
-  position: relative;
-}
-.benefit-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 1rem;
-  color: var(--color-sage-deep);
-  font-weight: 600;
-  top: 0.85rem;
-}
-
-.formats {
-  padding-block: clamp(4rem, 8vw, 7rem);
-  background: var(--color-paper);
-}
-.format-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
-  gap: 1.25rem;
-}
-.format-card {
-  background: var(--color-paper);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-l);
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-.format-card:hover {
-  border-color: var(--color-sage-soft);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
-}
-.format-card.featured {
-  background: var(--color-cream-soft);
-  border-color: var(--color-sage);
-}
-.featured-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--color-sage-deep);
-  color: var(--color-cream);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  padding: 0.3em 0.85em;
-  font-size: 0.62rem;
-  font-weight: 500;
-}
-.format-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.2rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
-.format-subtitle {
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--color-sage-deep);
-  font-size: 0.98rem;
-  line-height: 1.35;
-}
-.format-card > p:not(.format-subtitle) {
-  color: var(--color-ink-soft);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-.format-card em { color: var(--color-sage-deep); }
-.topics-block {
-  margin-top: 0.5rem;
-  padding-top: 0.85rem;
-  border-top: 1px dashed var(--color-line);
-}
-.topics-block strong {
-  display: block;
-  color: var(--color-ink);
-  font-weight: 600;
-  font-size: 0.85rem;
-  margin-bottom: 0.6rem;
-  letter-spacing: 0.02em;
-}
-.topics-block ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-.topics-block li {
-  color: var(--color-ink-soft);
-  font-size: 0.88rem;
-  line-height: 1.5;
-  padding-left: 1rem;
-  position: relative;
-}
-.topics-block li::before {
-  content: '·';
-  position: absolute;
-  left: 0;
-  color: var(--color-clay);
-  font-weight: 600;
-}
-.inline-list {
-  color: var(--color-ink-soft) !important;
-  font-size: 0.88rem !important;
-  line-height: 1.5;
-  margin: 0;
-}
-.meta {
-  display: flex;
-  gap: 1.5rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--color-line-soft);
-  flex-wrap: wrap;
-  margin-top: auto;
-}
-.meta dt {
-  font-size: 0.62rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-ink-muted);
-  font-weight: 500;
-}
-.meta dd {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--color-ink);
-  margin-top: 0.15rem;
-}
-.link-arrow {
-  color: var(--color-sage-deep);
-  font-size: 0.88rem;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  padding: 0.3em 0;
-  border-bottom: 1px solid currentColor;
-  align-self: flex-start;
-}
-.link-arrow::after { content: '→'; transition: transform 0.25s ease; }
-.link-arrow:hover { color: var(--color-ink); }
-.link-arrow:hover::after { transform: translateX(4px); }
-
-.final-cta {
-  padding-block: clamp(4rem, 8vw, 7rem);
-  background: var(--color-ink);
-  color: var(--color-cream);
-}
-.final-cta-inner {
-  text-align: center;
-  max-width: 38rem;
-  margin: 0 auto;
-}
-.final-cta .eyebrow { color: var(--color-clay-soft); }
-.final-cta .eyebrow::before { background: var(--color-clay-soft); }
-.final-cta h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  margin: 0.5rem 0 1rem;
-  color: var(--color-cream);
-  font-weight: 400;
-}
-.final-cta em { color: var(--color-clay-soft); font-style: italic; }
-.final-cta p {
-  color: rgba(245, 239, 230, 0.8);
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
-.final-cta .btn-primary { background: var(--color-cream); color: var(--color-ink); }
-.final-cta .btn-primary:hover { background: white; }
-
-@media (max-width: 800px) {
-  .ph-grid {
-    grid-template-columns: 1fr;
+  .page-intro { text-align: center; margin-bottom: 3rem; }
+  .page-intro h1 { margin: 0.5rem 0 1rem; }
+  .page-intro .lead { margin: 0 auto; }
+  .check-list { list-style: none; padding: 0; margin: 1.5rem 0 2rem; }
+  .check-list li {
+    padding: 0.7rem 0 0.7rem 1.75rem;
+    border-bottom: 1px solid var(--color-line);
+    position: relative;
+    color: var(--color-ink);
   }
-  .ph-photo {
-    min-height: auto;
-    max-width: 22rem;
-    margin-inline: auto;
+  .check-list li::before {
+    content: '·';
+    position: absolute; left: 0; top: 0.4rem;
+    color: var(--color-gold-deep);
+    font-size: 1.75rem;
+    line-height: 1;
   }
-  .ph-photo img {
-    aspect-ratio: 4/5;
-    min-height: auto;
-    height: auto;
+  .benefits-grid {
+    list-style: none; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.5rem 2rem;
   }
-}
+  .benefits-grid li {
+    padding: 0.6rem 0 0.6rem 1.5rem;
+    position: relative;
+    color: var(--color-ink);
+  }
+  .benefits-grid li::before {
+    content: '✓';
+    position: absolute; left: 0; top: 0.6rem;
+    color: var(--color-sage-deep);
+  }
+  .text-center { text-align: center; margin-bottom: 2rem; }
+
+  .format-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .format-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-m);
+    padding: 1.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition);
+  }
+  .format-card.card-featured {
+    background: var(--color-cream-soft);
+    border-color: var(--color-gold);
+  }
+  .format-card:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+  }
+  .format-badge {
+    align-self: flex-start;
+    margin-bottom: 0.75rem;
+  }
+  .format-card h3 { margin-bottom: 0.5rem; font-size: 1.4rem; }
+  .format-duration {
+    color: var(--color-bordeaux);
+    font-style: italic;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .format-desc {
+    font-size: 0.92rem;
+    color: var(--color-ink-soft);
+    margin-bottom: 1rem;
+  }
+  .format-meta {
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+    background: var(--color-cream);
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius-s);
+    margin-bottom: 0.75rem;
+    border-left: 2px solid var(--color-gold);
+  }
+  .format-foot {
+    margin-top: auto;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-line);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .format-price { margin: 0; display: flex; flex-direction: column; gap: 0.15rem; }
+  .format-price .label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--color-ink-muted);
+  }
+  .format-price strong {
+    font-family: var(--font-display); font-size: 1.15rem;
+    color: var(--color-bordeaux); font-weight: 500;
+  }
+
+  .cta-band {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--color-cream-soft);
+    border-radius: var(--radius-l);
+    border: 1px solid var(--color-line-gold);
+  }
+  .cta-band h3 { margin-bottom: 0.75rem; }
+  .cta-band p { max-width: 50ch; margin: 0 auto 1.5rem; }
 </style>
-</BaseLayout>

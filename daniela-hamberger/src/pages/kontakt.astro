@@ -1,221 +1,207 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE, CONTACT, SOCIAL } from '@/data/site';
+import { SITE, BOOKING_OPTIONS, CONTACT } from '@/data/site';
+
+const description =
+  'Kontakt und Buchung — kostenfreies Orientierungsgespräch, 1:1 Sitzung, KlarheitsReset oder Team-Vorgespräch mit Daniela Britta Hamberger.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Kontakt', item: `${SITE.url}/kontakt` },
+  ],
+};
 ---
 <BaseLayout
-  title={`Kontakt · ${SITE.brand}`}
-  description="Kontakt aufnehmen mit Daniela Britta Hamberger. Kostenfreies Orientierungsgespräch buchen oder eine Anfrage senden."
+  title="Kontakt"
+  description={description}
+  schema={breadcrumb}
 >
-
-  <section class="statement-hero">
-    <div class="container container-narrow sh-inner">
-      <nav class="breadcrumb"><a href="/">Start</a><span>/</span><span>Kontakt</span></nav>
-      <span class="eyebrow">Lass uns sprechen</span>
-      <h1>Von Herz zu Herz —<br /><em>schreib mir.</em></h1>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="text-align: left;">
+        <a href="/">Start</a><span>/</span><span>Kontakt</span>
+      </nav>
+      <span class="eyebrow">Kontakt &amp; Buchung</span>
+      <h1>Lass uns schauen, <em>was für dich passt</em></h1>
       <p class="lead">
-        Ob ein konkretes Anliegen, eine Frage oder einfach Interesse an
-        einem Kennenlernen.
+        Du möchtest herausfinden, ob eine 1:1 Begleitung, ein KlarheitsReset oder ein
+        Teamformat passend ist?
       </p>
     </div>
   </section>
 
-  <section class="contact">
-    <div class="container contact-grid">
-
-      <div class="contact-info">
-        <div class="info-card highlight">
-          <span class="eyebrow">Erstgespräch</span>
-          <h2>Kostenfreies Orientierungs&shy;gespräch</h2>
-          <p>
-            15 bis 30 Minuten — wir klären gemeinsam, worum es geht und ob wir
-            zusammenpassen. Online oder telefonisch.
-          </p>
-        </div>
-
-        <div class="info-card">
-          <h3>Schreib mir</h3>
-          <ul class="info-list">
-            <li>
-              <span class="info-label">E-Mail</span>
-              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
-            </li>
-            <li>
-              <span class="info-label">Antwortzeit</span>
-              <span>innerhalb von {CONTACT.responseTime}</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="info-card">
-          <h3>Praxis & Adresse</h3>
-          <address>
-            {SITE.name}<br />
-            {CONTACT.street}<br />
-            {CONTACT.postalCode} {CONTACT.city}<br />
-            {CONTACT.region}, {CONTACT.country}
-          </address>
-        </div>
-
-        <div class="info-card">
-          <h3>Online</h3>
-          <ul class="info-list">
-            <li><a href={SOCIAL.linkedin} target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href={SOCIAL.instagram} target="_blank" rel="noopener">Instagram</a></li>
-          </ul>
-        </div>
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <p>
+        Dann buche gerne ein kostenfreies Orientierungsgespräch. In 15–30 Minuten klären wir
+        dein Anliegen, mögliche nächste Schritte und die passende Form der Zusammenarbeit.
+      </p>
+      <div class="btn-group">
+        <a href="#kontaktformular" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
+        <a href="#kontaktformular" class="btn btn-outline">Teamformat anfragen</a>
+        <a href={`mailto:${CONTACT.email}`} class="btn btn-outline">Nachricht schreiben</a>
       </div>
-
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Vielen Dank für deine Nachricht! In der Live-Version landet sie jetzt direkt in meinem Postfach.');">
-        <h2>Schreib mir direkt</h2>
-        <p class="form-intro">
-          Erzähl mir kurz, worum es geht — ich melde mich innerhalb von
-          {CONTACT.responseTime} bei dir zurück.
-        </p>
-
-        <div class="form-row">
-          <label><span>Vorname <em>*</em></span><input type="text" required /></label>
-          <label><span>Nachname</span><input type="text" /></label>
-        </div>
-        <label><span>E-Mail <em>*</em></span><input type="email" required /></label>
-        <label>
-          <span>Worum geht es?</span>
-          <select>
-            <option>Orientierungsgespräch (1:1)</option>
-            <option>1:1 Begleitung — Einzelsitzung</option>
-            <option>Coaching-Starterpaket</option>
-            <option>KlarheitsReset</option>
-            <option>Individual-Intensiv-Paket</option>
-            <option>Team-Workshop / TeamBalance</option>
-            <option>Newsletter / Testleser:in</option>
-            <option>Sonstiges</option>
-          </select>
-        </label>
-        <label>
-          <span>Deine Nachricht</span>
-          <textarea rows="5" placeholder="Erzähl mir gerne kurz, was dich bewegt …"></textarea>
-        </label>
-        <label class="check-row">
-          <input type="checkbox" required />
-          <span>
-            Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen
-            und stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu. <em>*</em>
-          </span>
-        </label>
-        <button type="submit" class="btn btn-primary">Nachricht senden</button>
-        <p class="form-note">
-          <em>*</em> Pflichtfeld · Deine Daten werden vertraulich behandelt
-          und nicht an Dritte weitergegeben.
-        </p>
-      </form>
-
     </div>
   </section>
 
-<style>
-.statement-hero {
-  padding-top: clamp(4rem, 9vw, 7rem);
-  padding-bottom: clamp(4rem, 9vw, 7rem);
-  background: var(--color-cream);
-  position: relative;
-  overflow: hidden;
-}
-.statement-hero::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  right: -15%;
-  width: 50%;
-  height: 70%;
-  background: radial-gradient(ellipse, var(--color-sage-pale) 0%, transparent 70%);
-  opacity: 0.4;
-  pointer-events: none;
-}
-.statement-hero::after {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  left: -10%;
-  width: 40%;
-  height: 60%;
-  background: radial-gradient(ellipse, var(--color-clay-pale) 0%, transparent 70%);
-  opacity: 0.5;
-  pointer-events: none;
-}
-.sh-inner {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-.breadcrumb {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  color: var(--color-ink-muted);
-  margin-bottom: 2rem;
-  justify-content: center;
-}
-.breadcrumb a { color: var(--color-ink-muted); }
-.breadcrumb a:hover { color: var(--color-sage-deep); }
-.sh-inner h1 {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  margin: 1.25rem auto 1.5rem;
-  font-weight: 400;
-  max-width: 18ch;
-}
-.sh-inner h1 em {
-  color: var(--color-sage-deep);
-  font-style: italic;
-}
-.sh-inner .lead {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-  color: var(--color-ink-soft);
-  max-width: 38ch;
-  margin-inline: auto;
-  line-height: 1.45;
-}
+  <section class="section section-cream-deep">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Buchungsoptionen im Überblick</span>
+        <h2>Vier Wege, <em>uns auszutauschen</em></h2>
+      </header>
+      <div class="booking-grid">
+        {BOOKING_OPTIONS.map((b) => (
+          <article class="booking-card">
+            <h3>{b.title}</h3>
+            <p class="duration">{b.duration}</p>
+            <p>{b.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-.contact { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-paper); }
-.contact-grid { display: grid; grid-template-columns: 0.8fr 1fr; gap: clamp(2rem, 4vw, 4rem); align-items: start; }
-.contact-info { display: flex; flex-direction: column; gap: 1rem; }
-.info-card { background: var(--color-cream-soft); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 1.5rem; }
-.info-card.highlight { background: var(--color-sage-pale); border-color: var(--color-sage); }
-.info-card h2 { font-size: 1.3rem; margin: 0.4rem 0 0.75rem; font-weight: 400; letter-spacing: -0.015em; }
-.info-card h3 { font-size: 1rem; margin-bottom: 0.85rem; font-family: var(--font-body); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-sage-deep); }
-.info-card p { color: var(--color-ink-soft); line-height: 1.55; font-size: 0.95rem; }
-.info-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.85rem; }
-.info-list li { display: flex; flex-direction: column; gap: 0.2rem; }
-.info-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink-muted); }
-.info-list a { color: var(--color-sage-deep); }
-.info-list a:hover { color: var(--color-ink); }
-address { font-style: normal; line-height: 1.6; color: var(--color-ink-soft); }
+  <section class="section section-cream" id="kontaktformular">
+    <div class="container-narrow">
+      <h2>Schreib mir eine Nachricht</h2>
+      <p>
+        Du kannst mir auch direkt schreiben. Ich melde mich in der Regel innerhalb von
+        1–2 Werktagen.
+      </p>
 
-.contact-form { background: var(--color-cream-soft); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 2rem; }
-.contact-form h2 { font-size: 1.5rem; margin-bottom: 0.4rem; font-weight: 400; }
-.form-intro { color: var(--color-ink-soft); margin-bottom: 1.5rem; line-height: 1.5; font-size: 0.95rem; }
-.contact-form label { display: block; margin-bottom: 1rem; }
-.contact-form label span { display: block; font-size: 0.8rem; color: var(--color-ink); margin-bottom: 0.35rem; font-weight: 500; }
-.contact-form label span em { color: var(--color-clay); font-style: normal; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
-.form-row label { margin-bottom: 0.85rem; }
-.contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 0.75rem 1rem; background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-m); font-family: var(--font-body); font-size: 0.95rem; color: var(--color-ink); }
-.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: 2px solid var(--color-sage); outline-offset: 1px; }
-.contact-form textarea { resize: vertical; min-height: 6rem; }
-.check-row { display: flex !important; flex-direction: row !important; align-items: flex-start; gap: 0.7rem; }
-.check-row span { margin: 0 !important; font-weight: 400 !important; font-size: 0.82rem !important; color: var(--color-ink-soft) !important; line-height: 1.45; }
-.check-row span em { color: var(--color-clay); }
-.check-row input[type="checkbox"] { width: 1.1rem; height: 1.1rem; margin-top: 0.15rem; accent-color: var(--color-sage-deep); flex-shrink: 0; }
-.check-row a { color: var(--color-sage-deep); text-decoration: underline; }
-.contact-form button { margin-top: 0.6rem; }
-.form-note { margin-top: 1rem; font-size: 0.75rem; color: var(--color-ink-muted); line-height: 1.5; }
-.form-note em { color: var(--color-clay); font-style: normal; }
+      <form class="contact-form" action={`mailto:${CONTACT.email}`} method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="field">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="field">
+          <label for="topic">Anliegen</label>
+          <select id="topic" name="topic">
+            <option>1:1 Begleitung</option>
+            <option>Teamformat</option>
+            <option>Publikationen / Interessentenliste</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Nachricht</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <div class="field-check">
+          <input type="checkbox" id="impulsbrief" name="impulsbrief" />
+          <label for="impulsbrief">
+            Ich möchte den Impulsbrief von Daniela Britta Hamberger erhalten und über
+            neue Publikationen, Materialien und Angebote informiert werden.
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+      </form>
 
-@media (max-width: 800px) {
-  .contact-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-}
-</style>
+      <p class="form-note">
+        Alle Angaben werden vertraulich behandelt. Du kannst dich jederzeit vom Impulsbrief
+        abmelden.
+      </p>
+
+      <blockquote class="disclaimer">
+        <strong>Wichtiger Hinweis:</strong> Die Angebote auf dieser Website ersetzen keine
+        medizinische, psychotherapeutische oder psychiatrische Behandlung. Mentoring und
+        Coaching sind keine Therapie. Bei psychischen Erkrankungen oder Krisen wende dich
+        bitte an eine Ärztin, einen Arzt oder eine zugelassene Psychotherapeutin bzw. einen
+        zugelassenen Psychotherapeuten.
+      </blockquote>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .booking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.25rem;
+  }
+  .booking-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-top: 3px solid var(--color-gold);
+    padding: 1.5rem;
+    border-radius: var(--radius-m);
+  }
+  .booking-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  .booking-card .duration {
+    color: var(--color-gold-deep);
+    font-family: var(--font-display);
+    font-style: italic;
+    margin-bottom: 0.85rem;
+  }
+  .booking-card p { font-size: 0.92rem; margin: 0; }
+
+  .contact-form {
+    margin-top: 1.5rem;
+    background: var(--color-paper);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-m);
+  }
+  .field { margin-bottom: 1.25rem; }
+  .field label,
+  .field-check label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    margin-bottom: 0.4rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font: inherit;
+    font-size: 0.95rem;
+    background: var(--color-cream);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-s);
+    color: var(--color-ink);
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 1px;
+    border-color: var(--color-gold);
+  }
+  .field-check {
+    display: flex;
+    gap: 0.65rem;
+    margin: 1.25rem 0 1.5rem;
+    align-items: flex-start;
+  }
+  .field-check input {
+    margin-top: 0.25rem;
+    accent-color: var(--color-bordeaux);
+  }
+  .field-check label {
+    margin: 0;
+    font-weight: 400;
+    color: var(--color-ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .form-note {
+    font-size: 0.83rem;
+    color: var(--color-ink-muted);
+    font-style: italic;
+    margin-top: 1rem;
+  }
+</style>

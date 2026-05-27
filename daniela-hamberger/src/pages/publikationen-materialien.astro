@@ -1,305 +1,139 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE } from '@/data/site';
+import { SITE, IMAGES, PUBLICATIONS } from '@/data/site';
+
+const description =
+  'Selbstcoaching-Bücher, Workbooks, Coaching-Karten und Materialien von Daniela Britta Hamberger — für innere Ordnung, Klarheit und gelingendes Miteinander.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Publikationen', item: `${SITE.url}/publikationen-materialien` },
+  ],
+};
 ---
 <BaseLayout
-  title={`Publikationen & Materialien · ${SITE.brand}`}
-  description="Bücher, Workbooks und Coaching-Karten von Daniela Britta Hamberger. Selbstcoaching, Mythologie und Materialien für innere Klärung."
+  title="Publikationen & Materialien"
+  description={description}
+  schema={breadcrumb}
 >
+  <img class="image-accent" src={IMAGES.publikationen} alt="" loading="eager" />
 
-  <section class="page-hero">
-    <div class="container ph-grid">
-      <div class="ph-text">
-        <nav class="breadcrumb"><a href="/">Start</a><span>/</span><span>Publikationen</span></nav>
-        <span class="eyebrow">Bücher · Workbooks · Karten</span>
-        <h1>Worte, die <em>begleiten</em>.<br />Bilder, die <em>bleiben</em>.</h1>
-        <p class="lead">Materialien für innere Ordnung und bewusstes Miteinander.</p>
-        <p class="ph-welcome">
-          Unter <em>Fokus Schöner Leben</em> entstehen Bücher, Workbooks und
-          Coaching-Karten, die dich auch außerhalb einer Begleitung
-          unterstützen können — beim Sortieren, beim Reflektieren, beim
-          Wiederentdecken dessen, was bereits in dir angelegt ist.
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Start</a><span>/</span><span>Publikationen &amp; Materialien</span>
+      </nav>
+      <header class="page-intro">
+        <span class="eyebrow">Publikationen &amp; Materialien</span>
+        <h1>Bücher, Karten &amp; <em>Materialien</em></h1>
+        <p class="lead">
+          Selbstcoaching, Weisheitsgeschichten und Impulse für innere Ordnung, Klarheit und
+          gelingendes Miteinander
         </p>
-      </div>
-      <div class="ph-photo">
-        <img
-          src="https://cdn.gamma.app/bwtiitetcy0uj9u/generated-images/zSRjMLcRUTtiMeL8wgFak.png"
-          alt="Bücher und Materialien"
-          loading="eager"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="intro-text">
-    <div class="container container-narrow">
-      <p>
-        Ich plane und schreibe Ratgeber, Sachbücher mit Workbook und
-        Kartensets — zu Themen wie Familie, Beziehungen, Kommunikation,
-        Stressresilienz, Selbstfindung und Lebensfreude. Geplant sind
-        außerdem ein achtsamkeitsorientiertes Kinder-Eltern-Buch sowie ein
-        Sachbuch zur Arbeit mit der Akasha-Chronik.
-      </p>
-      <p>
-        Das Schreiben begleitet mich seit meiner Jugend — heute entstehen
-        neben Jugendbüchern auch <em>Taunus-Krimis unter Pseudonym</em>.
-      </p>
-    </div>
-  </section>
-
-  <section class="books">
-    <div class="container">
-
-      <article class="book-card">
-        <div class="book-cover">
-          <div class="cover-bg cover-1">
-            <span class="cover-type">Mythologischer Roman</span>
-            <span class="cover-title">Das Vermächtnis<br />des Herzens</span>
-          </div>
-        </div>
-        <div class="book-content">
-          <span class="book-type">Roman · erscheint in Kürze</span>
-          <h2>Das Vermächtnis des Herzens</h2>
-          <p class="book-subtitle">Eine mythologische Reise zu innerer Weisheit</p>
-          <p>
-            Eine Geschichte aus der keltischen Mythologie: Zwei ungleiche Wesen —
-            eine stolze Drachin und ein listiger Fuchs — gehen gemeinsam einen Weg,
-            auf dem Missverständnisse zu Verständnis werden und Einsamkeit sich in
-            Gemeinschaft verwandelt.
-          </p>
-          <p class="audience"><strong>Für:</strong> Ältere Jugendliche und Erwachsene</p>
-          <a href="/kontakt" class="link-arrow">Erfahre, wenn es erscheint</a>
-        </div>
-      </article>
-
-      <article class="book-card reverse">
-        <div class="book-cover">
-          <div class="cover-bg cover-2">
-            <span class="cover-type">Selbstcoaching</span>
-            <span class="cover-title">Zurück<br />zu dir</span>
-          </div>
-        </div>
-        <div class="book-content">
-          <span class="book-type">Selbstcoaching-Buch · erscheint in Kürze</span>
-          <h2>Zurück zu dir</h2>
-          <p class="book-subtitle">Selbstcoaching-Buch mit integriertem Workbook</p>
-          <p>
-            Ein Begleiter für alle, die sich selbst besser verstehen und bewusster
-            durch Übergangsphasen gehen möchten. Mit Reflexionsfragen, Schreibimpulsen
-            und alltagstauglichen Übungen für mehr Klarheit, Selbstwert und Lebensfreude.
-          </p>
-          <p class="audience"><strong>Für:</strong> Erwachsene in Veränderungsphasen</p>
-          <a href="/kontakt" class="link-arrow">Erfahre, wenn es erscheint</a>
-        </div>
-      </article>
-
-      <article class="book-card">
-        <div class="book-cover">
-          <div class="cover-bg cover-3">
-            <span class="cover-type">Karten-Set</span>
-            <span class="cover-title">Coaching-<br />& Impulskarten</span>
-          </div>
-        </div>
-        <div class="book-content">
-          <span class="book-type">Karten-Set · in Planung</span>
-          <h2>Coaching- & Impulskarten</h2>
-          <p class="book-subtitle">Für Einzelarbeit, Gruppen und Workshops</p>
-          <p>
-            Liebevoll gestaltete Karten mit Fragen, Gedankenanstößen und kleinen
-            Übungen. Themen: innere Ordnung, Klarheit, Selbstwahrnehmung,
-            Wertschätzung, Mut zur Veränderung.
-          </p>
-          <p class="audience"><strong>Für:</strong> Einzelpersonen, Coaches, Teams</p>
-          <a href="/kontakt" class="link-arrow">Erfahre, wenn es erscheint</a>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="more-projects">
-    <div class="container container-narrow">
-      <header class="section-head">
-        <span class="eyebrow">Weitere Projekte in Planung</span>
-        <h2>Was sonst noch <em>entsteht</em></h2>
       </header>
-      <ul class="project-list">
-        <li>
-          <h3>Achtsamkeits-Kinderbuch</h3>
-          <p>Ein achtsamkeitsorientiertes Bilderbuch für Kinder und Eltern — gemeinsam lesen, gemeinsam fühlen, gemeinsam wachsen.</p>
-        </li>
-        <li>
-          <h3>Akasha-Chronik Sachbuch mit Workbook</h3>
-          <p>Ein praxisorientiertes Sachbuch mit integriertem Workbook zur Arbeit mit der Akasha-Chronik — Schritt für Schritt erklärt und anwendbar.</p>
-        </li>
-        <li>
-          <h3>Ratgeber-Reihe</h3>
-          <p>Geplante Ratgeber zu Familie, Beziehungen, Kommunikation, Stressresilienz, Selbstfindung und Lebensfreude.</p>
-        </li>
-        <li>
-          <h3>Taunus-Krimis (Pseudonym)</h3>
-          <p>Neben den Sachbüchern entstehen unter Pseudonym auch Krimis mit Schauplatz Taunus — eine ganz andere Seite des Schreibens.</p>
-        </li>
-      </ul>
+
+      <p>
+        Unter Fokus Schöner Leben entstehen Bücher, Workbooks, Coaching-Karten und Materialien,
+        die meine Arbeit über persönliche Begleitung, Workshops und Teamprozesse hinaus
+        erweitern. Sie richten sich an ältere Jugendliche, Erwachsene, Einzelpersonen, Gruppen
+        und Teams, die sich mit innerer Stabilität, Selbstwahrnehmung, Sinnfragen, Wertschätzung,
+        Empathie und bewusster Entwicklung beschäftigen möchten.
+      </p>
+      <p>
+        Meine Publikationen verbinden pädagogische Erfahrung, Mentaltraining, Achtsamkeit,
+        positive Psychologie, Elemente der Persönlichkeitsentwicklung, symbolische Bildsprache
+        und Impulse für ein wertschätzendes Miteinander. Ziel ist es, Menschen dabei zu
+        unterstützen, sich selbst besser wahrzunehmen, Gedanken zu ordnen, neue Perspektiven
+        zu entwickeln und wieder mehr Verbindung zu sich, zu anderen und zur Natur zu spüren.
+      </p>
     </div>
   </section>
 
-  <section class="newsletter-teaser">
-    <div class="container container-narrow nt-inner">
-      <span class="eyebrow">Testleser:in werden</span>
-      <h2>Möchtest du Bescheid wissen?</h2>
-      <p>
-        Wenn du erfahren möchtest, wann meine Bücher und Materialien erscheinen —
-        oder wenn du Lust hast, Testleser:in zu sein — melde dich gerne über meinen
-        Newsletter.
-      </p>
-      <a href="/kontakt" class="btn btn-primary">Newsletter abonnieren</a>
+  <section class="section section-cream-deep">
+    <div class="container">
+      <h2 class="text-center">Geplante und entstehende Projekte</h2>
+      <div class="pub-grid">
+        {PUBLICATIONS.map((p) => (
+          <article class="pub-card">
+            <span class="tag tag-outline">{p.label}</span>
+            <h3>{p.name}</h3>
+            {p.subtitle && <p class="pub-sub"><em>{p.subtitle}</em></p>}
+            <p class="pub-desc">{p.description}</p>
+            {p.meta && <p class="pub-meta">{p.meta}</p>}
+            <div class="btn-group">
+              <a href="/kontakt" class="btn btn-outline">Vormerken</a>
+              <a href="/kontakt" class="btn btn-outline">Mehr erfahren</a>
+            </div>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
+
+  <section class="section section-cream">
+    <div class="container-narrow" style="text-align: center;">
+      <h2>Bleib auf dem Laufenden</h2>
+      <p style="margin: 1rem auto 1.5rem; max-width: 50ch;">
+        Trag dich in die Interessentenliste ein und erfahre als Erstes, wenn neue Materialien
+        erscheinen.
+      </p>
+      <div class="btn-group btn-group-center">
+        <a href="/kontakt" class="btn btn-primary">Interessentenliste eintragen</a>
+        <a href="/kontakt" class="btn btn-outline">Buchprojekte vormerken</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
 
 <style>
-.page-hero {
-  padding-top: clamp(2.5rem, 5vw, 4.5rem);
-  padding-bottom: clamp(3.5rem, 8vw, 7rem);
-  background: var(--color-cream);
-}
-.ph-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: stretch;
-}
-.ph-text {
-  max-width: 34rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.breadcrumb {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  color: var(--color-ink-muted);
-  margin-bottom: 1.5rem;
-}
-.breadcrumb a { color: var(--color-ink-muted); }
-.breadcrumb a:hover { color: var(--color-sage-deep); }
-.ph-text h1 {
-  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  margin: 1rem 0 1.5rem;
-  font-weight: 400;
-}
-.ph-text h1 em {
-  color: var(--color-sage-deep);
-  font-style: italic;
-}
-.ph-text .lead {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.35rem;
-  color: var(--color-sage-deep);
-  margin-bottom: 1.5rem;
-  max-width: none;
-}
-.ph-welcome {
-  color: var(--color-ink-soft);
-  line-height: 1.65;
-  font-size: 1rem;
-  max-width: 32rem;
-}
-.ph-welcome em {
-  color: var(--color-sage-deep);
-  font-style: italic;
-}
-.ph-photo {
-  height: 100%;
-  min-height: 28rem;
-  display: flex;
-  align-items: stretch;
-}
-.ph-photo img {
-  width: 100%;
-  height: 100%;
-  min-height: 28rem;
-  object-fit: cover;
-  border-radius: var(--radius-l);
-  box-shadow: var(--shadow-lift);
-  display: block;
-}
+  .page-intro { text-align: center; margin-bottom: 2.5rem; }
+  .page-intro h1 { margin: 0.5rem 0 1rem; }
+  .page-intro .lead { margin: 0 auto; }
+  .text-center { text-align: center; margin-bottom: 2.5rem; }
 
-.intro-text {
-  padding-block: clamp(3rem, 6vw, 5rem);
-  background: var(--color-paper);
-}
-.intro-text p {
-  color: var(--color-ink-soft);
-  line-height: 1.75;
-  font-size: 1.05rem;
-  margin-bottom: 1.25rem;
-}
-.intro-text em {
-  color: var(--color-sage-deep);
-  font-style: italic;
-}
-
-.books { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-paper); }
-.book-card { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(2rem, 4vw, 4rem); align-items: center; max-width: 56rem; margin: 0 auto 5rem; }
-.book-card:last-child { margin-bottom: 0; }
-.book-card.reverse { direction: rtl; }
-.book-card.reverse > * { direction: ltr; }
-.book-cover { display: flex; justify-content: center; }
-.cover-bg { aspect-ratio: 200/280; max-width: 14rem; width: 100%; border-radius: 4px; box-shadow: 0 20px 40px -16px rgba(31,32,29,0.4), 0 2px 8px rgba(31,32,29,0.1); display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; position: relative; overflow: hidden; }
-.cover-bg::after { content: ''; position: absolute; left: 12px; top: 8%; bottom: 8%; width: 1px; background: rgba(250,246,239,0.3); }
-.cover-1 { background: linear-gradient(135deg, #3d4e3f 0%, #5a6b56 100%); }
-.cover-2 { background: linear-gradient(135deg, #b97f5a 0%, #d4a285 100%); }
-.cover-3 { background: linear-gradient(135deg, #c39282 0%, #ead7c5 100%); }
-.cover-type { color: rgba(250,246,239,0.7); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; }
-.cover-title { font-family: var(--font-display); font-style: italic; color: #faf6ef; font-size: 1.3rem; line-height: 1.15; }
-.book-type { display: inline-block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-clay); margin-bottom: 0.75rem; font-weight: 500; }
-.book-content h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.1; margin-bottom: 0.5rem; font-weight: 400; letter-spacing: -0.02em; }
-.book-subtitle { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: var(--color-sage-deep); margin-bottom: 1rem; }
-.book-content > p:not(.book-subtitle):not(.audience) { color: var(--color-ink-soft); line-height: 1.65; margin-bottom: 1rem; }
-.audience { font-size: 0.9rem; color: var(--color-ink-soft); margin-bottom: 1.25rem; }
-.audience strong { color: var(--color-ink); font-weight: 600; }
-.link-arrow { color: var(--color-sage-deep); font-size: 0.92rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4em; padding: 0.4em 0; border-bottom: 1px solid currentColor; }
-.link-arrow::after { content: '→'; transition: transform 0.25s ease; }
-.link-arrow:hover { color: var(--color-ink); }
-.link-arrow:hover::after { transform: translateX(4px); }
-
-.more-projects { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-cream); }
-.section-head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
-.section-head h2 { margin-top: 0.5rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; font-weight: 400; letter-spacing: -0.02em; }
-.section-head em { color: var(--color-sage-deep); font-style: italic; }
-.project-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.25rem; }
-.project-list li { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 1.5rem; }
-.project-list h3 { font-size: 1.1rem; font-family: var(--font-body); font-weight: 600; margin-bottom: 0.5rem; }
-.project-list p { color: var(--color-ink-soft); font-size: 0.92rem; line-height: 1.55; }
-
-.newsletter-teaser { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-paper); }
-.nt-inner { text-align: center; max-width: 36rem; margin: 0 auto; }
-.nt-inner h2 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; margin: 0.5rem 0 1rem; font-weight: 400; letter-spacing: -0.02em; }
-.nt-inner p { color: var(--color-ink-soft); line-height: 1.6; margin-bottom: 2rem; }
-
-@media (max-width: 800px) {
-  .ph-grid {
-    grid-template-columns: 1fr;
+  .pub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
   }
-  .ph-photo {
-    min-height: auto;
-    max-width: 22rem;
-    margin-inline: auto;
+  .pub-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-m);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition);
   }
-  .ph-photo img {
-    aspect-ratio: 4/5;
-    min-height: auto;
-    height: auto;
+  .pub-card:hover {
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
   }
-}
-@media (max-width: 700px) {
-  .book-card, .book-card.reverse { grid-template-columns: 1fr; direction: ltr; text-align: center; }
-  .book-card.reverse > * { direction: ltr; }
-}
+  .pub-card .tag { align-self: flex-start; margin-bottom: 0.85rem; }
+  .pub-card h3 { margin-bottom: 0.5rem; font-size: 1.35rem; }
+  .pub-sub {
+    color: var(--color-gold-deep);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .pub-desc {
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+    color: var(--color-ink-soft);
+  }
+  .pub-meta {
+    font-size: 0.83rem;
+    color: var(--color-ink-muted);
+    background: var(--color-cream);
+    padding: 0.65rem 0.85rem;
+    border-left: 2px solid var(--color-gold);
+    margin-bottom: 1rem;
+  }
+  .pub-card .btn-group { margin-top: auto; }
 </style>
-</BaseLayout>

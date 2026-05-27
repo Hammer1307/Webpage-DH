@@ -1,126 +1,175 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE } from '@/data/site';
+import { SITE, IMAGES } from '@/data/site';
+
+const description =
+  'TeamBalance Workshop — 3-stündiger Workshop für Klarheit, Wertschätzung und stabile Zusammenarbeit. Ab 1.500 € zzgl. MwSt. Online oder vor Ort.';
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Teams & Workshops', item: `${SITE.url}/teams-workshops` },
+      { '@type': 'ListItem', position: 3, name: 'TeamBalance', item: `${SITE.url}/teambalance` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'TeamBalance Workshop',
+    provider: { '@type': 'Person', name: SITE.name },
+    description: 'Halbtags-Workshop (3 Stunden) für Klarheit, Wertschätzung und stabile Zusammenarbeit in Teams.',
+    offers: { '@type': 'Offer', price: '1500', priceCurrency: 'EUR', description: 'ab 1.500 € zzgl. MwSt.' },
+  },
+];
+
+const wirkungen = [
+  { title: 'Mehr Klarheit', text: 'über Kommunikationsmuster und Teamdynamiken' },
+  { title: 'Konkrete Impulse', text: 'für wertschätzenderes Miteinander' },
+  { title: 'Geschützter Raum', text: 'für offene Reflexion' },
+  { title: 'Stärkung', text: 'von Vertrauen, Rollen und gemeinsamer Ausrichtung' },
+  { title: 'Praktische Methoden', text: 'für den Arbeitsalltag' },
+];
 ---
 <BaseLayout
-  title={`TeamBalance · ${SITE.brand}`}
-  description="Halbtags-Workshop für Teams, die innehalten, ehrlich hinschauen und konkrete Impulse für mehr Wertschätzung und Klarheit mitnehmen möchten."
+  title="TeamBalance Workshop"
+  description={description}
+  schema={schemas}
 >
+  <img class="image-accent" src={IMAGES.teamBalance} alt="" loading="eager" />
 
-  <section class="page-hero">
-    <div class="container ph-grid">
-      <div class="ph-text">
-        <nav class="breadcrumb"><a href="/">Start</a><span>/</span><a href="/teams-workshops">Teams & Workshops</a><span>/</span><span>TeamBalance</span></nav>
-        <span class="eyebrow">Workshop · Halbtags · 3–3,5 Std.</span>
-        <h1><em>TeamBalance.</em><br />Wenn das Miteinander wieder<br />klarer werden darf.</h1>
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Start</a><span>/</span>
+        <a href="/teams-workshops">Teams &amp; Workshops</a><span>/</span>
+        <span>TeamBalance</span>
+      </nav>
+      <header class="page-intro">
+        <span class="tag tag-gold">Workshop für Teams</span>
+        <h1>Team<em>Balance</em></h1>
         <p class="lead">
-          Ein halbtägiger Workshop, in dem ihr als Team innehaltet,
-          ehrlich hinschaut und konkrete Impulse mitnehmt.
+          Klarheit, Wertschätzung und stabile Zusammenarbeit für Teams
         </p>
-        <div class="meta-card">
-          <div><span class="ml">Dauer</span><span class="mv">3–3,5 Std.</span></div>
-          <div><span class="ml">Format</span><span class="mv">Vor Ort & online</span></div>
-          <div><span class="ml">Investition</span><span class="mv">ab 1.500 €<small> zzgl. MwSt.</small></span></div>
+      </header>
+
+      <p>
+        Wenn Kommunikation schwieriger wird, Rollen unklar sind oder Wertschätzung im Alltag
+        verloren geht, braucht es Raum für Reflexion.
+      </p>
+      <p>
+        TeamBalance ist ein Workshopformat für Teams, die ihr Miteinander bewusster gestalten
+        möchten. Es geht um Kommunikation, Selbst- und Fremdwahrnehmung, Bedürfnisse,
+        Wertschätzung und konkrete Impulse für den Arbeitsalltag.
+      </p>
+
+      <div class="tb-facts">
+        <div class="fact">
+          <h4>Dauer</h4>
+          <p>ca. 3 Stunden</p>
+        </div>
+        <div class="fact">
+          <h4>Format</h4>
+          <p>online oder vor Ort</p>
+        </div>
+        <div class="fact">
+          <h4>Investition</h4>
+          <p>ab 1.500 € zzgl. MwSt.</p>
+        </div>
+        <div class="fact">
+          <h4>Geeignet für</h4>
+          <p>pädagogische Teams, soziale Einrichtungen, Praxisteams, kleinere Unternehmen, Projektteams</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="content">
+  <section class="section section-cream-deep">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">Was wir im Workshop tun</span>
-        <h2>Vier <em>Bewegungen</em> im Workshop</h2>
+        <span class="eyebrow">Was im Workshop entsteht</span>
+        <h2>Was der Workshop <em>bewirkt</em></h2>
       </header>
-      <div class="content-grid">
-        <div class="content-card">
-          <div class="num">01</div>
-          <h3>Wahrnehmung der Teamdynamik</h3>
-          <p>Wir schauen, was im Team gerade lebt — sichtbar und unsichtbar. Ohne Bewertung, mit Wertschätzung.</p>
-        </div>
-        <div class="content-card">
-          <div class="num">02</div>
-          <h3>Kommunikation reflektieren</h3>
-          <p>Welche Muster wiederholen sich? Wo entstehen Missverständnisse? Wir lernen, sie zu erkennen.</p>
-        </div>
-        <div class="content-card">
-          <div class="num">03</div>
-          <h3>Wertschätzung konkret üben</h3>
-          <p>Wertschätzung wird in praktischen Übungen erfahrbar. Nichts Theoretisches, sondern erlebbar im Hier und Jetzt.</p>
-        </div>
-        <div class="content-card">
-          <div class="num">04</div>
-          <h3>Impulse für den Alltag</h3>
-          <p>Drei bis fünf konkrete Werkzeuge, die ab der nächsten Teamsitzung greifen — ohne Mehrarbeit.</p>
-        </div>
+      <div class="wirkung-grid">
+        {wirkungen.map((w) => (
+          <article class="wirkung">
+            <h3>{w.title}</h3>
+            <p>{w.text}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="flow">
-    <div class="container container-narrow">
-      <header class="section-head section-head-left">
-        <span class="eyebrow">Ablauf</span>
-        <h2>So läuft ein <em>TeamBalance</em> Workshop</h2>
-      </header>
-      <ol class="flow-list">
-        <li><strong>Vorgespräch (kostenfrei, ca. 30 Min.)</strong> — Wir klären, worum es geht und welcher Schwerpunkt für euer Team Sinn macht.</li>
-        <li><strong>Workshop (3–3,5 Std.)</strong> — Konzentrierte Arbeit mit klarer Struktur: Reflexion, Impuls, Übung, Verankerung.</li>
-        <li><strong>Take-aways</strong> — Ihr nehmt konkrete Werkzeuge und Vereinbarungen mit, an denen ihr weiterarbeiten könnt.</li>
-        <li><strong>Optional: Nachklang-Session</strong> — Vier bis sechs Wochen später ein Online-Check-in zur Justierung.</li>
-      </ol>
+  <section class="section section-bordeaux">
+    <div class="container-narrow" style="text-align: center;">
+      <h2>Interesse an TeamBalance?</h2>
+      <p style="margin: 1rem auto 2rem; max-width: 50ch;">
+        Ich freue mich auf ein erstes Gespräch. In einem kurzen Vorgespräch (30 Min.) klären
+        wir, ob und wie TeamBalance zu eurem Team passt.
+      </p>
+      <div class="btn-group btn-group-center">
+        <a href="/kontakt" class="btn btn-gold">TeamBalance anfragen</a>
+        <a href="/kontakt" class="btn btn-outline" style="color: var(--color-cream); border-color: var(--color-gold-pale);">Team-Vorgespräch buchen</a>
+      </div>
+      <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.75;">
+        Unverbindlich · Individuell konzipiert · Online oder vor Ort
+      </p>
     </div>
   </section>
-
-  <section class="final-cta">
-    <div class="container final-cta-inner">
-      <span class="eyebrow">Anfragen</span>
-      <h2>Bringen wir euer Team wieder in <em>Balance</em>.</h2>
-      <p>Ein kostenfreies Vorgespräch klärt, ob TeamBalance der richtige Rahmen für euch ist.</p>
-      <a href="/kontakt" class="btn btn-primary">Workshop anfragen</a>
-    </div>
-  </section>
+</BaseLayout>
 
 <style>
-.page-hero { padding-top: clamp(2rem, 5vw, 4rem); padding-bottom: clamp(3rem, 7vw, 5rem); background: var(--color-cream); }
-.ph-grid { max-width: 42rem; margin-inline: auto; text-align: center; }
-.breadcrumb { display: flex; gap: 0.5rem; font-size: 0.78rem; color: var(--color-ink-muted); margin-bottom: 1.5rem; justify-content: center; flex-wrap: wrap; }
-.breadcrumb a { color: var(--color-ink-muted); }
-.breadcrumb a:hover { color: var(--color-sage-deep); }
-.ph-text h1 { font-size: clamp(2.4rem, 4.5vw, 4rem); line-height: 1.02; letter-spacing: -0.03em; margin: 1rem 0 1.5rem; font-weight: 400; }
-.ph-text h1 em { color: var(--color-sage-deep); font-style: italic; }
-.ph-text .lead { font-family: var(--font-display); font-style: italic; font-size: 1.35rem; color: var(--color-ink-soft); margin-bottom: 2rem; max-width: 38ch; margin-inline: auto; }
-.meta-card { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-l); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1.5rem; max-width: 32rem; margin: 0 auto; text-align: left; }
-.ml { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-ink-muted); margin-bottom: 0.25rem; }
-.mv { display: block; font-family: var(--font-display); font-size: 1.1rem; color: var(--color-ink); }
-.mv small { color: var(--color-ink-muted); font-size: 0.7em; }
+  .page-intro { text-align: center; margin-bottom: 2.5rem; }
+  .page-intro .tag { margin-bottom: 1.25rem; display: inline-block; }
+  .page-intro h1 { margin: 0.25rem 0 1rem; }
+  .page-intro h1 em { color: var(--color-gold-deep); }
+  .page-intro .lead { margin: 0 auto; }
 
-.content { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-paper); }
-.section-head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
-.section-head-left { text-align: left; margin-inline: 0; }
-.section-head h2 { margin-top: 0.5rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; font-weight: 400; letter-spacing: -0.02em; }
-.section-head em { color: var(--color-sage-deep); font-style: italic; }
-.content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.5rem; max-width: 56rem; margin: 0 auto; }
-.content-card { background: var(--color-cream-soft); border-radius: var(--radius-l); padding: 1.75rem; border: 1px solid var(--color-line); }
-.content-card .num { font-family: var(--font-display); font-size: 1.5rem; color: var(--color-clay); font-style: italic; margin-bottom: 0.85rem; }
-.content-card h3 { font-size: 1.15rem; font-family: var(--font-body); font-weight: 600; margin-bottom: 0.5rem; }
-.content-card p { color: var(--color-ink-soft); line-height: 1.55; font-size: 0.92rem; }
+  .tb-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .fact {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    padding: 1.25rem;
+    border-radius: var(--radius-m);
+    border-top: 3px solid var(--color-gold);
+  }
+  .fact h4 {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--color-gold-deep); font-family: var(--font-body);
+    font-weight: 500; margin-bottom: 0.5rem;
+  }
+  .fact p {
+    color: var(--color-bordeaux);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    margin: 0; line-height: 1.4;
+  }
 
-.flow { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-cream); }
-.flow-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.85rem; }
-.flow-list li { background: var(--color-paper); border-left: 3px solid var(--color-sage); padding: 1.25rem 1.5rem; color: var(--color-ink-soft); line-height: 1.6; border-radius: 0 var(--radius-m) var(--radius-m) 0; }
-.flow-list strong { color: var(--color-ink); font-weight: 600; }
-
-.final-cta { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-ink); color: var(--color-cream); }
-.final-cta-inner { text-align: center; max-width: 36rem; margin: 0 auto; }
-.final-cta .eyebrow { color: var(--color-clay-soft); }
-.final-cta .eyebrow::before { background: var(--color-clay-soft); }
-.final-cta h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 0.5rem 0 1rem; color: var(--color-cream); font-weight: 400; }
-.final-cta em { color: var(--color-clay-soft); font-style: italic; }
-.final-cta p { color: rgba(245, 239, 230, 0.8); margin-bottom: 2rem; line-height: 1.5; }
-.final-cta .btn-primary { background: var(--color-cream); color: var(--color-ink); }
-.final-cta .btn-primary:hover { background: white; }
-
-@media (max-width: 800px) { .meta-card { grid-template-columns: 1fr; gap: 0.5rem; } }
+  .wirkung-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+  }
+  .wirkung {
+    background: var(--color-paper);
+    padding: 1.75rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-m);
+    border-top: 3px solid var(--color-gold);
+    text-align: center;
+  }
+  .wirkung h3 {
+    font-style: italic;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .wirkung p { font-size: 0.93rem; margin: 0; }
 </style>
-</BaseLayout>

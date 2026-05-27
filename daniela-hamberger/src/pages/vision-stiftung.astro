@@ -1,246 +1,226 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE } from '@/data/site';
+import { SITE, STIFTUNG_BEREICHE, CONTACT } from '@/data/site';
+
+const description =
+  'Vision & Stiftung Fokus Schöner Leben — geplante Stiftung zur Unterstützung von Umwelt-, Arten- und Meeresschutz, Upcycling/Recycling sowie sozialen Hilfsangeboten. Drei Prozent der Verkaufserlöse meiner Buchprojekte sollen perspektivisch einfließen.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Vision & Stiftung', item: `${SITE.url}/vision-stiftung` },
+  ],
+};
 ---
 <BaseLayout
-  title={`Vision · ${SITE.brand}`}
-  description="Aus Geschichten kann Wirkung entstehen. Die Vision von Fokus Schöner Leben — und der Plan einer Stiftung für Umwelt, Soziales und Bewusstsein."
+  title="Vision & Stiftung Fokus Schöner Leben"
+  description={description}
+  schema={breadcrumb}
 >
-
-  <section class="statement-hero">
-    <div class="container container-narrow sh-inner">
-      <nav class="breadcrumb"><a href="/">Start</a><span>/</span><span>Vision</span></nav>
-      <span class="eyebrow">Vision</span>
-      <h1>Aus Geschichten kann<br /><em>Wirkung entstehen</em>.</h1>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="text-align: left;">
+        <a href="/">Start</a><span>/</span><span>Vision &amp; Stiftung</span>
+      </nav>
+      <span class="eyebrow">Vision &amp; Stiftung Fokus Schöner Leben</span>
+      <h1>Aus Geschichten kann <em>Wirkung entstehen</em></h1>
       <p class="lead">
-        Meine Buchprojekte sind für mich mehr als Geschichten — sie sind
-        Ausdruck einer Haltung.
+        Aus Geschichten, Impulsen und Begegnungen kann Wirkung entstehen.
       </p>
     </div>
   </section>
 
-  <section class="manifest">
-    <div class="container container-narrow">
-      <div class="manifest-grid">
-        <div class="manifest-quote">
-          <svg width="48" height="36" viewBox="0 0 48 36" fill="none" aria-hidden="true">
-            <path d="M0 36V20.4C0 14.4 1.2 9.6 3.6 6C6 2.4 9.6 0.4 14.4 0L16.8 4.8C13.6 5.2 11.2 6.4 9.6 8.4C8 10.4 7.2 13.2 7.2 16.8H14.4V36H0ZM26.4 36V20.4C26.4 14.4 27.6 9.6 30 6C32.4 2.4 36 0.4 40.8 0L43.2 4.8C40 5.2 37.6 6.4 36 8.4C34.4 10.4 33.6 13.2 33.6 16.8H40.8V36H26.4Z" fill="#c5cfbd"/>
-          </svg>
-          <blockquote>
-            Dass jedes Wesen Bedeutung trägt. Dass Menschlichkeit im
-            Miteinander beginnt. Und dass aus kleinen Impulsen größere
-            Bewegungen entstehen können.
-          </blockquote>
-        </div>
-        <div class="manifest-text">
-          <h2>Worte, Begegnungen,<br /><em>innere Entwicklung</em></h2>
-          <p>
-            Ich glaube daran, dass Worte, Geschichten, Begegnungen und innere
-            Entwicklung etwas verändern können — in uns selbst und in der
-            Welt um uns herum.
-          </p>
-          <p>
-            Perspektivisch plane ich, <strong>drei Prozent der Verkaufserlöse
-            meiner Buchprojekte</strong> in die künftig zu gründende
-            <em>Stiftung Fokus Schöner Leben</em> einfließen zu lassen — sobald
-            die rechtlichen, steuerlichen und organisatorischen Voraussetzungen
-            geschaffen sind und die Buchprojekte erfolgreich wachsen.
-          </p>
-        </div>
-      </div>
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <p>
+        Meine Buchprojekte sind für mich mehr als Geschichten. Sie sind Ausdruck einer Haltung:
+        dass jedes Wesen Bedeutung trägt, dass Menschlichkeit im Miteinander beginnt und dass
+        aus kleinen Impulsen größere Bewegungen entstehen können.
+      </p>
+      <p>
+        Ich glaube daran, dass Worte, Geschichten, Begegnungen und innere Entwicklung etwas
+        verändern können — in uns selbst und in der Welt um uns herum.
+      </p>
+      <p>
+        Perspektivisch plane ich, drei Prozent der Verkaufserlöse meiner Buchprojekte in die
+        künftig zu gründende <strong>Stiftung Fokus Schöner Leben</strong> einfließen zu lassen
+        — sobald die rechtlichen, steuerlichen und organisatorischen Voraussetzungen geschaffen
+        sind und die Buchprojekte erfolgreich wachsen.
+      </p>
+      <p>
+        Die geplante Stiftung soll positive Veränderungen unterstützen: im Umwelt-, Arten- und
+        Meeresschutz, bei Upcycling- und Recyclingprojekten sowie bei sozialen Hilfsangeboten
+        für Menschen, die einsam, benachteiligt, vernachlässigt oder von Ungerechtigkeit
+        betroffen sind.
+      </p>
     </div>
   </section>
 
-  <section class="bereiche">
+  <section class="section section-cream-deep">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">Wirkungsbereiche</span>
-        <h2>Was die Stiftung <em>unterstützen soll</em></h2>
-        <p class="section-intro">
-          Die geplante Stiftung soll positive Veränderungen unterstützen —
-          in den folgenden Bereichen, die mir persönlich am Herzen liegen.
-        </p>
+        <span class="eyebrow">Vier Wirkungsbereiche</span>
+        <h2>Wo die Stiftung <em>wirken soll</em></h2>
       </header>
-      <div class="bereich-grid">
-        <article class="bereich-card">
-          <div class="bereich-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <path d="M20 6c-8 0-14 6-14 14 0 4 1 8 4 11 6-2 11-7 13-13 1-3 1-7-3-12z" stroke="#5a6b56" stroke-width="1.5" fill="#c5cfbd" fill-opacity=".3"/>
-              <path d="M12 28l8-8M16 24l4-4" stroke="#5a6b56" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Umwelt- & Artenschutz</h3>
-          <p>Projekte, die Lebensräume erhalten, regenerieren und schützen — lokal beginnend, vernetzt gedacht.</p>
-        </article>
-
-        <article class="bereich-card">
-          <div class="bereich-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <path d="M4 14c4-3 8-3 12 0s8 3 12 0 8-3 8 0M4 22c4-3 8-3 12 0s8 3 12 0 8-3 8 0M4 30c4-3 8-3 12 0s8 3 12 0 8-3 8 0" stroke="#5a6b56" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Meeresschutz</h3>
-          <p>Initiativen für saubere Meere, gesunde Flüsse und einen achtsamen Umgang mit unseren natürlichen Ressourcen.</p>
-        </article>
-
-        <article class="bereich-card">
-          <div class="bereich-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <path d="M20 6l-4 6 4-1 4 1zM20 8v20M14 20l-6 4 6 4M26 32l4-6-4 1-4-1z" stroke="#5a6b56" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Upcycling & Recycling</h3>
-          <p>Projekte, in denen Material ein zweites Leben bekommt — und in denen Menschen erleben, wie aus Resten Wert entsteht.</p>
-        </article>
-
-        <article class="bereich-card">
-          <div class="bereich-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <path d="M20 32s-12-7-12-15a7 7 0 0112-5 7 7 0 0112 5c0 8-12 15-12 15z" stroke="#5a6b56" stroke-width="1.5" fill="#c5cfbd" fill-opacity=".3"/>
-            </svg>
-          </div>
-          <h3>Soziale Hilfsangebote</h3>
-          <p>Für Menschen, die einsam, benachteiligt, vernachlässigt oder von Ungerechtigkeit betroffen sind — niederschwellig, persönlich, würdevoll.</p>
-        </article>
+      <div class="bereiche-grid">
+        {STIFTUNG_BEREICHE.map((b) => (
+          <article class="bereich">
+            <h3>{b.title}</h3>
+            <p>{b.text}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="hinweis">
-    <div class="container container-narrow">
-      <span class="eyebrow">Transparenz</span>
-      <h2>Die Stiftung ist <em>in Vorbereitung</em></h2>
-      <div class="hinweis-block">
-        <p>
-          Die hier beschriebene Stiftung befindet sich derzeit in Konzeption
-          und ist <strong>noch nicht rechtlich errichtet</strong>. Aktuell
-          besteht keine anerkannte Gemeinnützigkeit, und es können keine
-          Spendenbescheinigungen ausgestellt werden.
-        </p>
-        <p>
-          Die genannten Beiträge werden zunächst projektbezogen und transparent
-          dokumentiert eingesetzt. Sobald die rechtliche Errichtung erfolgt
-          ist, wird diese Seite entsprechend aktualisiert.
-        </p>
-      </div>
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <blockquote class="vision-quote">
+        Mein Wunsch ist es, etablierte Hilfsprojekte und Organisationen finanziell und
+        persönlich zu unterstützen und zugleich eigene Projekte wachsen zu lassen. Kreativität
+        verstehe ich dabei als Brückenbauerin — zwischen Menschen, Ideen, Natur, Bewusstsein,
+        innerem Ganzwerden und Gemeinschaft.
+      </blockquote>
+
+      <h2 style="margin-top: 3rem;">Transparenz über den Weg</h2>
+      <p>
+        Sobald die Stiftung Fokus Schöner Leben gegründet ist und ihre Arbeit aufnehmen kann,
+        möchte ich auf dieser Seite transparent darüber informieren:
+      </p>
+      <ul class="check-list">
+        <li>welche Projekte unterstützt werden</li>
+        <li>wohin Mittel fließen</li>
+        <li>welche Organisationen oder Initiativen begleitet werden</li>
+        <li>welche eigenen Projekte aus der Stiftung heraus entstehen</li>
+        <li>welche Wirkung durch die Unterstützung möglich wird</li>
+      </ul>
+      <p>
+        Bis dahin dient diese Seite als Einblick in die Vision, die hinter Fokus Schöner Leben
+        steht. Die genaue Route dieser Reise liegt noch vor mir. Doch die Vision ist klar:
+        eine Welt, in der Menschen sich selbst wieder näherkommen, einander auf Augenhöhe
+        begegnen und ihre Einzigartigkeit als Teil eines größeren Ganzen verstehen.
+      </p>
     </div>
   </section>
 
-  <section class="final-cta">
-    <div class="container final-cta-inner">
-      <span class="eyebrow">Mitwirken</span>
-      <h2>Wenn dich diese Vision <em>berührt</em> …</h2>
-      <p>… freue ich mich, davon zu hören. Sei es als Auftraggeber:in, als Kolleg:in, als Teil eines Projekts.</p>
-      <a href="/kontakt" class="btn btn-primary">Schreib mir</a>
+  <section class="section section-cream-deep">
+    <div class="container-narrow">
+      <h2>Mitgestalten &amp; Unterstützen</h2>
+      <p>
+        Wenn dich diese Vision berührt und du dir vorstellen kannst, sie perspektivisch zu
+        unterstützen, freue ich mich über deine Kontaktaufnahme. Gemeinsam können wir schauen,
+        welche Form der Beteiligung sinnvoll und möglich ist.
+      </p>
+
+      <aside class="alert alert-warning">
+        <h3>Wichtiger rechtlicher Hinweis zur Unterstützung</h3>
+        <ul>
+          <li>Die Stiftung Fokus Schöner Leben ist derzeit noch nicht gegründet und besitzt keine behördliche Anerkennung als rechtsfähige Stiftung.</li>
+          <li>Es besteht aktuell keine steuerliche Gemeinnützigkeit (§ 52 AO). Zuwendungen können daher derzeit nicht als Spenden steuerlich geltend gemacht werden, und es können keine Spendenbescheinigungen ausgestellt werden.</li>
+          <li>Wer die Vision dennoch ideell oder finanziell begleiten möchte, kann dies ausschließlich als freiwillige, private Zuwendung ohne steuerliche Absetzbarkeit tun.</li>
+          <li>Sobald die Stiftung gegründet und behördlich anerkannt ist, werden alle relevanten Informationen zu Bankverbindung, Verwendungszweck und steuerlicher Abzugsfähigkeit transparent auf dieser Seite veröffentlicht.</li>
+        </ul>
+      </aside>
+
+      <h3 style="margin-top: 2rem;">Kontakt für Interessierte</h3>
+      <p>
+        Wenn du Interesse hast, die Vision von Fokus Schöner Leben zu begleiten — sei es durch
+        persönliches Engagement, Kooperationen, Projektideen oder perspektivisch durch
+        finanzielle Unterstützung — melde dich gerne direkt:
+      </p>
+      <div class="btn-group">
+        <a href="/kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
+        <a href={`mailto:${CONTACT.email}`} class="btn btn-outline">E-Mail schreiben</a>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.88rem; color: var(--color-ink-muted); font-style: italic;">
+        Alle eingehenden Anfragen werden vertraulich behandelt. Eine Rückmeldung erfolgt in
+        der Regel innerhalb von 1–2 Werktagen.
+      </p>
+
+      <aside class="alert alert-info" style="margin-top: 2rem;">
+        <h3>Hinweis</h3>
+        <p>
+          Die Stiftung Fokus Schöner Leben befindet sich derzeit in Planung und ist noch nicht
+          gegründet. Informationen zu konkreten Förderungen, Mittelverwendungen und Projekten
+          werden veröffentlicht, sobald die rechtlichen und organisatorischen Voraussetzungen
+          geschaffen sind. Eine rechtsfähige Stiftung entsteht in Deutschland erst durch
+          Stiftungsgeschäft und behördliche Anerkennung.
+        </p>
+      </aside>
     </div>
   </section>
+</BaseLayout>
 
 <style>
-.statement-hero {
-  padding-top: clamp(4rem, 9vw, 7rem);
-  padding-bottom: clamp(4rem, 9vw, 7rem);
-  background: var(--color-cream);
-  position: relative;
-  overflow: hidden;
-}
-.statement-hero::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  right: -15%;
-  width: 50%;
-  height: 70%;
-  background: radial-gradient(ellipse, var(--color-sage-pale) 0%, transparent 70%);
-  opacity: 0.4;
-  pointer-events: none;
-}
-.statement-hero::after {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  left: -10%;
-  width: 40%;
-  height: 60%;
-  background: radial-gradient(ellipse, var(--color-clay-pale) 0%, transparent 70%);
-  opacity: 0.5;
-  pointer-events: none;
-}
-.sh-inner {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-.breadcrumb {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  color: var(--color-ink-muted);
-  margin-bottom: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.breadcrumb a { color: var(--color-ink-muted); }
-.breadcrumb a:hover { color: var(--color-sage-deep); }
-.sh-inner h1 {
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  margin: 1.25rem auto 1.5rem;
-  font-weight: 400;
-  max-width: 18ch;
-}
-.sh-inner h1 em {
-  color: var(--color-sage-deep);
-  font-style: italic;
-}
-.sh-inner .lead {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-  color: var(--color-ink-soft);
-  max-width: 38ch;
-  margin-inline: auto;
-  line-height: 1.45;
-}
+  .check-list { list-style: none; padding: 0; margin: 1.5rem 0; }
+  .check-list li {
+    padding: 0.65rem 0 0.65rem 1.6rem;
+    border-bottom: 1px solid var(--color-line);
+    position: relative;
+    color: var(--color-ink);
+  }
+  .check-list li::before {
+    content: '·';
+    position: absolute; left: 0; top: 0.35rem;
+    color: var(--color-gold-deep);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
 
-.manifest { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-paper); }
-.manifest-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(2rem, 4vw, 4rem); align-items: start; }
-.manifest-quote blockquote { font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 1.9rem); color: var(--color-ink); line-height: 1.3; font-style: italic; font-weight: 400; margin: 0.75rem 0 0; max-width: none; }
-.manifest-text h2 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; margin-bottom: 1rem; font-weight: 400; letter-spacing: -0.02em; }
-.manifest-text em { color: var(--color-sage-deep); font-style: italic; }
-.manifest-text p { color: var(--color-ink-soft); line-height: 1.7; margin-bottom: 1rem; }
-.manifest-text strong { color: var(--color-ink); font-weight: 600; }
+  .bereiche-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.25rem;
+  }
+  .bereich {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-top: 3px solid var(--color-sage-deep);
+    padding: 1.5rem 1.5rem 1.75rem;
+    border-radius: var(--radius-m);
+    text-align: center;
+  }
+  .bereich h3 {
+    color: var(--color-sage-deep);
+    font-size: 1.2rem;
+    font-family: var(--font-display);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .bereich p { font-size: 0.9rem; margin: 0; }
 
-.bereiche { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-cream); }
-.section-head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
-.section-head h2 { margin-top: 0.5rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; font-weight: 400; letter-spacing: -0.02em; }
-.section-head em { color: var(--color-sage-deep); font-style: italic; }
-.section-intro { margin-top: 1rem; color: var(--color-ink-soft); font-size: 1.02rem; line-height: 1.55; }
-.bereich-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.25rem; }
-.bereich-card { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 1.75rem; transition: all 0.25s ease; }
-.bereich-card:hover { border-color: var(--color-sage-soft); transform: translateY(-3px); box-shadow: var(--shadow-card); }
-.bereich-icon { margin-bottom: 1rem; }
-.bereich-card h3 { font-size: 1.15rem; font-family: var(--font-body); font-weight: 600; margin-bottom: 0.5rem; }
-.bereich-card p { color: var(--color-ink-soft); font-size: 0.92rem; line-height: 1.55; }
+  .vision-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--color-bordeaux);
+    line-height: 1.5;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    border-left: 3px solid var(--color-gold);
+    margin: 2rem 0;
+  }
 
-.hinweis { padding-block: clamp(4rem, 6vw, 5rem); background: var(--color-paper); text-align: center; }
-.hinweis h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0.5rem 0 1.5rem; font-weight: 400; letter-spacing: -0.015em; }
-.hinweis em { color: var(--color-clay); font-style: italic; }
-.hinweis-block { background: var(--color-cream-deep); border-left: 3px solid var(--color-clay); padding: 1.75rem 2rem; text-align: left; border-radius: 0 var(--radius-m) var(--radius-m) 0; max-width: 42rem; margin: 1.5rem auto 0; }
-.hinweis-block p { color: var(--color-ink-soft); line-height: 1.65; margin-bottom: 0.85rem; font-size: 0.95rem; }
-.hinweis-block p:last-child { margin-bottom: 0; }
-.hinweis-block strong { color: var(--color-ink); font-weight: 600; }
-
-.final-cta { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-ink); color: var(--color-cream); }
-.final-cta-inner { text-align: center; max-width: 36rem; margin: 0 auto; }
-.final-cta .eyebrow { color: var(--color-clay-soft); }
-.final-cta .eyebrow::before { background: var(--color-clay-soft); }
-.final-cta h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 0.5rem 0 1rem; color: var(--color-cream); font-weight: 400; }
-.final-cta em { color: var(--color-clay-soft); font-style: italic; }
-.final-cta p { color: rgba(245, 239, 230, 0.8); margin-bottom: 2rem; line-height: 1.5; }
-.final-cta .btn-primary { background: var(--color-cream); color: var(--color-ink); }
-.final-cta .btn-primary:hover { background: white; }
-
-@media (max-width: 800px) { .manifest-grid { grid-template-columns: 1fr; } }
+  .alert {
+    padding: 1.5rem 1.75rem;
+    border-radius: var(--radius-m);
+    margin: 1.5rem 0;
+  }
+  .alert-warning {
+    background: #fef5e7;
+    border-left: 4px solid var(--color-gold-deep);
+  }
+  .alert-info {
+    background: #f0eef8;
+    border-left: 4px solid var(--color-sage-deep);
+  }
+  .alert h3 {
+    color: var(--color-bordeaux);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  .alert ul { padding-left: 1.25rem; list-style: disc; }
+  .alert ul li { margin-bottom: 0.5rem; font-size: 0.92rem; color: var(--color-ink-soft); }
+  .alert p { font-size: 0.92rem; color: var(--color-ink-soft); }
 </style>
-</BaseLayout>

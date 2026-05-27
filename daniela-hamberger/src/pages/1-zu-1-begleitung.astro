@@ -1,76 +1,68 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE } from '@/data/site';
+import { SITE, IMAGES, COACHING_FORMATS } from '@/data/site';
+
+const description =
+  'Persönliche 1:1 Begleitung mit Daniela Britta Hamberger — KlarheitsSitzung, KlarheitsStart, KlarheitsReset und Fokus Schöner Leben Intensiv. Für innere Stabilität, Klarheit und neue Ausrichtung.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: '1:1 Begleitung', item: `${SITE.url}/1-zu-1-begleitung` },
+  ],
+};
 ---
 <BaseLayout
-  title={`1:1 Begleitung · ${SITE.brand}`}
-  description="1:1 Begleitung für Menschen, die wieder klarer, freier und stabiler werden möchten. Klarheits-Sitzungen, Pakete und Intensiv-Formate."
+  title="1:1 Begleitung"
+  description={description}
+  schema={breadcrumb}
 >
+  <img class="image-accent" src={IMAGES.begleitung1zu1} alt="" loading="eager" />
 
-  <section class="page-hero">
-    <div class="container ph-grid">
-      <div class="ph-text">
-        <nav class="breadcrumb"><a href="/">Start</a><span>/</span><span>1:1 Begleitung</span></nav>
-        <span class="eyebrow">Für dich · 1:1 Mentoring</span>
-        <h1>Wieder klarer.<br /><em>Wieder bei dir.</em></h1>
-        <p class="lead">1:1 Begleitung, wenn du dich neu sortieren möchtest.</p>
-        <p class="ph-welcome">
-          Vielleicht kennst du das Gefühl, dass etwas in deinem Leben wieder
-          klarer werden möchte. Ich begleite dich dabei, innere Ordnung zu
-          finden und wieder stabiler in dir selbst zu stehen.
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Start</a><span>/</span><span>1:1 Begleitung</span>
+      </nav>
+      <header class="page-intro">
+        <span class="eyebrow">1:1 Begleitung</span>
+        <h1>1:1 <em>Begleitung</em></h1>
+        <p class="lead">
+          Wenn du spürst: Ich möchte wieder klarer, freier und stabiler werden.
         </p>
-      </div>
-      <div class="ph-photo">
-        <img
-          src="https://cdn.gamma.app/bwtiitetcy0uj9u/generated-images/V8gHGTjJiAqmfHj5.png"
-          alt="1:1 Begleitung"
-          loading="eager"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="kennst-du-das">
-    <div class="container container-narrow">
-      <header class="section-head section-head-left">
-        <span class="eyebrow">Vielleicht kennst du das …</span>
-        <h2>Die <em>leisen Hinweise</em>, dass etwas anders werden möchte</h2>
       </header>
 
-      <ul class="recognition-list">
+      <h2>Vielleicht kennst du das:</h2>
+      <ul class="check-list">
         <li>Du funktionierst viel, aber innerlich bist du erschöpft.</li>
-        <li>Du spürst, dass sich etwas verändern möchte — aber du weißt noch nicht genau, wie.</li>
+        <li>Du spürst, dass sich etwas verändern möchte, aber du weißt noch nicht genau, wie.</li>
         <li>Du stehst vor einer Entscheidung und drehst dich gedanklich im Kreis.</li>
         <li>Du merkst, dass du deine eigenen Bedürfnisse zu oft übergehst.</li>
         <li>Du fühlst dich angepasst, fremdbestimmt oder nicht mehr ganz verbunden mit dem, was dich eigentlich ausmacht.</li>
       </ul>
 
-      <div class="haltungs-block">
-        <p>
-          In meiner 1:1 Begleitung geht es nicht darum, dir fertige Antworten
-          überzustülpen. Es geht darum, dass du wieder Zugang zu deiner
-          eigenen <em>inneren Klarheit</em> findest.
-        </p>
-        <p>
-          Oft liegt die Antwort nicht irgendwo im Außen. Sie ist bereits in dir
-          angelegt — vielleicht nur verschüttet durch alte Erfahrungen, Erwartungen,
-          Druck, innere Unruhe oder die Gewohnheit, es anderen recht machen zu wollen.
-        </p>
-        <p class="emphasis">
-          Ich begleite dich dabei, wieder mehr <em>Ordnung, Stabilität,
-          Selbstvertrauen und Lebensfreude</em> in dir freizulegen.
-        </p>
-      </div>
+      <p>
+        In meiner 1:1 Begleitung geht es nicht darum, dir fertige Antworten überzustülpen.
+        Es geht darum, dass du wieder Zugang zu deiner eigenen inneren Klarheit findest.
+      </p>
+      <p>
+        Oft liegt die Antwort nicht irgendwo im Außen. Sie ist bereits in dir angelegt —
+        vielleicht nur verschüttet durch alte Erfahrungen, Erwartungen, Druck, innere Unruhe
+        oder die Gewohnheit, es anderen recht machen zu wollen.
+      </p>
+      <p>
+        Ich begleite dich dabei, wieder mehr Ordnung, Stabilität, Selbstvertrauen und
+        Lebensfreude in dir freizulegen.
+      </p>
     </div>
   </section>
 
-  <section class="entstehen-darf">
-    <div class="container container-narrow">
-      <header class="section-head section-head-left">
-        <span class="eyebrow">Was in der Begleitung entstehen darf</span>
-        <h2>Räume für das, was <em>wachsen möchte</em></h2>
-      </header>
-      <ul class="benefit-list">
+  <section class="section section-cream-deep">
+    <div class="container-narrow">
+      <h2 class="text-center">Was in der Begleitung entstehen darf</h2>
+      <ul class="benefits-grid">
         <li>mehr innere Ruhe und Stabilität</li>
         <li>ein klarerer Blick auf dich und deine Situation</li>
         <li>mehr Verbindung zu deinen Bedürfnissen</li>
@@ -83,523 +75,187 @@ import { SITE } from '@/data/site';
     </div>
   </section>
 
-  <section class="formats">
+  <section class="section section-cream">
     <div class="container">
       <header class="section-head">
         <span class="eyebrow">Die Formate im Überblick</span>
-        <h2>Fünf <em>Wege</em>, miteinander zu arbeiten</h2>
+        <h2>Fünf Wege, miteinander zu arbeiten</h2>
       </header>
 
       <div class="format-grid">
-        <article class="format-card highlight-card">
-          <span class="format-tag tag-orange">Erster Schritt</span>
-          <h3>Kostenfreies Orientierungsgespräch</h3>
-          <p class="format-subtitle">15–30 Minuten · unverbindlich · online oder telefonisch</p>
-          <p>
-            Du bist nicht sicher, welches Format zu dir passt? In einem ersten
-            Gespräch schauen wir gemeinsam, wo du gerade stehst und welche Form
-            der Begleitung für dich sinnvoll sein kann.
-          </p>
-          <p class="format-note">
-            Ohne Druck, ohne Verpflichtung — einfach als erster klarer Schritt.
-          </p>
-          <dl class="meta">
-            <div><dt>Dauer</dt><dd>15–30 Min</dd></div>
-            <div><dt>Investition</dt><dd>kostenfrei</dd></div>
-          </dl>
-          <a href="/kontakt" class="link-arrow">Orientierungsgespräch buchen</a>
-        </article>
-
-        <article class="format-card">
-          <h3>KlarheitsSitzung</h3>
-          <p class="format-subtitle">60 Minuten für dein konkretes Anliegen</p>
-          <p>
-            Passend, wenn du ein bestimmtes Thema anschauen, eine Entscheidung
-            sortieren oder einen ersten klaren Impuls für dich mitnehmen möchtest.
-          </p>
-          <p>
-            Wir schauen gemeinsam hin: Was bewegt dich gerade? Was blockiert
-            deinen Blick? Was braucht Ordnung? Und welcher nächste Schritt
-            fühlt sich für dich stimmig an?
-          </p>
-          <p class="for-whom">
-            <strong>Geeignet für:</strong> Entscheidungsfragen, innere Unruhe,
-            emotionale Sortierung, Perspektivwechsel, erste Orientierung.
-          </p>
-          <dl class="meta">
-            <div><dt>Dauer</dt><dd>60 Min</dd></div>
-            <div><dt>Investition</dt><dd>250–300 €</dd></div>
-          </dl>
-          <a href="/kontakt" class="link-arrow">KlarheitsSitzung anfragen</a>
-        </article>
-
-        <article class="format-card featured">
-          <span class="featured-badge">Empfohlen</span>
-          <h3>KlarheitsStart</h3>
-          <p class="format-subtitle">3 Sitzungen für innere Ordnung, Stabilität und neue Ausrichtung</p>
-          <p>
-            Geeignet, wenn du spürst, dass ein Thema mehr Raum braucht.
-            In drei Sitzungen gehen wir tiefer: Wir sortieren deine aktuelle
-            Situation, betrachten wiederkehrende Muster, stärken deine innere
-            Stabilität und entwickeln konkrete nächste Schritte.
-          </p>
-          <p>
-            Wenn du nicht nur verstehen möchtest, was los ist, sondern beginnen
-            willst, dich innerlich neu auszurichten.
-          </p>
-          <dl class="meta">
-            <div><dt>Dauer</dt><dd>3 × 60 Min</dd></div>
-            <div><dt>Rhythmus</dt><dd>wöchentlich</dd></div>
-            <div><dt>Investition</dt><dd>600 € gesamt</dd></div>
-          </dl>
-          <a href="/kontakt" class="link-arrow">KlarheitsStart anfragen</a>
-        </article>
-
-        <article class="format-card">
-          <h3>KlarheitsReset</h3>
-          <p class="format-subtitle">Intensive Begleitung, wenn etwas wirklich gesehen und geklärt werden möchte</p>
-          <p>
-            Für dich, wenn du spürst: Ich möchte nicht länger kreisen. Ich möchte
-            hinschauen, sortieren und wieder eine klare innere Richtung finden.
-          </p>
-          <p>
-            In einer intensiven Session nehmen wir uns Zeit für dein Anliegen.
-            Wir betrachten innere und äußere Dynamiken, öffnen Raum für neue
-            Perspektiven und schauen, was in dir wieder freigelegt werden möchte.
-          </p>
-          <dl class="meta">
-            <div><dt>Dauer</dt><dd>2,5–3 Std.</dd></div>
-            <div><dt>Investition</dt><dd>ab 490 €</dd></div>
-          </dl>
-          <a href="/klarheitsreset" class="link-arrow">KlarheitsReset entdecken</a>
-        </article>
-
-        <article class="format-card">
-          <h3>Fokus Schöner Leben Intensiv</h3>
-          <p class="format-subtitle">Mehrwöchige Begleitung für tiefergehende Veränderung und neue innere Ausrichtung</p>
-          <p>
-            Für dich, wenn du dich nicht nur punktuell sortieren, sondern über
-            mehrere Wochen bewusst begleiten lassen möchtest. Es geht um innere
-            Stabilität, Selbstwert, Abgrenzung, Orientierung, Lebensfreude und
-            die Rückverbindung mit dem, was dich im Kern ausmacht.
-          </p>
-          <p>
-            Je nach Anliegen können Hypnose, Mentaltraining, Achtsamkeit,
-            systemischer Blick, Arbeit mit inneren Anteilen, PSYCH-K® und
-            bioenergetische Zugänge einfließen.
-          </p>
-          <dl class="meta">
-            <div><dt>Format</dt><dd>individuell</dd></div>
-            <div><dt>Investition</dt><dd>auf Anfrage / ab 1.798 € zzgl. MwSt.</dd></div>
-          </dl>
-          <a href="/kontakt" class="link-arrow">Intensivbegleitung anfragen</a>
-        </article>
+        {COACHING_FORMATS.map((f) => (
+          <article class:list={['format-card', { 'card-featured': f.featured }]}>
+            {f.featured && <span class="tag tag-gold format-badge">Empfohlen</span>}
+            <h3>{f.name}</h3>
+            <p class="format-duration">{f.duration}</p>
+            <p class="format-desc">{f.description}</p>
+            {f.suitableFor && <p class="format-meta">{f.suitableFor}</p>}
+            <div class="format-foot">
+              <p class="format-price">
+                <span class="label">Investition</span>
+                <strong>{f.price}</strong>
+              </p>
+              <a href={f.href} class="btn btn-outline">{f.cta}</a>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="hinweis">
-    <div class="container container-narrow hinweis-inner">
-      <span class="eyebrow">Wichtiger Hinweis</span>
-      <p>
-        Meine Arbeit versteht sich als ganzheitliche Begleitung zur
-        persönlichen Klärung, Stabilisierung und bewussten Entwicklung.
-        Sie ersetzt <strong>keine ärztliche, psychotherapeutische oder
-        heilkundliche Diagnose oder Behandlung</strong>.
-      </p>
-      <p>
-        Ich stelle keine medizinischen Diagnosen, gebe keine Heilversprechen
-        und behandle keine Krankheiten. Wenn du körperliche oder psychische
-        Beschwerden hast, dich in einer akuten Krise befindest oder medizinische
-        Fragen hast, wende dich bitte an eine Ärztin, einen Arzt, eine
-        Psychotherapeutin, einen Psychotherapeuten oder eine entsprechend
-        qualifizierte Fachperson.
-      </p>
+  <section class="section section-cream-deep">
+    <div class="container-text">
+      <blockquote class="disclaimer">
+        <strong>Wichtiger Hinweis:</strong> Meine Arbeit versteht sich als ganzheitliche
+        Begleitung zur persönlichen Klärung, Stabilisierung und bewussten Entwicklung. Sie
+        ersetzt keine ärztliche, psychotherapeutische oder heilkundliche Diagnose oder
+        Behandlung. Ich stelle keine medizinischen Diagnosen, gebe keine Heilversprechen
+        und behandle keine Krankheiten. Wenn du körperliche oder psychische Beschwerden hast,
+        dich in einer akuten Krise befindest oder medizinische Fragen hast, wende dich bitte
+        an eine Ärztin, einen Arzt, eine Psychotherapeutin, einen Psychotherapeuten oder
+        eine entsprechend qualifizierte Fachperson.
+      </blockquote>
     </div>
   </section>
 
-  <section class="final-cta">
-    <div class="container final-cta-inner">
-      <span class="eyebrow">Bereit für den ersten Schritt</span>
+  <section class="section section-bordeaux">
+    <div class="container-narrow" style="text-align: center;">
       <h2>Ein Gespräch — und mehr nicht.</h2>
-      <p>
-        Lass uns in einem kostenfreien Orientierungsgespräch herausfinden,
-        ob und wie wir gemeinsam arbeiten möchten.
+      <p style="margin: 1rem auto 2rem; max-width: 50ch;">
+        Buche ein kostenfreies Orientierungsgespräch (15–30 Minuten). Unverbindlich, ohne
+        Verpflichtung — einfach als erster klarer Schritt.
       </p>
-      <div class="cta-buttons">
-        <a href="/kontakt" class="btn btn-primary">Orientierungsgespräch buchen</a>
-        <a href="/kontakt" class="btn btn-ghost-light">Ich möchte mich sortieren</a>
-      </div>
+      <a href="/kontakt" class="btn btn-gold">Orientierungsgespräch buchen</a>
     </div>
   </section>
+</BaseLayout>
 
 <style>
-.page-hero {
-  padding-top: clamp(2.5rem, 5vw, 4.5rem);
-  padding-bottom: clamp(3.5rem, 8vw, 7rem);
-  background: var(--color-cream);
-}
-.ph-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: stretch;
-}
-.ph-text {
-  max-width: 34rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.breadcrumb {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  color: var(--color-ink-muted);
-  margin-bottom: 1.5rem;
-}
-.breadcrumb a { color: var(--color-ink-muted); }
-.breadcrumb a:hover { color: var(--color-sage-deep); }
-.ph-text h1 {
-  font-size: clamp(2.4rem, 4.5vw, 4rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  margin: 1rem 0 1.5rem;
-  font-weight: 400;
-}
-.ph-text h1 em {
-  color: var(--color-sage-deep);
-  font-style: italic;
-}
-.ph-text .lead {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.4rem;
-  color: var(--color-sage-deep);
-  margin-bottom: 1.5rem;
-  max-width: none;
-}
-.ph-welcome {
-  color: var(--color-ink-soft);
-  line-height: 1.65;
-  font-size: 1.02rem;
-  max-width: 32rem;
-}
-.ph-photo {
-  height: 100%;
-  min-height: 28rem;
-  display: flex;
-  align-items: stretch;
-}
-.ph-photo img {
-  width: 100%;
-  height: 100%;
-  min-height: 28rem;
-  object-fit: cover;
-  border-radius: var(--radius-l);
-  box-shadow: var(--shadow-lift);
-  display: block;
-}
-
-.kennst-du-das {
-  padding-block: clamp(4rem, 8vw, 7rem);
-  background: var(--color-paper);
-}
-.recognition-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
-}
-.recognition-list li {
-  padding: 1.1rem 1.5rem 1.1rem 3rem;
-  background: var(--color-cream-soft);
-  border-left: 3px solid var(--color-clay);
-  border-radius: 0 var(--radius-m) var(--radius-m) 0;
-  color: var(--color-ink);
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.45;
-  position: relative;
-}
-.recognition-list li::before {
-  content: '·';
-  position: absolute;
-  left: 1.5rem;
-  color: var(--color-clay);
-  font-size: 2rem;
-  line-height: 1;
-  top: 0.85rem;
-}
-.haltungs-block p {
-  color: var(--color-ink-soft);
-  line-height: 1.75;
-  margin-bottom: 1.25rem;
-  font-size: 1.05rem;
-}
-.haltungs-block em {
-  color: var(--color-sage-deep);
-  font-style: italic;
-}
-.haltungs-block .emphasis {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.3rem;
-  color: var(--color-ink);
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-line);
-}
-
-.entstehen-darf {
-  padding-block: clamp(4rem, 8vw, 7rem);
-  background: var(--color-cream);
-}
-.section-head {
-  text-align: center;
-  max-width: 42rem;
-  margin: 0 auto 3rem;
-}
-.section-head-left {
-  text-align: left;
-  margin-inline: 0;
-}
-.section-head h2 {
-  margin-top: 0.5rem;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
-.section-head em {
-  color: var(--color-sage-deep);
-  font-style: italic;
-}
-.benefit-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-  gap: 0.6rem;
-}
-.benefit-list li {
-  padding: 0.85rem 1.25rem 0.85rem 2.25rem;
-  color: var(--color-ink-soft);
-  background: var(--color-paper);
-  border-radius: var(--radius-m);
-  font-size: 0.95rem;
-  line-height: 1.45;
-  position: relative;
-}
-.benefit-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 1rem;
-  color: var(--color-sage-deep);
-  font-weight: 600;
-  top: 0.85rem;
-}
-
-.formats {
-  padding-block: clamp(4rem, 8vw, 7rem);
-  background: var(--color-paper);
-}
-.format-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-  gap: 1.25rem;
-}
-.format-card {
-  background: var(--color-paper);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-l);
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-.format-card:hover {
-  border-color: var(--color-sage-soft);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
-}
-.format-card.featured {
-  background: var(--color-cream-soft);
-  border-color: var(--color-sage);
-}
-.format-card.highlight-card {
-  background: var(--color-clay-pale);
-  border-color: var(--color-clay-soft);
-}
-.featured-badge,
-.format-tag {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: var(--color-sage-deep);
-  color: var(--color-cream);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  padding: 0.3em 0.85em;
-  font-size: 0.62rem;
-  font-weight: 500;
-}
-.tag-orange {
-  background: var(--color-clay);
-}
-.format-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.2rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
-.format-subtitle {
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--color-sage-deep);
-  font-size: 0.98rem;
-  line-height: 1.35;
-}
-.format-card > p:not(.format-subtitle):not(.for-whom):not(.format-note) {
-  color: var(--color-ink-soft);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-.format-note {
-  font-family: var(--font-display);
-  font-style: italic;
-  color: var(--color-clay);
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-.for-whom {
-  font-size: 0.88rem;
-  color: var(--color-ink-soft);
-  line-height: 1.5;
-  padding-top: 0.5rem;
-  border-top: 1px dashed var(--color-line);
-}
-.for-whom strong {
-  color: var(--color-ink);
-  font-weight: 600;
-}
-.meta {
-  display: flex;
-  gap: 1.5rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--color-line-soft);
-  flex-wrap: wrap;
-  margin-top: auto;
-}
-.meta dt {
-  font-size: 0.62rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-ink-muted);
-  font-weight: 500;
-}
-.meta dd {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--color-ink);
-  margin-top: 0.15rem;
-}
-.link-arrow {
-  color: var(--color-sage-deep);
-  font-size: 0.88rem;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  padding: 0.3em 0;
-  border-bottom: 1px solid currentColor;
-  align-self: flex-start;
-}
-.link-arrow::after { content: '→'; transition: transform 0.25s ease; }
-.link-arrow:hover { color: var(--color-ink); }
-.link-arrow:hover::after { transform: translateX(4px); }
-
-.hinweis {
-  padding-block: clamp(3rem, 5vw, 4rem);
-  background: var(--color-cream-deep);
-}
-.hinweis-inner {
-  text-align: center;
-}
-.hinweis .eyebrow {
-  margin-bottom: 1rem;
-}
-.hinweis p {
-  color: var(--color-ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-.hinweis strong { color: var(--color-ink); }
-
-.final-cta {
-  padding-block: clamp(4rem, 8vw, 7rem);
-  background: var(--color-ink);
-  color: var(--color-cream);
-}
-.final-cta-inner {
-  text-align: center;
-  max-width: 38rem;
-  margin: 0 auto;
-}
-.final-cta .eyebrow { color: var(--color-clay-soft); }
-.final-cta .eyebrow::before { background: var(--color-clay-soft); }
-.final-cta h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  margin: 0.5rem 0 1rem;
-  color: var(--color-cream);
-  font-weight: 400;
-}
-.final-cta em { color: var(--color-clay-soft); font-style: italic; }
-.final-cta p {
-  color: rgba(245, 239, 230, 0.8);
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
-.cta-buttons {
-  display: flex;
-  gap: 0.85rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.final-cta .btn-primary { background: var(--color-cream); color: var(--color-ink); }
-.final-cta .btn-primary:hover { background: white; }
-.btn-ghost-light {
-  background: transparent;
-  border: 1px solid rgba(245, 239, 230, 0.4);
-  color: var(--color-cream);
-}
-.btn-ghost-light:hover {
-  background: rgba(245, 239, 230, 0.1);
-  border-color: var(--color-cream);
-}
-
-@media (max-width: 800px) {
-  .ph-grid {
-    grid-template-columns: 1fr;
+  .page-intro {
+    text-align: center;
+    margin-bottom: 3rem;
   }
-  .ph-photo {
-    min-height: auto;
-    max-width: 22rem;
-    margin-inline: auto;
+  .page-intro h1 { margin: 0.5rem 0 1rem; }
+  .page-intro .lead { margin: 0 auto; }
+
+  .check-list,
+  .benefits-grid {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
   }
-  .ph-photo img {
-    aspect-ratio: 4/5;
-    min-height: auto;
-    height: auto;
+  .check-list li {
+    padding: 0.7rem 0 0.7rem 1.75rem;
+    border-bottom: 1px solid var(--color-line);
+    position: relative;
+    color: var(--color-ink);
   }
-}
+  .check-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+    color: var(--color-gold-deep);
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.5rem 2rem;
+  }
+  .benefits-grid li {
+    padding: 0.6rem 0 0.6rem 1.5rem;
+    position: relative;
+    color: var(--color-ink);
+  }
+  .benefits-grid li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    color: var(--color-sage-deep);
+    font-weight: 500;
+  }
+
+  .text-center { text-align: center; margin-bottom: 2rem; }
+
+  .format-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+  }
+  .format-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-m);
+    padding: 2rem 1.75rem 1.75rem;
+    transition: all var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .format-card.card-featured {
+    background: var(--color-cream-soft);
+    border-color: var(--color-gold);
+  }
+  .format-card:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+  }
+  .format-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .format-card h3 { margin-bottom: 0.5rem; font-size: 1.4rem; }
+  .format-duration {
+    color: var(--color-bordeaux);
+    font-style: italic;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .format-desc {
+    font-size: 0.92rem;
+    color: var(--color-ink-soft);
+    margin-bottom: 1rem;
+  }
+  .format-meta {
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+    background: var(--color-cream);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-s);
+    margin-bottom: 1rem;
+    border-left: 2px solid var(--color-gold);
+  }
+  .format-foot {
+    margin-top: auto;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-line);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .format-price {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .format-price .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-ink-muted);
+  }
+  .format-price strong {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--color-bordeaux);
+    font-weight: 500;
+  }
 </style>
-</BaseLayout>

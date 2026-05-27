@@ -12,11 +12,7 @@ export interface Props {
   ogImage?: string;
   ogType?: 'website' | 'article' | 'profile';
   noindex?: boolean;
-  publishedAt?: string;
-  modifiedAt?: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
-  /** Optionaler Klassenname für <main> */
-  mainClass?: string;
 }
 
 const {
@@ -26,10 +22,7 @@ const {
   ogImage,
   ogType = 'website',
   noindex,
-  publishedAt,
-  modifiedAt,
   schema,
-  mainClass,
 } = Astro.props;
 ---
 <!doctype html>
@@ -44,15 +37,13 @@ const {
       ogImage={ogImage}
       ogType={ogType}
       noindex={noindex}
-      publishedAt={publishedAt}
-      modifiedAt={modifiedAt}
       schema={schema}
     />
     <ClientRouter />
   </head>
   <body>
     <Header />
-    <main id="main" class={mainClass}>
+    <main id="main">
       <slot />
     </main>
     <Footer />

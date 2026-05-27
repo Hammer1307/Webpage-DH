@@ -1,0 +1,150 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE, STIMMEN, CONTACT } from '@/data/site';
+
+const description =
+  'Stimmen und Erfahrungen zu Begleitungen, Workshops, Büchern und Impulsen von Daniela Britta Hamberger — veröffentlicht mit ausdrücklicher Zustimmung.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Stimmen & Erfahrungen', item: `${SITE.url}/stimmen-erfahrungen` },
+  ],
+};
+
+const begleitung = STIMMEN.filter(s => s.category === '1:1 Begleitung');
+const teams = STIMMEN.filter(s => s.category === 'Workshops & Teamcoaching');
+---
+<BaseLayout
+  title="Stimmen & Erfahrungen"
+  description={description}
+  schema={breadcrumb}
+>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="text-align: left;">
+        <a href="/">Start</a><span>/</span><span>Stimmen &amp; Erfahrungen</span>
+      </nav>
+      <span class="eyebrow">Stimmen &amp; Erfahrungen</span>
+      <h1>Was Menschen <em>erlebt haben</em></h1>
+      <p class="lead">
+        Rückmeldungen zu Begleitungen, Workshops, Büchern und Impulsen.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <p>
+        Wertschätzung bedeutet mir viel. Hier teile ich — mit ausdrücklicher Zustimmung —
+        Rückmeldungen von Menschen, die meine Arbeit erlebt haben. Auf Wunsch werden Namen
+        anonymisiert.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-cream-deep">
+    <div class="container">
+      <h2 class="cat-head">💬 1:1 Begleitung</h2>
+      <div class="quote-grid">
+        {begleitung.map((s) => (
+          <article class="quote-card">
+            <blockquote>{s.text}</blockquote>
+            <cite>— {s.author}</cite>
+            <span class="quote-source">{s.source}</span>
+            {s.response && (
+              <div class="quote-response">
+                <strong>Antwort von Daniela Hamberger:</strong>
+                <p>{s.response}</p>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="container">
+      <h2 class="cat-head">👥 Workshops &amp; Teamcoaching</h2>
+      <div class="quote-grid">
+        {teams.map((s) => (
+          <article class="quote-card">
+            <blockquote>{s.text}</blockquote>
+            <cite>— {s.author}</cite>
+            <span class="quote-source">{s.source}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream-deep">
+    <div class="container-narrow">
+      <h2>📚 Bücher, Workbooks &amp; Materialien</h2>
+      <p style="font-style: italic; color: var(--color-ink-muted);">
+        Hier erscheinen künftig Leserstimmen zu Selbstcoachingbuch, Das Vermächtnis des
+        Herzens, Coaching-Karten und Workbooks.
+      </p>
+
+      <h2 style="margin-top: 2.5rem;">✨ Fokus Impulse &amp; Social Media</h2>
+      <p style="font-style: italic; color: var(--color-ink-muted);">
+        Hier erscheinen künftig Rückmeldungen zu Blogbeiträgen, Audio-Impulsen und
+        Social-Media-Posts.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="container-narrow">
+      <h2>Deine Rückmeldung einreichen</h2>
+      <p>
+        Wenn du eine Erfahrung teilen möchtest, schreib mir gerne an:
+        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+      </p>
+      <p>Bitte gib dabei an:</p>
+      <ul class="check-list">
+        <li>ob deine Rückmeldung veröffentlicht werden darf</li>
+        <li>ob dein Name genannt oder anonymisiert werden soll</li>
+        <li>zu welchem Bereich deine Rückmeldung gehört</li>
+      </ul>
+      <div class="btn-group">
+        <a href={`mailto:${CONTACT.email}`} class="btn btn-primary">Rückmeldung per E-Mail senden</a>
+      </div>
+
+      <blockquote class="disclaimer" style="margin-top: 2rem;">
+        <strong>Hinweis:</strong> Alle Stimmen werden ausschließlich mit ausdrücklicher
+        Einwilligung der jeweiligen Person veröffentlicht. Auf Wunsch erfolgt die
+        Veröffentlichung anonymisiert oder gekürzt. Der Werbecharakter von Testimonials ist
+        durch die Seitengestaltung erkennbar.
+      </blockquote>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cat-head {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .quote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 1.5rem;
+  }
+  .check-list { list-style: none; padding: 0; margin: 1rem 0 1.5rem; }
+  .check-list li {
+    padding: 0.6rem 0 0.6rem 1.5rem;
+    border-bottom: 1px solid var(--color-line);
+    position: relative;
+  }
+  .check-list li::before {
+    content: '·';
+    position: absolute; left: 0; top: 0.3rem;
+    color: var(--color-gold-deep);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+</style>
