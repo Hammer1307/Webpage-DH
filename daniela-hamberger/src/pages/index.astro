@@ -21,14 +21,38 @@ const description =
       <div class="hero-overlay"></div>
     </div>
     <div class="container hero-inner">
-      <img
-        class="hero-mark"
-        src={IMAGES.logo}
-        alt="Daniela Britta Hamberger · Fokus Schöner Leben"
-        width="540"
-        loading="eager"
-      />
-      <hr class="hero-rule" />
+      <div class="hero-brand" role="img" aria-label="Daniela Britta Hamberger — Fokus Schöner Leben">
+        <svg class="hero-lotus" width="110" height="110" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <g stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            {/* Innere mittlere Blütenblätter */}
+            <path d="M50 20 Q42 30 42 50 Q42 60 47 67" />
+            <path d="M50 20 Q58 30 58 50 Q58 60 53 67" />
+            {/* Schräge Blütenblätter */}
+            <path d="M42 50 Q32 44 28 56 Q28 64 38 68" />
+            <path d="M58 50 Q68 44 72 56 Q72 64 62 68" />
+            {/* Äußere Blütenblätter */}
+            <path d="M30 56 Q18 56 14 68 Q18 76 30 76" />
+            <path d="M70 56 Q82 56 86 68 Q82 76 70 76" />
+            {/* Basis / Schale */}
+            <path d="M18 72 Q30 80 50 80 Q70 80 82 72" />
+            <path d="M22 72 Q35 76 50 76 Q65 76 78 72" opacity="0.55" />
+          </g>
+          {/* Yin-Yang im Zentrum */}
+          <circle cx="50" cy="50" r="11" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M50 39 A11 11 0 0 1 50 61 A5.5 5.5 0 0 0 50 50 A5.5 5.5 0 0 1 50 39 Z" fill="currentColor"/>
+          <circle cx="50" cy="44.5" r="1.5" fill="#FAF7F2"/>
+          <circle cx="50" cy="55.5" r="1.5" fill="currentColor"/>
+        </svg>
+        <p class="brand-name">Daniela Britta Hamberger</p>
+        <p class="brand-tagline">
+          Mentorin für innere Stabilität, bewusste Entwicklung<br />
+          und gelingendes Miteinander
+        </p>
+        <hr class="brand-rule" />
+        <p class="brand-line">Fokus Schöner Leben</p>
+        <p class="brand-motto">Innere Ordnung · Neue Klarheit · Freude am Leben</p>
+      </div>
+
       <h1 class="hero-title">
         Wenn du spürst:<br /><em>Es darf wieder klarer werden</em>
       </h1>
@@ -217,7 +241,7 @@ const description =
   .hero {
     position: relative;
     isolation: isolate;
-    min-height: clamp(640px, 90vh, 860px);
+    min-height: clamp(680px, 95vh, 900px);
     padding: clamp(5rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 6rem);
     display: flex;
     align-items: center;
@@ -229,13 +253,26 @@ const description =
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 25%;
+    filter: blur(2.5px) saturate(0.88) brightness(1.04);
+    transform: scale(1.04);
   }
+  /* Konzentrierter Cream-Schimmer — vertikal länger, damit auch H1 und Buttons gut lesbar sind */
   .hero-overlay {
     position: absolute; inset: 0; z-index: -1;
     background:
-      radial-gradient(ellipse at 50% 50%, rgba(250, 247, 242, 0.94) 0%, rgba(250, 247, 242, 0.78) 30%, rgba(250, 247, 242, 0.4) 58%, rgba(250, 247, 242, 0.1) 82%, rgba(250, 247, 242, 0) 100%),
-      linear-gradient(to bottom, rgba(31, 32, 29, 0.08) 0%, rgba(31, 32, 29, 0) 30%, rgba(31, 32, 29, 0) 70%, rgba(31, 32, 29, 0.18) 100%);
+      radial-gradient(ellipse 55% 70% at 50% 50%,
+        rgba(250, 247, 242, 0.94) 0%,
+        rgba(250, 247, 242, 0.86) 22%,
+        rgba(250, 247, 242, 0.7) 44%,
+        rgba(250, 247, 242, 0.42) 66%,
+        rgba(250, 247, 242, 0.15) 88%,
+        rgba(250, 247, 242, 0) 100%),
+      linear-gradient(to bottom,
+        rgba(31, 32, 29, 0.04) 0%,
+        rgba(31, 32, 29, 0) 35%,
+        rgba(31, 32, 29, 0) 70%,
+        rgba(31, 32, 29, 0.2) 100%);
   }
   .hero-inner {
     text-align: center;
@@ -243,18 +280,89 @@ const description =
     flex-direction: column;
     align-items: center;
   }
-  .hero-mark {
-    width: min(540px, 80vw);
+
+  /* ============== BRAND BLOCK (statt Logo-PNG) ============== */
+  .hero-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 2.5rem;
+    max-width: 38rem;
+  }
+  .hero-lotus {
+    color: var(--color-gold-deep);
+    width: clamp(82px, 9vw, 110px);
     height: auto;
-    filter: drop-shadow(0 4px 16px rgba(31, 32, 29, 0.1));
+    margin-bottom: 1.1rem;
+    filter:
+      drop-shadow(0 0 12px rgba(255, 248, 235, 0.85))
+      drop-shadow(0 2px 6px rgba(123, 45, 66, 0.2));
   }
-  .hero-rule {
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.85rem, 3.6vw, 2.85rem);
+    font-weight: 500;
+    color: var(--color-bordeaux);
+    letter-spacing: 0.005em;
+    line-height: 1.1;
+    margin: 0 0 0.7rem;
+    max-width: none;
+    text-shadow:
+      0 0 14px rgba(250, 247, 242, 0.95),
+      0 0 28px rgba(250, 247, 242, 0.7),
+      0 1px 2px rgba(255, 248, 235, 0.9);
+  }
+  .brand-tagline {
+    font-family: var(--font-body);
+    font-size: clamp(0.88rem, 1.05vw, 1rem);
+    color: var(--color-ink);
+    line-height: 1.5;
+    letter-spacing: 0.005em;
+    font-weight: 500;
+    margin: 0 0 0.95rem;
+    max-width: 42ch;
+    text-shadow:
+      0 0 10px rgba(250, 247, 242, 0.95),
+      0 0 18px rgba(250, 247, 242, 0.7),
+      0 1px 2px rgba(255, 248, 235, 0.9);
+  }
+  .brand-rule {
     border: none;
-    width: 64px;
-    height: 1px;
-    background: var(--color-gold);
-    margin: 1.5rem auto 1.75rem;
+    width: 72px;
+    height: 1.5px;
+    background: var(--color-gold-deep);
+    margin: 0.6rem auto 0.95rem;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(250, 247, 242, 0.85);
   }
+  .brand-line {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 1.9vw, 1.7rem);
+    font-weight: 500;
+    color: var(--color-gold-deep);
+    letter-spacing: 0.012em;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+    text-shadow:
+      0 0 14px rgba(250, 247, 242, 0.95),
+      0 0 24px rgba(250, 247, 242, 0.7),
+      0 1px 2px rgba(255, 248, 235, 0.9);
+  }
+  .brand-motto {
+    font-family: var(--font-body);
+    font-size: clamp(0.82rem, 0.95vw, 0.92rem);
+    color: var(--color-ink);
+    line-height: 1.45;
+    letter-spacing: 0.07em;
+    font-weight: 500;
+    margin: 0;
+    text-shadow:
+      0 0 10px rgba(250, 247, 242, 0.95),
+      0 0 18px rgba(250, 247, 242, 0.7),
+      0 1px 2px rgba(255, 248, 235, 0.9);
+  }
+
   .hero-title {
     font-family: var(--font-display);
     font-size: clamp(1.85rem, 3.5vw, 2.95rem);
@@ -263,6 +371,10 @@ const description =
     font-weight: 500;
     color: var(--color-bordeaux);
     max-width: 22ch;
+    text-shadow:
+      0 0 16px rgba(250, 247, 242, 0.9),
+      0 0 32px rgba(250, 247, 242, 0.65),
+      0 1px 2px rgba(255, 248, 235, 0.85);
   }
   .hero-title em {
     font-style: italic;
