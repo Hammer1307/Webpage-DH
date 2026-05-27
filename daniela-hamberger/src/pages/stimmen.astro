@@ -1,0 +1,177 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/data/site';
+---
+<BaseLayout
+  title={`Stimmen · ${SITE.brand}`}
+  description="Was Klient:innen nach der Begleitung sagen. Echte Rückmeldungen aus 1:1 Coachings und Team-Workshops."
+>
+
+  <section class="statement-hero">
+    <div class="container container-narrow sh-inner">
+      <nav class="breadcrumb"><a href="/">Start</a><span>/</span><span>Stimmen</span></nav>
+      <span class="eyebrow">Stimmen aus der Praxis</span>
+      <h1>Was Menschen<br /><em>nach der Begleitung</em><br />sagen</h1>
+      <p class="lead">
+        Echte Rückmeldungen aus 1:1 Coachings, Workshops und
+        Begleitprogrammen.
+      </p>
+    </div>
+  </section>
+
+  <section class="voices">
+    <div class="container">
+      <div class="voices-grid">
+
+        <article class="voice-card">
+          <div class="rating">★★★★★</div>
+          <blockquote>
+            <p>
+              Eine sehr einfühlsame und aufmerksame Begleitung. Daniela hat mich
+              nahezu meditativ durch meine Session geführt — gerade für Menschen,
+              die sich etwas verloren fühlen, eine wertvolle Unterstützung.
+            </p>
+            <footer>
+              <strong>Bianca T.</strong>
+              <span>1:1 Coaching · Idstein</span>
+            </footer>
+          </blockquote>
+        </article>
+
+        <article class="voice-card">
+          <div class="rating">★★★★★</div>
+          <blockquote>
+            <p>
+              Frau Hamberger hört wirklich zu — aufmerksam, respektvoll und ohne
+              vorschnelle Bewertungen. Ich habe mehr Stabilität und Vertrauen in
+              meine Entscheidungen zurückgewonnen.
+            </p>
+            <footer>
+              <strong>Carmela M.</strong>
+              <span>KlarheitsReset</span>
+            </footer>
+          </blockquote>
+        </article>
+
+        <article class="voice-card">
+          <div class="rating">★★★★★</div>
+          <blockquote>
+            <p>
+              Im TeamBalance Workshop entstand nach und nach ein offenerer,
+              menschlicherer Austausch. Daniela schafft einen Raum, in dem
+              Wertschätzung wirklich spürbar wird.
+            </p>
+            <footer>
+              <strong>Team aus dem Rhein-Main-Gebiet</strong>
+              <span>TeamBalance Workshop</span>
+            </footer>
+          </blockquote>
+        </article>
+
+      </div>
+
+      <p class="footnote">
+        <em>Hinweis:</em> Alle Stimmen wurden mit Einverständnis der Klient:innen
+        veröffentlicht. Namen teilweise gekürzt zum Schutz der Privatsphäre.
+      </p>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <span class="eyebrow">Auch deine Geschichte zählt</span>
+      <h2>Möchtest du <em>deinen Weg</em> beginnen?</h2>
+      <p>In einem kostenfreien Orientierungsgespräch schauen wir gemeinsam, was du brauchst.</p>
+      <a href="/kontakt" class="btn btn-primary">Gespräch buchen</a>
+    </div>
+  </section>
+
+<style>
+.statement-hero {
+  padding-top: clamp(4rem, 9vw, 7rem);
+  padding-bottom: clamp(4rem, 9vw, 7rem);
+  background: var(--color-cream);
+  position: relative;
+  overflow: hidden;
+}
+.statement-hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -15%;
+  width: 50%;
+  height: 70%;
+  background: radial-gradient(ellipse, var(--color-sage-pale) 0%, transparent 70%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+.statement-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(ellipse, var(--color-clay-pale) 0%, transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.sh-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-ink-muted);
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.breadcrumb a { color: var(--color-ink-muted); }
+.breadcrumb a:hover { color: var(--color-sage-deep); }
+.sh-inner h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 1.25rem auto 1.5rem;
+  font-weight: 400;
+  max-width: 18ch;
+}
+.sh-inner h1 em {
+  color: var(--color-sage-deep);
+  font-style: italic;
+}
+.sh-inner .lead {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  color: var(--color-ink-soft);
+  max-width: 38ch;
+  margin-inline: auto;
+  line-height: 1.45;
+}
+
+.voices { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-paper); }
+.voices-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.5rem; }
+.voice-card { background: var(--color-cream-soft); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 2rem; display: flex; flex-direction: column; }
+.rating { color: var(--color-clay); letter-spacing: 0.2em; margin-bottom: 1rem; font-size: 0.95rem; }
+.voice-card blockquote p { font-family: var(--font-display); font-size: 1.1rem; color: var(--color-ink); margin-bottom: 1.5rem; line-height: 1.5; font-style: italic; flex: 1; }
+.voice-card blockquote footer { border-top: 1px solid var(--color-line); padding-top: 1rem; }
+.voice-card blockquote footer strong { display: block; color: var(--color-ink); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; font-family: var(--font-body); font-style: normal; }
+.voice-card blockquote footer span { color: var(--color-ink-muted); font-size: 0.8rem; font-family: var(--font-body); font-style: normal; }
+.footnote { text-align: center; color: var(--color-ink-muted); font-size: 0.85rem; margin-top: 2.5rem; max-width: 42rem; margin-inline: auto; }
+.footnote em { color: var(--color-clay); font-style: italic; }
+
+.final-cta { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-ink); color: var(--color-cream); }
+.final-cta-inner { text-align: center; max-width: 36rem; margin: 0 auto; }
+.final-cta .eyebrow { color: var(--color-clay-soft); }
+.final-cta .eyebrow::before { background: var(--color-clay-soft); }
+.final-cta h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 0.5rem 0 1rem; color: var(--color-cream); font-weight: 400; }
+.final-cta em { color: var(--color-clay-soft); font-style: italic; }
+.final-cta p { color: rgba(245, 239, 230, 0.8); margin-bottom: 2rem; line-height: 1.5; }
+.final-cta .btn-primary { background: var(--color-cream); color: var(--color-ink); }
+.final-cta .btn-primary:hover { background: white; }
+</style>
+</BaseLayout>

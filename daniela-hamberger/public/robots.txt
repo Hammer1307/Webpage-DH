@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://danielabrittahamberger.de/sitemap-index.xml
+
+# Disallow common bot traps and dev files
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /.well-known/

@@ -1,0 +1,150 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/data/site';
+---
+<BaseLayout
+  title={`KlarheitsReset · ${SITE.brand}`}
+  description="Intensive Einzelsession von 2,5–3 Stunden, wenn ein konkretes Thema dringend Klarheit braucht. Tiefe Arbeit in einer Sitzung."
+>
+
+  <section class="page-hero">
+    <div class="container ph-grid">
+      <div class="ph-text">
+        <nav class="breadcrumb"><a href="/">Start</a><span>/</span><a href="/1-zu-1-begleitung">1:1 Begleitung</a><span>/</span><span>KlarheitsReset</span></nav>
+        <span class="eyebrow">Intensive Einzelsession · 2,5–3 Std.</span>
+        <h1><em>KlarheitsReset.</em><br />Wenn etwas dringend<br />klarer werden darf.</h1>
+        <p class="lead">
+          Eine konzentrierte Einzelsitzung, die Tiefe und Verbindlichkeit
+          verbindet. Für Momente, in denen du nicht warten kannst.
+        </p>
+        <div class="meta-card">
+          <div><span class="ml">Dauer</span><span class="mv">2,5–3 Std.</span></div>
+          <div><span class="ml">Format</span><span class="mv">Vor Ort & online</span></div>
+          <div><span class="ml">Investition</span><span class="mv">ab 590 €</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="when">
+    <div class="container">
+      <div class="when-grid">
+        <div class="when-text">
+          <span class="eyebrow">Wann ein KlarheitsReset hilft</span>
+          <h2>Wenn ein <em>Anliegen</em> seine Klärung sucht</h2>
+          <p>
+            Manchmal braucht es keine Begleitung über Wochen, sondern ein konzentriertes
+            Hinschauen. Eine Tiefe, die Raum schafft. Eine Haltung, die nichts erzwingt —
+            und doch etwas bewegt.
+          </p>
+          <p>
+            Im KlarheitsReset arbeiten wir an einem konkreten Thema. Nicht oberflächlich,
+            sondern so, dass du am Ende der Sitzung wirklich anders nach Hause gehst.
+          </p>
+        </div>
+        <ul class="when-list">
+          <li class="when-head">Typische Situationen</li>
+          <li><span class="dot"></span>Du stehst vor einer Entscheidung, die sich nicht greifen lässt.</li>
+          <li><span class="dot"></span>Ein Konflikt zehrt an dir und du suchst eine neue Perspektive.</li>
+          <li><span class="dot"></span>Etwas Altes meldet sich — und blockiert das Neue.</li>
+          <li><span class="dot"></span>Du brauchst keine Reihe von Sitzungen, sondern einen klaren Schritt.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="phases">
+    <div class="container container-narrow">
+      <header class="section-head">
+        <span class="eyebrow">Der Ablauf</span>
+        <h2>Drei <em>Phasen</em> in einer Session</h2>
+      </header>
+      <div class="phase-grid">
+        <article class="phase-card">
+          <div class="phase-num">01</div>
+          <h3>Ankommen</h3>
+          <p>Wir starten mit einer kurzen Stille und einem behutsamen Einstieg. Du erzählst, worum es geht.</p>
+        </article>
+        <article class="phase-card">
+          <div class="phase-num">02</div>
+          <h3>Vertiefen</h3>
+          <p>Mit einer passenden Methode — Aufstellung, bioenergetische Arbeit, Hypnose-Elemente — gehen wir dorthin, wo das Thema seinen Ursprung hat.</p>
+        </article>
+        <article class="phase-card">
+          <div class="phase-num">03</div>
+          <h3>Klären & Verankern</h3>
+          <p>Wir destillieren, was klar geworden ist. Du nimmst eine konkrete Bewegung mit in deinen Alltag.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="hinweis">
+    <div class="container container-narrow">
+      <p>
+        <strong>Wichtig:</strong> Ein KlarheitsReset ersetzt keine Therapie. Diese
+        Arbeit richtet sich an psychisch stabile Menschen, die einen bewussten,
+        wachen Schritt in ihrem Leben gehen möchten.
+      </p>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <span class="eyebrow">Anfragen</span>
+      <h2>Bereit für deinen <em>KlarheitsReset</em>?</h2>
+      <p>Vor jeder Session sprechen wir kurz miteinander, damit wir gemeinsam einschätzen können, ob das Format passt.</p>
+      <a href="/kontakt" class="btn btn-primary">KlarheitsReset anfragen</a>
+    </div>
+  </section>
+
+<style>
+.page-hero { padding-top: clamp(2rem, 5vw, 4rem); padding-bottom: clamp(3rem, 7vw, 5rem); background: var(--color-cream); }
+.ph-grid { max-width: 42rem; margin-inline: auto; text-align: center; }
+.breadcrumb { display: flex; gap: 0.5rem; font-size: 0.78rem; color: var(--color-ink-muted); margin-bottom: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.breadcrumb a { color: var(--color-ink-muted); }
+.breadcrumb a:hover { color: var(--color-sage-deep); }
+.ph-text h1 { font-size: clamp(2.4rem, 4.5vw, 4rem); line-height: 1.02; letter-spacing: -0.03em; margin: 1rem 0 1.5rem; font-weight: 400; }
+.ph-text h1 em { color: var(--color-sage-deep); font-style: italic; }
+.ph-text .lead { font-family: var(--font-display); font-style: italic; font-size: 1.35rem; color: var(--color-ink-soft); margin-bottom: 2rem; max-width: 36ch; margin-inline: auto; }
+.meta-card { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-l); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1.5rem; max-width: 32rem; margin: 0 auto; text-align: left; }
+.ml { display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-ink-muted); margin-bottom: 0.25rem; }
+.mv { display: block; font-family: var(--font-display); font-size: 1.1rem; color: var(--color-ink); }
+
+.when { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-paper); }
+.when-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; max-width: 56rem; margin: 0 auto; }
+.section-head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
+.section-head h2 { margin-top: 0.5rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; font-weight: 400; letter-spacing: -0.02em; }
+.section-head em { color: var(--color-sage-deep); font-style: italic; }
+.when-text h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); line-height: 1.1; margin: 0.5rem 0 1rem; font-weight: 400; letter-spacing: -0.02em; }
+.when-text em { color: var(--color-sage-deep); font-style: italic; }
+.when-text p { color: var(--color-ink-soft); line-height: 1.65; margin-bottom: 1rem; }
+.when-list { background: var(--color-cream-soft); border-radius: var(--radius-l); padding: 1.75rem; list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+.when-head { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: var(--color-sage-deep); margin-bottom: 0.3rem; }
+.when-list li:not(.when-head) { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--color-ink-soft); line-height: 1.55; font-size: 0.92rem; }
+.dot { width: 7px; height: 7px; background: var(--color-clay); border-radius: 50%; margin-top: 0.5rem; flex-shrink: 0; }
+
+.phases { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-cream); }
+.phase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1.25rem; }
+.phase-card { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 1.75rem; }
+.phase-num { font-family: var(--font-display); font-size: 1.5rem; color: var(--color-clay); font-style: italic; margin-bottom: 0.85rem; }
+.phase-card h3 { font-size: 1.2rem; font-family: var(--font-body); font-weight: 600; margin-bottom: 0.5rem; }
+.phase-card p { color: var(--color-ink-soft); font-size: 0.92rem; line-height: 1.55; }
+
+.hinweis { padding-block: clamp(3rem, 5vw, 4rem); background: var(--color-cream-deep); }
+.hinweis p { color: var(--color-ink-soft); font-size: 0.92rem; line-height: 1.6; text-align: center; }
+.hinweis strong { color: var(--color-ink); }
+
+.final-cta { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-ink); color: var(--color-cream); }
+.final-cta-inner { text-align: center; max-width: 36rem; margin: 0 auto; }
+.final-cta .eyebrow { color: var(--color-clay-soft); }
+.final-cta .eyebrow::before { background: var(--color-clay-soft); }
+.final-cta h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 0.5rem 0 1rem; color: var(--color-cream); font-weight: 400; }
+.final-cta em { color: var(--color-clay-soft); font-style: italic; }
+.final-cta p { color: rgba(245, 239, 230, 0.8); margin-bottom: 2rem; line-height: 1.5; }
+.final-cta .btn-primary { background: var(--color-cream); color: var(--color-ink); }
+.final-cta .btn-primary:hover { background: white; }
+
+@media (max-width: 800px) { .when-grid { grid-template-columns: 1fr; } .meta-card { grid-template-columns: 1fr; gap: 0.5rem; } }
+</style>
+</BaseLayout>

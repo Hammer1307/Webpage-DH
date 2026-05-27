@@ -1,0 +1,167 @@
+---
+import { SITE, CONTACT } from '@/data/site';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  noindex?: boolean;
+  publishedAt?: string;
+  modifiedAt?: string;
+  /** Zusätzliches JSON-LD als Objekt oder Array (Service, FAQPage, BreadcrumbList …) */
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = '/og-default.jpg',
+  ogType = 'website',
+  noindex = false,
+  publishedAt,
+  modifiedAt,
+  schema,
+} = Astro.props;
+
+const url = canonical ?? new URL(Astro.url.pathname, SITE.url).href;
+const ogImageUrl = new URL(ogImage, SITE.url).href;
+
+const fullTitle = title.includes(SITE.name)
+  ? title
+  : `${title} · ${SITE.name}`;
+
+// Grund-Schema: Person + LocalBusiness (Coaching-Praxis)
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${SITE.url}/#person`,
+  name: 'Daniela Britta Hamberger',
+  alternateName: 'Daniela Hamberger',
+  jobTitle: 'Mentorin, Coach, Autorin',
+  description:
+    'Mentorin für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander.',
+  url: SITE.url,
+  email: `mailto:${CONTACT.email}`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: CONTACT.street,
+    postalCode: CONTACT.postalCode,
+    addressLocality: CONTACT.city,
+    addressRegion: CONTACT.region,
+    addressCountry: CONTACT.countryCode,
+  },
+  knowsAbout: [
+    'Mentoring',
+    'Coaching',
+    'Hypnotherapie',
+    'Mentaltraining',
+    'Achtsamkeit',
+    'Positive Psychologie',
+    'Systemische Aufstellung',
+    'Bioenergetik',
+    'Teamentwicklung',
+    'Innere Stabilität',
+  ],
+  knowsLanguage: ['de-DE'],
+};
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${SITE.url}/#business`,
+  name: SITE.name,
+  alternateName: SITE.brand,
+  description: SITE.description,
+  url: SITE.url,
+  telephone: '',
+  email: CONTACT.email,
+  image: ogImageUrl,
+  priceRange: '€€',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: CONTACT.street,
+    postalCode: CONTACT.postalCode,
+    addressLocality: CONTACT.city,
+    addressRegion: CONTACT.region,
+    addressCountry: CONTACT.countryCode,
+  },
+  founder: { '@id': `${SITE.url}/#person` },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Deutschland',
+  },
+  serviceType: [
+    '1:1 Coaching',
+    'Mentoring',
+    'Teamcoaching',
+    'Workshop',
+    'KlarheitsReset',
+  ],
+};
+
+const extraSchemas = schema
+  ? Array.isArray(schema) ? schema : [schema]
+  : [];
+
+const allSchemas = [personSchema, businessSchema, ...extraSchemas];
+---
+{/* === Primary Meta Tags === */}
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta name="author" content="Daniela Britta Hamberger" />
+<meta name="generator" content={Astro.generator} />
+<link rel="canonical" href={url} />
+
+{/* === Robots === */}
+{noindex
+  ? <meta name="robots" content="noindex, nofollow" />
+  : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
+
+{/* === Sprache / Region === */}
+<meta http-equiv="content-language" content="de" />
+<meta name="language" content="German" />
+<meta name="geo.region" content="DE-HE" />
+<meta name="geo.placename" content="Idstein" />
+
+{/* === Open Graph === */}
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content={SITE.name} />
+{publishedAt && <meta property="article:published_time" content={publishedAt} />}
+{modifiedAt && <meta property="article:modified_time" content={modifiedAt} />}
+
+{/* === Twitter === */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={url} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+{/* === Theme === */}
+<meta name="theme-color" content="#f5efe6" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#3d4e3f" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light" />
+
+{/* === Favicon === */}
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+{/* === Performance Hints === */}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+{/* === JSON-LD Schema === */}
+{allSchemas.map((s) => (
+  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+))}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5efe6"/>
+      <stop offset="1" stop-color="#ebe2d1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.6">
+    <circle cx="990" cy="160" r="180" fill="none" stroke="#5a6b56" stroke-width="1"/>
+    <circle cx="990" cy="160" r="120" fill="none" stroke="#5a6b56" stroke-width="0.75"/>
+    <circle cx="990" cy="160" r="60" fill="none" stroke="#5a6b56" stroke-width="0.5"/>
+  </g>
+  <text x="80" y="220" font-family="Georgia, 'Fraunces', serif" font-size="22" letter-spacing="6" fill="#5a6b56" text-transform="uppercase">FOKUS SCHÖNER LEBEN</text>
+  <text x="80" y="330" font-family="Georgia, 'Fraunces', serif" font-size="78" font-weight="400" fill="#1f201d">Daniela Britta Hamberger</text>
+  <text x="80" y="400" font-family="Georgia, 'Fraunces', serif" font-size="34" font-style="italic" fill="#3a3b37">Innere Ordnung. Neue Klarheit. Freude am Leben.</text>
+  <text x="80" y="540" font-family="'Manrope', sans-serif" font-size="22" fill="#6b6c66">Mentorin · Coach · Autorin</text>
+  <text x="80" y="570" font-family="'Manrope', sans-serif" font-size="20" fill="#6b6c66">danielabrittahamberger.de</text>
+</svg>

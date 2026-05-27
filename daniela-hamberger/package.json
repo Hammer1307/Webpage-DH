@@ -1,0 +1,25 @@
+{
+  "name": "daniela-hamberger",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Website von Daniela Britta Hamberger – Mentorin für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander.",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.10",
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.1.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "lightningcss": "^1.32.0",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,897 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/data/site';
+
+const description =
+  'Daniela Britta Hamberger — Mentorin mit pädagogischer Expertise für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander. Fokus Schöner Leben: Innere Ordnung. Neue Klarheit. Freude am Leben.';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Was ist der Unterschied zwischen Coaching, Mentoring und Therapie?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'Meine Arbeit versteht sich als ganzheitliche Begleitung zur persönlichen Klärung, Stabilisierung und bewussten Entwicklung. Sie ersetzt keine ärztliche, psychotherapeutische oder heilkundliche Diagnose oder Behandlung.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wo findet die Begleitung statt?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'Online sowie vor Ort in Idstein, Hessen. Auch Inhouse-Workshops bei Teams sind möglich.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wie läuft ein Orientierungsgespräch ab?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text:
+          'In 15 bis 30 Minuten klären wir gemeinsam, worum es geht und welche Form der Begleitung für dich sinnvoll sein kann. Ohne Druck, ohne Verpflichtung — als erster klarer Schritt.',
+      },
+    },
+  ],
+};
+---
+<BaseLayout
+  title={`${SITE.name} · ${SITE.brand}`}
+  description={description}
+  schema={faqSchema}
+>
+  {/* ============== HERO ============== */}
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow">Fokus Schöner Leben</span>
+        <h1 class="hero-title">
+          Innere Ordnung.<br />
+          <em>Neue Klarheit.</em><br />
+          Freude am Leben.
+        </h1>
+        <p class="hero-lead">
+          Vielleicht spürst du gerade, dass etwas in deinem Leben
+          wieder klarer werden möchte.
+        </p>
+        <p class="hero-body">
+          Vielleicht bist du müde vom Funktionieren. Vielleicht stehst du
+          vor einer Entscheidung. Vielleicht suchst du inneren Halt, mehr
+          Orientierung oder das Gefühl, wieder wirklich bei dir selbst
+          anzukommen.
+        </p>
+        <p class="hero-body">
+          Ich begleite dich dabei, innere Ordnung zu finden, den Blick zu
+          weiten und wieder stabiler in dir selbst zu stehen.
+        </p>
+        <div class="hero-actions">
+          <a href="/kontakt" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
+          <a href="/kontakt" class="btn btn-secondary">Ich möchte mich sortieren</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img
+          src="https://cdn.gamma.app/bwtiitetcy0uj9u/9c6c25e6510d4f06b98c5ac935e92629/original/Ich-Buisnesslook2.png"
+          alt="Daniela Britta Hamberger"
+          class="hero-photo"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ============== WAS IN UNS ANGELEGT IST ============== */}
+  <section class="freilegen">
+    <div class="container container-narrow freilegen-inner">
+      <span class="eyebrow">Was bereits in dir angelegt ist</span>
+      <h2>Es darf wieder <em>sichtbar werden</em></h2>
+      <p>
+        Oft ist vieles bereits in uns angelegt: Klarheit, Kraft, Vertrauen,
+        Lebensfreude, ein Gespür für den nächsten stimmigen Schritt.
+      </p>
+      <p>
+        Manchmal ist es nur überlagert — durch Erwartungen, Fremdbestimmung,
+        alte Muster, innere Unruhe oder das Gefühl, immer weiter funktionieren
+        zu müssen.
+      </p>
+      <p class="freilegen-mission">
+        In meiner Arbeit geht es darum, genau diesen inneren
+        <em>Zugang wieder freizulegen</em>.
+      </p>
+      <p class="expertise">
+        Mit langjähriger Erfahrung als <strong>Pädagogin und ehemalige Lehrerin
+        in der Sekundarstufe I</strong> verbinde ich Hypnose, Mentaltraining,
+        Achtsamkeitstools, positive Psychologie, einen systemischen Blick auf
+        Beziehungen und Dynamiken, PSYCH-K® sowie bioenergetische Zugänge.
+      </p>
+    </div>
+  </section>
+
+  {/* ============== HI, ICH BIN DANIELA ============== */}
+  <section class="about-teaser">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <img
+          src="https://cdn.gamma.app/bwtiitetcy0uj9u/21437661fef64aa8b95e89df1094cd03/original/image.png"
+          alt="Daniela in ihrem Element"
+          loading="lazy"
+        />
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">Hi, ich bin</span>
+        <h2>Daniela</h2>
+        <p class="lead-soft">
+          Mutter, Künstlerin, Pädagogin, Autorin, Coachin, Seminarleiterin
+          und stolze Halterin dreier treuer Hundegefährten.
+        </p>
+        <p>
+          Ich begleite seit über 15 Jahren Menschen dabei, wieder mehr bei
+          sich selbst anzukommen — dort, wo Klarheit, Kraft und Lebensfreude
+          vielleicht gerade verschüttet sind.
+        </p>
+        <p>
+          Mein eigener Weg — geprägt von Umbrüchen und einem Burn-out —
+          hat mich gelehrt, wie wichtig es ist, der inneren Stimme Raum zu
+          geben. Diese Erfahrung bildet das Fundament meiner Arbeit.
+        </p>
+        <a href="/ueber-mich" class="link-arrow">Lerne mich richtig kennen</a>
+      </div>
+    </div>
+  </section>
+
+  {/* ============== DREI WEGE DER ZUSAMMENARBEIT ============== */}
+  <section class="paths">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Drei Wege der Zusammenarbeit</span>
+        <h2>Für dich. Für euch als Team.<br />Für das, was <em>wachsen möchte</em>.</h2>
+        <p class="section-intro">
+          Ob in einer persönlichen 1:1 Begleitung, in einem Team-Workshop oder
+          zwischen den Seiten eines Buches: Meine Arbeit folgt demselben
+          Anliegen. Es geht darum, wieder Verbindung entstehen zu lassen —
+          zu dir selbst, zu deinen eigenen Bedürfnissen, zu deiner inneren
+          Kraft und zu den Menschen, mit denen du lebst oder arbeitest.
+        </p>
+      </header>
+
+      <div class="paths-grid">
+        <article class="path-card">
+          <div class="path-photo">
+            <img
+              src="https://cdn.gamma.app/bwtiitetcy0uj9u/generated-images/V8gHGTjJiAqmfHj5.png"
+              alt="1:1 Begleitung"
+              loading="lazy"
+            />
+          </div>
+          <div class="path-content">
+            <span class="path-eyebrow">01 · für dich</span>
+            <h3>1:1 Begleitung</h3>
+            <p class="path-subtitle">Wenn du dich neu sortieren und wieder mehr bei dir ankommen möchtest</p>
+            <p>
+              Vielleicht fühlst du dich innerlich unruhig, erschöpft oder
+              nicht mehr richtig verbunden mit dir selbst. In einem geschützten
+              Raum darfst du dich sortieren, fühlen, erkennen und neu ausrichten.
+            </p>
+            <a href="/1-zu-1-begleitung" class="link-arrow">Zur 1:1 Begleitung</a>
+          </div>
+        </article>
+
+        <article class="path-card">
+          <div class="path-photo">
+            <img
+              src="https://cdn.gamma.app/bwtiitetcy0uj9u/generated-images/r4vrtpz15ujsQ9iu.png"
+              alt="Teams & Workshops"
+              loading="lazy"
+            />
+          </div>
+          <div class="path-content">
+            <span class="path-eyebrow">02 · für euch als team</span>
+            <h3>Teams & Workshops</h3>
+            <p class="path-subtitle">Wenn ihr wieder klarer, wertschätzender und menschlicher zusammenarbeiten möchtet</p>
+            <p>
+              Manchmal läuft Kommunikation aneinander vorbei, sind Rollen
+              unklar, geht Wertschätzung im Alltag unter. Ich begleite euch
+              dabei, Dynamiken bewusst wahrzunehmen und neue Wege für ein
+              menschlicheres Miteinander zu entwickeln.
+            </p>
+            <a href="/teams-workshops" class="link-arrow">Zu Teams & Workshops</a>
+          </div>
+        </article>
+
+        <article class="path-card">
+          <div class="path-photo">
+            <img
+              src="https://cdn.gamma.app/bwtiitetcy0uj9u/generated-images/zSRjMLcRUTtiMeL8wgFak.png"
+              alt="Publikationen & Materialien"
+              loading="lazy"
+            />
+          </div>
+          <div class="path-content">
+            <span class="path-eyebrow">03 · zum mitnehmen</span>
+            <h3>Publikationen</h3>
+            <p class="path-subtitle">Impulse, Bücher und Karten für innere Ordnung und bewusstes Miteinander</p>
+            <p>
+              Unter Fokus Schöner Leben entstehen Bücher, Workbooks,
+              Coaching-Karten und Materialien, die dich auch außerhalb einer
+              Begleitung oder eines Workshops unterstützen können.
+            </p>
+            <a href="/publikationen-materialien" class="link-arrow">Publikationen ansehen</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {/* ============== ZITAT MIT BILD-HINTERGRUND ============== */}
+  <section class="quote-hero">
+    <div class="container">
+      <div class="quote-frame">
+        <img
+          class="quote-bg"
+          src="https://cdn.gamma.app/bwtiitetcy0uj9u/edited-images/sA5Y5SZYVNzTEe4XgwSNR.png"
+          alt=""
+          loading="lazy"
+        />
+        <blockquote class="quote-overlay">
+          <p>
+            Veränderung entsteht nicht durch Druck, sondern durch
+            <em>Klarheit, Vertrauen</em> und echte innere Bewegung.
+          </p>
+          <footer>— Von Herz zu Herz, Daniela</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  {/* ============== METHODEN ALS PILLEN ============== */}
+  <section class="methods-section">
+    <div class="container">
+      <header class="section-head section-head-left">
+        <span class="eyebrow">Was mich auszeichnet</span>
+        <h2>Ein vielseitiger Begleitansatz —<br />klar, achtsam und <em>von Mensch zu Mensch</em></h2>
+        <p class="section-intro">
+          Nicht jedes Thema öffnet sich über denselben Weg. Manchmal braucht
+          es ein Gespräch. Manchmal innere Ruhe. Manchmal einen neuen Blick
+          auf Beziehungen, Rollen oder Erwartungen. Deshalb arbeite ich
+          nicht nach einem starren Konzept — sondern individuell mit dir.
+        </p>
+      </header>
+
+      <ul class="methods-pills">
+        <li class="method-pill">Hypnose & Hypnotherapie</li>
+        <li class="method-pill">Mentaltraining</li>
+        <li class="method-pill">Achtsamkeitstools</li>
+        <li class="method-pill">Positive Psychologie</li>
+        <li class="method-pill">Systemischer Blick</li>
+        <li class="method-pill">PSYCH-K®</li>
+        <li class="method-pill">Bioenergetische Zugänge</li>
+        <li class="method-pill">Akasha-Chronik-Reading</li>
+        <li class="method-pill">Reiki</li>
+        <li class="method-pill">Aufstellungsarbeit</li>
+        <li class="method-pill">Arbeit mit inneren Anteilen</li>
+        <li class="method-pill">Bild- & Symbolarbeit</li>
+      </ul>
+    </div>
+  </section>
+
+  {/* ============== VISION & STIFTUNG ============== */}
+  <section class="vision-teaser">
+    <div class="container vision-grid">
+      <div class="vision-text">
+        <span class="eyebrow">Vision · Aus Geschichten kann Wirkung entstehen</span>
+        <h2>Damit aus Worten <em>Wirkung</em> wird</h2>
+        <p>
+          Meine Buchprojekte sind für mich mehr als Geschichten. Sie sind
+          Ausdruck einer Haltung: dass jedes Wesen Bedeutung trägt und dass
+          aus kleinen Impulsen größere Bewegungen entstehen können.
+        </p>
+        <p>
+          Perspektivisch plane ich, <strong>drei Prozent der Verkaufserlöse
+          meiner Buchprojekte</strong> in die künftig zu gründende
+          <em>Stiftung Fokus Schöner Leben</em> einfließen zu lassen — sobald
+          die rechtlichen Voraussetzungen geschaffen sind.
+        </p>
+        <a href="/vision-stiftung" class="link-arrow">Mehr über die Vision erfahren</a>
+      </div>
+      <div class="vision-cards">
+        <div class="vision-mini">
+          <span class="vm-icon">🌿</span>
+          <span>Umwelt-, Arten- & Meeresschutz</span>
+        </div>
+        <div class="vision-mini">
+          <span class="vm-icon">♻️</span>
+          <span>Upcycling & Recycling</span>
+        </div>
+        <div class="vision-mini">
+          <span class="vm-icon">🤝</span>
+          <span>Soziale Hilfsangebote</span>
+        </div>
+        <div class="vision-mini">
+          <span class="vm-icon">📖</span>
+          <span>Bücher mit Wirkung</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ============== NEWSLETTER ============== */}
+  <section class="newsletter">
+    <div class="container newsletter-inner">
+      <div class="newsletter-text">
+        <span class="eyebrow">Fokus Impulse</span>
+        <h2>Gedanken, die <em>etwas öffnen</em></h2>
+        <p>
+          Trag dich in meinen Newsletter ein und erfahre als Erste von neuen
+          Impulsen, Publikationen, Coaching-Angeboten und Workshops. Auch
+          die Möglichkeit, Testleser:in zu sein, läuft über den Newsletter.
+        </p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Vielen Dank! In der Live-Version landest du jetzt in der Anmeldung.');">
+        <label>
+          <span>Deine E-Mail</span>
+          <input type="email" required placeholder="du@example.com" />
+        </label>
+        <label>
+          <span>Dein Vorname <small>(optional)</small></span>
+          <input type="text" placeholder="Daniela" />
+        </label>
+        <button type="submit" class="btn btn-primary">Newsletter abonnieren</button>
+        <small>Bestätigung per Doppel-Opt-In. Abmeldung jederzeit möglich.</small>
+      </form>
+    </div>
+  </section>
+
+  {/* ============== ABSCHLUSS-CTA ============== */}
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <span class="eyebrow">Lass uns kennenlernen</span>
+      <h2>Ein Gespräch —<br /><em>und mehr nicht.</em></h2>
+      <p>
+        Buche ein kostenfreies Orientierungsgespräch. 15–30 Minuten,
+        ohne Druck, ohne Verpflichtung — einfach als erster klarer Schritt.
+      </p>
+      <div class="cta-buttons">
+        <a href="/kontakt" class="btn btn-primary">Orientierungsgespräch buchen</a>
+        <a href="/kontakt" class="btn btn-ghost-light">Ich möchte mich sortieren</a>
+      </div>
+    </div>
+  </section>
+
+<style>
+.hero {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(3.5rem, 8vw, 7rem);
+  background: var(--color-cream);
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.hero-text { max-width: 34rem; }
+.hero-title {
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 1rem 0 1.5rem;
+  font-weight: 400;
+}
+.hero-title em { color: var(--color-sage-deep); font-style: italic; }
+.hero-lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  line-height: 1.4;
+  color: var(--color-ink);
+  font-weight: 400;
+  font-style: italic;
+  max-width: 34ch;
+  margin-bottom: 1.25rem;
+}
+.hero-body {
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  max-width: 34rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--color-ink);
+  color: var(--color-ink);
+}
+.btn-secondary:hover {
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+.hero-photo {
+  aspect-ratio: 4/5;
+  max-width: 29rem;
+  width: 100%;
+  margin-inline: auto;
+  display: block;
+  border-radius: var(--radius-l);
+  object-fit: cover;
+  box-shadow: var(--shadow-lift);
+}
+
+.freilegen {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background: var(--color-paper);
+  text-align: center;
+}
+.freilegen-inner h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin: 0.75rem 0 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.freilegen-inner em {
+  color: var(--color-sage-deep);
+  font-style: italic;
+}
+.freilegen-inner p {
+  color: var(--color-ink-soft);
+  line-height: 1.7;
+  margin: 0 auto 1.25rem;
+  max-width: 38rem;
+  font-size: 1.02rem;
+}
+.freilegen-mission {
+  font-family: var(--font-display) !important;
+  font-size: 1.35rem !important;
+  font-style: italic;
+  color: var(--color-ink) !important;
+  margin-top: 2rem !important;
+  border-top: 1px solid var(--color-line);
+  padding-top: 2rem;
+  max-width: 32rem !important;
+}
+.expertise {
+  margin-top: 2rem !important;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-cream-soft);
+  border-radius: var(--radius-m);
+  font-size: 0.95rem !important;
+  max-width: 42rem !important;
+}
+.expertise strong { color: var(--color-ink); font-weight: 600; }
+
+.link-arrow {
+  color: var(--color-sage-deep);
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.4em 0;
+  border-bottom: 1px solid currentColor;
+  transition: gap 0.25s ease;
+}
+.link-arrow::after {
+  content: '→';
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.link-arrow:hover { color: var(--color-ink); }
+.link-arrow:hover::after { transform: translateX(4px); }
+
+.about-teaser {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background: var(--color-cream);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+.about-photo {
+  width: 100%;
+  max-width: 24rem;
+  margin-inline: auto;
+}
+.about-photo img {
+  aspect-ratio: 4/5;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-card);
+}
+.about-text { max-width: 34rem; }
+.about-text h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  margin: 0.5rem 0 1.5rem;
+  font-weight: 400;
+}
+.lead-soft {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: var(--color-ink);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.about-text p {
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+.paths {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background: var(--color-paper);
+}
+.section-head {
+  text-align: center;
+  max-width: 46rem;
+  margin: 0 auto 3rem;
+}
+.section-head-left {
+  text-align: left;
+  margin-inline: 0;
+  margin-bottom: 2.5rem;
+  max-width: 50rem;
+}
+.section-head h2 {
+  margin-top: 0.5rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.section-head em {
+  color: var(--color-sage-deep);
+  font-style: italic;
+}
+.section-intro {
+  margin-top: 1rem;
+  color: var(--color-ink-soft);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+.paths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1.5rem;
+}
+.path-card {
+  background: var(--color-paper);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-line);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.path-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+.path-photo {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: var(--color-cream);
+}
+.path-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.path-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+.path-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  font-weight: 500;
+}
+.path-content h3 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.path-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-sage-deep);
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-bottom: 0.3rem;
+}
+.path-content p:not(.path-subtitle) {
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.quote-hero {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  background: var(--color-cream);
+}
+.quote-frame {
+  position: relative;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  min-height: 22rem;
+  background: var(--color-sage-deep);
+}
+.quote-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  filter: brightness(0.8);
+}
+.quote-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(61, 78, 63, 0.85) 0%, rgba(31, 32, 29, 0.7) 100%);
+  z-index: 1;
+}
+.quote-overlay {
+  position: relative;
+  z-index: 2;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+  color: white;
+  max-width: 42rem;
+}
+.quote-overlay p {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  line-height: 1.35;
+  font-weight: 400;
+  font-style: italic;
+  max-width: 100%;
+}
+.quote-overlay em {
+  color: var(--color-clay-soft);
+}
+.quote-overlay footer {
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  font-style: normal;
+}
+
+.methods-section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background: var(--color-paper);
+}
+.methods-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 60rem;
+}
+.method-pill {
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1.25rem;
+  font-size: 0.92rem;
+  color: var(--color-ink);
+  transition: all 0.25s ease;
+}
+.method-pill:hover {
+  background: var(--color-sage-pale);
+  border-color: var(--color-sage-soft);
+}
+
+.vision-teaser {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background: var(--color-cream-soft);
+}
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  max-width: 64rem;
+}
+.vision-text h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin: 0.5rem 0 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.vision-text em {
+  color: var(--color-sage-deep);
+  font-style: italic;
+}
+.vision-text p {
+  color: var(--color-ink-soft);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.vision-text strong { color: var(--color-ink); font-weight: 600; }
+.vision-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.vision-mini {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-l);
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-start;
+  transition: all 0.25s ease;
+}
+.vision-mini:hover {
+  border-color: var(--color-sage-soft);
+  transform: translateY(-2px);
+}
+.vm-icon { font-size: 1.5rem; }
+.vision-mini span:not(.vm-icon) {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--color-ink);
+  line-height: 1.3;
+}
+
+.newsletter {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background: var(--color-cream);
+}
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 64rem;
+}
+.newsletter-text h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.15;
+  margin: 0.5rem 0 1rem;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+.newsletter-text em {
+  color: var(--color-sage-deep);
+  font-style: italic;
+}
+.newsletter-text p {
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  font-size: 0.97rem;
+}
+.newsletter-form {
+  background: var(--color-paper);
+  padding: 1.75rem;
+  border-radius: var(--radius-l);
+  border: 1px solid var(--color-line);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.newsletter-form label { display: block; }
+.newsletter-form label span {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--color-ink);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+.newsletter-form label span small {
+  color: var(--color-ink-muted);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.newsletter-form input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: var(--color-cream);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-m);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+.newsletter-form input:focus {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 1px;
+}
+.newsletter-form small {
+  color: var(--color-ink-muted);
+  font-size: 0.75rem;
+}
+
+.final-cta {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+.final-cta-inner {
+  text-align: center;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+.final-cta .eyebrow { color: var(--color-clay-soft); }
+.final-cta .eyebrow::before { background: var(--color-clay-soft); }
+.final-cta h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0.5rem 0 1rem;
+  color: var(--color-cream);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.final-cta em { color: var(--color-clay-soft); font-style: italic; }
+.final-cta p {
+  color: rgba(245, 239, 230, 0.8);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+.cta-buttons {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.final-cta .btn-primary { background: var(--color-cream); color: var(--color-ink); }
+.final-cta .btn-primary:hover { background: white; }
+.btn-ghost-light {
+  background: transparent;
+  border: 1px solid rgba(245, 239, 230, 0.4);
+  color: var(--color-cream);
+}
+.btn-ghost-light:hover {
+  background: rgba(245, 239, 230, 0.1);
+  border-color: var(--color-cream);
+}
+
+@media (max-width: 800px) {
+  .hero-inner,
+  .about-grid,
+  .newsletter-inner,
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-photo { max-width: 20rem; }
+  .about-photo { max-width: 18rem; order: -1; }
+}
+@media (max-width: 480px) {
+  .vision-cards { grid-template-columns: 1fr; }
+}
+</style>
+</BaseLayout>

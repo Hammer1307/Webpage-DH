@@ -1,0 +1,147 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/data/site';
+---
+<BaseLayout
+  title={`Fokus Impulse · ${SITE.brand}`}
+  description="Gedanken, Impulse und kurze Texte zu Klarheit, innerer Stabilität, Wertschätzung und bewussterem Miteinander."
+>
+
+  <section class="statement-hero">
+    <div class="container container-narrow sh-inner">
+      <nav class="breadcrumb"><a href="/">Start</a><span>/</span><span>Fokus Impulse</span></nav>
+      <span class="eyebrow">Impulse aus der Praxis</span>
+      <h1>Gedanken, die einen<br /><em>Schritt weiterbringen</em>.</h1>
+      <p class="lead">
+        Kurze Texte, Reflexionsanstöße und Beobachtungen aus meiner Arbeit.
+      </p>
+    </div>
+  </section>
+
+  <section class="topics">
+    <div class="container container-narrow">
+      <span class="topics-label">Themen, über die ich schreibe:</span>
+      <ul class="topic-row">
+        <li>Klarheit & Entscheidung</li>
+        <li>Innere Stabilität</li>
+        <li>Wertschätzung</li>
+        <li>Achtsamkeit</li>
+        <li>Kommunikation</li>
+        <li>Selbstführung</li>
+        <li>Team-Dynamiken</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="coming-soon">
+    <div class="container container-narrow cs-inner">
+      <span class="eyebrow">In Vorbereitung</span>
+      <h2>Bald: <em>regelmäßige Impulse</em></h2>
+      <p>
+        Hier entstehen in Kürze regelmäßige Texte, Reflexionsfragen und Impulse —
+        rund um die Themen, die meine Arbeit prägen. Wenn du nichts verpassen
+        möchtest, melde dich gerne zum Newsletter an.
+      </p>
+      <a href="/kontakt" class="btn btn-primary">Newsletter abonnieren</a>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <span class="eyebrow">Direkt in Austausch</span>
+      <h2>Du hast ein <em>konkretes Anliegen</em>?</h2>
+      <p>Wenn du nicht warten möchtest, bis hier die ersten Texte erscheinen — sprich mich direkt an.</p>
+      <a href="/kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
+    </div>
+  </section>
+
+<style>
+.statement-hero {
+  padding-top: clamp(4rem, 9vw, 7rem);
+  padding-bottom: clamp(4rem, 9vw, 7rem);
+  background: var(--color-cream);
+  position: relative;
+  overflow: hidden;
+}
+.statement-hero::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -15%;
+  width: 50%;
+  height: 70%;
+  background: radial-gradient(ellipse, var(--color-sage-pale) 0%, transparent 70%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+.statement-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 40%;
+  height: 60%;
+  background: radial-gradient(ellipse, var(--color-clay-pale) 0%, transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.sh-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-ink-muted);
+  margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.breadcrumb a { color: var(--color-ink-muted); }
+.breadcrumb a:hover { color: var(--color-sage-deep); }
+.sh-inner h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 1.25rem auto 1.5rem;
+  font-weight: 400;
+  max-width: 18ch;
+}
+.sh-inner h1 em {
+  color: var(--color-sage-deep);
+  font-style: italic;
+}
+.sh-inner .lead {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  color: var(--color-ink-soft);
+  max-width: 38ch;
+  margin-inline: auto;
+  line-height: 1.45;
+}
+
+.topics { padding-block: clamp(2rem, 4vw, 3rem); background: var(--color-paper); text-align: center; }
+.topics-label { display: block; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-ink-muted); margin-bottom: 1rem; }
+.topic-row { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+.topic-row li { background: var(--color-cream); border: 1px solid var(--color-line); border-radius: var(--radius-pill); padding: 0.45rem 1rem; font-size: 0.85rem; color: var(--color-ink-soft); }
+
+.coming-soon { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-cream-soft); }
+.cs-inner { text-align: center; max-width: 38rem; margin: 0 auto; }
+.cs-inner h2 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; margin: 0.5rem 0 1rem; font-weight: 400; letter-spacing: -0.02em; }
+.cs-inner em { color: var(--color-sage-deep); font-style: italic; }
+.cs-inner p { color: var(--color-ink-soft); line-height: 1.65; margin-bottom: 2rem; }
+
+.final-cta { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-ink); color: var(--color-cream); }
+.final-cta-inner { text-align: center; max-width: 36rem; margin: 0 auto; }
+.final-cta .eyebrow { color: var(--color-clay-soft); }
+.final-cta .eyebrow::before { background: var(--color-clay-soft); }
+.final-cta h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 0.5rem 0 1rem; color: var(--color-cream); font-weight: 400; }
+.final-cta em { color: var(--color-clay-soft); font-style: italic; }
+.final-cta p { color: rgba(245, 239, 230, 0.8); margin-bottom: 2rem; line-height: 1.5; }
+.final-cta .btn-primary { background: var(--color-cream); color: var(--color-ink); }
+.final-cta .btn-primary:hover { background: white; }
+</style>
+</BaseLayout>

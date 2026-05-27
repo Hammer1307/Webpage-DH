@@ -1,0 +1,195 @@
+---
+export interface Props {
+  name: string;
+  subtitle?: string;
+  description: string;
+  price?: string;
+  duration?: string;
+  cta?: string;
+  href?: string;
+  featured?: boolean;
+  number?: number | string;
+}
+
+const {
+  name,
+  subtitle,
+  description,
+  price,
+  duration,
+  cta = 'Mehr erfahren',
+  href = '/kontakt',
+  featured = false,
+  number,
+} = Astro.props;
+---
+<article class:list={['service-card', { featured }]}>
+  {featured && <span class="featured-badge">Empfohlen</span>}
+  {number !== undefined && <span class="card-number">{number}</span>}
+
+  <header>
+    <h3>{name}</h3>
+    {subtitle && <p class="subtitle">{subtitle}</p>}
+  </header>
+
+  <p class="description">{description}</p>
+
+  {(price || duration) && (
+    <dl class="meta">
+      {duration && (
+        <div>
+          <dt>Dauer</dt>
+          <dd>{duration}</dd>
+        </div>
+      )}
+      {price && (
+        <div>
+          <dt>Investition</dt>
+          <dd>{price}</dd>
+        </div>
+      )}
+    </dl>
+  )}
+
+  <a href={href} class="card-cta">{cta}</a>
+</article>
+
+<style>
+  .service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-l);
+    transition: all 380ms var(--ease-out);
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at 0% 0%,
+        rgba(90, 107, 86, 0.06),
+        transparent 50%
+      );
+    opacity: 0;
+    transition: opacity 380ms var(--ease-out);
+    pointer-events: none;
+  }
+
+  .service-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-sage-soft);
+    box-shadow: var(--shadow-card);
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-card.featured {
+    background: var(--color-cream-soft);
+    border-color: var(--color-sage);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: var(--color-sage-deep);
+    color: var(--color-cream);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35em 0.9em;
+    border-radius: var(--radius-pill);
+    font-weight: 500;
+  }
+
+  .card-number {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: var(--font-display);
+font-size: 2.5rem;
+    color: var(--color-sage-soft);
+    line-height: 1;
+    opacity: 0.4;
+  }
+
+  .service-card h3 {
+    font-size: var(--step-2);
+    margin-bottom: 0.4rem;
+    color: var(--color-ink);
+  }
+
+  .subtitle {
+    font-family: var(--font-display);
+    font-style: italic;
+color: var(--color-sage-deep);
+    font-size: var(--step-0);
+    line-height: 1.4;
+  }
+
+  .description {
+    color: var(--color-ink-soft);
+    font-size: 0.97rem;
+    line-height: 1.65;
+    flex-grow: 1;
+  }
+
+  .meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-line-soft);
+  }
+
+  .meta > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .meta dt {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+    font-weight: 500;
+  }
+
+  .meta dd {
+    font-family: var(--font-display);
+font-size: 1.05rem;
+    color: var(--color-ink);
+  }
+
+  .card-cta {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    margin-top: auto;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-sage-deep);
+    padding: 0.5em 0;
+    border-bottom: 1px solid currentColor;
+    transition: all var(--transition);
+  }
+
+  .card-cta::after {
+    content: '→';
+    transition: transform var(--transition);
+    display: inline-block;
+  }
+
+  .service-card:hover .card-cta::after { transform: translateX(4px); }
+</style>

@@ -1,0 +1,148 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE, CONTACT } from '@/data/site';
+---
+<BaseLayout
+  title={`Datenschutz · ${SITE.brand}`}
+  description="Datenschutzerklärung nach DSGVO für danielabrittahamberger.de"
+>
+  <section class="legal-page">
+    <div class="container container-narrow">
+      <nav class="breadcrumb"><a href="/">Start</a><span>/</span><span>Datenschutz</span></nav>
+      <h1>Datenschutz&shy;erklärung</h1>
+      <p class="lead">Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO</p>
+
+      <section>
+        <h2>1. Verantwortliche</h2>
+        <address>
+          <strong>{SITE.name}</strong><br />
+          {CONTACT.street}, {CONTACT.postalCode} {CONTACT.city}<br />
+          E-Mail: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+        </address>
+      </section>
+
+      <section>
+        <h2>2. Allgemeines zur Datenverarbeitung</h2>
+        <p>
+          Wir verarbeiten personenbezogene Daten unserer Nutzer:innen grundsätzlich
+          nur, soweit dies zur Bereitstellung einer funktionsfähigen Website
+          sowie unserer Inhalte und Leistungen erforderlich ist. Die Verarbeitung
+          erfolgt regelmäßig nur nach Einwilligung der Nutzer:innen oder wenn
+          ein Gesetz dies erlaubt.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Rechtsgrundlagen</h2>
+        <p>
+          Soweit wir für Verarbeitungsvorgänge personenbezogener Daten eine
+          Einwilligung der betroffenen Person einholen, dient <strong>Art. 6 Abs. 1
+          lit. a DSGVO</strong> als Rechtsgrundlage. Bei Verarbeitungen zur
+          Erfüllung eines Vertrags ist <strong>Art. 6 Abs. 1 lit. b DSGVO</strong>
+          Rechtsgrundlage. Soweit eine Verarbeitung zur Wahrung berechtigter
+          Interessen erforderlich ist, dient <strong>Art. 6 Abs. 1 lit. f DSGVO</strong>
+          als Rechtsgrundlage.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Server-Logfiles</h2>
+        <p>
+          Beim Aufruf dieser Website werden durch den Hosting-Provider automatisch
+          Informationen erfasst (Browser, Betriebssystem, Referrer-URL, Hostname,
+          Uhrzeit, IP-Adresse). Diese Daten sind nicht bestimmten Personen
+          zuordenbar. Eine Zusammenführung mit anderen Datenquellen wird nicht
+          vorgenommen.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Kontaktformular & E-Mail-Kontakt</h2>
+        <p>
+          Bei Anfragen per Kontaktformular oder E-Mail werden die Angaben des:der
+          Anfragenden zur Bearbeitung des Anliegens und für den Fall von
+          Anschlussfragen gespeichert. Rechtsgrundlage: <strong>Art. 6 Abs. 1
+          lit. b DSGVO</strong> (Vertragsanbahnung) bzw. <strong>lit. f</strong>
+          (berechtigtes Interesse). Diese Daten geben wir nicht ohne Einwilligung
+          weiter.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Newsletter</h2>
+        <p>
+          Mit deiner Anmeldung zum Newsletter willigst du in die Verarbeitung
+          deiner E-Mail-Adresse zum Zweck des Versands ein. Die Anmeldung erfolgt
+          im Double-Opt-In-Verfahren. Die Einwilligung kannst du jederzeit
+          widerrufen (Abmeldelink in jeder E-Mail). Rechtsgrundlage: <strong>Art. 6
+          Abs. 1 lit. a DSGVO</strong>.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Cookies</h2>
+        <p>
+          Diese Website verwendet keine Tracking- oder Marketing-Cookies. Es können
+          technisch notwendige Cookies zum Einsatz kommen (z.&nbsp;B. zur Speicherung
+          deiner Cookie-Einstellungen).
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Deine Rechte</h2>
+        <ul>
+          <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+          <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+          <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+          <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+          <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+          <li>Widerspruchsrecht (Art. 21 DSGVO)</li>
+          <li>Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
+        </ul>
+        <p>
+          Zur Ausübung deiner Rechte genügt eine formlose E-Mail an
+          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Externe Links & Dienste</h2>
+        <p>
+          Diese Website kann auf externe Inhalte verlinken (z.&nbsp;B. LinkedIn,
+          Instagram). Beim Klick auf solche Links verlässt du diese Website.
+          Es gelten dann die Datenschutzbestimmungen des jeweiligen Anbieters.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Hosting</h2>
+        <p>
+          Diese Website wird auf Servern eines Dienstleisters gehostet. Die
+          dabei anfallenden personenbezogenen Daten werden auf Grundlage unseres
+          berechtigten Interesses (<strong>Art. 6 Abs. 1 lit. f DSGVO</strong>)
+          verarbeitet.
+        </p>
+      </section>
+
+      <p class="muted">Stand: Diese Datenschutzerklärung wurde zuletzt aktualisiert im Mai 2026.</p>
+    </div>
+  </section>
+
+<style>
+.legal-page { padding-block: clamp(3rem, 6vw, 5rem); background: var(--color-paper); }
+.breadcrumb { display: flex; gap: 0.5rem; font-size: 0.78rem; color: var(--color-ink-muted); margin-bottom: 2rem; }
+.breadcrumb a { color: var(--color-ink-muted); }
+.breadcrumb a:hover { color: var(--color-sage-deep); }
+.legal-page h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem; font-weight: 400; letter-spacing: -0.02em; }
+.legal-page .lead { color: var(--color-ink-soft); margin-bottom: 2.5rem; font-family: var(--font-display); font-style: italic; font-size: 1.2rem; }
+.legal-page section { margin-bottom: 2.5rem; }
+.legal-page h2 { font-size: 1.25rem; margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-line); color: var(--color-ink); font-weight: 400; }
+.legal-page p, .legal-page address, .legal-page ul { color: var(--color-ink-soft); line-height: 1.7; margin-bottom: 0.85rem; font-style: normal; }
+.legal-page ul { padding-left: 1.25rem; }
+.legal-page li { margin-bottom: 0.4rem; list-style: disc; }
+.legal-page strong { color: var(--color-ink); font-weight: 600; }
+.legal-page a { color: var(--color-sage-deep); text-decoration: underline; }
+.legal-page a:hover { color: var(--color-ink); }
+.muted { color: var(--color-ink-muted); font-size: 0.85rem; margin-top: 2rem; }
+</style>
+</BaseLayout>
