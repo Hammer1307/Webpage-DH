@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE, IMAGES, COACHING_FORMATS } from '@/data/site';
+import { SITE, IMAGES, COACHING_FORMATS, VENUE } from '@/data/site';
 
 const description =
-  'Persönliche 1:1 Begleitung mit Daniela Britta Hamberger — KlarheitsSitzung, KlarheitsStart, KlarheitsReset und Fokus Schöner Leben Intensiv. Für innere Stabilität, Klarheit und neue Ausrichtung.';
+  'Persönliche 1:1 Begleitung mit Daniela Britta Hamberger — besonders für Frauen, die wieder bei sich selbst ankommen möchten. KlarheitsSitzung, KlarheitsStart und KlarheitsReset für innere Stabilität und neue Ausrichtung.';
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -14,72 +14,123 @@ const breadcrumb = {
   ],
 };
 ---
-<BaseLayout
-  title="1:1 Begleitung"
-  description={description}
-  schema={breadcrumb}
->
-  <img class="image-accent" src={IMAGES.begleitung1zu1} alt="" loading="eager" />
+<BaseLayout title="1:1 Begleitung" description={description} schema={breadcrumb}>
+  <img class="image-accent" src={IMAGES.begleitungAnkommen} alt="Frau mit ausgebreiteten Armen im warmen Sonnenlicht — bei sich selbst ankommen" loading="eager" />
 
-  <section class="section section-cream">
+  <section class="section bg-cream">
     <div class="container-narrow">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Start</a><span>/</span><span>1:1 Begleitung</span>
-      </nav>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Start</a><span>/</span><span>1:1 Begleitung</span></nav>
       <header class="page-intro">
         <span class="eyebrow">1:1 Begleitung</span>
         <h1>1:1 <em>Begleitung</em></h1>
-        <p class="lead">
-          Wenn du spürst: Ich möchte wieder klarer, freier und stabiler werden.
-        </p>
+        <p class="lead">Besonders für Frauen, die wieder bei sich selbst ankommen möchten.</p>
       </header>
 
       <h2>Vielleicht kennst du das:</h2>
       <ul class="check-list">
-        <li>Du funktionierst viel, aber innerlich bist du erschöpft.</li>
-        <li>Du spürst, dass sich etwas verändern möchte, aber du weißt noch nicht genau, wie.</li>
-        <li>Du stehst vor einer Entscheidung und drehst dich gedanklich im Kreis.</li>
-        <li>Du merkst, dass du deine eigenen Bedürfnisse zu oft übergehst.</li>
-        <li>Du fühlst dich angepasst, fremdbestimmt oder nicht mehr ganz verbunden mit dem, was dich eigentlich ausmacht.</li>
+        <li>Du funktionierst viel, aber innerlich bist du müde.</li>
+        <li>Du bist für andere da, aber verlierst dich selbst aus dem Blick.</li>
+        <li>Du spürst, dass sich etwas verändern möchte, weißt aber noch nicht genau, wie.</li>
+        <li>Du hast dich angepasst, zurückgenommen oder zu oft über deine eigenen Grenzen hinweggegangen.</li>
+        <li>Du suchst wieder mehr Halt, Orientierung und Vertrauen in dich selbst.</li>
       </ul>
 
       <p>
-        In meiner 1:1 Begleitung geht es nicht darum, dir fertige Antworten überzustülpen.
-        Es geht darum, dass du wieder Zugang zu deiner eigenen inneren Klarheit findest.
+        In meiner 1:1 Begleitung begleite ich dich dabei, wieder mehr bei dir anzukommen. Nicht durch Druck. Nicht durch fertige Antworten. Sondern durch einen geschützten Raum, in dem du dich selbst wieder klarer wahrnehmen darfst.
       </p>
       <p>
-        Oft liegt die Antwort nicht irgendwo im Außen. Sie ist bereits in dir angelegt —
-        vielleicht nur verschüttet durch alte Erfahrungen, Erwartungen, Druck, innere Unruhe
-        oder die Gewohnheit, es anderen recht machen zu wollen.
+        Es geht um innere Stabilität, Selbstwert, Abgrenzung, Orientierung, Lebensfreude und die Rückverbindung mit dem, was in dir bereits angelegt ist.
       </p>
-      <p>
-        Ich begleite dich dabei, wieder mehr Ordnung, Stabilität, Selbstvertrauen und
-        Lebensfreude in dir freizulegen.
-      </p>
+      <div class="btn-group">
+        <a href="/kontakt" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
+      </div>
     </div>
   </section>
 
-  <section class="section section-cream-deep">
+  <section class="section bg-cream-deep">
+    <div class="container split-grid">
+      <div>
+        <span class="eyebrow">Was in dir wieder sichtbar werden darf</span>
+        <h2>In der Begleitung schauen wir <em>gemeinsam</em></h2>
+        <ul class="check-list">
+          <li>Wo stehst du gerade?</li>
+          <li>Was bewegt dich wirklich?</li>
+          <li>Was raubt dir Kraft?</li>
+          <li>Was möchtest du nicht länger mittragen?</li>
+          <li>Und was darf in dir wieder stärker werden?</li>
+        </ul>
+        <h3 style="margin-top: 2rem;">Dabei kann entstehen:</h3>
+        <ul class="benefits-grid">
+          <li>mehr innere Ruhe und Stabilität</li>
+          <li>ein klarerer Blick auf dich und deine Situation</li>
+          <li>mehr Verbindung zu deinen Bedürfnissen</li>
+          <li>mehr Selbstwert und gesunde Abgrenzung</li>
+          <li>neue Perspektiven auf alte Muster</li>
+          <li>mehr Vertrauen in deine eigene Wahrnehmung</li>
+          <li>ein stimmigeres, freieres Lebensgefühl</li>
+          <li>neue Lebensfreude aus dir selbst heraus</li>
+        </ul>
+        <div class="btn-group">
+          <a href="/kontakt" class="btn btn-secondary">Ich möchte mich sortieren</a>
+        </div>
+      </div>
+      <figure class="split-image">
+        <img src={IMAGES.begleitungMeditation} alt="Frau in stiller Achtsamkeit vor weiter Landschaft — bei sich ankommen" loading="lazy" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
     <div class="container-narrow">
-      <h2 class="text-center">Was in der Begleitung entstehen darf</h2>
-      <ul class="benefits-grid">
-        <li>mehr innere Ruhe und Stabilität</li>
-        <li>ein klarerer Blick auf dich und deine Situation</li>
-        <li>mehr Verbindung zu deinen Bedürfnissen</li>
-        <li>neue Perspektiven auf alte Muster</li>
-        <li>mehr Selbstwert und Abgrenzung</li>
-        <li>ein bewussterer Umgang mit Entscheidungen</li>
-        <li>mehr Vertrauen in deinen eigenen Weg</li>
-        <li>ein Lebensgefühl, das wieder stimmiger, freier und lebendiger wird</li>
-      </ul>
+      <span class="eyebrow">Wie ich arbeite</span>
+      <h2>Mensch im Mittelpunkt, <em>nicht die Methode</em></h2>
+      <p>
+        Ich verbinde meine langjährige pädagogische Erfahrung mit Mentaltraining, Hypnose, Achtsamkeit, Entspannungspädagogik, positiver Psychologie, einem systemischen Blick auf Beziehungen und Dynamiken, PSYCH-K® sowie bioenergetischen Zugängen.
+      </p>
+      <p>
+        Manche Themen zeigen sich im Gespräch. Andere werden über innere Bilder, Körperwahrnehmung, alte Überzeugungen, Beziehungen oder wiederkehrende Muster sichtbar.
+      </p>
+      <p>
+        Im Mittelpunkt steht nicht die Methode, sondern du: dein Anliegen, dein Tempo und das, was für dich gerade stimmig ist.
+      </p>
     </div>
   </section>
 
-  <section class="section section-cream">
+  <section class="section bg-cream-soft">
+    <div class="container split-grid">
+      <figure class="split-image">
+        <img src={IMAGES.begleitungNebelweg} alt="Weicher Lichtweg im Wald — ein Raum, in dem etwas klarer werden darf" loading="lazy" />
+      </figure>
+      <div>
+        <span class="eyebrow">Online oder vor Ort in Wiesbaden</span>
+        <h2>Ein Ort, an dem du nicht <em>funktionieren musst</em></h2>
+        <p>
+          Deine 1:1 Begleitung kann online, telefonisch oder nach Absprache vor Ort in Wiesbaden stattfinden.
+        </p>
+        <p>
+          Für ausgewählte Vor-Ort-Termine nutze ich stimmige Räumlichkeiten, unter anderem den <strong>{VENUE.name}</strong> in Wiesbaden.
+        </p>
+        <p>
+          Gerade wenn du spürst, dass du aus dem Alltag heraustreten möchtest, kann ein ruhiger, neutraler Raum hilfreich sein. Ein Ort, an dem du nicht funktionieren musst, sondern ankommen, sortieren und wieder klarer wahrnehmen darfst, was in dir gesehen werden möchte.
+        </p>
+        <address class="venue-card">
+          <strong>{VENUE.name}</strong><br />
+          {VENUE.street}<br />
+          {VENUE.postalCode} {VENUE.city}
+        </address>
+        <p class="venue-note"><em>Vor-Ort-Termine finden ausschließlich nach persönlicher Absprache und Buchung über Daniela Britta Hamberger statt.</em></p>
+        <div class="btn-group">
+          <a href="/kontakt" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">Die Formate im Überblick</span>
-        <h2>Fünf Wege, miteinander zu arbeiten</h2>
+        <span class="eyebrow">1:1 Angebote</span>
+        <h2>Die Formate <em>im Überblick</em></h2>
       </header>
 
       <div class="format-grid">
@@ -91,11 +142,8 @@ const breadcrumb = {
             <p class="format-desc">{f.description}</p>
             {f.suitableFor && <p class="format-meta">{f.suitableFor}</p>}
             <div class="format-foot">
-              <p class="format-price">
-                <span class="label">Investition</span>
-                <strong>{f.price}</strong>
-              </p>
-              <a href={f.href} class="btn btn-outline">{f.cta}</a>
+              <p class="format-price"><span class="label">Investition</span><strong>{f.price}</strong></p>
+              <a href={f.href} class="btn btn-secondary">{f.cta}</a>
             </div>
           </article>
         ))}
@@ -103,159 +151,56 @@ const breadcrumb = {
     </div>
   </section>
 
-  <section class="section section-cream-deep">
+  <section class="section bg-cream-deep">
     <div class="container-text">
       <blockquote class="disclaimer">
-        <strong>Wichtiger Hinweis:</strong> Meine Arbeit versteht sich als ganzheitliche
-        Begleitung zur persönlichen Klärung, Stabilisierung und bewussten Entwicklung. Sie
-        ersetzt keine ärztliche, psychotherapeutische oder heilkundliche Diagnose oder
-        Behandlung. Ich stelle keine medizinischen Diagnosen, gebe keine Heilversprechen
-        und behandle keine Krankheiten. Wenn du körperliche oder psychische Beschwerden hast,
-        dich in einer akuten Krise befindest oder medizinische Fragen hast, wende dich bitte
-        an eine Ärztin, einen Arzt, eine Psychotherapeutin, einen Psychotherapeuten oder
-        eine entsprechend qualifizierte Fachperson.
+        <strong>Wichtiger Hinweis:</strong> Meine Arbeit versteht sich als ganzheitliche Begleitung zur persönlichen Klärung, Stabilisierung und bewussten Entwicklung. Sie ersetzt keine ärztliche, psychotherapeutische oder heilkundliche Diagnose oder Behandlung.
       </blockquote>
     </div>
   </section>
 
-  <section class="section section-bordeaux">
+  <section class="section bg-sage">
     <div class="container-narrow" style="text-align: center;">
       <h2>Ein Gespräch — und mehr nicht.</h2>
-      <p style="margin: 1rem auto 2rem; max-width: 50ch;">
-        Buche ein kostenfreies Orientierungsgespräch (15–30 Minuten). Unverbindlich, ohne
-        Verpflichtung — einfach als erster klarer Schritt.
-      </p>
+      <p style="margin: 1rem auto 2rem; max-width: 50ch;">Buche ein kostenfreies Orientierungsgespräch (15–30 Minuten). Unverbindlich, ohne Verpflichtung.</p>
       <a href="/kontakt" class="btn btn-gold">Orientierungsgespräch buchen</a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .page-intro {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
+  .page-intro { text-align: center; margin-bottom: 2.5rem; }
   .page-intro h1 { margin: 0.5rem 0 1rem; }
   .page-intro .lead { margin: 0 auto; }
 
-  .check-list,
-  .benefits-grid {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0 2rem;
-  }
-  .check-list li {
-    padding: 0.7rem 0 0.7rem 1.75rem;
-    border-bottom: 1px solid var(--color-line);
-    position: relative;
-    color: var(--color-ink);
-  }
-  .check-list li::before {
-    content: '·';
-    position: absolute;
-    left: 0;
-    top: 0.4rem;
-    color: var(--color-gold-deep);
-    font-size: 1.75rem;
-    line-height: 1;
-  }
+  .check-list { list-style: none; padding: 0; margin: 1.5rem 0 1rem; }
+  .check-list li { padding: 0.65rem 0 0.65rem 1.6rem; border-bottom: 1px solid var(--color-line-soft); position: relative; color: var(--color-ink); }
+  .check-list li::before { content: '·'; position: absolute; left: 0; top: 0.3rem; color: var(--color-clay); font-size: 1.75rem; line-height: 1; }
 
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 0.5rem 2rem;
-  }
-  .benefits-grid li {
-    padding: 0.6rem 0 0.6rem 1.5rem;
-    position: relative;
-    color: var(--color-ink);
-  }
-  .benefits-grid li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    top: 0.6rem;
-    color: var(--color-sage-deep);
-    font-weight: 500;
-  }
+  .benefits-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.25rem 1.5rem; }
+  .benefits-grid li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; color: var(--color-ink); font-size: 0.95rem; }
+  .benefits-grid li::before { content: '✓'; position: absolute; left: 0; top: 0.5rem; color: var(--color-sage-deep); font-weight: 500; }
 
-  .text-center { text-align: center; margin-bottom: 2rem; }
+  .split-grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); align-items: center; }
+  @media (min-width: 860px) { .split-grid { grid-template-columns: 1fr 1fr; } }
+  .split-image { margin: 0; }
+  .split-image img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius-l); box-shadow: var(--shadow-lift); }
 
-  .format-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 1.5rem;
-  }
-  .format-card {
-    background: var(--color-paper);
-    border: 1px solid var(--color-line);
-    border-radius: var(--radius-m);
-    padding: 2rem 1.75rem 1.75rem;
-    transition: all var(--transition);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  .format-card.card-featured {
-    background: var(--color-cream-soft);
-    border-color: var(--color-gold);
-  }
-  .format-card:hover {
-    box-shadow: var(--shadow-card);
-    transform: translateY(-2px);
-  }
-  .format-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
+  .venue-card { font-style: normal; background: var(--color-paper); border-left: 3px solid var(--color-clay); padding: 1rem 1.25rem; margin: 1rem 0 0.5rem; border-radius: 0 var(--radius-s) var(--radius-s) 0; line-height: 1.55; }
+  .venue-card strong { color: var(--color-sage-deep); }
+  .venue-note { font-size: 0.85rem; color: var(--color-ink-muted); }
+
+  .format-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1.5rem; }
+  .format-card { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 2rem 1.75rem 1.75rem; transition: all var(--transition); position: relative; display: flex; flex-direction: column; }
+  .format-card.card-featured { background: var(--color-cream-soft); border-color: var(--color-clay); }
+  .format-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
+  .format-badge { position: absolute; top: 1rem; right: 1rem; }
   .format-card h3 { margin-bottom: 0.5rem; font-size: 1.4rem; }
-  .format-duration {
-    color: var(--color-bordeaux);
-    font-style: italic;
-    font-family: var(--font-display);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  .format-desc {
-    font-size: 0.92rem;
-    color: var(--color-ink-soft);
-    margin-bottom: 1rem;
-  }
-  .format-meta {
-    font-size: 0.85rem;
-    color: var(--color-ink-muted);
-    background: var(--color-cream);
-    padding: 0.75rem 1rem;
-    border-radius: var(--radius-s);
-    margin-bottom: 1rem;
-    border-left: 2px solid var(--color-gold);
-  }
-  .format-foot {
-    margin-top: auto;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--color-line);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-  .format-price {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-  }
-  .format-price .label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--color-ink-muted);
-  }
-  .format-price strong {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    color: var(--color-bordeaux);
-    font-weight: 500;
-  }
+  .format-duration { color: var(--color-sage-deep); font-family: var(--font-display); font-style: italic; font-size: 1rem; margin-bottom: 1rem; max-width: none; }
+  .format-desc { font-size: 0.92rem; color: var(--color-ink-soft); margin-bottom: 1rem; max-width: none; }
+  .format-meta { font-size: 0.85rem; color: var(--color-ink-muted); background: var(--color-cream); padding: 0.75rem 1rem; border-radius: var(--radius-s); margin-bottom: 1rem; border-left: 2px solid var(--color-clay); max-width: none; }
+  .format-foot { margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--color-line-soft); display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .format-price { margin: 0; display: flex; flex-direction: column; gap: 0.15rem; max-width: none; }
+  .format-price .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-ink-muted); }
+  .format-price strong { font-family: var(--font-display); font-size: 1.25rem; color: var(--color-sage-deep); font-weight: 500; }
 </style>

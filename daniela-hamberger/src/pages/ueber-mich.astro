@@ -1,202 +1,135 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE, IMAGES, METHODS } from '@/data/site';
+import { SITE, IMAGES, METHODEN_DETAIL } from '@/data/site';
 
 const description =
-  'Daniela Britta Hamberger — Mentorin für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander. Pädagogische Erfahrung verbunden mit Hypnose, Mentaltraining, Achtsamkeit, positiver Psychologie, Aufstellungsarbeit und bioenergetischen Zugängen.';
+  'Daniela Britta Hamberger — Mentorin mit pädagogischer Expertise. Mentaltraining, Hypnose, Achtsamkeit, Entspannungspädagogik, positive Psychologie, systemischer Blick, PSYCH-K® und bioenergetische Zugänge.';
 
 const breadcrumb = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
     { '@type': 'ListItem', position: 2, name: 'Über mich', item: `${SITE.url}/ueber-mich` },
   ],
 };
 ---
-<BaseLayout
-  title="Über mich"
-  description={description}
-  schema={breadcrumb}
->
-  <section class="section section-cream">
+<BaseLayout title="Über mich" description={description} schema={breadcrumb}>
+  <section class="section bg-cream">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Start</a><span>/</span><span>Über mich</span>
-      </nav>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Start</a><span>/</span><span>Über mich</span></nav>
 
       <div class="um-grid">
         <div class="um-text">
           <span class="eyebrow">Über mich</span>
           <h1>Daniela Britta <em>Hamberger</em></h1>
-          <p class="lead">
-            Mentorin für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander.
-          </p>
-          <p>
-            <strong>Fokus Schöner Leben</strong> — Innere Ordnung. Neue Klarheit.
-            Freude am Leben.
-          </p>
-          <p>
-            In meiner Arbeit verbinde ich langjährige pädagogische Erfahrung mit Hypnose,
-            Mentaltraining, Achtsamkeit, positiver Psychologie, Aufstellungsarbeit und
-            bioenergetischen Zugängen.
-          </p>
+          <p class="lead">Mentorin mit pädagogischer Expertise für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander.</p>
+          <p>Mit <strong>Fokus Schöner Leben</strong> — Innere Ordnung. Neue Klarheit. Freude am Leben. — verbinde ich meine Arbeit als Mentorin, Autorin und Künstlerin.</p>
+          <p>Viele Jahre war ich als Pädagogin und Lehrerin in der Sekundarstufe I tätig. Diese Zeit hat meinen Blick auf Menschen, Entwicklung, Beziehung, Kommunikation und Gruppendynamik tief geprägt.</p>
+          <p>Ich habe erlebt, wie stark Wertschätzung, Klarheit, Sprache, Motivation, Perspektivenwechsel und Empathie wirken können. Gleichzeitig habe ich gelernt, mich immer wieder neu auf sehr unterschiedliche Menschen, Persönlichkeiten, Bedürfnisse und Lebenssituationen einzustellen.</p>
+          <p>Heute fließt diese Erfahrung in meine ganzheitliche Begleitung ein. Ich arbeite mit <strong>Mentaltraining, Hypnose, Achtsamkeit, Entspannungspädagogik, positiver Psychologie</strong>, einem <strong>systemischen Blick</strong> auf Beziehungen und Dynamiken, <strong>PSYCH-K®</strong>, inneren Anteilen, kreativen Ausdrucksformen und <strong>bioenergetischen Zugängen</strong>.</p>
+          <p>Im Mittelpunkt steht für mich immer der Mensch: mit seiner Geschichte, seinen Bedürfnissen, seinen Beziehungen und seinem Wunsch nach mehr innerer Ordnung, Selbstvertrauen, Lebensfreude und einem stimmigeren Miteinander.</p>
         </div>
         <figure class="um-portrait">
-          <img src={IMAGES.portrait} alt="Daniela Britta Hamberger" loading="eager" />
-          <figcaption><em>Daniela Britta Hamberger</em></figcaption>
+          <img src={IMAGES.begleitungMeditation} alt="Stille, Achtsamkeit und Weite — Grundhaltung in der Begleitung" loading="eager" />
         </figure>
       </div>
     </div>
   </section>
 
-  <section class="section section-cream-deep">
+  <section class="section bg-cream-deep">
     <div class="container-narrow">
-      <p>
-        Viele Jahre war ich als Pädagogin in der Sekundarstufe I tätig. Diese Zeit hat
-        meinen Blick auf Menschen, Entwicklung und Beziehung tief geprägt. Wertschätzung,
-        Kommunikation, Empathie, Klarheit, Perspektivwechsel und Motivation bilden bis heute
-        die Grundlage meiner Arbeit.
-      </p>
-    </div>
-  </section>
-
-  <section class="section section-cream">
-    <div class="container">
-      <header class="section-head">
-        <span class="eyebrow">Was mich besonders macht</span>
-        <h2>Ein vielseitiger <em>Begleitansatz</em></h2>
-        <p class="lead" style="margin: 0 auto;">
-          Durch meine langjährige Erfahrung im Umgang mit Menschen verfüge ich über ein breites
-          Methodenspektrum, das ich achtsam, individuell und passend zum jeweiligen Anliegen
-          einsetze.
-        </p>
-      </header>
-
-      <ul class="methoden-grid">
-        {METHODS.map((m) => (
-          <li class="methode">
-            <h3>{m.name}</h3>
-            {m.detail && <p>{m.detail}</p>}
-          </li>
-        ))}
+      <span class="eyebrow">Was mich besonders macht</span>
+      <h2>Pädagogische Erfahrung und <em>feine Wahrnehmung</em></h2>
+      <p>Ich verbinde pädagogische Erfahrung mit einer sehr feinen Wahrnehmung für Menschen und Situationen.</p>
+      <p>Mir geht es nicht darum, dir fertige Antworten überzustülpen. Ich begleite dich dabei, wieder Zugang zu dem zu finden, was in dir bereits angelegt ist: Klarheit, Kraft, Selbstwert, Orientierung und ein Gefühl für deinen nächsten stimmigen Schritt.</p>
+      <p>Dabei arbeite ich klar, empathisch, wertschätzend und mit einem Blick für das Ganze:</p>
+      <ul class="check-list">
+        <li>Was wirkt in dir?</li>
+        <li>Was wirkt in deinen Beziehungen?</li>
+        <li>Welche alten Erwartungen, Prägungen oder Rollen beeinflussen dein Leben?</li>
+        <li>Und was darf wieder freier, leichter und wahrhaftiger werden?</li>
       </ul>
     </div>
   </section>
 
-  <section class="section section-cream-deep">
-    <div class="container-narrow">
-      <h2>Mein verbindendes Element</h2>
-      <p>
-        Meine Arbeit unterstützt Menschen dabei, innere Klarheit, Fokus und Lebensfreude zu
-        stärken. Ich begleite sie darin, neue Perspektiven einzunehmen, sich selbst
-        wertschätzender zu begegnen und eine harmonischere Beziehung zu sich selbst und ihrem
-        Umfeld zu entwickeln.
-      </p>
-      <p>
-        Im Mittelpunkt steht ein Leben, das bewusster, selbstbestimmter und stimmiger wird —
-        mit mehr innerer Stabilität, mehr Verbindung zu den eigenen Bedürfnissen und mehr
-        Vertrauen in den nächsten Schritt.
-      </p>
+  <section class="section bg-cream">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Mein Begleitansatz</span>
+        <h2>Ein vielseitiger Begleitansatz — <em>klar, achtsam und von Mensch zu Mensch</em></h2>
+        <p class="lead" style="margin: 0 auto;">
+          Durch meine langjährige Erfahrung als Pädagogin, ehemalige Lehrerin in der Sekundarstufe I und Entspannungspädagogin habe ich erlebt, wie unterschiedlich Menschen fühlen, denken, reagieren, lernen und sich entwickeln. Nicht jedes Thema öffnet sich über denselben Weg.
+        </p>
+      </header>
 
-      <h2 style="margin-top: 2.5rem;">Als Autorin</h2>
-      <p>
-        Auch in meinem Wirken als Autorin beschäftige ich mich mit Themen, die mich
-        gesellschaftlich, sozial und persönlich prägen: Menschlichkeit, Naturverbundenheit,
-        Wertevermittlung, Empathie, Resilienz, Achtsamkeit, Bewusstsein und gelingendes
-        Miteinander.
-      </p>
-      <p>
-        Diese Themen fließen in Workbooks, Selbstcoachingbücher, Kartensets, Romane,
-        Erzählungen und Impulse für persönliche Entwicklung und Gruppenarbeit ein.
-      </p>
-      <p>
-        Auch auf meinen Social-Media-Kanälen teile ich Gedanken, die zum Nachdenken anregen,
-        verbinden und ermutigen sollen. Es geht mir darum, Wertschätzung sichtbar zu machen,
-        Empathie zu stärken und Brücken zu bauen — zwischen Menschen, Perspektiven und
-        Lebenswegen.
-      </p>
+      <div class="methoden-grid">
+        {METHODEN_DETAIL.map((m) => (
+          <article class="methode-card">
+            <h3>{m.name}</h3>
+            <p>{m.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="cta-band">
+        <p>Wenn du PSYCH-K® oder einen bestimmten Ansatz konkret besprechen möchtest, können wir das gerne im Orientierungsgespräch tun.</p>
+        <a href="/kontakt" class="btn btn-secondary">PSYCH-K® im Orientierungsgespräch ansprechen</a>
+      </div>
     </div>
   </section>
 
-  <section class="section section-bordeaux">
+  <section class="section bg-cream-soft">
+    <div class="container split-grid">
+      <div>
+        <span class="eyebrow">Als Autorin und Künstlerin</span>
+        <h2>Wirken auch <em>jenseits der Begleitung</em></h2>
+        <p>Auch als Autorin und Künstlerin beschäftige ich mich mit Themen, die mein Wirken prägen: Menschlichkeit, Naturverbundenheit, Wertevermittlung, Empathie, Resilienz, Achtsamkeit, Bewusstsein, innere Entwicklung und gelingendes Miteinander.</p>
+        <p>Ich schreibe Bücher, Geschichten, Reflexionstexte und Selbstcoaching-Materialien. Gleichzeitig male, zeichne, gestalte und arbeite mit unterschiedlichen künstlerischen Ausdrucksformen wie Malerei, Zeichnung, keramischem Arbeiten oder Mosaik.</p>
+        <p>Einige meiner Arbeiten wurden in der Vergangenheit bereits verkauft oder ausgestellt. Perspektivisch möchte ich ausgewählte kreative Werke, Motive, Karten oder begleitende Produkte zu meinen Buchprojekten zugänglich machen.</p>
+        <p><em>Kunst, Schreiben und Begleitung haben für mich eine gemeinsame Wurzel: Sie können sichtbar machen, was in uns wirkt — und sie können Räume öffnen, in denen Menschen sich selbst, einander und der Welt wieder bewusster begegnen.</em></p>
+        <div class="btn-group">
+          <a href="/publikationen-materialien" class="btn btn-secondary">Publikationen ansehen</a>
+        </div>
+      </div>
+      <figure class="split-image">
+        <img src={IMAGES.publikationenSchreiben} alt="Schreiben am Tablet — der kreative Ausdruck als Teil meiner Arbeit" loading="lazy" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section bg-sage">
     <div class="container-narrow" style="text-align: center;">
       <h2>Lass uns kennenlernen</h2>
-      <p style="margin: 1rem auto 2rem; max-width: 50ch;">
-        Wenn du spürst, dass du dir mehr Klarheit, innere Stabilität oder neue Orientierung
-        wünschst, lade ich dich herzlich zu einem kostenfreien Orientierungsgespräch ein.
-        15–30 Minuten · unverbindlich · online oder telefonisch.
-      </p>
+      <p style="margin: 1rem auto 2rem; max-width: 50ch;">Kostenfreies Orientierungsgespräch · 15–30 Minuten · unverbindlich · online oder telefonisch.</p>
       <a href="/kontakt" class="btn btn-gold">Kostenfreies Orientierungsgespräch buchen</a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .um-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: center;
-    margin-top: 1.5rem;
-  }
-  @media (max-width: 800px) {
-    .um-grid { grid-template-columns: 1fr; }
-  }
+  .um-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; margin-top: 1.5rem; }
+  @media (max-width: 860px) { .um-grid { grid-template-columns: 1fr; } }
   .um-text h1 { margin: 0.5rem 0 1.25rem; }
   .um-text .lead { margin-bottom: 1rem; }
   .um-text p { margin-bottom: 1rem; }
-  .um-portrait {
-    margin: 0;
-    aspect-ratio: 4/5;
-    max-width: 26rem;
-    margin-inline: auto;
-    width: 100%;
-  }
-  .um-portrait img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--radius-l);
-    box-shadow: var(--shadow-lift);
-  }
-  .um-portrait figcaption {
-    margin-top: 1rem;
-    text-align: center;
-    color: var(--color-ink-muted);
-    font-size: 0.9rem;
-  }
+  .um-portrait { margin: 0; }
+  .um-portrait img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius-l); box-shadow: var(--shadow-lift); }
 
-  .methoden-grid {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1rem;
-  }
-  .methode {
-    background: var(--color-paper);
-    border: 1px solid var(--color-line);
-    border-left: 3px solid var(--color-gold);
-    padding: 1.25rem 1.5rem;
-    border-radius: var(--radius-s);
-    transition: all var(--transition);
-  }
-  .methode:hover {
-    border-color: var(--color-gold);
-    box-shadow: var(--shadow-soft);
-  }
-  .methode h3 {
-    font-size: 1.05rem;
-    margin: 0 0 0.25rem;
-    color: var(--color-bordeaux);
-    font-family: var(--font-display);
-    font-weight: 500;
-  }
-  .methode p {
-    margin: 0;
-    font-size: 0.88rem;
-    color: var(--color-ink-muted);
-    font-style: italic;
-  }
+  .check-list { list-style: none; padding: 0; margin: 1rem 0; }
+  .check-list li { padding: 0.6rem 0 0.6rem 1.5rem; border-bottom: 1px solid var(--color-line-soft); position: relative; }
+  .check-list li::before { content: '·'; position: absolute; left: 0; top: 0.25rem; color: var(--color-clay); font-size: 1.5rem; line-height: 1; }
+
+  .methoden-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 1.5rem; }
+  .methode-card { background: var(--color-paper); border: 1px solid var(--color-line); border-left: 3px solid var(--color-sage); padding: 1.5rem 1.75rem; border-radius: 0 var(--radius-m) var(--radius-m) 0; transition: all var(--transition); }
+  .methode-card:hover { border-left-color: var(--color-clay); box-shadow: var(--shadow-soft); }
+  .methode-card h3 { font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--color-sage-deep); font-family: var(--font-display); font-weight: 500; }
+  .methode-card p { font-size: 0.92rem; line-height: 1.6; color: var(--color-ink-soft); max-width: none; margin: 0; }
+
+  .cta-band { margin-top: 3rem; padding: 2rem; background: var(--color-cream-soft); border-radius: var(--radius-l); text-align: center; }
+  .cta-band p { max-width: 50ch; margin: 0 auto 1.25rem; }
+
+  .split-grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); align-items: center; }
+  @media (min-width: 860px) { .split-grid { grid-template-columns: 1fr 1fr; } }
+  .split-image { margin: 0; }
+  .split-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius-l); box-shadow: var(--shadow-lift); }
 </style>

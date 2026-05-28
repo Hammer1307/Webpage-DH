@@ -1,0 +1,200 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE, CONTACT } from '@/data/site';
+
+const description =
+  'Wichtiger Hinweis — Meine Arbeit als Mentorin und Coach ersetzt keine ärztliche, psychotherapeutische oder heilkundliche Diagnose oder Behandlung.';
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Wichtiger Hinweis', item: `${SITE.url}/wichtiger-hinweis` },
+  ],
+};
+---
+<BaseLayout
+  title="Wichtiger Hinweis"
+  description={description}
+  schema={breadcrumb}
+>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="text-align: left;">
+        <a href="/">Start</a><span>/</span><span>Wichtiger Hinweis</span>
+      </nav>
+      <span class="eyebrow">Hinweis zur Arbeit als Mentorin</span>
+      <h1>Wichtiger <em>Hinweis</em></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-text">
+      <article class="hinweis-card">
+        <p>
+          <strong>Meine Arbeit versteht sich als ganzheitliche Begleitung zur persönlichen
+          Klärung, Stabilisierung und bewussten Entwicklung.</strong>
+        </p>
+        <p>
+          Sie ersetzt keine ärztliche, psychotherapeutische oder heilkundliche Diagnose
+          oder Behandlung. Ich stelle keine medizinischen Diagnosen, gebe keine
+          Heilversprechen und behandle keine Krankheiten.
+        </p>
+        <p>
+          Wenn du körperliche oder psychische Beschwerden hast, dich in einer akuten
+          Krise befindest oder medizinische Fragen hast, wende dich bitte an eine
+          Ärztin, einen Arzt, eine Psychotherapeutin, einen Psychotherapeuten oder eine
+          entsprechend qualifizierte Fachperson.
+        </p>
+
+        <hr class="hinweis-rule" />
+
+        <h2>Methoden &amp; ihr Einsatzrahmen</h2>
+        <p>
+          Die in meiner Begleitung eingesetzten Methoden — darunter Mentaltraining,
+          Hypnose, Achtsamkeit, Entspannungspädagogik, positive Psychologie,
+          systemischer Blick auf Beziehungen und Dynamiken, PSYCH-K®, Arbeit mit
+          inneren Anteilen, kunst- und ausdrucksorientierte Elemente sowie
+          bioenergetische Zugänge — sind ergänzende, nicht-medizinische Ansätze.
+        </p>
+        <p>
+          Sie dienen ausschließlich der persönlichen Orientierung, Reflexion und
+          bewussten Entwicklung. Eine Wirksamkeit im medizinischen oder
+          heilkundlichen Sinn wird nicht behauptet.
+        </p>
+
+        <h2>Räumliche Perspektivarbeit</h2>
+        <p>
+          Wenn in meiner Begleitung räumliche Perspektivarbeit — etwa durch
+          Positionierungen, Bodenanker oder die bewusste Betrachtung verschiedener
+          innerer Perspektiven — zum Einsatz kommt, verstehe ich dies ausdrücklich
+          nicht als therapeutische systemische Aufstellung, sondern als achtsame
+          Perspektivarbeit innerhalb meiner ganzheitlichen Begleitung.
+        </p>
+
+        <h2>Bioenergetische Zugänge</h2>
+        <p>
+          Bioenergetische Zugänge (z. B. Reiki, Akasha-Chronik-Reading, Arbeit mit
+          dem Akasha-, morphogenen oder Quantenfeld im spirituell-energetischen
+          Verständnis) verstehe ich als ergänzende, spirituell-energetische
+          Möglichkeit, innere Resonanzen wahrzunehmen. Sie ersetzen keine ärztliche
+          oder psychotherapeutische Behandlung und stellen keine wissenschaftlich
+          anerkannte Heilmethode dar. Keine starren Deutungen, keine Diagnosen,
+          keine Heilversprechen.
+        </p>
+
+        <hr class="hinweis-rule" />
+
+        <h2>In akuten Krisen</h2>
+        <p>
+          Wenn du dich in einer akuten Krise oder Notlage befindest, wende dich
+          bitte direkt an folgende Stellen:
+        </p>
+        <ul class="krisen-list">
+          <li>
+            <strong>Notruf (medizinische Notfälle):</strong> 112
+          </li>
+          <li>
+            <strong>Telefonseelsorge (rund um die Uhr, kostenfrei, anonym):</strong>{' '}
+            0800 / 111 0 111 oder 0800 / 111 0 222
+          </li>
+          <li>
+            <strong>Nummer gegen Kummer (für Kinder &amp; Jugendliche):</strong>{' '}
+            116 111
+          </li>
+          <li>
+            <strong>Hilfetelefon „Gewalt gegen Frauen“:</strong> 08000 / 116 016
+          </li>
+        </ul>
+
+        <p class="contact-row">
+          Für allgemeine Anfragen zu meiner Begleitung erreichst du mich unter
+          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* === Wichtiger Hinweis: Empfehlung Briefing Sect. 17 ===
+     Hintergrund: warmes Beige
+     Schrift: dunkles Grau / Schwarz
+     Mindestens 14–16 px
+     Dünner Rahmen in Beige/Taupe
+     Ausreichend Innenabstand
+  */
+  .hinweis-card {
+    background: var(--color-cream-soft);
+    border: 1px solid var(--color-clay-pale);
+    border-radius: var(--radius-l);
+    padding: clamp(2rem, 5vw, 3rem);
+    box-shadow: var(--shadow-soft);
+    color: var(--color-ink);
+  }
+  .hinweis-card p,
+  .hinweis-card ul,
+  .hinweis-card li {
+    color: var(--color-ink);
+    font-size: 1rem; /* 16 px Basisgröße */
+    line-height: 1.7;
+    margin-bottom: 1.15rem;
+    max-width: none;
+  }
+  .hinweis-card p:first-child {
+    font-size: 1.05rem;
+    color: var(--color-ink);
+  }
+  .hinweis-card p strong { color: var(--color-ink); }
+  .hinweis-card h2 {
+    font-size: var(--step-2);
+    color: var(--color-sage-deep);
+    margin: 2rem 0 1rem;
+    line-height: 1.2;
+  }
+  .hinweis-rule {
+    border: none;
+    height: 1px;
+    background: var(--color-clay-pale);
+    margin: 2.25rem 0;
+    width: 100%;
+  }
+  .krisen-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.5rem;
+  }
+  .krisen-list li {
+    padding: 0.7rem 0 0.7rem 1.25rem;
+    border-bottom: 1px solid var(--color-line);
+    position: relative;
+    font-size: 0.97rem;
+  }
+  .krisen-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+    color: var(--color-clay);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .krisen-list li strong {
+    color: var(--color-sage-deep);
+    font-weight: 600;
+  }
+  .contact-row {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-clay-pale);
+    font-size: 0.95rem;
+    color: var(--color-ink-soft);
+  }
+  .contact-row a {
+    color: var(--color-sage-deep);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+</style>

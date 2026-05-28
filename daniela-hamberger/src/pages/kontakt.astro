@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE, BOOKING_OPTIONS, CONTACT } from '@/data/site';
+import { SITE, BOOKING_OPTIONS, CONTACT, VENUE, IMAGES } from '@/data/site';
 
 const description =
   'Kontakt und Buchung — kostenfreies Orientierungsgespräch, 1:1 Sitzung, KlarheitsReset oder Team-Vorgespräch mit Daniela Britta Hamberger.';
@@ -61,6 +61,45 @@ const breadcrumb = {
             <p>{b.text}</p>
           </article>
         ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ============== RÄUMLICHKEITEN WIESBADEN ============== */}
+  <section class="section bg-cream-soft venue-section">
+    <div class="container venue-grid">
+      <div class="venue-text">
+        <span class="eyebrow">Kontakt &amp; Räumlichkeiten</span>
+        <h2>Vor Ort in <em>Wiesbaden</em></h2>
+        <p class="lead">
+          Termine finden online, telefonisch oder nach Absprache vor Ort statt.
+        </p>
+        <p>
+          Für ausgewählte Begleitungen, Workshops und Teamformate nutze ich stimmige
+          Räumlichkeiten in Wiesbaden, unter anderem den <strong>{VENUE.name}</strong>.
+        </p>
+        <address class="venue-address">
+          <strong>{VENUE.name}</strong><br />
+          {VENUE.street}<br />
+          {VENUE.postalCode} {VENUE.city}
+        </address>
+        <aside class="venue-note">
+          <strong>Hinweis:</strong> Vor-Ort-Termine und Workshops werden ausschließlich
+          über Daniela Britta Hamberger abgestimmt und gebucht — nicht extern über
+          den Seminarraum.
+        </aside>
+        <div class="btn-group">
+          <a href="#kontaktformular" class="btn btn-primary">Gespräch buchen</a>
+          <a href={`mailto:${CONTACT.email}`} class="btn btn-secondary">E-Mail schreiben</a>
+        </div>
+      </div>
+      <div class="venue-visual">
+        <img
+          src={IMAGES.raumMeditation}
+          alt={`Meditationskreis im ${VENUE.name}, Wiesbaden`}
+          loading="lazy"
+          class="venue-img"
+        />
       </div>
     </div>
   </section>
@@ -203,5 +242,48 @@ const breadcrumb = {
     color: var(--color-ink-muted);
     font-style: italic;
     margin-top: 1rem;
+  }
+
+  /* ============== VENUE WIESBADEN ============== */
+  .venue-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  .venue-text h2 { margin: 0.5rem 0 1rem; }
+  .venue-text .lead { margin-bottom: 1.25rem; max-width: 38ch; }
+  .venue-text p { margin-bottom: 1.25rem; max-width: 46ch; }
+  .venue-address {
+    background: var(--color-paper);
+    border-left: 3px solid var(--color-clay);
+    padding: 1.25rem 1.5rem;
+    font-style: normal;
+    line-height: 1.7;
+    border-radius: 0 var(--radius-s) var(--radius-s) 0;
+    margin-bottom: 1.25rem;
+    color: var(--color-ink);
+  }
+  .venue-note {
+    background: var(--color-cream-deep);
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    color: var(--color-ink-soft);
+    border-radius: var(--radius-s);
+    margin-bottom: 0.5rem;
+  }
+  .venue-note strong { color: var(--color-sage-deep); }
+  .venue-img {
+    aspect-ratio: 4 / 5;
+    max-width: 28rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-lift);
+    margin-inline: auto;
+  }
+  @media (max-width: 860px) {
+    .venue-grid { grid-template-columns: 1fr; }
+    .venue-img { max-width: 22rem; aspect-ratio: 4 / 3; }
   }
 </style>

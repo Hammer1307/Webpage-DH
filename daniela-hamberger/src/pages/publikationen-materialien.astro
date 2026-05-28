@@ -3,58 +3,46 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, PUBLICATIONS } from '@/data/site';
 
 const description =
-  'Selbstcoaching-Bücher, Workbooks, Coaching-Karten und Materialien von Daniela Britta Hamberger — für innere Ordnung, Klarheit und gelingendes Miteinander.';
+  'Bücher, Workbooks, Coaching-Karten und kreative Arbeiten von Daniela Britta Hamberger. Selbstcoachingbuch "Zurück zu dir", mythologische Reise "Das Vermächtnis des Herzens" und mehr.';
 
 const breadcrumb = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
     { '@type': 'ListItem', position: 2, name: 'Publikationen', item: `${SITE.url}/publikationen-materialien` },
   ],
 };
 ---
-<BaseLayout
-  title="Publikationen & Materialien"
-  description={description}
-  schema={breadcrumb}
->
-  <img class="image-accent" src={IMAGES.publikationen} alt="" loading="eager" />
+<BaseLayout title="Publikationen, Bücher & kreative Arbeiten" description={description} schema={breadcrumb}>
+  <img class="image-accent" src={IMAGES.publikationenSchreiben} alt="Schreiben am Tablet — Worte, die Räume öffnen können" loading="eager" />
 
-  <section class="section section-cream">
+  <section class="section bg-cream">
     <div class="container-narrow">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Start</a><span>/</span><span>Publikationen &amp; Materialien</span>
-      </nav>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Start</a><span>/</span><span>Publikationen</span></nav>
       <header class="page-intro">
-        <span class="eyebrow">Publikationen &amp; Materialien</span>
-        <h1>Bücher, Karten &amp; <em>Materialien</em></h1>
-        <p class="lead">
-          Selbstcoaching, Weisheitsgeschichten und Impulse für innere Ordnung, Klarheit und
-          gelingendes Miteinander
-        </p>
+        <span class="eyebrow">Publikationen, Bücher &amp; kreative Arbeiten</span>
+        <h1>Weisheitsgeschichten, Selbstcoaching, <em>Karten und Kunst</em></h1>
+        <p class="lead">Für innere Ordnung, Lebensfreude und ein wertschätzendes Miteinander.</p>
       </header>
 
       <p>
-        Unter Fokus Schöner Leben entstehen Bücher, Workbooks, Coaching-Karten und Materialien,
-        die meine Arbeit über persönliche Begleitung, Workshops und Teamprozesse hinaus
-        erweitern. Sie richten sich an ältere Jugendliche, Erwachsene, Einzelpersonen, Gruppen
-        und Teams, die sich mit innerer Stabilität, Selbstwahrnehmung, Sinnfragen, Wertschätzung,
-        Empathie und bewusster Entwicklung beschäftigen möchten.
+        Als Autorin und Künstlerin greife ich Themen auf, die mich seit Jahren bewegen: Menschlichkeit, Naturverbundenheit, Empathie, Werte, innere Entwicklung, Sinnsuche, Lebensfreude und gelingendes Miteinander.
       </p>
       <p>
-        Meine Publikationen verbinden pädagogische Erfahrung, Mentaltraining, Achtsamkeit,
-        positive Psychologie, Elemente der Persönlichkeitsentwicklung, symbolische Bildsprache
-        und Impulse für ein wertschätzendes Miteinander. Ziel ist es, Menschen dabei zu
-        unterstützen, sich selbst besser wahrzunehmen, Gedanken zu ordnen, neue Perspektiven
-        zu entwickeln und wieder mehr Verbindung zu sich, zu anderen und zur Natur zu spüren.
+        Meine Bücher, Workbooks, Karten und kreativen Arbeiten sollen berühren, stärken und zum Nachdenken einladen. Manche Projekte sind erzählerisch. Andere unterstützen Selbstreflexion, Coaching, Gruppenarbeit oder persönliche Entwicklung.
+      </p>
+      <p>
+        Dabei geht es nicht nur um Inhalte, sondern auch um Atmosphäre: um Räume, Bilder und Worte, die Menschen wieder näher zu sich selbst führen können.
       </p>
     </div>
   </section>
 
-  <section class="section section-cream-deep">
+  <section class="section bg-cream-deep">
     <div class="container">
-      <h2 class="text-center">Geplante und entstehende Projekte</h2>
+      <header class="section-head">
+        <span class="eyebrow">Projekte in Vorbereitung</span>
+        <h2>Geplante und entstehende <em>Projekte</em></h2>
+      </header>
       <div class="pub-grid">
         {PUBLICATIONS.map((p) => (
           <article class="pub-card">
@@ -64,8 +52,8 @@ const breadcrumb = {
             <p class="pub-desc">{p.description}</p>
             {p.meta && <p class="pub-meta">{p.meta}</p>}
             <div class="btn-group">
-              <a href="/kontakt" class="btn btn-outline">Vormerken</a>
-              <a href="/kontakt" class="btn btn-outline">Mehr erfahren</a>
+              <a href="/kontakt" class="btn btn-secondary">Vormerken</a>
+              <a href="/kontakt" class="btn btn-ghost">Mehr erfahren</a>
             </div>
           </article>
         ))}
@@ -73,16 +61,12 @@ const breadcrumb = {
     </div>
   </section>
 
-  <section class="section section-cream">
+  <section class="section bg-cream">
     <div class="container-narrow" style="text-align: center;">
-      <h2>Bleib auf dem Laufenden</h2>
-      <p style="margin: 1rem auto 1.5rem; max-width: 50ch;">
-        Trag dich in die Interessentenliste ein und erfahre als Erstes, wenn neue Materialien
-        erscheinen.
-      </p>
+      <h2>Bleib auf dem <em>Laufenden</em></h2>
+      <p style="margin: 1rem auto 1.5rem; max-width: 55ch;">Wenn du über neue Bücher, Workbooks, Karten, kreative Arbeiten oder ausgewählte Impulse informiert werden möchtest, kannst du mir gerne schreiben.</p>
       <div class="btn-group btn-group-center">
-        <a href="/kontakt" class="btn btn-primary">Interessentenliste eintragen</a>
-        <a href="/kontakt" class="btn btn-outline">Buchprojekte vormerken</a>
+        <a href="/kontakt" class="btn btn-primary">Interesse an Publikationen mitteilen</a>
       </div>
     </div>
   </section>
@@ -92,48 +76,13 @@ const breadcrumb = {
   .page-intro { text-align: center; margin-bottom: 2.5rem; }
   .page-intro h1 { margin: 0.5rem 0 1rem; }
   .page-intro .lead { margin: 0 auto; }
-  .text-center { text-align: center; margin-bottom: 2.5rem; }
-
-  .pub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 1.5rem;
-  }
-  .pub-card {
-    background: var(--color-paper);
-    border: 1px solid var(--color-line);
-    border-radius: var(--radius-m);
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    transition: all var(--transition);
-  }
-  .pub-card:hover {
-    border-color: var(--color-gold);
-    box-shadow: var(--shadow-card);
-    transform: translateY(-2px);
-  }
+  .pub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 1.5rem; }
+  .pub-card { background: var(--color-paper); border: 1px solid var(--color-line); border-radius: var(--radius-l); padding: 1.75rem; display: flex; flex-direction: column; transition: all var(--transition); }
+  .pub-card:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
   .pub-card .tag { align-self: flex-start; margin-bottom: 0.85rem; }
   .pub-card h3 { margin-bottom: 0.5rem; font-size: 1.35rem; }
-  .pub-sub {
-    color: var(--color-gold-deep);
-    font-family: var(--font-display);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-style: italic;
-  }
-  .pub-desc {
-    font-size: 0.92rem;
-    margin-bottom: 1rem;
-    color: var(--color-ink-soft);
-  }
-  .pub-meta {
-    font-size: 0.83rem;
-    color: var(--color-ink-muted);
-    background: var(--color-cream);
-    padding: 0.65rem 0.85rem;
-    border-left: 2px solid var(--color-gold);
-    margin-bottom: 1rem;
-  }
+  .pub-sub { color: var(--color-clay); font-family: var(--font-display); font-size: 1rem; margin-bottom: 1rem; font-style: italic; max-width: none; }
+  .pub-desc { font-size: 0.92rem; margin-bottom: 1rem; color: var(--color-ink-soft); max-width: none; }
+  .pub-meta { font-size: 0.83rem; color: var(--color-ink-muted); background: var(--color-cream); padding: 0.65rem 0.85rem; border-left: 2px solid var(--color-clay); margin-bottom: 1rem; max-width: none; }
   .pub-card .btn-group { margin-top: auto; }
 </style>

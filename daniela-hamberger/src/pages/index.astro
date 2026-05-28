@@ -1,105 +1,67 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE, IMAGES } from '@/data/site';
+import { SITE, IMAGES, METHODEN_LISTE, VENUE } from '@/data/site';
 
 const description =
-  'Daniela Britta Hamberger — Mentorin für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander. 1:1 Begleitung, Teams & Workshops, Publikationen unter dem Leitgedanken Fokus Schöner Leben.';
+  'Daniela Britta Hamberger — Mentorin mit pädagogischer Expertise für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander. Fokus Schöner Leben: Innere Ordnung. Neue Klarheit. Freude am Leben.';
 ---
 <BaseLayout
   title={`${SITE.name} · ${SITE.brand}`}
   description={description}
 >
-  {/* ============== HERO — Split (Text + Portrait), v1-Stil ============== */}
+  {/* ============== HERO — Logo oben prominent, kein Text-Doppel ============== */}
   <section class="hero">
     <div class="container hero-inner">
+      <div class="hero-logo-wrap">
+        <img src={IMAGES.logo} alt="Daniela Britta Hamberger — Fokus Schöner Leben (Phönix und Lotus)" class="hero-logo" loading="eager" fetchpriority="high" />
+      </div>
+
       <div class="hero-text">
-        <span class="eyebrow">Fokus Schöner Leben</span>
-        <h1 class="hero-title">
-          Wenn du spürst:<br /><em>Es darf wieder klarer werden</em>
-        </h1>
+        <h1 class="hero-title">Wenn du spürst:<br /><em>Es darf wieder klarer werden</em></h1>
+
         <p class="hero-lead">
-          Vielleicht spürst du gerade, dass etwas in deinem Leben
-          wieder klarer werden möchte.
+          Vielleicht hast du lange funktioniert, getragen, organisiert oder dich angepasst. Vielleicht stehst du vor einer Entscheidung, bist innerlich unruhig oder merkst: So wie bisher möchte ich nicht weitermachen.
         </p>
+
         <p class="hero-body">
-          Vielleicht bist du müde vom Funktionieren. Vielleicht stehst du
-          vor einer Entscheidung. Vielleicht suchst du inneren Halt, mehr
-          Orientierung oder das Gefühl, wieder wirklich bei dir selbst
-          anzukommen.
+          Ich begleite dich dabei, wieder mehr bei dir selbst anzukommen — mit innerer Ordnung, neuer Klarheit und mehr Vertrauen in deinen eigenen Weg.
         </p>
+
         <p class="hero-body">
-          Ich begleite dich dabei, innere Ordnung zu finden, den Blick zu
-          weiten und wieder stabiler in dir selbst zu stehen.
+          Mit langjähriger Erfahrung als <strong>Pädagogin und ehemalige Lehrerin in der Sekundarstufe&nbsp;I</strong> verbinde ich Mentaltraining, Hypnose, Achtsamkeit, positive Psychologie, Entspannungspädagogik, einen systemischen Blick auf Beziehungsdynamiken, PSYCH-K® sowie bioenergetische Zugänge.
         </p>
+
         <div class="hero-actions">
           <a href="/kontakt" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
-          <a href="/1-zu-1-begleitung" class="btn btn-secondary">1:1 Begleitung entdecken</a>
+          <a href="/1-zu-1-begleitung" class="btn btn-secondary">1:1 Begleitung für Frauen entdecken</a>
+          <a href="/teams-workshops" class="btn btn-ghost">Teams &amp; Workshops ansehen</a>
         </div>
-        <p class="hero-motto"><span class="script">Innere Ordnung. Neue Klarheit. Freude am Leben.</span></p>
       </div>
 
       <div class="hero-visual">
-        <img
-          src={IMAGES.hero}
-          alt="Ein Moment der Weite und inneren Ruhe"
-          class="hero-photo"
-          loading="eager"
-          fetchpriority="high"
-        />
+        <img src={IMAGES.heroStartseite} alt="Stille Frühlingswiese mit Apfelbaum und einer einladenden Holzbank — Ankommen und innere Ordnung" class="hero-photo" loading="eager" />
       </div>
     </div>
   </section>
 
-  {/* ============== EINLEITUNG ============== */}
-  <section class="section section-cream intro-section">
-    <div class="container-text">
-      <p class="lead">
-        Vielleicht spürst du gerade, dass etwas in deinem Leben wieder klarer werden möchte.
-      </p>
-      <p>
-        Vielleicht bist du müde vom Funktionieren. Vielleicht stehst du vor einer Entscheidung.
-        Vielleicht suchst du inneren Halt, mehr Orientierung oder das Gefühl, wieder wirklich
-        bei dir selbst anzukommen.
-      </p>
-      <p>
-        Ich begleite dich dabei, innere Ordnung zu finden, den Blick zu weiten und wieder
-        stabiler in dir selbst zu stehen.
-      </p>
-      <p>
-        Oft ist vieles bereits in uns angelegt: Klarheit, Kraft, Vertrauen, Lebensfreude,
-        ein Gespür für den nächsten stimmigen Schritt. Manchmal ist es nur überlagert — durch
-        Erwartungen, Fremdbestimmung, alte Muster, innere Unruhe oder das Gefühl, immer weiter
-        funktionieren zu müssen.
-      </p>
-      <p>
-        In meiner Arbeit geht es darum, genau diesen inneren Zugang wieder freizulegen.
-      </p>
-      <p>
-        Mit langjähriger Erfahrung als <strong>Pädagogin und ehemalige Lehrerin in der
-        Sekundarstufe&nbsp;I</strong> verbinde ich Hypnose, Mentaltraining, Achtsamkeitstools,
-        positive Psychologie, einen systemischen Blick auf Beziehungen und Dynamiken, PSYCH-K®
-        sowie bioenergetische Zugänge.
-      </p>
-      <div class="btn-group">
-        <a href="/kontakt" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
-        <a href="/1-zu-1-begleitung" class="btn btn-outline">1:1 Begleitung entdecken</a>
-        <a href="/publikationen-materialien" class="btn btn-outline">Publikationen ansehen</a>
-      </div>
+  {/* ============== METHODENLEISTE — nur einmal ============== */}
+  <section class="section-tight methoden-leiste">
+    <div class="container">
+      <div class="ornament"><span>Mein Begleitansatz</span></div>
+      <ul class="methoden-list">
+        {METHODEN_LISTE.map((m) => <li>{m}</li>)}
+      </ul>
     </div>
   </section>
 
-  {/* ============== DREI WEGE DER ZUSAMMENARBEIT ============== */}
-  <section class="section section-cream-deep">
+  {/* ============== 3 WEGE ============== */}
+  <section class="section bg-cream-soft">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">Drei Wege der Zusammenarbeit</span>
-        <h2>Für dich. Für euch als Team.<br /><em>Für das, was wachsen möchte.</em></h2>
+        <span class="eyebrow">Wege, wie wir in Verbindung kommen können</span>
+        <h2>Begleitung, Workshops, Bücher, <em>Impulse und kreative Arbeiten</em></h2>
         <p class="lead">
-          Ob in einer persönlichen 1:1 Begleitung, in einem Team-Workshop oder zwischen
-          den Seiten eines Buches: Meine Arbeit folgt demselben Anliegen. Es geht darum,
-          wieder Verbindung entstehen zu lassen — zu dir selbst, zu deinen eigenen
-          Bedürfnissen, zu deiner inneren Kraft und zu den Menschen, mit denen du lebst
-          oder arbeitest.
+          Meine Arbeit zeigt sich auf unterschiedliche Weise: in der persönlichen 1:1 Begleitung, in Team-Workshops, in Büchern, Workbooks, Coaching-Karten, kreativen Arbeiten und Impulsen. Der rote Faden bleibt derselbe: innere Ordnung, neue Klarheit, Lebensfreude und ein wertschätzendes Miteinander.
         </p>
       </header>
 
@@ -107,114 +69,61 @@ const description =
         <article class="weg-card fade-up">
           <span class="weg-number">01</span>
           <h3>1:1 Begleitung</h3>
-          <p class="weg-sub">
-            <em>Wenn du dich neu sortieren und wieder mehr bei dir ankommen möchtest</em>
-          </p>
-          <p>
-            Vielleicht fühlst du dich innerlich unruhig, erschöpft oder nicht mehr richtig
-            verbunden mit dir selbst. In der 1:1 Begleitung entsteht ein geschützter Raum,
-            in dem du dich sortieren, fühlen, erkennen und neu ausrichten darfst.
-          </p>
-          <a href="/1-zu-1-begleitung" class="btn btn-outline">Zur 1:1 Begleitung</a>
+          <p class="weg-sub"><em>Besonders für Frauen, die wieder bei sich selbst ankommen möchten</em></p>
+          <p>Vielleicht fühlst du dich müde vom Funktionieren. Vielleicht hast du lange für andere mitgedacht, dich angepasst oder deine eigenen Bedürfnisse übergangen. In meiner 1:1 Begleitung findest du einen geschützten Raum, in dem du dich sortieren, spüren und neu ausrichten kannst. Oft ist vieles bereits in dir angelegt: Kraft, Klarheit, Selbstwert, Lebensfreude und ein feines Gefühl für deinen nächsten Schritt.</p>
+          <a href="/1-zu-1-begleitung" class="btn btn-ghost">Zur 1:1 Begleitung</a>
         </article>
 
         <article class="weg-card fade-up delay-1">
           <span class="weg-number">02</span>
           <h3>Teams &amp; Workshops</h3>
-          <p class="weg-sub">
-            <em>Wenn ihr als Team wieder klarer, wertschätzender und menschlicher
-            miteinander arbeiten möchtet</em>
-          </p>
-          <p>
-            Vielleicht spürt ihr, dass euer Miteinander gerade schwerer geworden ist.
-            In meinen Teamformaten geht es darum, Dynamiken bewusster wahrzunehmen,
-            Spannungen achtsam sichtbar zu machen und neue Wege für ein offeneres,
-            menschlicheres Miteinander zu entwickeln.
-          </p>
-          <a href="/teams-workshops" class="btn btn-outline">Zu Teams &amp; Workshops</a>
+          <p class="weg-sub"><em>Wenn ihr wieder klarer, wertschätzender und menschlicher miteinander arbeiten möchtet</em></p>
+          <p>Vielleicht arbeitet ihr zusammen, aber nicht immer wirklich miteinander. Kommunikation läuft aneinander vorbei. Wertschätzung ist eigentlich da, wird aber im Alltag zu selten spürbar. Ich begleite euch dabei, euer Miteinander bewusster wahrzunehmen und neue Wege für mehr Klarheit, Vertrauen, Empathie und Wertschätzung zu entwickeln.</p>
+          <a href="/teams-workshops" class="btn btn-ghost">Zu Teams &amp; Workshops</a>
         </article>
 
         <article class="weg-card fade-up delay-2">
           <span class="weg-number">03</span>
-          <h3>Publikationen &amp; Materialien</h3>
-          <p class="weg-sub">
-            <em>Impulse, Bücher und Karten für innere Ordnung und bewusstes Miteinander</em>
-          </p>
-          <p>
-            Unter Fokus Schöner Leben entstehen Bücher, Workbooks, Coaching-Karten und
-            Materialien, die dich auch außerhalb einer Begleitung oder eines Workshops
-            unterstützen können.
-          </p>
-          <a href="/publikationen-materialien" class="btn btn-outline">Publikationen ansehen</a>
+          <h3>Publikationen, Kunst &amp; Impulse</h3>
+          <p class="weg-sub"><em>Bücher, Workbooks, Coaching-Karten und kreative Arbeiten</em></p>
+          <p>Als Autorin und Künstlerin beschäftige ich mich mit Themen, die auch meine Begleitung prägen: innere Ordnung, Menschlichkeit, Naturverbundenheit, Empathie, Lebensfreude, Sinnsuche und gelingendes Miteinander. Geplant sind unter anderem das Selbstcoachingbuch <em>Zurück zu dir</em>, das mythologische Buchprojekt <em>Das Vermächtnis des Herzens</em>, Coaching- und Impulskarten sowie ausgewählte kreative Arbeiten.</p>
+          <a href="/publikationen-materialien" class="btn btn-ghost">Publikationen ansehen</a>
         </article>
       </div>
     </div>
   </section>
 
-  {/* ============== VISION TEASER ============== */}
-  <section class="section section-cream vision-teaser">
-    <div class="container-narrow">
-      <span class="eyebrow">Vision &amp; Stiftung Fokus Schöner Leben</span>
-      <h2>Aus Geschichten kann <em>Wirkung entstehen</em></h2>
-      <p>
-        Meine Buchprojekte sind für mich mehr als Geschichten. Sie sind Ausdruck einer
-        Haltung: dass jedes Wesen Bedeutung trägt, dass Menschlichkeit im Miteinander beginnt
-        und dass aus kleinen Impulsen größere Bewegungen entstehen können.
-      </p>
-      <p>
-        Perspektivisch plane ich, drei Prozent der Verkaufserlöse meiner Buchprojekte in die
-        künftig zu gründende <strong>Stiftung Fokus Schöner Leben</strong> einfließen zu lassen
-        — für Umwelt-, Arten- und Meeresschutz, Upcycling- und Recyclingprojekte sowie soziale
-        Hilfsangebote.
-      </p>
-      <div class="btn-group">
-        <a href="/vision-stiftung" class="btn btn-gold">Mehr über die Vision erfahren</a>
-        <a href="/publikationen-materialien" class="btn btn-outline">Publikationen entdecken</a>
+  {/* ============== RAUM (Wiesbaden / Schöne Aussichten) ============== */}
+  <section class="section bg-cream raum-section">
+    <div class="container raum-grid">
+      <div class="raum-text">
+        <span class="eyebrow">Ein Raum, der Entwicklung unterstützt</span>
+        <h2>Ein stimmiger Rahmen für <em>innere Ordnung und bewusste Entwicklung</em></h2>
+        <p>Manchmal braucht Veränderung nicht nur Zeit, sondern auch einen passenden Rahmen.</p>
+        <p>Für ausgewählte Begleitungen, Workshops und Teamformate arbeite ich nach Absprache in stimmigen Räumlichkeiten in Wiesbaden. Der <strong>{VENUE.name}</strong> bietet dafür eine ruhige, wertschätzende Atmosphäre, in der Abstand zum Alltag entstehen darf.</p>
+        <p>Mir ist wichtig, dass ganzheitliches Wohlbefinden nicht nur im Inneren beginnt, sondern auch durch eine passende äußere Umgebung unterstützt wird: durch Ruhe, Klarheit, eine angenehme Atmosphäre und einen Raum, in dem Menschen ankommen, sich öffnen und neu sortieren können.</p>
+        <p>Hier darf entstehen, was im Alltag oft zu kurz kommt: Innehalten, bewusster Austausch, neue Perspektiven und ein geschützter Rahmen für innere Ordnung und Entwicklung.</p>
+        <aside class="raum-note">
+          <strong>Wichtig:</strong> Der Seminarraum wird nicht extern über die Website gebucht. Termine, Workshops und Vor-Ort-Formate werden ausschließlich über Daniela Britta Hamberger abgestimmt.
+        </aside>
+        <div class="btn-group">
+          <a href="/kontakt" class="btn btn-primary">Gespräch buchen</a>
+        </div>
+      </div>
+      <div class="raum-gallery">
+        <img src={IMAGES.raumMeditation} alt={`Meditationskreis im ${VENUE.name}, Wiesbaden`} loading="lazy" class="raum-img raum-img-large" />
+        <img src={IMAGES.raumBestuhlung} alt="Lichtdurchfluteter Dachraum mit zwei türkisen Stühlen und gemütlichem Ambiente" loading="lazy" class="raum-img" />
+        <img src={IMAGES.raumEingang} alt="Detail im Eingangsbereich — Mosaikspiegel, Libelle und natürliche Akzente" loading="lazy" class="raum-img" />
       </div>
     </div>
   </section>
 
-  {/* ============== FOKUS IMPULSE TEASER ============== */}
-  <section class="section section-cream-deep impulse-teaser">
-    <div class="container-narrow">
-      <span class="eyebrow">Fokus Impulse</span>
-      <h2>Blogbeiträge, Gedanken,<br /><em>Audio und Video</em></h2>
-      <p>
-        Impulse für innere Ordnung, Klarheit und gelingendes Miteinander — manche aus meiner
-        Arbeit als Mentorin, andere aus meinen Buchprojekten oder Beobachtungen im Alltag.
-      </p>
-      <div class="btn-group">
-        <a href="/impulse" class="btn btn-primary">Fokus Impulse entdecken</a>
-        <a href="https://instagram.com/fokus_schoener_leben" target="_blank" rel="noopener" class="btn btn-outline">Instagram</a>
-        <a href="https://www.linkedin.com/in/danielabrittahamberger" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  {/* ============== STIMMEN TEASER ============== */}
-  <section class="section section-cream stimmen-teaser">
-    <div class="container-narrow">
-      <span class="eyebrow">Stimmen &amp; Erfahrungen</span>
-      <h2>Was Menschen <em>erlebt haben</em></h2>
-      <p>
-        Wenn meine Bücher, Begleitungen, Workshops oder Impulse etwas in dir bewegt haben,
-        freue ich mich sehr über deine Rückmeldung. Ausgewählte Stimmen teile ich — natürlich
-        nur mit ausdrücklicher Zustimmung — auf dieser Website.
-      </p>
-      <div class="btn-group">
-        <a href="/stimmen-erfahrungen" class="btn btn-outline">Stimmen lesen</a>
-      </div>
-    </div>
-  </section>
-
-  {/* ============== CTA ============== */}
-  <section class="section section-bordeaux final-cta">
+  {/* ============== FINAL CTA ============== */}
+  <section class="section bg-sage final-cta">
     <div class="container-narrow" style="text-align: center;">
       <h2>Lass uns kennenlernen</h2>
       <p style="margin: 1rem auto 2rem; max-width: 50ch;">
-        Wenn du spürst, dass du dir mehr Klarheit, innere Stabilität oder neue Orientierung
-        wünschst, lade ich dich herzlich zu einem kostenfreien Orientierungsgespräch ein.
-        15–30 Minuten · unverbindlich · online oder telefonisch.
+        Wenn du spürst, dass du dir mehr Klarheit, innere Stabilität oder neue Orientierung wünschst, lade ich dich herzlich zu einem kostenfreien Orientierungsgespräch ein. 15–30 Minuten · unverbindlich · online oder telefonisch.
       </p>
       <div class="btn-group btn-group-center">
         <a href="/kontakt" class="btn btn-gold">Kostenfreies Orientierungsgespräch buchen</a>
@@ -224,32 +133,39 @@ const description =
 </BaseLayout>
 
 <style>
-  /* ============== HERO (Split: Text + Portrait) ============== */
+  /* ============== HERO ============== */
   .hero {
-    padding-top: clamp(2.5rem, 5vw, 4.5rem);
-    padding-bottom: clamp(3.5rem, 8vw, 7rem);
+    padding-top: clamp(2rem, 4vw, 3.5rem);
+    padding-bottom: clamp(3.5rem, 7vw, 6rem);
     background: var(--color-cream);
   }
   .hero-inner {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: clamp(2rem, 5vw, 5rem);
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
   }
-  .hero-text { max-width: 38rem; }
+  /* Logo prominent zentral oben */
+  .hero-logo-wrap {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  .hero-logo {
+    width: clamp(180px, 22vw, 280px);
+    height: auto;
+    display: block;
+  }
+  .hero-text { max-width: 42rem; }
   .hero-title {
     font-size: var(--step-5);
     line-height: 1.02;
     letter-spacing: -0.025em;
-    margin: 0.75rem 0 1.5rem;
+    margin: 0 0 1.5rem;
     color: var(--color-ink);
   }
-  .hero-title em {
-    color: var(--color-sage-deep);
-    font-style: italic;
-    display: block;
-    margin-top: 0.1em;
-  }
+  .hero-title em { color: var(--color-sage-deep); font-style: italic; display: block; margin-top: 0.1em; }
   .hero-lead {
     font-family: var(--font-display);
     font-size: var(--step-2);
@@ -257,14 +173,14 @@ const description =
     color: var(--color-ink);
     font-weight: 400;
     font-style: italic;
-    max-width: 30ch;
+    max-width: 34ch;
     margin-bottom: 1.25rem;
   }
   .hero-body {
     color: var(--color-ink-soft);
     line-height: 1.65;
     margin-bottom: 1rem;
-    max-width: 38ch;
+    max-width: 44ch;
   }
   .hero-actions {
     display: flex;
@@ -272,108 +188,77 @@ const description =
     flex-wrap: wrap;
     margin-top: 2rem;
   }
-  .hero-motto {
-    margin-top: 1.75rem;
-    font-size: var(--step-1);
-  }
   .hero-visual { position: relative; }
   .hero-photo {
-    aspect-ratio: 4 / 5;
-    max-width: 30rem;
+    aspect-ratio: 4 / 3;
     width: 100%;
-    margin-inline: auto;
     display: block;
     border-radius: var(--radius-l);
     object-fit: cover;
     box-shadow: var(--shadow-lift);
   }
-
-  @media (max-width: 860px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-visual { order: -1; }
-    .hero-photo { max-width: 22rem; aspect-ratio: 3 / 2; }
-    .hero-lead, .hero-body { max-width: none; }
+  @media (min-width: 960px) {
+    .hero-inner {
+      grid-template-columns: 1.15fr 0.85fr;
+      column-gap: clamp(2.5rem, 5vw, 4rem);
+    }
+    .hero-logo-wrap { grid-column: 1 / -1; justify-content: flex-start; }
+    .hero-photo { aspect-ratio: 4 / 5; }
   }
 
-  /* ============== INTRO ============== */
-  .intro-section .lead {
+  /* ============== METHODENLEISTE ============== */
+  .methoden-leiste { background: var(--color-cream-soft); border-top: 1px solid var(--color-line-soft); border-bottom: 1px solid var(--color-line-soft); }
+  .methoden-leiste .ornament { color: var(--color-sage); font-family: var(--font-display); font-style: italic; font-size: var(--step-1); margin-bottom: 1.25rem; }
+  .methoden-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 0.75rem;
+    list-style: none;
+    padding: 0;
+  }
+  .methoden-list li {
+    display: inline-block;
+    padding: 0.55em 1.15em;
+    background: var(--color-paper);
     color: var(--color-sage-deep);
-    margin-bottom: 1.5rem;
-  }
-  .intro-section p {
-    margin-bottom: 1.25rem;
-  }
-
-  /* ============== SECTION HEADER ============== */
-  .section-head {
-    text-align: center;
-    margin-bottom: clamp(2.5rem, 5vw, 4rem);
-  }
-  .section-head h2 { margin-bottom: 1.25rem; }
-  .section-head .lead {
-    margin: 0 auto;
-    color: var(--color-ink-soft);
-    font-style: italic;
-    text-align: center;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    font-weight: 500;
   }
 
-  /* ============== DREI WEGE ============== */
-  .wege-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 1.5rem;
-  }
+  /* ============== 3 WEGE ============== */
+  .wege-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.5rem; }
   .weg-card {
     background: var(--color-paper);
     border: 1px solid var(--color-line);
-    border-top: 4px solid var(--color-gold);
-    border-radius: var(--radius-m);
+    border-top: 4px solid var(--color-clay);
+    border-radius: var(--radius-l);
     padding: clamp(1.75rem, 3vw, 2.5rem);
     transition: all var(--transition);
     position: relative;
     display: flex;
     flex-direction: column;
   }
-  .weg-card:hover {
-    border-color: var(--color-gold);
-    box-shadow: var(--shadow-card);
-    transform: translateY(-3px);
-  }
-  .weg-number {
-    font-family: var(--font-display);
-    font-style: italic;
-    color: var(--color-gold-deep);
-    font-size: 1.25rem;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.5rem;
-  }
+  .weg-card:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); }
+  .weg-number { font-family: var(--font-display); font-style: italic; color: var(--color-clay); font-size: 1.25rem; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
   .weg-card h3 { margin-bottom: 0.75rem; }
-  .weg-sub {
-    color: var(--color-bordeaux);
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-  .weg-sub em { color: var(--color-bordeaux); }
-  .weg-card p { margin-bottom: 1.5rem; flex: 1; font-size: 0.95rem; }
-  .weg-card .btn { align-self: flex-start; }
+  .weg-sub { color: var(--color-sage-deep); margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.5; max-width: none; }
+  .weg-sub em { color: var(--color-sage-deep); }
+  .weg-card p { margin-bottom: 1.25rem; flex: 1; font-size: 0.95rem; max-width: none; }
+  .weg-card .btn { align-self: flex-start; margin-top: auto; }
 
-  /* ============== VISION TEASER ============== */
-  .vision-teaser h2 { margin-top: 0.5rem; }
-  .vision-teaser p { margin-bottom: 1rem; }
-
-  /* ============== IMPULSE TEASER ============== */
-  .impulse-teaser { text-align: center; }
-  .impulse-teaser h2 { margin-top: 0.5rem; }
-  .impulse-teaser p { margin: 1rem auto 1.5rem; }
-  .impulse-teaser .btn-group { justify-content: center; }
-
-  /* ============== STIMMEN TEASER ============== */
-  .stimmen-teaser { text-align: center; }
-  .stimmen-teaser h2 { margin-top: 0.5rem; }
-  .stimmen-teaser p { margin: 1rem auto 1.5rem; }
-  .stimmen-teaser .btn-group { justify-content: center; }
-
-  /* ============== FINAL CTA ============== */
-  .final-cta h2 { color: var(--color-cream); }
+  /* ============== RAUM-SECTION ============== */
+  .raum-grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); align-items: start; }
+  @media (min-width: 900px) { .raum-grid { grid-template-columns: 1fr 0.95fr; } }
+  .raum-text h2 { margin: 0.5rem 0 1.25rem; }
+  .raum-text p { margin-bottom: 1rem; }
+  .raum-note { background: var(--color-cream-deep); border-left: 3px solid var(--color-sage); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.92rem; border-radius: 0 var(--radius-s) var(--radius-s) 0; color: var(--color-ink-soft); }
+  .raum-note strong { color: var(--color-sage-deep); }
+  .raum-gallery { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 0.75rem; }
+  .raum-img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-m); box-shadow: var(--shadow-soft); }
+  .raum-img-large { grid-column: 1 / -1; aspect-ratio: 16/9; }
+  .raum-img:not(.raum-img-large) { aspect-ratio: 1/1; }
 </style>
