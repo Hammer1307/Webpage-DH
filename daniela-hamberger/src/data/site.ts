@@ -56,6 +56,28 @@ export const NAV = [
   { label: 'Kontakt', href: '/kontakt' },
 ] as const;
 
+// Footer-Navigation
+export const FOOTER_NAV = {
+  angebot: [
+    { label: '1:1 Begleitung', href: '/1-zu-1-begleitung' },
+    { label: 'KlarheitsReset', href: '/klarheitsreset' },
+    { label: 'Teams & Workshops', href: '/teams-workshops' },
+    { label: 'TeamBalance', href: '/teambalance' },
+  ],
+  wissen: [
+    { label: 'Über mich', href: '/ueber-mich' },
+    { label: 'Publikationen', href: '/publikationen-materialien' },
+    { label: 'Vision & Stiftung', href: '/vision-stiftung' },
+    { label: 'Stimmen', href: '/stimmen-erfahrungen' },
+    { label: 'Fokus Impulse', href: '/impulse' },
+  ],
+  rechtliches: [
+    { label: 'Kontakt', href: '/kontakt' },
+    { label: 'Impressum', href: '/impressum' },
+    { label: 'Datenschutz', href: '/datenschutz' },
+  ],
+};
+
 // 1:1 Begleitformate — exakt aus Gamma Section "1:1 Begleitung"
 export const COACHING_FORMATS = [
   {

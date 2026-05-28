@@ -9,56 +9,43 @@ const description =
   title={`${SITE.name} · ${SITE.brand}`}
   description={description}
 >
-  {/* ============== HERO — See & Lotus-Logo ============== */}
+  {/* ============== HERO — Split (Text + Portrait), v1-Stil ============== */}
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <img
-        src={IMAGES.hero}
-        alt=""
-        loading="eager"
-        fetchpriority="high"
-      />
-      <div class="hero-overlay"></div>
-    </div>
     <div class="container hero-inner">
-      <div class="hero-brand" role="img" aria-label="Daniela Britta Hamberger — Fokus Schöner Leben">
-        <svg class="hero-lotus" width="110" height="110" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <g stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            {/* Innere mittlere Blütenblätter */}
-            <path d="M50 20 Q42 30 42 50 Q42 60 47 67" />
-            <path d="M50 20 Q58 30 58 50 Q58 60 53 67" />
-            {/* Schräge Blütenblätter */}
-            <path d="M42 50 Q32 44 28 56 Q28 64 38 68" />
-            <path d="M58 50 Q68 44 72 56 Q72 64 62 68" />
-            {/* Äußere Blütenblätter */}
-            <path d="M30 56 Q18 56 14 68 Q18 76 30 76" />
-            <path d="M70 56 Q82 56 86 68 Q82 76 70 76" />
-            {/* Basis / Schale */}
-            <path d="M18 72 Q30 80 50 80 Q70 80 82 72" />
-            <path d="M22 72 Q35 76 50 76 Q65 76 78 72" opacity="0.55" />
-          </g>
-          {/* Yin-Yang im Zentrum */}
-          <circle cx="50" cy="50" r="11" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <path d="M50 39 A11 11 0 0 1 50 61 A5.5 5.5 0 0 0 50 50 A5.5 5.5 0 0 1 50 39 Z" fill="currentColor"/>
-          <circle cx="50" cy="44.5" r="1.5" fill="#FAF7F2"/>
-          <circle cx="50" cy="55.5" r="1.5" fill="currentColor"/>
-        </svg>
-        <p class="brand-name">Daniela Britta Hamberger</p>
-        <p class="brand-tagline">
-          Mentorin für innere Stabilität, bewusste Entwicklung<br />
-          und gelingendes Miteinander
+      <div class="hero-text">
+        <span class="eyebrow">Fokus Schöner Leben</span>
+        <h1 class="hero-title">
+          Wenn du spürst:<br /><em>Es darf wieder klarer werden</em>
+        </h1>
+        <p class="hero-lead">
+          Vielleicht spürst du gerade, dass etwas in deinem Leben
+          wieder klarer werden möchte.
         </p>
-        <hr class="brand-rule" />
-        <p class="brand-line">Fokus Schöner Leben</p>
-        <p class="brand-motto">Innere Ordnung · Neue Klarheit · Freude am Leben</p>
+        <p class="hero-body">
+          Vielleicht bist du müde vom Funktionieren. Vielleicht stehst du
+          vor einer Entscheidung. Vielleicht suchst du inneren Halt, mehr
+          Orientierung oder das Gefühl, wieder wirklich bei dir selbst
+          anzukommen.
+        </p>
+        <p class="hero-body">
+          Ich begleite dich dabei, innere Ordnung zu finden, den Blick zu
+          weiten und wieder stabiler in dir selbst zu stehen.
+        </p>
+        <div class="hero-actions">
+          <a href="/kontakt" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
+          <a href="/1-zu-1-begleitung" class="btn btn-secondary">1:1 Begleitung entdecken</a>
+        </div>
+        <p class="hero-motto"><span class="script">Innere Ordnung. Neue Klarheit. Freude am Leben.</span></p>
       </div>
 
-      <h1 class="hero-title">
-        Wenn du spürst:<br /><em>Es darf wieder klarer werden</em>
-      </h1>
-      <div class="hero-actions">
-        <a href="/kontakt" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
-        <a href="/1-zu-1-begleitung" class="btn btn-outline">1:1 Begleitung entdecken</a>
+      <div class="hero-visual">
+        <img
+          src={IMAGES.hero}
+          alt="Ein Moment der Weite und inneren Ruhe"
+          class="hero-photo"
+          loading="eager"
+          fetchpriority="high"
+        />
       </div>
     </div>
   </section>
@@ -237,160 +224,80 @@ const description =
 </BaseLayout>
 
 <style>
-  /* ============== HERO ============== */
+  /* ============== HERO (Split: Text + Portrait) ============== */
   .hero {
-    position: relative;
-    isolation: isolate;
-    min-height: clamp(680px, 95vh, 900px);
-    padding: clamp(5rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 6rem);
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    background: #2c3526;
-  }
-  .hero-bg { position: absolute; inset: 0; z-index: -2; }
-  .hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 25%;
-    filter: blur(2.5px) saturate(0.88) brightness(1.04);
-    transform: scale(1.04);
-  }
-  /* Konzentrierter Cream-Schimmer — vertikal länger, damit auch H1 und Buttons gut lesbar sind */
-  .hero-overlay {
-    position: absolute; inset: 0; z-index: -1;
-    background:
-      radial-gradient(ellipse 55% 70% at 50% 50%,
-        rgba(250, 247, 242, 0.94) 0%,
-        rgba(250, 247, 242, 0.86) 22%,
-        rgba(250, 247, 242, 0.7) 44%,
-        rgba(250, 247, 242, 0.42) 66%,
-        rgba(250, 247, 242, 0.15) 88%,
-        rgba(250, 247, 242, 0) 100%),
-      linear-gradient(to bottom,
-        rgba(31, 32, 29, 0.04) 0%,
-        rgba(31, 32, 29, 0) 35%,
-        rgba(31, 32, 29, 0) 70%,
-        rgba(31, 32, 29, 0.2) 100%);
+    padding-top: clamp(2.5rem, 5vw, 4.5rem);
+    padding-bottom: clamp(3.5rem, 8vw, 7rem);
+    background: var(--color-cream);
   }
   .hero-inner {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2rem, 5vw, 5rem);
     align-items: center;
   }
-
-  /* ============== BRAND BLOCK (statt Logo-PNG) ============== */
-  .hero-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 2.5rem;
-    max-width: 38rem;
-  }
-  .hero-lotus {
-    color: var(--color-gold-deep);
-    width: clamp(82px, 9vw, 110px);
-    height: auto;
-    margin-bottom: 1.1rem;
-    filter:
-      drop-shadow(0 0 12px rgba(255, 248, 235, 0.85))
-      drop-shadow(0 2px 6px rgba(123, 45, 66, 0.2));
-  }
-  .brand-name {
-    font-family: var(--font-display);
-    font-size: clamp(1.85rem, 3.6vw, 2.85rem);
-    font-weight: 500;
-    color: var(--color-bordeaux);
-    letter-spacing: 0.005em;
-    line-height: 1.1;
-    margin: 0 0 0.7rem;
-    max-width: none;
-    text-shadow:
-      0 0 14px rgba(250, 247, 242, 0.95),
-      0 0 28px rgba(250, 247, 242, 0.7),
-      0 1px 2px rgba(255, 248, 235, 0.9);
-  }
-  .brand-tagline {
-    font-family: var(--font-body);
-    font-size: clamp(0.88rem, 1.05vw, 1rem);
-    color: var(--color-ink);
-    line-height: 1.5;
-    letter-spacing: 0.005em;
-    font-weight: 500;
-    margin: 0 0 0.95rem;
-    max-width: 42ch;
-    text-shadow:
-      0 0 10px rgba(250, 247, 242, 0.95),
-      0 0 18px rgba(250, 247, 242, 0.7),
-      0 1px 2px rgba(255, 248, 235, 0.9);
-  }
-  .brand-rule {
-    border: none;
-    width: 72px;
-    height: 1.5px;
-    background: var(--color-gold-deep);
-    margin: 0.6rem auto 0.95rem;
-    opacity: 1;
-    box-shadow: 0 0 10px rgba(250, 247, 242, 0.85);
-  }
-  .brand-line {
-    font-family: var(--font-display);
-    font-size: clamp(1.3rem, 1.9vw, 1.7rem);
-    font-weight: 500;
-    color: var(--color-gold-deep);
-    letter-spacing: 0.012em;
-    line-height: 1.2;
-    margin: 0 0 0.5rem;
-    text-shadow:
-      0 0 14px rgba(250, 247, 242, 0.95),
-      0 0 24px rgba(250, 247, 242, 0.7),
-      0 1px 2px rgba(255, 248, 235, 0.9);
-  }
-  .brand-motto {
-    font-family: var(--font-body);
-    font-size: clamp(0.82rem, 0.95vw, 0.92rem);
-    color: var(--color-ink);
-    line-height: 1.45;
-    letter-spacing: 0.07em;
-    font-weight: 500;
-    margin: 0;
-    text-shadow:
-      0 0 10px rgba(250, 247, 242, 0.95),
-      0 0 18px rgba(250, 247, 242, 0.7),
-      0 1px 2px rgba(255, 248, 235, 0.9);
-  }
-
+  .hero-text { max-width: 38rem; }
   .hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(1.85rem, 3.5vw, 2.95rem);
-    line-height: 1.18;
-    margin: 0 0 1.75rem;
-    font-weight: 500;
-    color: var(--color-bordeaux);
-    max-width: 22ch;
-    text-shadow:
-      0 0 16px rgba(250, 247, 242, 0.9),
-      0 0 32px rgba(250, 247, 242, 0.65),
-      0 1px 2px rgba(255, 248, 235, 0.85);
+    font-size: var(--step-5);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin: 0.75rem 0 1.5rem;
+    color: var(--color-ink);
   }
   .hero-title em {
+    color: var(--color-sage-deep);
     font-style: italic;
-    color: var(--color-bordeaux);
+    display: block;
+    margin-top: 0.1em;
+  }
+  .hero-lead {
+    font-family: var(--font-display);
+    font-size: var(--step-2);
+    line-height: 1.3;
+    color: var(--color-ink);
     font-weight: 400;
+    font-style: italic;
+    max-width: 30ch;
+    margin-bottom: 1.25rem;
+  }
+  .hero-body {
+    color: var(--color-ink-soft);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    max-width: 38ch;
   }
   .hero-actions {
     display: flex;
     gap: 0.85rem;
     flex-wrap: wrap;
-    justify-content: center;
+    margin-top: 2rem;
+  }
+  .hero-motto {
+    margin-top: 1.75rem;
+    font-size: var(--step-1);
+  }
+  .hero-visual { position: relative; }
+  .hero-photo {
+    aspect-ratio: 4 / 5;
+    max-width: 30rem;
+    width: 100%;
+    margin-inline: auto;
+    display: block;
+    border-radius: var(--radius-l);
+    object-fit: cover;
+    box-shadow: var(--shadow-lift);
+  }
+
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { order: -1; }
+    .hero-photo { max-width: 22rem; aspect-ratio: 3 / 2; }
+    .hero-lead, .hero-body { max-width: none; }
   }
 
   /* ============== INTRO ============== */
   .intro-section .lead {
-    color: var(--color-bordeaux);
+    color: var(--color-sage-deep);
     margin-bottom: 1.5rem;
   }
   .intro-section p {
