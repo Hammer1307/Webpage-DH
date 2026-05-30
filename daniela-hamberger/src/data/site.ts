@@ -47,6 +47,16 @@ export const SOCIAL = {
 export const IMAGES = {
   logo:                    '/images/logo.png',
   heroStartseite:          '/images/hero-startseite.jpg',
+  // Daniela-Portraits & echte Fotos
+  danielaHeroPortrait:     '/images/daniela-hero-portrait.jpg',
+  danielaPortrait:         '/images/daniela-portrait.jpg',
+  danielaPortraitStehend:  '/images/daniela-portrait-stehend.jpg',
+  danielaKuenstlerin:      '/images/daniela-kuenstlerin.jpg',
+  daniela1zu1Hero:         '/images/daniela-1zu1-hero.jpg',
+  danielaTeams:            '/images/daniela-teams.jpg',
+  danielaCoaching:         '/images/daniela-coaching.jpg',
+  danielaKontakt:          '/images/daniela-kontakt.jpg',
+  // Atmosphäre
   begleitungAnkommen:      '/images/begleitung-ankommen.jpg',
   begleitungNebelweg:      '/images/begleitung-nebelweg.jpg',
   begleitungMeditation:    '/images/begleitung-meditation.jpg',

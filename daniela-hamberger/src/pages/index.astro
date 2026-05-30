@@ -9,37 +9,67 @@ const description =
   title={`${SITE.name} · ${SITE.brand}`}
   description={description}
 >
-  {/* ============== HERO — Logo oben prominent, kein Text-Doppel ============== */}
+  {/* ============== HERO — Split: Text + Portrait Daniela ============== */}
   <section class="hero">
     <div class="container hero-inner">
-      <div class="hero-logo-wrap">
-        <img src={IMAGES.logo} alt="Daniela Britta Hamberger — Fokus Schöner Leben (Phönix und Lotus)" class="hero-logo" loading="eager" fetchpriority="high" />
-      </div>
-
       <div class="hero-text">
+        <span class="eyebrow">Mentoring · Fokus Schöner Leben</span>
+
         <h1 class="hero-title">Wenn du spürst:<br /><em>Es darf wieder klarer werden</em></h1>
 
         <p class="hero-lead">
-          Vielleicht hast du lange funktioniert, getragen, organisiert oder dich angepasst. Vielleicht stehst du vor einer Entscheidung, bist innerlich unruhig oder merkst: So wie bisher möchte ich nicht weitermachen.
+          Innere Ordnung. Neue Klarheit. Freude am Leben.
         </p>
 
         <p class="hero-body">
-          Ich begleite dich dabei, wieder mehr bei dir selbst anzukommen — mit innerer Ordnung, neuer Klarheit und mehr Vertrauen in deinen eigenen Weg.
-        </p>
-
-        <p class="hero-body">
-          Mit langjähriger Erfahrung als <strong>Pädagogin und ehemalige Lehrerin in der Sekundarstufe&nbsp;I</strong> verbinde ich Mentaltraining, Hypnose, Achtsamkeit, positive Psychologie, Entspannungspädagogik, einen systemischen Blick auf Beziehungsdynamiken, PSYCH-K® sowie bioenergetische Zugänge.
+          Vielleicht hast du lange funktioniert, getragen, organisiert oder dich
+          angepasst. Ich begleite dich dabei, wieder mehr bei dir selbst
+          anzukommen — mit Klarheit, Stabilität und Vertrauen in deinen eigenen Weg.
         </p>
 
         <div class="hero-actions">
           <a href="/kontakt" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
           <a href="/1-zu-1-begleitung" class="btn btn-secondary">1:1 Begleitung für Frauen entdecken</a>
-          <a href="/teams-workshops" class="btn btn-ghost">Teams &amp; Workshops ansehen</a>
         </div>
+
+        <p class="price-hint">
+          <strong>Kostenfreies Erstgespräch</strong> · Sitzungen ab 160 € · online oder in Wiesbaden
+        </p>
       </div>
 
       <div class="hero-visual">
-        <img src={IMAGES.heroStartseite} alt="Stille Frühlingswiese mit Apfelbaum und einer einladenden Holzbank — Ankommen und innere Ordnung" class="hero-photo" loading="eager" />
+        <img src={IMAGES.danielaHeroPortrait} alt="Daniela Britta Hamberger — Mentorin für innere Stabilität und bewusste Entwicklung" class="hero-photo" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  {/* ============== ICH BIN DANIELA — Teaser ============== */}
+  <section class="section daniela-teaser">
+    <div class="container daniela-teaser-grid">
+      <div class="daniela-teaser-image">
+        <img src={IMAGES.danielaPortrait} alt="Daniela Britta Hamberger" loading="lazy" />
+      </div>
+      <div class="daniela-teaser-text">
+        <span class="eyebrow">Schön, dass du da bist</span>
+        <h2>Ich bin <em>Daniela</em></h2>
+        <p class="lead">
+          Mentorin mit pädagogischer Expertise für innere Stabilität,
+          bewusste Entwicklung und gelingendes Miteinander.
+        </p>
+        <p>
+          Viele Jahre war ich als Pädagogin und Lehrerin in der Sekundarstufe&nbsp;I
+          tätig. Heute verbinde ich diese Erfahrung mit Mentaltraining, Hypnose,
+          Achtsamkeit, positiver Psychologie, einem systemischen Blick und weiteren
+          ganzheitlichen Ansätzen.
+        </p>
+        <p>
+          Im Mittelpunkt steht für mich der Mensch — mit seiner Geschichte,
+          seinen Bedürfnissen und seinem Wunsch nach mehr Klarheit, Selbstvertrauen
+          und Lebensfreude.
+        </p>
+        <div class="btn-group">
+          <a href="/ueber-mich" class="btn btn-secondary">Mehr über mich erfahren</a>
+        </div>
       </div>
     </div>
   </section>
@@ -146,18 +176,7 @@ const description =
     align-items: start;
   }
   /* Logo prominent zentral oben */
-  .hero-logo-wrap {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-  }
-  .hero-logo {
-    width: clamp(180px, 22vw, 280px);
-    height: auto;
-    display: block;
-  }
-  .hero-text { max-width: 42rem; }
+  .hero-text { max-width: 38rem; }
   .hero-title {
     font-size: var(--step-5);
     line-height: 1.02;
@@ -173,7 +192,7 @@ const description =
     color: var(--color-ink);
     font-weight: 400;
     font-style: italic;
-    max-width: 34ch;
+    max-width: 30ch;
     margin-bottom: 1.25rem;
   }
   .hero-body {
@@ -188,22 +207,65 @@ const description =
     flex-wrap: wrap;
     margin-top: 2rem;
   }
+  .price-hint {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-ink-muted);
+    letter-spacing: 0.01em;
+    max-width: none;
+  }
+  .price-hint strong { color: var(--color-sage-deep); font-weight: 600; }
   .hero-visual { position: relative; }
   .hero-photo {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
+    max-width: 30rem;
     width: 100%;
+    margin-inline: auto;
     display: block;
     border-radius: var(--radius-l);
     object-fit: cover;
+    object-position: center 30%;
     box-shadow: var(--shadow-lift);
   }
   @media (min-width: 960px) {
     .hero-inner {
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.05fr 0.95fr;
       column-gap: clamp(2.5rem, 5vw, 4rem);
     }
-    .hero-logo-wrap { grid-column: 1 / -1; justify-content: flex-start; }
-    .hero-photo { aspect-ratio: 4 / 5; }
+  }
+  @media (max-width: 859px) {
+    .hero-visual { order: -1; margin-bottom: 1.5rem; }
+    .hero-photo { aspect-ratio: 3 / 2; max-width: 24rem; }
+  }
+
+  /* ============== ICH BIN DANIELA — Teaser ============== */
+  .daniela-teaser {
+    background: var(--color-cream-soft);
+    border-top: 1px solid var(--color-line-soft);
+  }
+  .daniela-teaser-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  .daniela-teaser-image img {
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    max-width: 24rem;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-card);
+    margin-inline: auto;
+    display: block;
+  }
+  .daniela-teaser-text h2 { margin: 0.5rem 0 1.25rem; }
+  .daniela-teaser-text .lead { margin-bottom: 1.5rem; max-width: 38ch; }
+  .daniela-teaser-text p { margin-bottom: 1rem; max-width: 50ch; }
+  @media (max-width: 859px) {
+    .daniela-teaser-grid { grid-template-columns: 1fr; }
+    .daniela-teaser-image img { max-width: 20rem; }
   }
 
   /* ============== METHODENLEISTE ============== */
