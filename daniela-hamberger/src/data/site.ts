@@ -112,8 +112,9 @@ export const FOOTER_NAV = {
 // Methodenliste — nur diese verwenden, keine Doppelung
 export const METHODEN_LISTE = [
   'Mentaltraining',
-  'Hypnose',
+  'Bewusstseinsarbeit',
   'Achtsamkeit',
+  'Hypnose',
   'Positive Psychologie',
   'Entspannungspädagogik',
   'systemischer Blick',
@@ -176,7 +177,7 @@ export const COACHING_FORMATS = [
 // Team-Formate — neue Preise, kürzere Liste
 export const TEAM_FORMATS = [
   {
-    id: 'impuls',
+    id: 'impulsvortrag',
     name: 'Impulsvortrag: Miteinander wirkt',
     label: 'Impulsvortrag',
     duration: '60–90 Minuten für Teams, Einrichtungen und Organisationen',
@@ -361,9 +362,81 @@ export const STIFTUNG_BEREICHE = [
 ] as const;
 
 // Buchungsoptionen Kontakt
-export const BOOKING_OPTIONS = [
-  { title: 'Kostenfreies Orientierungsgespräch', duration: '15–30 Minuten', text: 'Für alle, die herausfinden möchten, welches Format passt.' },
-  { title: '1:1 Sitzung', duration: '60 Minuten', text: 'Für bestehende Begleitungen und Folgetermine.' },
-  { title: 'KlarheitsReset', duration: 'ca. 2,5 Stunden', text: 'Intensive Einzelsitzung für ein konkretes Thema.' },
-  { title: 'Team-Vorgespräch', duration: '30 Minuten', text: 'Für Teams und Organisationen, die ein Workshopformat anfragen möchten.' },
+// Booking-Optionen sauber getrennt: 1:1 vs. Teams
+export const BOOKING_1ZU1 = [
+  { title: 'Kostenfreies Orientierungsgespräch', duration: '15–30 Minuten', text: 'Für alle, die herausfinden möchten, ob und in welcher Form eine 1:1 Begleitung passt.' },
+  { title: 'Klarheitsgespräch', duration: '60 Minuten', text: 'Einzelsitzung für ein konkretes Anliegen — Sortieren, Klären, nächste Schritte finden.' },
+  { title: '1:1 Begleitung — Folgetermin', duration: '60 Minuten', text: 'Für bestehende Begleitungen und vertiefende Folgesitzungen.' },
+  { title: 'KlarheitsReset — intensive Einzelsitzung', duration: 'ca. 2,5 Stunden', text: 'Längere Einzelsitzung für tiefer liegende Themen, Klärung oder Neuorientierung.' },
+] as const;
+
+export const BOOKING_TEAM = [
+  { title: 'Kostenfreies Teamvorgespräch', duration: 'ca. 30 Minuten', text: 'Auftragsklärung: Worum geht es bei euch? Welches Format ist sinnvoll — Workshop, Team-Mentoring oder Führungskräftecoaching?' },
+  { title: 'Führungskräftecoaching', duration: 'nach Absprache', text: 'Begleitung von Führungskräften in herausfordernden Phasen, Rollenklärung, bewusste Führung.' },
+  { title: 'Team-Mentoring', duration: 'nach Absprache', text: 'Längerfristige Begleitung von Teams in Veränderungs- oder Reflexionsprozessen.' },
+  { title: 'TeamBalance Workshop', duration: '3–3,5 Stunden', text: 'Halbtagsformat für Klarheit, Wertschätzung und stabile Zusammenarbeit.' },
+  { title: 'TeamReset Workshop', duration: 'individuell', text: 'Tieferer Workshop für Teams in Spannungs- oder Umbruchsphasen.' },
+  { title: 'Kleingruppen-Mentoring', duration: 'nach Absprache', text: 'Mentoringformat für kleinere Gruppen mit gemeinsamem Anliegen.' },
+  { title: 'Impulsvortrag für Teams', duration: '60–90 Minuten', text: 'Themenimpuls für Teamtage, Konferenzen oder Gesundheitstage.' },
+  { title: 'Begleitung von Veränderungsprozessen', duration: 'nach Absprache', text: 'Längere Begleitung organisationaler oder Team-Veränderungen.' },
+] as const;
+
+// Konkrete Workshop-Themen für Teams & Organisationen
+export const WORKSHOP_TOPICS = [
+  { title: 'Stressresilienz im Arbeitsalltag', text: 'Wie ihr im Alltag Stressmuster früher erkennt und gemeinsam stabiler werdet.' },
+  { title: 'Bewusste Kommunikation', text: 'Was Worte bewirken — und wie ihr klarer, wertschätzender und ehrlicher miteinander sprecht.' },
+  { title: 'Wertschätzung im Team', text: 'Wie Wertschätzung im Alltag spürbar wird, nicht nur als Wort, sondern als Haltung.' },
+  { title: 'Besseres Miteinander', text: 'Räume für ehrlichen Austausch, Verbindung und ein menschlicheres Miteinander.' },
+  { title: 'Teamfindung und Rollenklärung', text: 'Wer trägt was? Wo überschneiden sich Rollen? Was darf klarer werden?' },
+  { title: 'Generationen verbinden', text: 'Erfahrene und junge Kolleginnen und Kollegen: unterschiedliche Stärken, gemeinsamer Weg.' },
+  { title: 'Umgang mit Veränderung', text: 'Wie Teams gut durch Umbrüche, Umstrukturierungen und Übergänge gehen.' },
+  { title: 'Selbst- und Fremdwahrnehmung', text: 'Wie ich wirke, wie ich gemeint bin — und wie wir den Unterschied bewusst nutzen.' },
+  { title: 'Führung mit Klarheit und Menschlichkeit', text: 'Bewusste Führung: klar in der Sache, wertschätzend im Ton.' },
+  { title: 'Achtsame Pausen & mentale Stabilität', text: 'Kleine Routinen für mehr Ruhe, Fokus und mentale Stabilität im Arbeitsalltag.' },
+  { title: 'Konflikte frühzeitig erkennen', text: 'Wie Spannungen früh sichtbar werden — bevor sie zu Konflikten eskalieren.' },
+  { title: 'Zusammenarbeit stärken', text: 'Praktische Übungen und Reflexionen für ein tragfähigeres Miteinander.' },
+] as const;
+
+// 5 kuratierte Impulse-Beiträge (PLATZHALTER — bitte mit den besten Original-Posts von LinkedIn/Instagram ersetzen)
+export const IMPULSE_BEITRAEGE = [
+  {
+    id: 'dankbarkeit',
+    category: 'Dankbarkeit',
+    title: 'Der Dankbarkeitsstein',
+    teaser:
+      'Manchmal reicht ein kleiner Stein in der Hosentasche, um den Tag zu drehen. Ein winziger Anker für einen bewussten Moment, wenn der Alltag uns mit sich reißt. Wofür darfst du heute dankbar sein — bevor du weitergehst?',
+    source: 'Beitrag',
+  },
+  {
+    id: 'waldbaden',
+    category: 'Naturverbundenheit',
+    title: 'Was Waldbaden mit Klarheit zu tun hat',
+    teaser:
+      'Wir verbringen täglich Stunden vor Bildschirmen — und wundern uns, dass der Kopf nicht zur Ruhe kommt. Schon zwanzig Minuten im Wald, ohne Aufgabe, ohne Ziel, verändern messbar etwas in uns. Was bräuchtest du heute, um wirklich anzukommen?',
+    source: 'Beitrag',
+  },
+  {
+    id: 'wertschaetzung-aelter',
+    category: 'Wertschätzung im Arbeitsleben',
+    title: 'Ältere Arbeitnehmer:innen — übersehene Schätze',
+    teaser:
+      'Wer dreißig Jahre Erfahrung mitbringt, hat etwas, das keine Stellenanzeige der Welt einfangen kann: Ruhe in Stürmen, Gespür für Menschen, Wissen um Wiederholungsmuster. Was wäre, wenn wir diesen Erfahrungsschatz aktiv in unseren Teams sichtbar machen würden?',
+    source: 'Beitrag',
+  },
+  {
+    id: 'menschlichkeit',
+    category: 'Menschlichkeit im Arbeitsleben',
+    title: 'Menschlichkeit ist kein Soft Skill',
+    teaser:
+      'In vielen Organisationen wird Menschlichkeit als „nice to have" behandelt. Dabei ist sie die Voraussetzung dafür, dass Menschen überhaupt langfristig gut zusammenarbeiten können. Klarheit, Wertschätzung, ehrliche Kommunikation — das sind keine Extras. Das ist das Fundament.',
+    source: 'Beitrag',
+  },
+  {
+    id: 'generationen',
+    category: 'Generationen verbinden',
+    title: 'Jung trifft erfahren — was möglich wird',
+    teaser:
+      'Wenn jüngere und erfahrenere Kolleg:innen sich nicht beäugen, sondern wirklich begegnen, passiert etwas Besonderes: Neugier statt Bewertung, gegenseitiges Lernen statt Reibung. Es braucht nur einen Raum, in dem das möglich wird — und Menschen, die ihn öffnen.',
+    source: 'Beitrag',
+  },
 ] as const;

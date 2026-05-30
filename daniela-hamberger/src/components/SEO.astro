@@ -121,3 +121,17 @@ const allSchemas = [personSchema, businessSchema, ...extra];
 {allSchemas.map((s) => (
   <script type="application/ld+json" set:html={JSON.stringify(s)} />
 ))}
+
+{/*
+  Cloudflare Web Analytics — cookie-frei, kein Banner nötig, DSGVO-freundlich.
+  Setup: Cloudflare Dashboard → Analytics → Web Analytics → Add Site → Token kopieren →
+  hier unten das CFA_TOKEN durch den echten Token ersetzen und den Block aktivieren.
+  Solange der Token leer ist, wird nichts geladen.
+*/}
+{import.meta.env.PUBLIC_CFA_TOKEN && (
+  <script
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon={`{"token": "${import.meta.env.PUBLIC_CFA_TOKEN}"}`}
+  />
+)}

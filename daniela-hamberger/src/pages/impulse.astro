@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE, IMAGES, IMPULSE_TOPICS, SOCIAL } from '@/data/site';
+import { SITE, IMAGES, IMPULSE_TOPICS, IMPULSE_BEITRAEGE, SOCIAL } from '@/data/site';
 
 const description =
   'Fokus Impulse — Blogbeiträge, Gedanken, Audio, Video und Social-Media-Impulse von Daniela Britta Hamberger für innere Ordnung, Klarheit und gelingendes Miteinander.';
@@ -14,7 +14,7 @@ const breadcrumb = {
 };
 ---
 <BaseLayout title="Fokus Impulse" description={description} schema={breadcrumb}>
-  <img class="image-accent" src={IMAGES.impulseLebensfreude} alt="Lebensfreude — ein leichter Moment voller Freude" loading="eager" />
+  <img class="image-accent image-accent--portrait-source" src={IMAGES.impulseLebensfreude} alt="Lebensfreude — ein leichter Moment voller Freude" loading="eager" />
 
   <section class="section bg-cream">
     <div class="container-narrow">
@@ -28,7 +28,7 @@ const breadcrumb = {
       <p>Hier teile ich Gedanken, Texte und Impulse zu Themen, die mich bewegen und meine Arbeit prägen: innere Stabilität, Achtsamkeit, Stressresilienz, Wertschätzung, Empathie, Naturverbundenheit, Bewusstsein, Lebensfreude und gelingendes Miteinander.</p>
       <p>Manche Beiträge entstehen aus meiner Arbeit als Mentorin. Andere aus meinen Buchprojekten, aus Alltagssituationen, gesellschaftlichen Beobachtungen oder Gedanken, die ich auch auf LinkedIn und Instagram teile.</p>
       <p>Es geht um kleine Impulse, die etwas öffnen können: einen neuen Gedanken, einen Perspektivwechsel, einen Moment von Verbindung oder die Erinnerung daran, dass Veränderung oft leise beginnt.</p>
-      <p>Künftig können hier neben Texten auch <strong>Audio-Impulse, kurze Videos, Reflexionsübungen oder geführte Gedankenreisen</strong> erscheinen.</p>
+      <p>Künftig können hier neben Texten auch <strong>Audio-Impulse, kurze Videos, Reflexionsübungen oder geführte Fantasiereisen</strong> erscheinen.</p>
 
       <div class="btn-group">
         <a href="#beitraege" class="btn btn-primary">Neueste Beiträge lesen</a>
@@ -42,7 +42,7 @@ const breadcrumb = {
   <section class="section bg-cream-deep" id="themen">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">Mögliche Kategorien</span>
+        <span class="eyebrow">Kategorien</span>
         <h2>Themen, die <em>diese Seite tragen</em></h2>
       </header>
 
@@ -58,12 +58,33 @@ const breadcrumb = {
   </section>
 
   <section class="section bg-cream" id="beitraege">
-    <div class="container-narrow">
-      <h2>Aktuelle <em>Beiträge</em></h2>
-      <p class="muted">Die ersten Beiträge erscheinen in Kürze hier. Bis dahin findest du Gedanken und Impulse auf meinen Social-Media-Kanälen.</p>
-      <div class="btn-group">
-        <a href={SOCIAL.instagram} target="_blank" rel="noopener" class="btn btn-secondary">Instagram besuchen</a>
-        <a href={SOCIAL.linkedin} target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Impulse zum Mitnehmen</span>
+        <h2>Gedanken, die <em>nachklingen</em></h2>
+        <p class="lead" style="margin: 0 auto;">
+          Kleine Texte zu Themen, die mich bewegen — und die hoffentlich auch dich
+          berühren, zum Nachdenken anregen oder etwas in dir öffnen.
+        </p>
+      </header>
+
+      <div class="beitrag-grid">
+        {IMPULSE_BEITRAEGE.map((b) => (
+          <article class="beitrag-card">
+            <span class="beitrag-cat">{b.category}</span>
+            <h3>{b.title}</h3>
+            <p>{b.teaser}</p>
+            <p class="beitrag-source">{b.source}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="beitrag-foot">
+        <p>Weitere Gedanken und Impulse findest du auf meinen Social-Media-Kanälen:</p>
+        <div class="btn-group">
+          <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Instagram besuchen</a>
+          <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn besuchen</a>
+        </div>
       </div>
     </div>
   </section>
@@ -72,11 +93,26 @@ const breadcrumb = {
     <div class="container split-grid">
       <div>
         <span class="eyebrow">Audio &amp; Video</span>
-        <h2>Audio-Impulse, Gedankenreisen <em>und Videos</em></h2>
-        <p>Audio-Impulse und Videos erscheinen hier künftig — kurze Übungen, geführte Gedankenreisen, Fantasiereisen und Reflexionen zum Anhören und Ansehen.</p>
+        <h2>Geführte Audio-Impulse, <em>Fantasiereisen und Videos</em></h2>
+        <p>
+          Geführte <strong>Audio-Impulse, Fantasiereisen und innere Reisen</strong>
+          unterstützen dich dabei, zur Ruhe zu kommen, Stabilität zu finden und
+          wieder mehr Verbindung zu dir selbst aufzubauen.
+        </p>
+        <p>
+          Elemente aus der <strong>Progressiven Muskelentspannung nach Jacobson</strong>
+          und verwandten Entspannungsverfahren können helfen, körperliche Anspannung
+          bewusster wahrzunehmen und Schritt für Schritt mehr innere und äußere
+          Entspannung zu entwickeln.
+        </p>
+        <p>
+          Geplante Formate: kurze Audio-Impulse für den Alltag, geführte
+          Fantasiereisen für Ruhe und Klarheit, Reflexionsübungen und Videos zu
+          Bewusstsein und innerer Stabilität.
+        </p>
         <p><span class="tag tag-outline">In Vorbereitung</span></p>
         <div class="btn-group">
-          <a href="/kontakt" class="btn btn-secondary">Bei Erscheinen informieren lassen</a>
+          <button type="button" class="btn btn-secondary" data-modal-open="vormerken" data-publication="audio-video">Bei Erscheinen informieren lassen</button>
         </div>
       </div>
       <figure class="split-image">
@@ -102,4 +138,73 @@ const breadcrumb = {
   @media (min-width: 860px) { .split-grid { grid-template-columns: 1fr 1fr; } }
   .split-image { margin: 0; }
   .split-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius-l); box-shadow: var(--shadow-lift); }
+
+  /* Impulse-Beiträge */
+  .beitrag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .beitrag-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-m);
+    padding: 1.75rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 260ms, box-shadow 260ms;
+  }
+  .beitrag-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
+  }
+  .beitrag-cat {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-clay);
+    font-weight: 600;
+  }
+  .beitrag-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--color-ink);
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .beitrag-card > p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-ink-soft);
+    margin: 0;
+    flex: 1;
+    max-width: none;
+  }
+  .beitrag-source {
+    font-size: 0.78rem !important;
+    color: var(--color-ink-muted) !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-top: 1px solid var(--color-line-soft);
+    padding-top: 0.75rem;
+    margin-top: 0.5rem !important;
+    flex: 0 0 auto !important;
+  }
+  .beitrag-foot {
+    text-align: center;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-line-soft);
+  }
+  .beitrag-foot p {
+    margin: 0 auto 1rem;
+    color: var(--color-ink-soft);
+    font-style: italic;
+  }
+  .beitrag-foot .btn-group {
+    justify-content: center;
+  }
 </style>

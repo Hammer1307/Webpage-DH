@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE, IMAGES, TEAM_FORMATS, VENUE } from '@/data/site';
+import { SITE, IMAGES, TEAM_FORMATS, WORKSHOP_TOPICS, VENUE } from '@/data/site';
 
 const description =
   'Workshops und Teamcoaching für gelingendes Miteinander — Impulsvortrag, TeamBalance Workshop und TeamReset mit Daniela Britta Hamberger. Stimmige Räumlichkeiten in Wiesbaden möglich.';
@@ -54,23 +54,28 @@ const breadcrumb = {
   <section class="section bg-cream-soft">
     <div class="container split-grid">
       <div>
-        <span class="eyebrow">Workshops in einem stimmigen Rahmen</span>
-        <h2>Aus dem gewohnten Arbeitsumfeld <em>heraustreten</em></h2>
-        <p>Für kleinere Gruppen, Teams und Workshops kann nach Absprache der <strong>{VENUE.name}</strong> in Wiesbaden genutzt werden.</p>
-        <p>Der Raum eignet sich für achtsame Gruppenarbeit, Reflexion, Austausch, Perspektivwechsel und Übungen, die ein wertschätzendes Miteinander stärken.</p>
-        <p>Gerade für Teamprozesse ist der Rahmen wichtig. Wenn Menschen einmal aus dem gewohnten Arbeitsumfeld heraustreten, kann ein anderer Blick möglich werden: auf Kommunikation, Rollen, Spannungen, Ressourcen und das, was im Miteinander wieder wachsen darf.</p>
-        <address class="venue-card">
-          <strong>{VENUE.name}</strong><br />
-          {VENUE.street}<br />
-          {VENUE.postalCode} {VENUE.city}
-        </address>
-        <p class="venue-note"><em>Die Abstimmung des passenden Ortes erfolgt ausschließlich im persönlichen Kontakt mit Daniela Britta Hamberger.</em></p>
+        <span class="eyebrow">Wo wir zusammenarbeiten</span>
+        <h2>Direkt bei euch, online oder <em>in einem stimmigen Raum</em></h2>
+        <p>
+          Workshops und Teamformate können je nach Anliegen online, in geeigneten Räumlichkeiten in
+          Wiesbaden oder Idstein oder direkt <strong>bei euch vor Ort</strong> im Rhein-Main-Gebiet stattfinden.
+        </p>
+        <p>
+          Für Teams und Organisationen komme ich nach Absprache auch zu euch — in eure Räume oder an
+          einen geeigneten externen Ort. Für kleinere Gruppen und sehr kompakte Formate kann
+          alternativ ein ruhiger Seminarraum in Wiesbaden genutzt werden, wenn das zum Anliegen passt.
+        </p>
+        <p>
+          Gerade für Teamprozesse ist der Rahmen wichtig. Wenn Menschen einmal aus dem gewohnten
+          Arbeitsumfeld heraustreten, wird ein anderer Blick möglich: auf Kommunikation, Rollen,
+          Spannungen, Ressourcen und das, was im Miteinander wieder wachsen darf.
+        </p>
         <div class="btn-group">
-          <a href="/kontakt" class="btn btn-primary">Gespräch buchen</a>
+          <button type="button" class="btn btn-primary" data-modal-open="teams" data-format="teamvorgespraech">Teamvorgespräch buchen</button>
         </div>
       </div>
       <figure class="split-image">
-        <img src={IMAGES.raumMeditation} alt={`Heller Workshopraum mit Sitzkreis im ${VENUE.name}`} loading="lazy" />
+        <img src={IMAGES.teamsWorkshop} alt="Team in Workshop-Situation — gemeinsames Arbeiten an Ideen" loading="lazy" />
       </figure>
     </div>
   </section>
@@ -93,7 +98,7 @@ const breadcrumb = {
             {f.suitableFor && <p class="format-meta">{f.suitableFor}</p>}
             <div class="format-foot">
               <p class="format-price"><span class="label">Investition</span><strong>{f.price}</strong></p>
-              <a href={f.href} class="btn btn-secondary">{f.cta}</a>
+              <button type="button" class="btn btn-secondary" data-modal-open="teams" data-format={f.id}>{f.cta}</button>
             </div>
           </article>
         ))}
@@ -101,10 +106,38 @@ const breadcrumb = {
     </div>
   </section>
 
+  <section class="section bg-cream-soft">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Mögliche Workshop-Themen</span>
+        <h2>Themen, die <em>im Miteinander wirken</em></h2>
+        <p class="lead" style="margin: 0 auto;">
+          Workshops und Teamformate gestalten wir gemeinsam — passend zu eurem Anliegen.
+          Hier eine Auswahl an Themen, die ich häufig begleite. Was bei euch dran ist,
+          klären wir im kostenfreien Teamvorgespräch.
+        </p>
+      </header>
+
+      <div class="topics-grid">
+        {WORKSHOP_TOPICS.map((t) => (
+          <article class="topic-card">
+            <h3>{t.title}</h3>
+            <p>{t.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="topics-cta">
+        <p>Auch andere Themen sind möglich. Ich gehe gern auf eure konkreten Anliegen ein.</p>
+        <button type="button" class="btn btn-primary" data-modal-open="teams" data-format="teamvorgespraech">Kostenfreies Teamvorgespräch buchen</button>
+      </div>
+    </div>
+  </section>
+
   <section class="section bg-cream-deep">
     <div class="container-text">
       <blockquote class="disclaimer">
-        <strong>Wichtiger Hinweis:</strong> Meine Arbeit versteht sich als ganzheitliche Begleitung. Sie ersetzt keine ärztliche, psychotherapeutische oder heilkundliche Diagnose oder Behandlung.
+        <strong>Wichtiger Hinweis:</strong> Meine Arbeit versteht sich als ganzheitliche Begleitung. Sie kann persönliche Entwicklungsprozesse unterstützen, ersetzt jedoch keine medizinische, psychotherapeutische oder heilkundliche Behandlung.
       </blockquote>
     </div>
   </section>
@@ -113,7 +146,7 @@ const breadcrumb = {
     <div class="container-narrow" style="text-align: center;">
       <h2>Sprechen wir über <em>euer Team</em></h2>
       <p style="margin: 1rem auto 2rem; max-width: 50ch;">Ein kostenfreies Erstgespräch klärt, ob und in welcher Form eine Zusammenarbeit Sinn macht.</p>
-      <a href="/kontakt" class="btn btn-gold">Anfrage senden</a>
+      <button type="button" class="btn btn-gold" data-modal-open="teams" data-format="unklar">Anfrage senden</button>
     </div>
   </section>
 </BaseLayout>
@@ -148,4 +181,51 @@ const breadcrumb = {
   .format-price { margin: 0; display: flex; flex-direction: column; gap: 0.15rem; max-width: none; }
   .format-price .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-ink-muted); }
   .format-price strong { font-family: var(--font-display); font-size: 1.25rem; color: var(--color-sage-deep); font-weight: 500; }
+
+  /* Workshop-Themen */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .topic-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-top: 3px solid var(--color-sage);
+    border-radius: var(--radius-m);
+    padding: 1.25rem 1.4rem;
+    transition: transform 260ms, box-shadow 260ms;
+  }
+  .topic-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+  }
+  .topic-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--color-ink);
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+  }
+  .topic-card p {
+    font-size: 0.9rem;
+    color: var(--color-ink-soft);
+    line-height: 1.55;
+    margin: 0;
+    max-width: none;
+  }
+  .topics-cta {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-line-soft);
+  }
+  .topics-cta p {
+    margin: 0 auto 1.25rem;
+    color: var(--color-ink-soft);
+    font-style: italic;
+    max-width: 40ch;
+  }
 </style>

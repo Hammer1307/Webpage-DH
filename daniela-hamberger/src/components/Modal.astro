@@ -1,0 +1,646 @@
+---
+// Modale für drei Anfrage-Typen
+// Wird einmalig in BaseLayout eingebunden, über data-attribute Triggern geöffnet.
+---
+{/* ============ Modal: 1:1 Anfrage ============ */}
+<dialog id="modal-1zu1" class="modal" aria-labelledby="modal-1zu1-title" aria-modal="true">
+  <div class="modal-card">
+    <button type="button" class="modal-close" aria-label="Schließen" data-modal-close>&times;</button>
+
+    <header class="modal-head">
+      <span class="eyebrow">Für Frauen · 1:1</span>
+      <h2 id="modal-1zu1-title">Anfrage <em>1:1 Begleitung</em></h2>
+      <p>Schreib mir gerne — ich melde mich in der Regel innerhalb von 1–2 Werktagen.</p>
+    </header>
+
+    <form class="modal-form" data-form="1zu1" novalidate>
+      <div class="form-row">
+        <label for="f1-name">Name<span aria-hidden="true">*</span></label>
+        <input type="text" id="f1-name" name="name" required autocomplete="name" />
+      </div>
+
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="f1-email">E-Mail<span aria-hidden="true">*</span></label>
+          <input type="email" id="f1-email" name="email" required autocomplete="email" />
+        </div>
+        <div class="form-row">
+          <label for="f1-phone">Telefon <span class="opt">(optional)</span></label>
+          <input type="tel" id="f1-phone" name="phone" autocomplete="tel" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="f1-format">Worum geht es?<span aria-hidden="true">*</span></label>
+        <select id="f1-format" name="format" required data-prefill-field="format">
+          <option value="">Bitte wählen…</option>
+          <option value="orientierung">Kostenfreies Orientierungsgespräch</option>
+          <option value="klarheit">Klarheitsgespräch (60 Min)</option>
+          <option value="klarheitsreset">KlarheitsReset (intensive Einzelsitzung)</option>
+          <option value="folgetermin">1:1 Begleitung — Folgetermin</option>
+          <option value="unklar">Noch unklar — bitte beraten</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="f1-message">Magst du vorab schon etwas erzählen?</label>
+        <textarea id="f1-message" name="message" rows="4" placeholder="Worum geht es? Was beschäftigt dich? — kein Pflichtfeld."></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="f1-timing">Bevorzugte Termine / Zeitfenster?</label>
+        <textarea id="f1-timing" name="timing" rows="2" placeholder="z. B. Mo–Mi vormittags, oder konkrete Wunschtermine."></textarea>
+      </div>
+
+      <div class="form-row form-check">
+        <input type="checkbox" id="f1-consent" name="consent" required />
+        <label for="f1-consent">
+          Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden.<span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <div class="form-status" data-form-status></div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-modal-close>Abbrechen</button>
+        <button type="submit" class="btn btn-primary">Anfrage senden</button>
+      </div>
+    </form>
+  </div>
+</dialog>
+
+{/* ============ Modal: Teams Anfrage ============ */}
+<dialog id="modal-teams" class="modal" aria-labelledby="modal-teams-title" aria-modal="true">
+  <div class="modal-card">
+    <button type="button" class="modal-close" aria-label="Schließen" data-modal-close>&times;</button>
+
+    <header class="modal-head">
+      <span class="eyebrow">Für Teams &amp; Organisationen</span>
+      <h2 id="modal-teams-title">Anfrage <em>Teamformat</em></h2>
+      <p>Im kostenfreien Teamvorgespräch klären wir, worum es bei euch geht und welches Format sinnvoll ist.</p>
+    </header>
+
+    <form class="modal-form" data-form="teams" novalidate>
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="f2-name">Name<span aria-hidden="true">*</span></label>
+          <input type="text" id="f2-name" name="name" required autocomplete="name" />
+        </div>
+        <div class="form-row">
+          <label for="f2-company">Firma / Organisation<span aria-hidden="true">*</span></label>
+          <input type="text" id="f2-company" name="company" required autocomplete="organization" />
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="f2-role">Position / Rolle <span class="opt">(optional)</span></label>
+          <input type="text" id="f2-role" name="role" autocomplete="organization-title" />
+        </div>
+        <div class="form-row">
+          <label for="f2-size">Teamgröße <span class="opt">(optional)</span></label>
+          <input type="text" id="f2-size" name="size" placeholder="z. B. 8 Personen" />
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="f2-email">E-Mail<span aria-hidden="true">*</span></label>
+          <input type="email" id="f2-email" name="email" required autocomplete="email" />
+        </div>
+        <div class="form-row">
+          <label for="f2-phone">Telefon <span class="opt">(optional)</span></label>
+          <input type="tel" id="f2-phone" name="phone" autocomplete="tel" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="f2-format">Welches Format interessiert?<span aria-hidden="true">*</span></label>
+        <select id="f2-format" name="format" required data-prefill-field="format">
+          <option value="">Bitte wählen…</option>
+          <option value="teamvorgespraech">Kostenfreies Teamvorgespräch (30 Min)</option>
+          <option value="impulsvortrag">Impulsvortrag (60–90 Min)</option>
+          <option value="teambalance">TeamBalance Workshop (Halbtag)</option>
+          <option value="teamreset">TeamReset (mehrere Wochen)</option>
+          <option value="fuehrungskraefte">Führungskräftecoaching</option>
+          <option value="team-mentoring">Team-Mentoring</option>
+          <option value="kleingruppen">Kleingruppen-Mentoring</option>
+          <option value="veraenderung">Begleitung von Veränderungsprozessen</option>
+          <option value="unklar">Noch unklar — bitte beraten</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="f2-background">Hintergrund: Worum geht es bei euch?</label>
+        <textarea id="f2-background" name="background" rows="4" placeholder="z. B. aktuelle Situation im Team, Anliegen, Wünsche — kein Pflichtfeld."></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="f2-timing">Terminwünsche / Zeitraum?</label>
+        <textarea id="f2-timing" name="timing" rows="2" placeholder="z. B. Q2 2026, Vorzugstag der Woche, gewünschter Zeitrahmen."></textarea>
+      </div>
+
+      <div class="form-row form-check">
+        <input type="checkbox" id="f2-consent" name="consent" required />
+        <label for="f2-consent">
+          Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden.<span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <div class="form-status" data-form-status></div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-modal-close>Abbrechen</button>
+        <button type="submit" class="btn btn-primary">Anfrage senden</button>
+      </div>
+    </form>
+  </div>
+</dialog>
+
+{/* ============ Modal: Vormerken Publikation ============ */}
+<dialog id="modal-vormerken" class="modal" aria-labelledby="modal-vormerken-title" aria-modal="true">
+  <div class="modal-card">
+    <button type="button" class="modal-close" aria-label="Schließen" data-modal-close>&times;</button>
+
+    <header class="modal-head">
+      <span class="eyebrow">Vormerken</span>
+      <h2 id="modal-vormerken-title">Benachrichtigung <em>bei Erscheinen</em></h2>
+      <p>Hinterlasse Name und E-Mail — ich melde mich, sobald die Publikation verfügbar ist.</p>
+    </header>
+
+    <form class="modal-form" data-form="vormerken" novalidate>
+      <div class="form-row">
+        <label for="f3-publication">Publikation</label>
+        <input type="text" id="f3-publication" name="publication" data-prefill-field="publication" readonly />
+      </div>
+
+      <div class="form-row">
+        <label for="f3-name">Name<span aria-hidden="true">*</span></label>
+        <input type="text" id="f3-name" name="name" required autocomplete="name" />
+      </div>
+
+      <div class="form-row">
+        <label for="f3-email">E-Mail<span aria-hidden="true">*</span></label>
+        <input type="email" id="f3-email" name="email" required autocomplete="email" />
+      </div>
+
+      <div class="form-row form-check">
+        <input type="checkbox" id="f3-all" name="notifyAll" />
+        <label for="f3-all">
+          Auch über andere Publikationen, Karten und Materialien informieren
+        </label>
+      </div>
+
+      <div class="form-row form-check">
+        <input type="checkbox" id="f3-consent" name="consent" required />
+        <label for="f3-consent">
+          Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Benachrichtigung gespeichert werden.<span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <div class="form-status" data-form-status></div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-modal-close>Abbrechen</button>
+        <button type="submit" class="btn btn-primary">Vormerken</button>
+      </div>
+    </form>
+  </div>
+</dialog>
+
+<style>
+  /* ============== MODAL OVERLAY ============== */
+  .modal {
+    border: none;
+    padding: 0;
+    background: transparent;
+    max-width: min(720px, 100vw);
+    width: 100%;
+    max-height: 100vh;
+    margin: auto;
+    color: var(--color-ink);
+  }
+  .modal::backdrop {
+    background: rgba(20, 28, 22, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .modal[open] {
+    animation: modal-in 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes modal-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .modal-card {
+    background: var(--color-paper);
+    border-radius: var(--radius-l);
+    box-shadow: 0 24px 64px rgba(20, 28, 22, 0.28);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    max-height: 92vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--color-line);
+    color: var(--color-ink-soft);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 200ms, color 200ms, border-color 200ms;
+  }
+  .modal-close:hover {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    border-color: var(--color-clay);
+  }
+  .modal-head {
+    margin-bottom: 1.5rem;
+    padding-right: 2.5rem;
+  }
+  .modal-head .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-clay);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .modal-head h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-weight: 400;
+    margin: 0 0 0.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .modal-head h2 em { color: var(--color-sage-deep); font-style: italic; }
+  .modal-head p {
+    font-size: 0.95rem;
+    color: var(--color-ink-soft);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 50ch;
+  }
+
+  /* ============== FORM ============== */
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  @media (max-width: 540px) {
+    .form-grid { grid-template-columns: 1fr; }
+  }
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .form-row label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    letter-spacing: 0.01em;
+  }
+  .form-row label .opt {
+    color: var(--color-ink-muted);
+    font-weight: 400;
+    font-size: 0.78rem;
+  }
+  .form-row label span[aria-hidden="true"] {
+    color: var(--color-clay);
+    margin-left: 0.15rem;
+  }
+  .form-row input[type="text"],
+  .form-row input[type="email"],
+  .form-row input[type="tel"],
+  .form-row select,
+  .form-row textarea {
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-s);
+    background: var(--color-cream-soft);
+    color: var(--color-ink);
+    transition: border-color 200ms, background 200ms, box-shadow 200ms;
+    width: 100%;
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: var(--color-sage);
+    background: var(--color-paper);
+    box-shadow: 0 0 0 3px rgba(79, 110, 90, 0.15);
+  }
+  .form-row input[readonly] {
+    background: var(--color-cream-deep);
+    color: var(--color-ink-soft);
+    cursor: default;
+  }
+  .form-row textarea {
+    resize: vertical;
+    min-height: 4.5rem;
+    font-family: inherit;
+    line-height: 1.5;
+  }
+  .form-row.form-check {
+    flex-direction: row;
+    gap: 0.6rem;
+    align-items: flex-start;
+    padding: 0.4rem 0;
+  }
+  .form-row.form-check input[type="checkbox"] {
+    margin-top: 0.2rem;
+    width: 1.05rem;
+    height: 1.05rem;
+    flex-shrink: 0;
+    accent-color: var(--color-sage-deep);
+    cursor: pointer;
+  }
+  .form-row.form-check label {
+    font-weight: 400;
+    color: var(--color-ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .form-row.form-check a {
+    color: var(--color-sage-deep);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* Honeypot — vor Bots versteckt */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Status & Aktionen */
+  .form-status {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    min-height: 1.2rem;
+  }
+  .form-status.is-error {
+    color: #a3372e;
+    background: #fbeee9;
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius-s);
+    border-left: 3px solid #c4584b;
+  }
+  .form-status.is-success {
+    color: var(--color-sage-deep);
+    background: #e9efe8;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-s);
+    border-left: 3px solid var(--color-sage);
+    font-weight: 500;
+  }
+  .form-status.is-loading {
+    color: var(--color-ink-muted);
+    font-style: italic;
+  }
+  .modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-line-soft);
+  }
+  .modal-actions .btn { margin: 0; }
+
+  /* Hervorgehobenes Invalid-Feld — nur nach Submit-Versuch (.is-invalid auf .form-row) */
+  .form-row.is-invalid input,
+  .form-row.is-invalid select,
+  .form-row.is-invalid textarea {
+    border-color: #c4584b;
+    background: #fbf4f2;
+  }
+
+  /* Body-Scroll-Lock wenn Modal offen */
+  :global(body.modal-open) {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  // ====== Modal-Controller (Vanilla JS) ======
+  // Worker-Endpoint wird beim Deployment gesetzt; bis dahin: leer = Demo-Modus
+  const WORKER_ENDPOINT = ''; // z. B. 'https://forms.danielabrittahamberger.de/submit'
+
+  type FormType = '1zu1' | 'teams' | 'vormerken';
+
+  const PUBLICATION_LABELS: Record<string, string> = {
+    'zurueck-zu-dir': 'Zurück zu dir — Selbstcoachingbuch',
+    'vermaechtnis-des-herzens': 'Das Vermächtnis des Herzens',
+    'coaching-karten': 'Coaching- und Impulskarten',
+    'kunst-werke': 'Bilder, Formen und Motive',
+    'audio-video': 'Audio-Impulse, Fantasiereisen und Videos',
+  };
+
+  function setStatus(form: HTMLFormElement, type: 'idle' | 'loading' | 'error' | 'success', msg = '') {
+    const status = form.querySelector<HTMLElement>('[data-form-status]');
+    if (!status) return;
+    status.className = 'form-status' + (type === 'idle' ? '' : ' is-' + type);
+    status.textContent = msg;
+  }
+
+  function openModal(modalId: string, prefill?: Record<string, string>) {
+    const modal = document.getElementById(modalId) as HTMLDialogElement | null;
+    if (!modal) return;
+    // Pre-fill
+    if (prefill) {
+      Object.entries(prefill).forEach(([key, value]) => {
+        const field = modal.querySelector<HTMLInputElement | HTMLSelectElement>(
+          `[data-prefill-field="${key}"]`
+        );
+        if (field) field.value = value;
+      });
+    }
+    // Reset previous status
+    const form = modal.querySelector<HTMLFormElement>('form');
+    if (form) setStatus(form, 'idle');
+
+    if (typeof modal.showModal === 'function') {
+      modal.showModal();
+    } else {
+      modal.setAttribute('open', '');
+    }
+    document.body.classList.add('modal-open');
+
+    // Focus the first input
+    setTimeout(() => {
+      const first = modal.querySelector<HTMLElement>('input:not([readonly]):not([type="hidden"]):not(.hp-field), select, textarea');
+      first?.focus();
+    }, 60);
+  }
+
+  function closeModal(modal: HTMLDialogElement) {
+    if (typeof modal.close === 'function') {
+      modal.close();
+    } else {
+      modal.removeAttribute('open');
+    }
+    document.body.classList.remove('modal-open');
+  }
+
+  // Trigger-Klicks: jedes Element mit data-modal-open="1zu1|teams|vormerken"
+  document.addEventListener('click', (e) => {
+    const trigger = (e.target as HTMLElement).closest<HTMLElement>('[data-modal-open]');
+    if (trigger) {
+      e.preventDefault();
+      const type = trigger.dataset.modalOpen as FormType;
+      const prefill: Record<string, string> = {};
+      if (trigger.dataset.format) prefill.format = trigger.dataset.format;
+      if (trigger.dataset.publication) {
+        prefill.publication = PUBLICATION_LABELS[trigger.dataset.publication] || trigger.dataset.publication;
+      }
+      openModal('modal-' + type, prefill);
+      return;
+    }
+    // Close-Klicks
+    const closeBtn = (e.target as HTMLElement).closest<HTMLElement>('[data-modal-close]');
+    if (closeBtn) {
+      const modal = closeBtn.closest<HTMLDialogElement>('dialog.modal');
+      if (modal) closeModal(modal);
+      return;
+    }
+  });
+
+  // Klick auf Backdrop schließt
+  document.querySelectorAll<HTMLDialogElement>('dialog.modal').forEach((modal) => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal(modal);
+    });
+    // Body-Scroll bei Esc-Close auch freigeben
+    modal.addEventListener('close', () => {
+      document.body.classList.remove('modal-open');
+    });
+  });
+
+  // Form-Submit
+  document.querySelectorAll<HTMLFormElement>('form.modal-form').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formType = form.dataset.form as FormType;
+
+      // Honeypot — falls ausgefüllt: Bot, still verwerfen
+      const hp = form.querySelector<HTMLInputElement>('.hp-field');
+      if (hp && hp.value) {
+        setStatus(form, 'success', 'Vielen Dank! Ich melde mich in Kürze.');
+        return;
+      }
+
+      // Validierung
+      const requiredFields = form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('[required]');
+      let valid = true;
+      requiredFields.forEach((field) => {
+        const row = field.closest('.form-row');
+        if (!field.value || (field.type === 'checkbox' && !(field as HTMLInputElement).checked)) {
+          valid = false;
+          row?.classList.add('is-invalid');
+        } else {
+          row?.classList.remove('is-invalid');
+        }
+        // Email-Format-Check
+        if (field.type === 'email' && field.value) {
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+            valid = false;
+            row?.classList.add('is-invalid');
+          }
+        }
+      });
+
+      if (!valid) {
+        setStatus(form, 'error', 'Bitte fülle die markierten Pflichtfelder aus.');
+        return;
+      }
+
+      setStatus(form, 'loading', 'Wird gesendet…');
+      const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        // Daten sammeln
+        const fd = new FormData(form);
+        const payload: Record<string, any> = { formType };
+        fd.forEach((value, key) => {
+          if (key === 'consent' || key === 'notifyAll') {
+            payload[key] = true;
+          } else {
+            payload[key] = value;
+          }
+        });
+
+        if (!WORKER_ENDPOINT) {
+          // Demo-Modus: noch nicht verkabelt
+          await new Promise((r) => setTimeout(r, 700));
+          console.log('[Demo-Modus] Formulardaten:', payload);
+          setStatus(
+            form,
+            'success',
+            'Demo-Modus aktiv — die Anfrage wurde noch nicht versendet. (Backend wird noch verbunden.)'
+          );
+        } else {
+          // Echter Submit an Cloudflare Worker
+          const response = await fetch(WORKER_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          if (!response.ok) {
+            const errText = await response.text();
+            throw new Error(errText || 'Server antwortete mit ' + response.status);
+          }
+          setStatus(
+            form,
+            'success',
+            'Vielen Dank für deine Anfrage! Ich melde mich in der Regel innerhalb von 1–2 Werktagen.'
+          );
+          form.reset();
+        }
+      } catch (err: any) {
+        console.error('Form submit error:', err);
+        setStatus(
+          form,
+          'error',
+          'Es gab ein Problem beim Senden. Bitte versuche es erneut oder schreibe direkt an info@danielabrittahamberger.de.'
+        );
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  });
+</script>

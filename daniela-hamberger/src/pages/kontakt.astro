@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE, BOOKING_OPTIONS, CONTACT, VENUE, IMAGES } from '@/data/site';
+import { SITE, BOOKING_1ZU1, BOOKING_TEAM, CONTACT, VENUE, IMAGES } from '@/data/site';
 
 const description =
   'Kontakt und Buchung — kostenfreies Orientierungsgespräch, 1:1 Sitzung, KlarheitsReset oder Team-Vorgespräch mit Daniela Britta Hamberger.';
@@ -40,8 +40,8 @@ const breadcrumb = {
         dein Anliegen, mögliche nächste Schritte und die passende Form der Zusammenarbeit.
       </p>
       <div class="btn-group">
-        <a href="#kontaktformular" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
-        <a href="#kontaktformular" class="btn btn-outline">Teamformat anfragen</a>
+        <button type="button" class="btn btn-primary" data-modal-open="1zu1" data-format="orientierung">Kostenfreies Orientierungsgespräch buchen</button>
+        <button type="button" class="btn btn-outline" data-modal-open="teams" data-format="teamvorgespraech">Teamformat anfragen</button>
         <a href={`mailto:${CONTACT.email}`} class="btn btn-outline">Nachricht schreiben</a>
       </div>
     </div>
@@ -51,10 +51,27 @@ const breadcrumb = {
     <div class="container">
       <header class="section-head">
         <span class="eyebrow">Buchungsoptionen im Überblick</span>
-        <h2>Vier Wege, <em>uns auszutauschen</em></h2>
+        <h2>Zwei Bereiche, <em>klar getrennt</em></h2>
+        <p class="lead" style="margin: 0 auto;">
+          Für Einzelpersonen einerseits, für Teams und Organisationen andererseits.
+          Wähle den Bereich, der zu deinem Anliegen passt.
+        </p>
       </header>
+
+      <h3 class="booking-group-title">Für Einzelpersonen — 1:1 Begleitung</h3>
       <div class="booking-grid">
-        {BOOKING_OPTIONS.map((b) => (
+        {BOOKING_1ZU1.map((b) => (
+          <article class="booking-card">
+            <h3>{b.title}</h3>
+            <p class="duration">{b.duration}</p>
+            <p>{b.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <h3 class="booking-group-title">Für Teams &amp; Organisationen</h3>
+      <div class="booking-grid">
+        {BOOKING_TEAM.map((b) => (
           <article class="booking-card">
             <h3>{b.title}</h3>
             <p class="duration">{b.duration}</p>
@@ -89,7 +106,7 @@ const breadcrumb = {
           den Seminarraum.
         </aside>
         <div class="btn-group">
-          <a href="#kontaktformular" class="btn btn-primary">Gespräch buchen</a>
+          <button type="button" class="btn btn-primary" data-modal-open="1zu1" data-format="orientierung">Gespräch buchen</button>
           <a href={`mailto:${CONTACT.email}`} class="btn btn-secondary">E-Mail schreiben</a>
         </div>
       </div>
@@ -106,47 +123,28 @@ const breadcrumb = {
 
   <section class="section section-cream" id="kontaktformular">
     <div class="container-narrow">
-      <h2>Schreib mir eine Nachricht</h2>
+      <h2>So erreichst du mich</h2>
       <p>
-        Du kannst mir auch direkt schreiben. Ich melde mich in der Regel innerhalb von
-        1–2 Werktagen.
+        Wähle den Bereich, der zu deinem Anliegen passt — du landest in einem kurzen
+        Anfrageformular. Ich melde mich in der Regel innerhalb von 1–2 Werktagen.
       </p>
 
-      <form class="contact-form" action={`mailto:${CONTACT.email}`} method="post" enctype="text/plain">
-        <div class="field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div class="field">
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="field">
-          <label for="topic">Anliegen</label>
-          <select id="topic" name="topic">
-            <option>1:1 Begleitung</option>
-            <option>Teamformat</option>
-            <option>Publikationen / Interessentenliste</option>
-            <option>Sonstiges</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="message">Nachricht</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-        </div>
-        <div class="field-check">
-          <input type="checkbox" id="impulsbrief" name="impulsbrief" />
-          <label for="impulsbrief">
-            Ich möchte den Impulsbrief von Daniela Britta Hamberger erhalten und über
-            neue Publikationen, Materialien und Angebote informiert werden.
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Nachricht senden</button>
-      </form>
+      <div class="kontakt-cta-grid">
+        <button type="button" class="btn btn-primary" data-modal-open="1zu1" data-format="orientierung">
+          1:1 Begleitung anfragen
+        </button>
+        <button type="button" class="btn btn-primary" data-modal-open="teams" data-format="teamvorgespraech">
+          Teamformat anfragen
+        </button>
+        <a href={`mailto:${CONTACT.email}`} class="btn btn-secondary">
+          Direkt per E-Mail schreiben
+        </a>
+      </div>
 
       <p class="form-note">
-        Alle Angaben werden vertraulich behandelt. Du kannst dich jederzeit vom Impulsbrief
-        abmelden.
+        Alle Angaben werden vertraulich behandelt und ausschließlich zur Bearbeitung
+        deiner Anfrage verwendet — Details findest du in der
+        <a href="/datenschutz">Datenschutzerklärung</a>.
       </p>
 
       <blockquote class="disclaimer">
@@ -161,10 +159,22 @@ const breadcrumb = {
 </BaseLayout>
 
 <style>
+  .booking-group-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--color-sage-deep);
+    margin: 2rem 0 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-line-soft);
+    letter-spacing: -0.005em;
+  }
+  .booking-group-title:first-of-type { margin-top: 0.5rem; }
   .booking-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     gap: 1.25rem;
+    margin-bottom: 1.5rem;
   }
   .booking-card {
     background: var(--color-paper);
@@ -185,64 +195,34 @@ const breadcrumb = {
   }
   .booking-card p { font-size: 0.92rem; margin: 0; }
 
-  .contact-form {
-    margin-top: 1.5rem;
-    background: var(--color-paper);
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    border: 1px solid var(--color-line);
-    border-radius: var(--radius-m);
-  }
-  .field { margin-bottom: 1.25rem; }
-  .field label,
-  .field-check label {
-    display: block;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--color-ink);
-    margin-bottom: 0.4rem;
-  }
-  .field input,
-  .field select,
-  .field textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    font: inherit;
-    font-size: 0.95rem;
-    background: var(--color-cream);
-    border: 1px solid var(--color-line);
-    border-radius: var(--radius-s);
-    color: var(--color-ink);
-  }
-  .field input:focus,
-  .field select:focus,
-  .field textarea:focus {
-    outline: 2px solid var(--color-gold);
-    outline-offset: 1px;
-    border-color: var(--color-gold);
-  }
-  .field-check {
+  .kontakt-cta-grid {
     display: flex;
-    gap: 0.65rem;
-    margin: 1.25rem 0 1.5rem;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0 1.25rem;
+    align-items: stretch;
   }
-  .field-check input {
-    margin-top: 0.25rem;
-    accent-color: var(--color-bordeaux);
+  .kontakt-cta-grid .btn {
+    justify-content: center;
+    text-align: center;
   }
-  .field-check label {
-    margin: 0;
-    font-weight: 400;
-    color: var(--color-ink-soft);
-    font-size: 0.88rem;
-    line-height: 1.5;
+  @media (min-width: 640px) {
+    .kontakt-cta-grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .kontakt-cta-grid .btn {
+      flex: 1 1 calc(33% - 0.5rem);
+      min-width: 180px;
+    }
   }
   .form-note {
-    font-size: 0.83rem;
+    font-size: 0.85rem;
     color: var(--color-ink-muted);
-    font-style: italic;
     margin-top: 1rem;
+    line-height: 1.55;
   }
+  .form-note a { color: var(--color-sage-deep); text-decoration: underline; text-underline-offset: 2px; }
 
   /* ============== VENUE WIESBADEN ============== */
   .venue-grid {

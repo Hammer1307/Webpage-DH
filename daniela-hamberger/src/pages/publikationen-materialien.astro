@@ -26,10 +26,17 @@ const breadcrumb = {
       </header>
 
       <p>
-        Als Autorin und Künstlerin greife ich Themen auf, die mich seit Jahren bewegen: Menschlichkeit, Naturverbundenheit, Empathie, Werte, innere Entwicklung, Sinnsuche, Lebensfreude und gelingendes Miteinander.
+        Als Autorin und Künstlerin greife ich Themen auf, die mich bewegen: Bewusstsein, Menschlichkeit, Naturverbundenheit, Empathie, Werte, innere Entwicklung, Sinnsuche, Lebensfreude und gelingendes Miteinander.
       </p>
       <p>
-        Meine Bücher, Workbooks, Karten und kreativen Arbeiten sollen berühren, stärken und zum Nachdenken einladen. Manche Projekte sind erzählerisch. Andere unterstützen Selbstreflexion, Coaching, Gruppenarbeit oder persönliche Entwicklung.
+        Meine <strong>Bücher, Texte, Kartensets und kreativen Arbeiten</strong> entstehen durch mich, Daniela Britta Hamberger.
+        <strong>Fokus Schöner Leben</strong> ist der thematische Rahmen, unter dem diese Arbeiten und meine Begleitformate
+        ihren gemeinsamen Klang finden.
+      </p>
+      <p>
+        Manche meiner Arbeiten regen zum Nachdenken an, andere möchten einfach ein gutes Gefühl schenken. Einige sind leise und
+        poetisch, andere klarer und direkter. Gemeinsam ist ihnen der Wunsch, Räume zu öffnen — für Bewusstsein, Menschlichkeit,
+        Verbindung und einen liebevolleren Blick auf sich selbst und andere.
       </p>
       <p>
         Dabei geht es nicht nur um Inhalte, sondern auch um Atmosphäre: um Räume, Bilder und Worte, die Menschen wieder näher zu sich selbst führen können.
@@ -52,8 +59,8 @@ const breadcrumb = {
             <p class="pub-desc">{p.description}</p>
             {p.meta && <p class="pub-meta">{p.meta}</p>}
             <div class="btn-group">
-              <a href="/kontakt" class="btn btn-secondary">Vormerken</a>
-              <a href="/kontakt" class="btn btn-ghost">Mehr erfahren</a>
+              <button type="button" class="btn btn-secondary" data-modal-open="vormerken" data-publication={p.id}>Vormerken</button>
+              <button type="button" class="btn btn-ghost" data-modal-open="vormerken" data-publication={p.id}>Mehr erfahren</button>
             </div>
           </article>
         ))}

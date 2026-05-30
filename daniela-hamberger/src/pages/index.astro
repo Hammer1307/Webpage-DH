@@ -23,17 +23,17 @@ const description =
 
         <p class="hero-body">
           Ich begleite <strong>Frauen in 1:1-Sessions</strong> und <strong>Teams in Workshops</strong> dabei,
-          wieder mehr Klarheit, Stabilität und Lebensfreude zu finden — online oder
-          vor Ort in Wiesbaden.
+          wieder mehr Klarheit, Bewusstsein und innere Stabilität zu finden — online sowie vor Ort
+          in Wiesbaden, Idstein oder nach Absprache bei euch im Rhein-Main-Gebiet.
         </p>
 
         <div class="hero-actions">
-          <a href="/kontakt" class="btn btn-primary">Kostenfreies Orientierungsgespräch buchen</a>
+          <button type="button" class="btn btn-primary" data-modal-open="1zu1" data-format="orientierung">Kostenfreies Orientierungsgespräch buchen</button>
           <a href="/1-zu-1-begleitung" class="btn btn-secondary">1:1 Begleitung für Frauen entdecken</a>
         </div>
 
         <p class="price-hint">
-          <strong>Kostenfreies Erstgespräch</strong> · Sitzungen ab 160 € · online oder in Wiesbaden
+          <strong>Kostenfreies Erstgespräch</strong> · Sitzungen ab 160 € · online oder vor Ort in Wiesbaden / Idstein
         </p>
       </div>
 
@@ -87,19 +87,19 @@ const description =
         <span class="eyebrow">Schön, dass du da bist</span>
         <h2>Ich bin <em>Daniela</em></h2>
         <p class="lead">
-          Mentorin mit pädagogischer Expertise für innere Stabilität,
-          bewusste Entwicklung und gelingendes Miteinander.
+          Mentorin mit pädagogischer Expertise für <strong>Bewusstsein</strong>,
+          innere Stabilität und gelingendes Miteinander.
         </p>
         <p>
           Viele Jahre war ich als Pädagogin und Lehrerin in der Sekundarstufe&nbsp;I
-          tätig. Heute verbinde ich diese Erfahrung mit Mentaltraining, Hypnose,
-          Achtsamkeit, positiver Psychologie, einem systemischen Blick und weiteren
+          tätig. Heute verbinde ich diese Erfahrung mit Mentaltraining,
+          Bewusstseinsarbeit, positiver Psychologie, einem systemischen Blick und weiteren
           ganzheitlichen Ansätzen.
         </p>
         <p>
-          Im Mittelpunkt steht für mich der Mensch — mit seiner Geschichte,
-          seinen Bedürfnissen und seinem Wunsch nach mehr Klarheit, Selbstvertrauen
-          und Lebensfreude.
+          In meiner Arbeit geht es darum, Bewusstsein zu schaffen — für sich selbst, für
+          das eigene Denken und Fühlen, für Beziehungen und für die feinen Dynamiken, die
+          unser Leben und Miteinander prägen.
         </p>
         <div class="btn-group">
           <a href="/ueber-mich" class="btn btn-secondary">Mehr über mich erfahren</a>
@@ -115,30 +115,37 @@ const description =
       <ul class="methoden-list">
         {METHODEN_LISTE.map((m) => <li>{m}</li>)}
       </ul>
+      <p class="methoden-link">
+        <a href="/ueber-mich#methoden">Mehr zu meinen Methoden →</a>
+      </p>
     </div>
   </section>
 
-  {/* ============== RAUM (Wiesbaden / Schöne Aussichten) ============== */}
-  <section class="section bg-cream raum-section">
-    <div class="container raum-grid">
-      <div class="raum-text">
-        <span class="eyebrow">Ein Raum, der Entwicklung unterstützt</span>
-        <h2>Ein stimmiger Rahmen für <em>innere Ordnung und bewusste Entwicklung</em></h2>
-        <p>Manchmal braucht Veränderung nicht nur Zeit, sondern auch einen passenden Rahmen.</p>
-        <p>Für ausgewählte Begleitungen, Workshops und Teamformate arbeite ich nach Absprache in stimmigen Räumlichkeiten in Wiesbaden. Der <strong>{VENUE.name}</strong> bietet dafür eine ruhige, wertschätzende Atmosphäre, in der Abstand zum Alltag entstehen darf.</p>
-        <p>Mir ist wichtig, dass ganzheitliches Wohlbefinden nicht nur im Inneren beginnt, sondern auch durch eine passende äußere Umgebung unterstützt wird: durch Ruhe, Klarheit, eine angenehme Atmosphäre und einen Raum, in dem Menschen ankommen, sich öffnen und neu sortieren können.</p>
-        <p>Hier darf entstehen, was im Alltag oft zu kurz kommt: Innehalten, bewusster Austausch, neue Perspektiven und ein geschützter Rahmen für innere Ordnung und Entwicklung.</p>
-        <aside class="raum-note">
-          <strong>Wichtig:</strong> Der Seminarraum wird nicht extern über die Website gebucht. Termine, Workshops und Vor-Ort-Formate werden ausschließlich über Daniela Britta Hamberger abgestimmt.
-        </aside>
-        <div class="btn-group">
-          <a href="/kontakt" class="btn btn-primary">Gespräch buchen</a>
-        </div>
+  {/* ============== STANDORTE — kompakt, nicht venue-fokussiert ============== */}
+  <section class="section bg-cream standorte-section">
+    <div class="container">
+      <div class="standorte-head">
+        <span class="eyebrow">Wo wir uns begegnen</span>
+        <h2>Online sowie vor Ort in <em>Wiesbaden, Idstein oder bei euch</em></h2>
+        <p class="lead">
+          Begleitungen, Coachings und Workshops finden online, in geeigneten Räumlichkeiten in
+          Wiesbaden oder Idstein oder nach Absprache direkt bei euch vor Ort im Rhein-Main-Gebiet
+          statt.
+        </p>
       </div>
-      <div class="raum-gallery">
-        <img src={IMAGES.raumMeditation} alt={`Meditationskreis im ${VENUE.name}, Wiesbaden`} loading="lazy" class="raum-img raum-img-large" />
-        <img src={IMAGES.raumBestuhlung} alt="Lichtdurchfluteter Dachraum mit zwei türkisen Stühlen und gemütlichem Ambiente" loading="lazy" class="raum-img" />
-        <img src={IMAGES.raumEingang} alt="Detail im Eingangsbereich — Mosaikspiegel, Libelle und natürliche Akzente" loading="lazy" class="raum-img" />
+      <div class="standorte-grid">
+        <div class="standort-card">
+          <h3>Online</h3>
+          <p>Per Video oder Telefon — ortsunabhängig, flexibel und für viele Anliegen genauso wirksam wie ein Vor-Ort-Termin.</p>
+        </div>
+        <div class="standort-card">
+          <h3>Wiesbaden &amp; Idstein</h3>
+          <p>Für 1:1 Begleitungen und kleinere Gruppen nutze ich nach Absprache ruhige Räumlichkeiten — unter anderem den Seminarraum Schöne Aussichten in Wiesbaden.</p>
+        </div>
+        <div class="standort-card">
+          <h3>Bei euch vor Ort</h3>
+          <p>Für Teams und Organisationen im Rhein-Main-Gebiet komme ich nach Absprache zu euch — in eure Räume oder an einen geeigneten externen Ort.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -148,10 +155,10 @@ const description =
     <div class="container-narrow" style="text-align: center;">
       <h2>Lass uns kennenlernen</h2>
       <p style="margin: 1rem auto 2rem; max-width: 50ch;">
-        Wenn du spürst, dass du dir mehr Klarheit, innere Stabilität oder neue Orientierung wünschst, lade ich dich herzlich zu einem kostenfreien Orientierungsgespräch ein. 15–30 Minuten · unverbindlich · online oder telefonisch.
+        Wenn du spürst, dass du dir mehr Klarheit, innere Stabilität oder neue Orientierung wünschst, lade ich dich herzlich zu einem kostenfreien Orientierungsgespräch ein. 15–30 Minuten · unverbindlich · online sowie vor Ort in Wiesbaden, Idstein oder telefonisch.
       </p>
       <div class="btn-group btn-group-center">
-        <a href="/kontakt" class="btn btn-gold">Kostenfreies Orientierungsgespräch buchen</a>
+        <button type="button" class="btn btn-gold" data-modal-open="1zu1" data-format="orientierung">Kostenfreies Orientierungsgespräch buchen</button>
       </div>
     </div>
   </section>
@@ -376,15 +383,38 @@ const description =
   .weg-card p { margin-bottom: 1.25rem; flex: 1; font-size: 0.95rem; max-width: none; }
   .weg-card .btn { align-self: flex-start; margin-top: auto; }
 
-  /* ============== RAUM-SECTION ============== */
-  .raum-grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 4vw, 3rem); align-items: start; }
-  @media (min-width: 900px) { .raum-grid { grid-template-columns: 1fr 0.95fr; } }
-  .raum-text h2 { margin: 0.5rem 0 1.25rem; }
-  .raum-text p { margin-bottom: 1rem; }
-  .raum-note { background: var(--color-cream-deep); border-left: 3px solid var(--color-sage); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.92rem; border-radius: 0 var(--radius-s) var(--radius-s) 0; color: var(--color-ink-soft); }
-  .raum-note strong { color: var(--color-sage-deep); }
-  .raum-gallery { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 0.75rem; }
-  .raum-img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-m); box-shadow: var(--shadow-soft); }
-  .raum-img-large { grid-column: 1 / -1; aspect-ratio: 16/9; }
-  .raum-img:not(.raum-img-large) { aspect-ratio: 1/1; }
+  /* ============== STANDORTE-SECTION ============== */
+  .standorte-head { text-align: center; max-width: 50rem; margin: 0 auto 2.5rem; }
+  .standorte-head h2 { margin: 0.5rem 0 1.25rem; }
+  .standorte-head .lead { max-width: 44ch; margin: 0 auto; }
+  .standorte-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .standort-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-top: 3px solid var(--color-sage);
+    border-radius: var(--radius-m);
+    padding: 1.5rem 1.5rem 1.25rem;
+  }
+  .standort-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--color-ink);
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.01em;
+  }
+  .standort-card p {
+    font-size: 0.93rem;
+    color: var(--color-ink-soft);
+    line-height: 1.6;
+    margin: 0;
+    max-width: none;
+  }
+  @media (max-width: 860px) {
+    .standorte-grid { grid-template-columns: 1fr; }
+  }
 </style>

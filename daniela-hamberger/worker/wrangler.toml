@@ -1,0 +1,19 @@
+name = "dbh-forms"
+main = "src/index.ts"
+compatibility_date = "2025-05-01"
+
+# Environment variables (non-secret). Secrets via `wrangler secret put RESEND_API_KEY`
+[vars]
+MAIL_TO = "info@danielabrittahamberger.de"
+MAIL_FROM = "formular@danielabrittahamberger.de"
+ALLOWED_ORIGIN = "https://danielabrittahamberger.de"
+
+# Wenn du Submissions persistieren möchtest, KV anlegen und ID hier eintragen:
+# [[kv_namespaces]]
+# binding = "SUBMISSIONS"
+# id = "<KV_NAMESPACE_ID>"
+
+# Custom Domain Routing (alternative zur worker.dev-URL)
+# [[routes]]
+# pattern = "forms.danielabrittahamberger.de/*"
+# zone_name = "danielabrittahamberger.de"
