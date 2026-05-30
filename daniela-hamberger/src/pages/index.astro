@@ -13,7 +13,7 @@ const description =
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
-        <span class="eyebrow">Mentoring · Fokus Schöner Leben</span>
+        <span class="eyebrow">Mentoring für Frauen · Workshops für Teams</span>
 
         <h1 class="hero-title">Wenn du spürst:<br /><em>Es darf wieder klarer werden</em></h1>
 
@@ -22,9 +22,9 @@ const description =
         </p>
 
         <p class="hero-body">
-          Vielleicht hast du lange funktioniert, getragen, organisiert oder dich
-          angepasst. Ich begleite dich dabei, wieder mehr bei dir selbst
-          anzukommen — mit Klarheit, Stabilität und Vertrauen in deinen eigenen Weg.
+          Ich begleite <strong>Frauen in 1:1-Sessions</strong> und <strong>Teams in Workshops</strong> dabei,
+          wieder mehr Klarheit, Stabilität und Lebensfreude zu finden — online oder
+          vor Ort in Wiesbaden.
         </p>
 
         <div class="hero-actions">
@@ -39,6 +39,40 @@ const description =
 
       <div class="hero-visual">
         <img src={IMAGES.danielaHeroPortrait} alt="Daniela Britta Hamberger — Mentorin für innere Stabilität und bewusste Entwicklung" class="hero-photo" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  {/* ============== SERVICE-STRIP — Was bietet Daniela konkret? ============== */}
+  <section class="section-tight service-strip">
+    <div class="container">
+      <div class="service-strip-head">
+        <span class="eyebrow">Drei Wege, miteinander zu arbeiten</span>
+      </div>
+      <div class="service-strip-grid">
+        <article class="service-card">
+          <span class="service-card-label">01 — Für Frauen</span>
+          <h3>1:1 Begleitung</h3>
+          <p>Für Frauen, die wieder bei sich selbst ankommen, neu sortieren oder klarer entscheiden möchten. Online oder in Wiesbaden.</p>
+          <p class="service-card-price">Erstgespräch kostenfrei · <strong>Sitzungen ab 160 €</strong></p>
+          <a href="/1-zu-1-begleitung" class="service-card-link">Zur 1:1 Begleitung →</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-card-label">02 — Für Teams</span>
+          <h3>Workshops &amp; Vorträge</h3>
+          <p>TeamBalance, TeamReset und Impulsvorträge für Teams, Einrichtungen und Organisationen, die ihr Miteinander stärken möchten.</p>
+          <p class="service-card-price">Impulsvortrag <strong>ab 450 €</strong> · TeamBalance <strong>ab 890 €</strong></p>
+          <a href="/teams-workshops" class="service-card-link">Zu Teams &amp; Workshops →</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-card-label">03 — Zum Mitnehmen</span>
+          <h3>Bücher &amp; Karten</h3>
+          <p>Selbstcoaching-Buch <em>Zurück zu dir</em>, mythologische Weisheitsgeschichte <em>Das Vermächtnis des Herzens</em> und Coaching-Karten — in Vorbereitung.</p>
+          <p class="service-card-price">Bei Erscheinen informieren lassen</p>
+          <a href="/publikationen-materialien" class="service-card-link">Zu den Publikationen →</a>
+        </article>
       </div>
     </div>
   </section>
@@ -81,45 +115,6 @@ const description =
       <ul class="methoden-list">
         {METHODEN_LISTE.map((m) => <li>{m}</li>)}
       </ul>
-    </div>
-  </section>
-
-  {/* ============== 3 WEGE ============== */}
-  <section class="section bg-cream-soft">
-    <div class="container">
-      <header class="section-head">
-        <span class="eyebrow">Wege, wie wir in Verbindung kommen können</span>
-        <h2>Begleitung, Workshops, Bücher, <em>Impulse und kreative Arbeiten</em></h2>
-        <p class="lead">
-          Meine Arbeit zeigt sich auf unterschiedliche Weise: in der persönlichen 1:1 Begleitung, in Team-Workshops, in Büchern, Workbooks, Coaching-Karten, kreativen Arbeiten und Impulsen. Der rote Faden bleibt derselbe: innere Ordnung, neue Klarheit, Lebensfreude und ein wertschätzendes Miteinander.
-        </p>
-      </header>
-
-      <div class="wege-grid">
-        <article class="weg-card fade-up">
-          <span class="weg-number">01</span>
-          <h3>1:1 Begleitung</h3>
-          <p class="weg-sub"><em>Besonders für Frauen, die wieder bei sich selbst ankommen möchten</em></p>
-          <p>Vielleicht fühlst du dich müde vom Funktionieren. Vielleicht hast du lange für andere mitgedacht, dich angepasst oder deine eigenen Bedürfnisse übergangen. In meiner 1:1 Begleitung findest du einen geschützten Raum, in dem du dich sortieren, spüren und neu ausrichten kannst. Oft ist vieles bereits in dir angelegt: Kraft, Klarheit, Selbstwert, Lebensfreude und ein feines Gefühl für deinen nächsten Schritt.</p>
-          <a href="/1-zu-1-begleitung" class="btn btn-ghost">Zur 1:1 Begleitung</a>
-        </article>
-
-        <article class="weg-card fade-up delay-1">
-          <span class="weg-number">02</span>
-          <h3>Teams &amp; Workshops</h3>
-          <p class="weg-sub"><em>Wenn ihr wieder klarer, wertschätzender und menschlicher miteinander arbeiten möchtet</em></p>
-          <p>Vielleicht arbeitet ihr zusammen, aber nicht immer wirklich miteinander. Kommunikation läuft aneinander vorbei. Wertschätzung ist eigentlich da, wird aber im Alltag zu selten spürbar. Ich begleite euch dabei, euer Miteinander bewusster wahrzunehmen und neue Wege für mehr Klarheit, Vertrauen, Empathie und Wertschätzung zu entwickeln.</p>
-          <a href="/teams-workshops" class="btn btn-ghost">Zu Teams &amp; Workshops</a>
-        </article>
-
-        <article class="weg-card fade-up delay-2">
-          <span class="weg-number">03</span>
-          <h3>Publikationen, Kunst &amp; Impulse</h3>
-          <p class="weg-sub"><em>Bücher, Workbooks, Coaching-Karten und kreative Arbeiten</em></p>
-          <p>Als Autorin und Künstlerin beschäftige ich mich mit Themen, die auch meine Begleitung prägen: innere Ordnung, Menschlichkeit, Naturverbundenheit, Empathie, Lebensfreude, Sinnsuche und gelingendes Miteinander. Geplant sind unter anderem das Selbstcoachingbuch <em>Zurück zu dir</em>, das mythologische Buchprojekt <em>Das Vermächtnis des Herzens</em>, Coaching- und Impulskarten sowie ausgewählte kreative Arbeiten.</p>
-          <a href="/publikationen-materialien" class="btn btn-ghost">Publikationen ansehen</a>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -236,6 +231,75 @@ const description =
   @media (max-width: 859px) {
     .hero-visual { order: -1; margin-bottom: 1.5rem; }
     .hero-photo { aspect-ratio: 3 / 2; max-width: 24rem; }
+  }
+
+  /* ============== SERVICE-STRIP — kompakte 3 Angebote ============== */
+  .service-strip { background: var(--color-cream); padding-block: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--color-line-soft); }
+  .service-strip-head { text-align: center; margin-bottom: 1.75rem; }
+  .service-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .service-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-m);
+    padding: 1.75rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 280ms, box-shadow 280ms, border-color 280ms;
+  }
+  .service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--color-clay-pale);
+  }
+  .service-card-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-clay);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    color: var(--color-ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+  .service-card > p {
+    font-size: 0.93rem;
+    color: var(--color-ink-soft);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+  .service-card-price {
+    font-size: 0.85rem;
+    color: var(--color-ink-muted) !important;
+    border-top: 1px solid var(--color-line-soft);
+    padding-top: 0.75rem;
+    margin-top: auto;
+    margin-bottom: 0.75rem !important;
+    flex: 0 0 auto !important;
+  }
+  .service-card-price strong { color: var(--color-sage-deep); font-weight: 600; }
+  .service-card-link {
+    color: var(--color-sage-deep);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: gap 280ms, color 280ms;
+    display: inline-flex;
+    gap: 0.3rem;
+  }
+  .service-card-link:hover { color: var(--color-ink); gap: 0.55rem; }
+  @media (max-width: 960px) {
+    .service-strip-grid { grid-template-columns: 1fr; gap: 1rem; }
   }
 
   /* ============== ICH BIN DANIELA — Teaser ============== */

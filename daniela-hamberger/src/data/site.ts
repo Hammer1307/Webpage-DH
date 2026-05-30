@@ -77,11 +77,10 @@ export const IMAGES = {
 
 // Hauptnavigation — exakt nach Briefing
 export const NAV = [
-  { label: 'Start', href: '/' },
   { label: '1:1 Begleitung', href: '/1-zu-1-begleitung' },
-  { label: 'Teams & Workshops', href: '/teams-workshops' },
+  { label: 'Teams', href: '/teams-workshops' },
   { label: 'Publikationen', href: '/publikationen-materialien' },
-  { label: 'Fokus Impulse', href: '/impulse' },
+  { label: 'Impulse', href: '/impulse' },
   { label: 'Über mich', href: '/ueber-mich' },
   { label: 'Kontakt', href: '/kontakt' },
 ] as const;

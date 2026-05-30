@@ -243,6 +243,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 .ornament::before, .ornament::after { content: ''; flex: 1; max-width: 4rem; height: 1px; background: currentColor; opacity: 0.4; }
 
 .image-accent { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; border-bottom: 3px solid var(--color-clay); }
+.image-accent--portrait-source { aspect-ratio: 16 / 9; object-position: center 25%; }
 @media (max-width: 720px) { .image-accent { aspect-ratio: 16 / 9; } }
 
 /* ============================================================ PAGE-HERO ============================================================ */
