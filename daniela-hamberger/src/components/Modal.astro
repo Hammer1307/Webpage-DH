@@ -161,6 +161,63 @@
   </div>
 </dialog>
 
+{/* ============ Modal: Freie Nachricht ============ */}
+<dialog id="modal-nachricht" class="modal" aria-labelledby="modal-nachricht-title" aria-modal="true">
+  <div class="modal-card">
+    <button type="button" class="modal-close" aria-label="Schließen" data-modal-close>&times;</button>
+
+    <header class="modal-head">
+      <span class="eyebrow">Freie Nachricht</span>
+      <h2 id="modal-nachricht-title">Schreib mir eine <em>Nachricht</em></h2>
+      <p>Wenn dein Anliegen nicht ins 1:1- oder Teamformular passt — schreib mir gerne direkt. Ich melde mich in der Regel innerhalb von 1–2 Werktagen.</p>
+    </header>
+
+    <form class="modal-form" data-form="nachricht" novalidate>
+      <div class="form-row">
+        <label for="f4-name">Name<span aria-hidden="true">*</span></label>
+        <input type="text" id="f4-name" name="name" required autocomplete="name" />
+      </div>
+
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="f4-email">E-Mail<span aria-hidden="true">*</span></label>
+          <input type="email" id="f4-email" name="email" required autocomplete="email" />
+        </div>
+        <div class="form-row">
+          <label for="f4-phone">Telefon <span class="opt">(optional)</span></label>
+          <input type="tel" id="f4-phone" name="phone" autocomplete="tel" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="f4-subject">Betreff <span class="opt">(optional)</span></label>
+        <input type="text" id="f4-subject" name="subject" placeholder="Worum geht es?" />
+      </div>
+
+      <div class="form-row">
+        <label for="f4-message">Deine Nachricht<span aria-hidden="true">*</span></label>
+        <textarea id="f4-message" name="message" rows="6" required placeholder="Schreib mir, was dich beschäftigt, was du wissen möchtest oder wo ich dich unterstützen kann."></textarea>
+      </div>
+
+      <div class="form-row form-check">
+        <input type="checkbox" id="f4-consent" name="consent" required />
+        <label for="f4-consent">
+          Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden.<span aria-hidden="true">*</span>
+        </label>
+      </div>
+
+      <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <div class="form-status" data-form-status></div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-modal-close>Abbrechen</button>
+        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+      </div>
+    </form>
+  </div>
+</dialog>
+
 {/* ============ Modal: Vormerken Publikation ============ */}
 <dialog id="modal-vormerken" class="modal" aria-labelledby="modal-vormerken-title" aria-modal="true">
   <div class="modal-card">
@@ -460,7 +517,7 @@
   // Worker-Endpoint wird beim Deployment gesetzt; bis dahin: leer = Demo-Modus
   const WORKER_ENDPOINT = ''; // z. B. 'https://forms.danielabrittahamberger.de/submit'
 
-  type FormType = '1zu1' | 'teams' | 'vormerken';
+  type FormType = '1zu1' | 'teams' | 'vormerken' | 'nachricht';
 
   const PUBLICATION_LABELS: Record<string, string> = {
     'zurueck-zu-dir': 'Zurück zu dir — Selbstcoachingbuch',

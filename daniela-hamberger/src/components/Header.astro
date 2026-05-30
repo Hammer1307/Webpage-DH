@@ -35,7 +35,7 @@ const isActive = (href: string) => {
       </ul>
     </nav>
 
-    <a href="/kontakt" class="btn btn-primary header-cta">Gespräch buchen</a>
+    <button type="button" class="btn btn-primary header-cta" data-modal-open="1zu1" data-format="orientierung">Gespräch buchen</button>
 
     <button
       class="menu-toggle"
@@ -55,7 +55,7 @@ const isActive = (href: string) => {
           <a href={item.href} class:list={['mobile-link', { active: isActive(item.href) }]}>{item.label}</a>
         </li>
       ))}
-      <li class="mobile-cta-wrap"><a href="/kontakt" class="btn btn-primary">Kostenfreies Gespräch buchen</a></li>
+      <li class="mobile-cta-wrap"><button type="button" class="btn btn-primary" data-modal-open="1zu1" data-format="orientierung">Kostenfreies Gespräch buchen</button></li>
     </ul>
   </nav>
 </header>

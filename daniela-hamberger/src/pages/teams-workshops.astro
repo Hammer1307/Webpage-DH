@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, TEAM_FORMATS, WORKSHOP_TOPICS, VENUE } from '@/data/site';
 
 const description =
-  'Workshops und Teamcoaching für gelingendes Miteinander — Impulsvortrag, TeamBalance Workshop und TeamReset mit Daniela Britta Hamberger. Stimmige Räumlichkeiten in Wiesbaden möglich.';
+  'Workshops und Teamcoaching für gelingendes Miteinander — Impulsvortrag, TeamBalance Workshop und TeamReset mit Daniela Britta Hamberger. Online sowie vor Ort in Wiesbaden, Idstein oder bei euch im Rhein-Main-Gebiet.';
 
 const breadcrumb = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -177,7 +177,8 @@ const breadcrumb = {
   .format-duration { color: var(--color-sage-deep); font-family: var(--font-display); font-style: italic; font-size: 1rem; margin-bottom: 1rem; max-width: none; }
   .format-desc { font-size: 0.92rem; color: var(--color-ink-soft); margin-bottom: 1rem; max-width: none; }
   .format-meta { font-size: 0.85rem; color: var(--color-ink-muted); background: var(--color-cream); padding: 0.65rem 0.85rem; border-radius: var(--radius-s); margin-bottom: 0.75rem; border-left: 2px solid var(--color-clay); max-width: none; }
-  .format-foot { margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--color-line-soft); display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .format-foot { margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--color-line-soft); display: flex; flex-direction: column; gap: 1rem; align-items: stretch; }
+  .format-foot .btn { white-space: normal; line-height: 1.3; text-align: center; min-height: auto; padding-top: 0.75rem; padding-bottom: 0.75rem; }
   .format-price { margin: 0; display: flex; flex-direction: column; gap: 0.15rem; max-width: none; }
   .format-price .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-ink-muted); }
   .format-price strong { font-family: var(--font-display); font-size: 1.25rem; color: var(--color-sage-deep); font-weight: 500; }

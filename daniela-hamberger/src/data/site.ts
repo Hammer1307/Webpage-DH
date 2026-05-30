@@ -8,7 +8,7 @@ export const SITE = {
     'Mentorin mit pädagogischer Expertise für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander',
   motto: 'Innere Ordnung. Neue Klarheit. Freude am Leben.',
   description:
-    'Daniela Britta Hamberger — Mentorin mit pädagogischer Expertise für innere Stabilität, bewusste Entwicklung und gelingendes Miteinander. 1:1 Begleitung für Frauen, Teams & Workshops, Publikationen unter dem Leitgedanken Fokus Schöner Leben.',
+    'Daniela Britta Hamberger — Mentorin mit pädagogischer Expertise für Bewusstsein, innere Stabilität und gelingendes Miteinander. 1:1 Begleitung für Frauen, Teams & Workshops, Publikationen unter dem thematischen Rahmen Fokus Schöner Leben. Online sowie vor Ort in Wiesbaden, Idstein und im Rhein-Main-Gebiet.',
   url: 'https://danielabrittahamberger.de',
   locale: 'de-DE',
   language: 'de',
@@ -132,7 +132,7 @@ export const COACHING_FORMATS = [
       'Du bist nicht sicher, ob eine Begleitung gerade das Richtige für dich ist? In einem ersten Gespräch schauen wir gemeinsam, wo du stehst, was dich bewegt und welches Format zu dir passen könnte.',
     suitableFor: '',
     price: 'kostenfrei',
-    cta: 'Kostenfreies Orientierungsgespräch buchen',
+    cta: 'Orientierungsgespräch buchen',
     href: '/kontakt',
     featured: false,
   },

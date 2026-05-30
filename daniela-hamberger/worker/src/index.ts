@@ -20,7 +20,7 @@ export interface Env {
   SUBMISSIONS?: KVNamespace; // optional: KV-Namespace zum Persistieren (falls eingerichtet)
 }
 
-type FormType = '1zu1' | 'teams' | 'vormerken';
+type FormType = '1zu1' | 'teams' | 'vormerken' | 'nachricht';
 
 interface BasePayload {
   formType: FormType;
@@ -53,6 +53,7 @@ const FORM_TITLES: Record<FormType, string> = {
   '1zu1': 'Neue Anfrage — 1:1 Begleitung',
   teams: 'Neue Anfrage — Teamformat',
   vormerken: 'Neue Vormerkung — Publikation',
+  nachricht: 'Neue Nachricht — Freie Anfrage',
 };
 
 function corsHeaders(env: Env): HeadersInit {
@@ -116,6 +117,15 @@ function buildHtml(payload: BasePayload): string {
       fmtField('Auch über andere Publikationen informieren', payload.notifyAll),
       fmtField('Datenschutz-Einverständnis', payload.consent),
     ].join('');
+  } else if (formType === 'nachricht') {
+    rows = [
+      fmtField('Name', payload.name),
+      fmtField('E-Mail', payload.email),
+      fmtField('Telefon', payload.phone),
+      fmtField('Betreff', payload.subject),
+      fmtField('Nachricht', payload.message),
+      fmtField('Datenschutz-Einverständnis', payload.consent),
+    ].join('');
   }
 
   const timestamp = new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' });
@@ -162,6 +172,12 @@ function buildPlainText(payload: BasePayload): string {
     pushField('Name', payload.name);
     pushField('E-Mail', payload.email);
     pushField('Auch über andere Publikationen', payload.notifyAll);
+  } else if (payload.formType === 'nachricht') {
+    pushField('Name', payload.name);
+    pushField('E-Mail', payload.email);
+    pushField('Telefon', payload.phone);
+    pushField('Betreff', payload.subject);
+    pushField('Nachricht', payload.message);
   }
   pushField('Datenschutz-Einverständnis', payload.consent);
   return lines.join('\n');
@@ -169,13 +185,21 @@ function buildPlainText(payload: BasePayload): string {
 
 function getSubject(payload: BasePayload): string {
   const prefix =
-    payload.formType === '1zu1' ? '[1:1]' : payload.formType === 'teams' ? '[Teams]' : '[Vormerken]';
+    payload.formType === '1zu1'
+      ? '[1:1]'
+      : payload.formType === 'teams'
+      ? '[Teams]'
+      : payload.formType === 'vormerken'
+      ? '[Vormerken]'
+      : '[Nachricht]';
   const name = payload.name ? ` — ${payload.name}` : '';
   const extra =
     payload.formType === 'teams' && payload.company
       ? ` (${payload.company})`
       : payload.formType === 'vormerken' && payload.publication
       ? ` — ${payload.publication}`
+      : payload.formType === 'nachricht' && payload.subject
+      ? `: ${payload.subject}`
       : '';
   return `${prefix} Neue Anfrage${name}${extra}`;
 }
@@ -212,7 +236,7 @@ function validate(payload: BasePayload): { ok: boolean; error?: string } {
   if (payload.website && String(payload.website).trim() !== '') {
     return { ok: false, error: 'honeypot' };
   }
-  if (!payload.formType || !['1zu1', 'teams', 'vormerken'].includes(payload.formType)) {
+  if (!payload.formType || !['1zu1', 'teams', 'vormerken', 'nachricht'].includes(payload.formType)) {
     return { ok: false, error: 'invalid formType' };
   }
   if (!payload.name || String(payload.name).trim().length < 2) {
@@ -230,6 +254,11 @@ function validate(payload: BasePayload): { ok: boolean; error?: string } {
   if (payload.formType === 'teams') {
     if (!payload.company) return { ok: false, error: 'company required' };
     if (!payload.format) return { ok: false, error: 'format required' };
+  }
+  if (payload.formType === 'nachricht') {
+    if (!payload.message || String(payload.message).trim().length < 3) {
+      return { ok: false, error: 'message required' };
+    }
   }
   // Längenbegrenzung gegen Missbrauch
   const totalLength = JSON.stringify(payload).length;
