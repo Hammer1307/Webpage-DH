@@ -19,7 +19,7 @@ export const CONTACT = {
   email: 'info@danielabrittahamberger.de',
   emailShort: 'info@danielahamberger.de',
   phone: '+49 6126 71705',
-  street: 'Schwalbacherstraße 30A',
+  street: 'Schwalbacher Straße 30A',
   postalCode: '65510',
   city: 'Idstein',
   region: 'Hessen',
@@ -105,6 +105,7 @@ export const FOOTER_NAV = {
     { label: 'Wichtiger Hinweis', href: '/wichtiger-hinweis' },
     { label: 'Impressum', href: '/impressum' },
     { label: 'Datenschutz', href: '/datenschutz' },
+    { label: 'Bildnachweise', href: '/bildnachweise' },
   ],
 };
 

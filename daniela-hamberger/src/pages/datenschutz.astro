@@ -2,7 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, CONTACT } from '@/data/site';
 
-const description = `Datenschutzerklärung für ${SITE.url}.`;
+const description = `Datenschutzerklärung für ${SITE.url} — transparente Information zur Verarbeitung personenbezogener Daten.`;
 ---
 <BaseLayout
   title="Datenschutzerklärung"
@@ -15,128 +15,383 @@ const description = `Datenschutzerklärung für ${SITE.url}.`;
         <a href="/">Start</a><span>/</span><span>Datenschutz</span>
       </nav>
       <h1>Datenschutzerklärung</h1>
+      <p class="page-hero-sub">Informationen nach Art. 13 und 14 DSGVO · Stand: Mai 2026</p>
     </div>
   </section>
 
   <section class="section section-cream">
     <div class="container-text legal">
-      <h2>1. Verantwortliche Person</h2>
-      <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+
+      <h2>1. Wer ist für die Datenverarbeitung verantwortlich?</h2>
+      <p>Verantwortliche Stelle im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
       <address>
         Daniela Britta Hamberger<br />
         {CONTACT.street}<br />
         {CONTACT.postalCode} {CONTACT.city}<br />
+        {CONTACT.country}<br />
+        Telefon: <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}>{CONTACT.phone}</a><br />
         E-Mail: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
       </address>
-
-      <h2>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
       <p>
-        Personenbezogene Daten werden auf dieser Website nur im technisch notwendigen Umfang
-        erhoben. In keinem Fall werden die erhobenen Daten verkauft oder aus anderen Gründen
-        an Dritte weitergegeben.
+        Bei allen Fragen zum Datenschutz und zur Ausübung deiner Rechte kannst du dich
+        jederzeit an die oben genannte E-Mail-Adresse wenden.
       </p>
 
-      <h2>3. Kontaktformular und E-Mail-Kontakt</h2>
+      <hr />
+
+      <h2>2. Allgemeine Grundsätze</h2>
       <p>
-        Wenn du das Kontaktformular auf dieser Website nutzt oder per E-Mail Kontakt
-        aufnimmst, werden die von dir angegebenen Daten (Name, E-Mail-Adresse, Nachricht)
-        zur Bearbeitung deiner Anfrage gespeichert. Diese Daten werden nicht ohne deine
-        Einwilligung weitergegeben.
-      </p>
-      <p>
-        Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1
-        lit. f DSGVO (berechtigtes Interesse).
+        Personenbezogene Daten werden auf dieser Website nur im technisch
+        notwendigen Umfang und nur zu den unten beschriebenen Zwecken erhoben und
+        verarbeitet. Die Verarbeitung erfolgt auf Grundlage der DSGVO und des
+        Bundesdatenschutzgesetzes (BDSG). Eine Weitergabe an Dritte erfolgt nur in
+        den unten genannten Fällen, ein Verkauf von Daten findet zu keinem Zeitpunkt
+        statt.
       </p>
 
-      <h2>4. Newsletter / Impulsbrief</h2>
+      <hr />
+
+      <h2>3. Hosting der Website</h2>
       <p>
-        Wenn du dich für den Impulsbrief anmeldest, wird deine E-Mail-Adresse und ggf. dein
-        Name gespeichert und für den Versand des Newsletters verwendet. Die Anmeldung erfolgt
-        auf Basis deiner ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Du kannst
-        deine Einwilligung jederzeit widerrufen und dich vom Newsletter abmelden. Ein
-        Abmeldelink befindet sich in jedem Newsletter.
+        Diese Website wird über die <strong>Cloudflare-Infrastruktur</strong>
+        bereitgestellt. Die Domain ist bei <strong>checkdomain GmbH</strong>
+        (Eiderstedter Weg 5, 23701 Eutin) registriert. Der Quellcode der Website
+        wird über <strong>GitHub Inc.</strong> verwaltet und über das Content
+        Delivery Network von <strong>Cloudflare Inc.</strong> ausgeliefert.
       </p>
 
-      <h2>5. Hosting und technische Infrastruktur</h2>
+      <h3>Cloudflare</h3>
       <p>
-        Diese Website wird über einen externen Hosting-Anbieter betrieben. Beim Besuch der
-        Website werden automatisch technische Daten (z. B. IP-Adresse, Browsertyp, Datum und
-        Uhrzeit des Zugriffs) in Server-Logfiles gespeichert. Diese Daten sind nicht
-        bestimmten Personen zuordenbar und werden nicht mit anderen Datenquellen
-        zusammengeführt.
+        Anbieter: Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA.<br />
+        Cloudflare verarbeitet beim Aufruf der Website technisch notwendige Daten
+        (insbesondere IP-Adresse, Datum und Uhrzeit der Anfrage, abgerufene URL,
+        Referrer-URL, übertragene Datenmenge, User-Agent des Browsers). Diese Daten
+        werden zur Auslieferung der Website, zur Abwehr von Angriffen
+        (DDoS-Schutz) sowie zur Sicherstellung der Verfügbarkeit benötigt.
+      </p>
+      <p>
+        Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+        sicheren und stabilen Bereitstellung der Website).<br />
+        Datentransfer in die USA: Cloudflare verarbeitet Daten auch auf Servern in
+        den USA. Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert.
+        Weitere Informationen:{' '}
+        <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer" target="_blank">
+          cloudflare.com/privacypolicy
+        </a>.
+      </p>
+      <p>
+        Speicherdauer: Server-Logfiles werden nach 30 Tagen automatisch gelöscht
+        oder anonymisiert, sofern nicht ein konkreter Sicherheitsvorfall eine
+        längere Speicherung erforderlich macht.
       </p>
 
-      <h2>6. Cookies</h2>
+      <h3>GitHub</h3>
       <p>
-        Diese Website verwendet ggf. technisch notwendige Cookies, die für den Betrieb der
-        Website erforderlich sind. Cookies, die nicht technisch notwendig sind, werden nur
-        mit deiner ausdrücklichen Einwilligung gesetzt.
+        Anbieter: GitHub, Inc., 88 Colin P Kelly Jr Street, San Francisco, CA 94107,
+        USA. GitHub wird ausschließlich zur Verwaltung des Quellcodes der Website
+        eingesetzt. Beim Aufruf der Website werden keine Daten an GitHub übertragen.
       </p>
 
-      <h2>7. Deine Rechte</h2>
-      <p>Du hast das Recht auf:</p>
+      <hr />
+
+      <h2>4. Server-Logfiles</h2>
+      <p>
+        Bei jedem Aufruf der Website werden durch die technische Infrastruktur
+        folgende Daten in sogenannten Logfiles erfasst:
+      </p>
       <ul class="rights-list">
-        <li>Auskunft über deine gespeicherten Daten (Art. 15 DSGVO)</li>
-        <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
-        <li>Löschung deiner Daten (Art. 17 DSGVO)</li>
-        <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-        <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-        <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        <li>IP-Adresse (gekürzt bzw. anonymisiert, sobald technisch möglich)</li>
+        <li>Datum und Uhrzeit des Zugriffs</li>
+        <li>abgerufene Seite/Datei</li>
+        <li>verwendeter Browser und Browserversion</li>
+        <li>verwendetes Betriebssystem</li>
+        <li>Referrer-URL (vorher besuchte Seite)</li>
       </ul>
       <p>
-        Zur Ausübung deiner Rechte wende dich bitte an:
-        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+        Diese Daten sind für mich nicht bestimmten Personen zuordenbar. Eine
+        Zusammenführung dieser Daten mit anderen Datenquellen findet nicht statt.
       </p>
       <p>
-        Du hast außerdem das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
-      </p>
-
-      <h2>8. Kein Heilversprechen</h2>
-      <p>
-        Die Inhalte dieser Website dienen ausschließlich der allgemeinen Information und
-        persönlichen Orientierung. Sie ersetzen keine medizinische, psychotherapeutische
-        oder psychiatrische Behandlung. Bei gesundheitlichen Beschwerden oder psychischen
-        Krisen wende dich bitte an eine Fachperson.
+        Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+        technischen Bereitstellung und Sicherheit der Website).<br />
+        Speicherdauer: maximal 30 Tage.
       </p>
 
-      <h2>9. Aktualität dieser Datenschutzerklärung</h2>
+      <hr />
+
+      <h2>5. Schriftarten (selbst gehostet)</h2>
       <p>
-        Diese Datenschutzerklärung ist aktuell gültig und hat den Stand: Mai 2026. Durch die
-        Weiterentwicklung dieser Website oder aufgrund geänderter gesetzlicher Vorgaben kann
-        es notwendig werden, diese Datenschutzerklärung zu ändern.
+        Für die Darstellung dieser Website werden die Schriftarten <em>Instrument
+        Serif</em> und <em>Manrope</em> verwendet. Diese Schriftarten werden
+        ausschließlich von meinem eigenen Server geladen — es findet
+        <strong> keine Verbindung zu Google-Servern oder anderen externen
+        Schriftarten-Diensten</strong> statt. Es werden in diesem Zusammenhang keine
+        personenbezogenen Daten an Dritte übertragen.
+      </p>
+
+      <hr />
+
+      <h2>6. Kontaktaufnahme</h2>
+
+      <h3>Kontaktformular</h3>
+      <p>
+        Wenn du das Kontaktformular auf dieser Website nutzt, werden die von dir
+        angegebenen Daten zum Zweck der Bearbeitung deiner Anfrage und für mögliche
+        Anschlussfragen gespeichert. Dazu zählen typischerweise:
+      </p>
+      <ul class="rights-list">
+        <li>Name</li>
+        <li>E-Mail-Adresse</li>
+        <li>Inhalt deiner Nachricht</li>
+        <li>ggf. Telefonnummer, sofern angegeben</li>
+      </ul>
+      <p>
+        Eine Weitergabe an Dritte erfolgt nicht. Die Daten werden ausschließlich auf
+        in der EU gehosteten Mail-Servern verarbeitet.
+      </p>
+      <p>
+        Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung und
+        Durchführung vorvertraglicher Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO
+        (berechtigtes Interesse an der Beantwortung deiner Anfrage).
+      </p>
+      <p>
+        Speicherdauer: Die Daten werden gelöscht, sobald deine Anfrage abschließend
+        bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten (z. B. nach
+        Handels- oder Steuerrecht) bestehen. Im Falle einer Auftragserteilung gelten
+        die handels- und steuerrechtlichen Aufbewahrungsfristen (in der Regel
+        6 bzw. 10 Jahre).
+      </p>
+
+      <h3>E-Mail-Kontakt</h3>
+      <p>
+        Wenn du mich per E-Mail kontaktierst, werden die übermittelten Daten zur
+        Bearbeitung deines Anliegens und für mögliche Anschlussfragen gespeichert.
+        Es gelten dieselben Speicherfristen und Rechtsgrundlagen wie beim
+        Kontaktformular.
+      </p>
+
+      <hr />
+
+      <h2>7. Begleitung, Coaching und Workshops</h2>
+      <p>
+        Wenn du eine Begleitung, eine KlarheitsSitzung, einen KlarheitsReset, einen
+        Workshop oder ein anderes Angebot bei mir buchst, verarbeite ich die zur
+        Vertragsabwicklung erforderlichen Daten (insbesondere Name, Kontaktdaten,
+        Rechnungsdaten, ggf. inhaltliche Notizen aus den Sitzungen).
+      </p>
+      <p>
+        Inhaltliche Notizen aus Sitzungen werden ausschließlich von mir persönlich
+        geführt, unterliegen der Verschwiegenheit und werden nicht an Dritte
+        weitergegeben.
+      </p>
+      <p>
+        Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).<br />
+        Speicherdauer: Rechnungs- und Buchhaltungsdaten werden gemäß § 147 AO und
+        § 257 HGB für 10 Jahre aufbewahrt. Inhaltliche Notizen werden spätestens
+        12 Monate nach Abschluss der Begleitung gelöscht, sofern du nicht
+        ausdrücklich einer längeren Aufbewahrung zustimmst.
+      </p>
+
+      <hr />
+
+      <h2>8. Cookies</h2>
+      <p>
+        Diese Website verwendet <strong>keine Tracking-Cookies und keine
+        Marketing-Cookies</strong>. Es werden lediglich technisch notwendige
+        Funktionen des Browsers (z. B. zur Erkennung, ob das mobile Menü geöffnet
+        ist) genutzt — dabei werden keine personenbezogenen Daten erhoben oder an
+        Dritte übertragen.
+      </p>
+      <p>
+        Sollten zukünftig Cookies eingesetzt werden, die nicht technisch notwendig
+        sind, werden diese ausschließlich mit deiner ausdrücklichen Einwilligung
+        gesetzt. Du wirst dann durch einen entsprechenden Hinweis informiert und
+        kannst die Einwilligung jederzeit widerrufen.
+      </p>
+
+      <hr />
+
+      <h2>9. Newsletter / Impulsbrief</h2>
+      <p>
+        Aktuell wird über diese Website kein Newsletter versendet. Sollte zukünftig
+        ein Impulsbrief angeboten werden, erfolgt die Anmeldung ausschließlich im
+        <strong> Double-Opt-In-Verfahren</strong> (mit Bestätigung per E-Mail) auf
+        Grundlage deiner ausdrücklichen Einwilligung nach Art. 6 Abs. 1 lit. a
+        DSGVO. Eine Abmeldung wird in jedem Newsletter durch einen Abmeldelink
+        ermöglicht. Diese Datenschutzerklärung wird in dem Moment um die
+        entsprechenden Angaben (Anbieter, Datenfelder, Speicherdauer) ergänzt.
+      </p>
+
+      <hr />
+
+      <h2>10. Soziale Medien</h2>
+      <p>
+        Auf dieser Website befinden sich Links zu meinen Profilen bei LinkedIn und
+        Instagram. Diese Links sind als reine Textlinks ausgeführt — es werden
+        <strong> keine Social-Plugins eingebunden und keine Daten an die
+        Plattformen übertragen</strong>, solange du die Links nicht aktiv anklickst.
+      </p>
+      <p>
+        Wenn du auf einen dieser Links klickst, wirst du zur jeweiligen Plattform
+        weitergeleitet. Es gelten dann die Datenschutzbestimmungen der
+        entsprechenden Plattform:
+      </p>
+      <ul class="rights-list">
+        <li>LinkedIn (LinkedIn Ireland Unlimited Company, Dublin):{' '}
+          <a href="https://www.linkedin.com/legal/privacy-policy" rel="noopener noreferrer" target="_blank">
+            linkedin.com/legal/privacy-policy
+          </a>
+        </li>
+        <li>Instagram (Meta Platforms Ireland Ltd., Dublin):{' '}
+          <a href="https://privacycenter.instagram.com/policy" rel="noopener noreferrer" target="_blank">
+            privacycenter.instagram.com/policy
+          </a>
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>11. SSL-/TLS-Verschlüsselung</h2>
+      <p>
+        Diese Website nutzt aus Gründen der Sicherheit eine SSL- bzw.
+        TLS-Verschlüsselung. Du erkennst eine verschlüsselte Verbindung daran, dass
+        die Adresszeile des Browsers von „http://" auf „https://" wechselt und am
+        Schloss-Symbol in deiner Browserzeile.
+      </p>
+
+      <hr />
+
+      <h2>12. Deine Rechte</h2>
+      <p>Du hast jederzeit folgende Rechte hinsichtlich deiner personenbezogenen Daten:</p>
+      <ul class="rights-list">
+        <li>Recht auf Auskunft über deine gespeicherten Daten (Art. 15 DSGVO)</li>
+        <li>Recht auf Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+        <li>Recht auf Löschung deiner Daten (Art. 17 DSGVO)</li>
+        <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        <li>Recht auf Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO)</li>
+      </ul>
+      <p>
+        Zur Ausübung dieser Rechte wende dich bitte an:{' '}
+        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+      </p>
+
+      <h3>Beschwerderecht bei einer Aufsichtsbehörde</h3>
+      <p>
+        Du hast außerdem das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu
+        beschweren. Zuständig für meine Tätigkeit ist:
+      </p>
+      <address>
+        Der Hessische Beauftragte für Datenschutz und Informationsfreiheit<br />
+        Postfach 3163<br />
+        65021 Wiesbaden<br />
+        <a href="https://datenschutz.hessen.de" rel="noopener noreferrer" target="_blank">
+          datenschutz.hessen.de
+        </a>
+      </address>
+
+      <hr />
+
+      <h2>13. Auftragsverarbeitung</h2>
+      <p>
+        Soweit personenbezogene Daten in meinem Auftrag durch Dritte (z. B.
+        Hosting-Dienstleister, Mail-Anbieter) verarbeitet werden, sind mit diesen
+        Anbietern entsprechende Verträge zur Auftragsverarbeitung gemäß
+        Art. 28 DSGVO geschlossen.
+      </p>
+
+      <hr />
+
+      <h2>14. Kein Heilversprechen</h2>
+      <p>
+        Die Inhalte dieser Website und die angebotenen Begleitformate dienen der
+        persönlichen Klärung, Stabilisierung und bewussten Entwicklung. Sie
+        ersetzen keine medizinische, psychotherapeutische oder psychiatrische
+        Behandlung. Bei gesundheitlichen Beschwerden oder psychischen Krisen wende
+        dich bitte an eine Ärztin, einen Arzt oder eine zugelassene Psychotherapeutin
+        bzw. einen zugelassenen Psychotherapeuten. Weitere Informationen findest du
+        auf der Seite <a href="/wichtiger-hinweis">Wichtiger Hinweis</a>.
+      </p>
+
+      <hr />
+
+      <h2>15. Aktualität dieser Datenschutzerklärung</h2>
+      <p>
+        Diese Datenschutzerklärung hat den Stand: <strong>Mai 2026</strong>. Durch
+        die Weiterentwicklung dieser Website oder aufgrund geänderter gesetzlicher
+        Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die
+        jeweils aktuelle Datenschutzerklärung ist jederzeit auf dieser Seite
+        abrufbar.
       </p>
       <p class="legal-note">
-        Diese Datenschutzerklärung wurde nach bestem Wissen erstellt. Für eine rechtssichere
-        Prüfung empfehlen wir die Beratung durch eine Rechtsanwältin oder einen Rechtsanwalt.
+        Diese Datenschutzerklärung wurde mit Sorgfalt erstellt. Für eine
+        rechtsverbindliche Prüfung im Einzelfall empfiehlt sich die Beratung durch
+        eine Rechtsanwältin oder einen Rechtsanwalt.
       </p>
+
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  .page-hero-sub {
+    font-size: 0.95rem;
+    color: var(--color-ink-muted);
+    margin-top: 0.5rem;
+  }
   .legal h2 {
     font-size: var(--step-2);
-    margin: 2.5rem 0 1rem;
+    margin: 2.75rem 0 1rem;
+    color: var(--color-ink);
   }
-  .legal h2:first-child { margin-top: 0; }
+  .legal h2:first-of-type { margin-top: 0; }
+  .legal h3 {
+    font-size: 1.15rem;
+    margin: 1.75rem 0 0.5rem;
+    color: var(--color-sage-deep);
+    font-weight: 600;
+  }
   .legal p, .legal address {
     margin-bottom: 1rem;
     font-size: 0.95rem;
     line-height: 1.7;
+    color: var(--color-ink);
   }
   .legal address { font-style: normal; }
+  .legal hr {
+    border: none;
+    border-top: 1px solid var(--color-line);
+    margin: 2.75rem 0;
+  }
+  .legal a {
+    color: var(--color-sage-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .legal a:hover { color: var(--color-ink); }
   .rights-list {
     list-style: disc;
     padding-left: 1.5rem;
     margin-bottom: 1.25rem;
   }
-  .rights-list li { margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .rights-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-ink);
+  }
+  .rights-list li a {
+    color: var(--color-sage-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
   .legal-note {
     font-size: 0.85rem;
     color: var(--color-ink-muted);
     font-style: italic;
     border-top: 1px solid var(--color-line);
-    padding-top: 1.25rem;
-    margin-top: 2rem;
+    padding-top: 1.5rem;
+    margin-top: 2.5rem;
   }
 </style>

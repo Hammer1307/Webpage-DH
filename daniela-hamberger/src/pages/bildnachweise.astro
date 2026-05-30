@@ -1,0 +1,188 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/data/site';
+
+const description = `Bildnachweise und Quellen aller auf ${SITE.url} verwendeten Bilder und Grafiken.`;
+---
+<BaseLayout
+  title="Bildnachweise"
+  description={description}
+  noindex
+>
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="text-align: left;">
+        <a href="/">Start</a><span>/</span><span>Bildnachweise</span>
+      </nav>
+      <h1>Bildnachweise</h1>
+      <p class="page-hero-sub">Quellen aller auf dieser Website verwendeten Bilder und Grafiken</p>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="container-text legal">
+
+      <p>
+        Auf dieser Website werden Bilder aus unterschiedlichen Quellen verwendet.
+        Aus Gründen der Transparenz und im Sinne fairer Bildnutzung sind die
+        Quellen hier aufgeführt.
+      </p>
+
+      <hr />
+
+      <h2>Portraits &amp; persönliche Bilder</h2>
+      <p>
+        Alle Portraits und persönlichen Aufnahmen, die Daniela Britta Hamberger
+        zeigen, wurden im Auftrag der Seitenbetreiberin erstellt bzw. KI-gestützt
+        nach persönlichen Vorlagen generiert. Die Nutzungsrechte liegen vollständig
+        bei Daniela Britta Hamberger.
+      </p>
+
+      <h3>Logo</h3>
+      <p>
+        Logo „Fokus Schöner Leben" (Phönix &amp; Lotus mit Frauenfigur): Eigenes
+        Design, Nutzungsrechte bei Daniela Britta Hamberger.
+      </p>
+
+      <hr />
+
+      <h2>Seminarraum Schöne Aussichten</h2>
+      <p>
+        Die Aufnahmen des Seminarraums Schöne Aussichten in Wiesbaden (Eingangs­bereich,
+        Bestuhlung, Meditationskreis, Detailaufnahmen) wurden mit Genehmigung der
+        Raumbetreiberin verwendet.
+      </p>
+
+      <hr />
+
+      <h2>Stockfotografie</h2>
+
+      <h3>Pexels (Pexels-Lizenz, kostenlos für kommerzielle Nutzung)</h3>
+      <p>
+        Pexels-Lizenz:{' '}
+        <a href="https://www.pexels.com/de-de/lizenz/" rel="noopener noreferrer" target="_blank">
+          pexels.com/de-de/lizenz
+        </a>
+      </p>
+      <ul class="rights-list">
+        <li>Landschaftsbild mit Bäumen und Wiese — Foto von Ganapathy Kumar (Pexels)</li>
+        <li>Workshop-Gruppe in Wohnzimmer — Foto von Hillary Fox (Pexels)</li>
+        <li>Silhouetten beim Springen vor Sonnenuntergang — Foto von Jill Wellington (Pexels)</li>
+        <li>Frauen-Team beim High-Five im Büro — Foto von Kampus Production (Pexels)</li>
+        <li>Lächelnde junge Frau mit High-Fives — Foto von Olia Danilevich (Pexels)</li>
+        <li>Frau im Kornfeld mit ausgebreiteten Armen — Foto von Andrea Piacquadio (Pexels)</li>
+        <li>Erschöpfte Frau am Laptop — Foto von Anna Shvets (Pexels)</li>
+        <li>Geschäftliches Händeschütteln — Foto von Sora Shimazaki (Pexels)</li>
+        <li>Junge Frau mit Smiley-Ballon — Foto vom Stockphotoartist (Pexels)</li>
+        <li>Frühlingswiese mit Apfelbaum und Bank — Foto von Triemli (Pexels)</li>
+        <li>Geschäftliches Beratungsgespräch — Foto von Marek Levák (Pexels)</li>
+        <li>Erfolgreiches Bewerbungsgespräch — Foto von oko_rs (Pexels)</li>
+      </ul>
+
+      <h3>Unsplash (Unsplash-Lizenz, kostenlos für kommerzielle Nutzung)</h3>
+      <p>
+        Unsplash-Lizenz:{' '}
+        <a href="https://unsplash.com/license" rel="noopener noreferrer" target="_blank">
+          unsplash.com/license
+        </a>
+      </p>
+      <ul class="rights-list">
+        <li>Nebelweg im Wald — Foto von Regine Tholen (Unsplash)</li>
+        <li>Tablet mit Schriftzug „you are what matters" — Foto von Resume Genius (Unsplash)</li>
+      </ul>
+
+      <hr />
+
+      <h2>Schriftarten</h2>
+      <p>
+        Auf dieser Website werden folgende Schriftarten verwendet, die selbst
+        gehostet werden (kein Drittanbieter-Request):
+      </p>
+      <ul class="rights-list">
+        <li>
+          <strong>Instrument Serif</strong> — Open-Font-Lizenz (OFL),{' '}
+          <a href="https://fonts.google.com/specimen/Instrument+Serif" rel="noopener noreferrer" target="_blank">
+            Google Fonts
+          </a>
+        </li>
+        <li>
+          <strong>Manrope</strong> — Open-Font-Lizenz (OFL),{' '}
+          <a href="https://fonts.google.com/specimen/Manrope" rel="noopener noreferrer" target="_blank">
+            Google Fonts
+          </a>
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Hinweis zu Stockfotografie</h2>
+      <p>
+        Die verwendeten Stockfotos zeigen Modelle oder symbolische Szenen. Sie
+        dienen ausschließlich der atmosphärischen Illustration der Themen und
+        bilden weder reale Klientinnen noch reale Coaching-Situationen ab.
+      </p>
+
+      <p class="legal-note">
+        Stand: Mai 2026. Sollte ein Bildnachweis fehlerhaft oder unvollständig
+        sein, bitte ich um einen kurzen Hinweis per E-Mail.
+      </p>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero-sub {
+    font-size: 0.95rem;
+    color: var(--color-ink-muted);
+    margin-top: 0.5rem;
+  }
+  .legal h2 {
+    font-size: var(--step-2);
+    margin: 2.5rem 0 1rem;
+    color: var(--color-ink);
+  }
+  .legal h2:first-of-type { margin-top: 0; }
+  .legal h3 {
+    font-size: 1.15rem;
+    margin: 1.75rem 0 0.75rem;
+    color: var(--color-sage-deep);
+    font-weight: 600;
+  }
+  .legal p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-ink);
+  }
+  .legal hr {
+    border: none;
+    border-top: 1px solid var(--color-line);
+    margin: 2.75rem 0;
+  }
+  .legal a {
+    color: var(--color-sage-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .legal a:hover { color: var(--color-ink); }
+  .rights-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .rights-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.93rem;
+    line-height: 1.55;
+    color: var(--color-ink);
+  }
+  .legal-note {
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+    font-style: italic;
+    border-top: 1px solid var(--color-line);
+    padding-top: 1.5rem;
+    margin-top: 2.5rem;
+  }
+</style>

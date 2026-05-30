@@ -114,9 +114,9 @@ const allSchemas = [personSchema, businessSchema, ...extra];
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://cdn.gamma.app" />
+{/* Selbst-gehostete Fonts (DSGVO-konform, kein Drittanbieter-Request an Google) */}
+<link rel="preload" href="/fonts/instrumentserif-jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/manrope-xn7gYHE41ni1AdIRggSxSuXd.woff2" as="font" type="font/woff2" crossorigin />
 
 {allSchemas.map((s) => (
   <script type="application/ld+json" set:html={JSON.stringify(s)} />
