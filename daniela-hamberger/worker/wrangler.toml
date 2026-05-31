@@ -15,5 +15,5 @@ ALLOWED_ORIGIN = "https://danielabrittahamberger.de"
 
 # Custom Domain Routing
 [[routes]]
-pattern = "danielabrittahamberger.de/submit"
+pattern = "api.danielabrittahamberger.de/*"
 zone_name = "danielabrittahamberger.de"
