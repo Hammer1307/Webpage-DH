@@ -8,12 +8,12 @@ MAIL_TO = "info@danielabrittahamberger.de"
 MAIL_FROM = "formular@danielabrittahamberger.de"
 ALLOWED_ORIGIN = "https://danielabrittahamberger.de"
 
-# Wenn du Submissions persistieren möchtest, KV anlegen und ID hier eintragen:
+# Wenn du Submissions persistieren moechtest, KV anlegen und ID hier eintragen:
 # [[kv_namespaces]]
 # binding = "SUBMISSIONS"
 # id = "<KV_NAMESPACE_ID>"
 
-# Custom Domain Routing (alternative zur worker.dev-URL)
-# [[routes]]
-# pattern = "forms.danielabrittahamberger.de/*"
-# zone_name = "danielabrittahamberger.de"
+# Custom Domain Routing
+[[routes]]
+pattern = "danielabrittahamberger.de/submit"
+zone_name = "danielabrittahamberger.de"
