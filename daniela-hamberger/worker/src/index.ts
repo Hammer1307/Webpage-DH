@@ -19,7 +19,7 @@ export interface Env {
     ALLOWED_ORIGIN: string;
     SUBMISSIONS?: KVNamespace;
 }
-h
+
 type FormType = '1zu1' | 'teams' | 'vormerken' | 'nachricht';
 
 interface BasePayload {
