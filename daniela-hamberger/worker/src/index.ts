@@ -301,44 +301,37 @@ async function sendMail(payload: BasePayload, env: Env): Promise<void> {
 // Bestätigungs-E-Mail an Kunden — über Cloudflare MailChannels (kostenlos, alle Adressen)
 async function sendConfirmation(payload: BasePayload, env: Env): Promise<void> {
       if (!payload.email) return;
-    
+
       const name = String(payload.name ?? '');
       const confirmSubject =
               payload.formType === 'vormerken'
-                ? `Ihre Vormerkung ist eingegangen — ${name}`
+          ? `Ihre Vormerkung ist eingegangen — ${name}`
                 : `Ihre Nachricht ist eingegangen — ${name}`;
-    
+
       const html = buildConfirmationHtml(payload);
-      const text = `Liebe/r ${name},\n\nvielen Dank für Ihre Nachricht! Wir haben Ihre Anfrage erhalten und melden uns schnellstmöglich bei Ihnen.\n\nHerzliche Grüße,\nDaniela Britta Hamberger\n\nFokus Schöner Leben · https://danielabrittahamberger.de`;
-    
-      // MailChannels — kostenlos in Cloudflare Workers, sendet an jede externe E-Mail-Adresse
-      const res = await fetch('https://api.mailchannels.net/tx/v1/send', {
+      const text = `Liebe/r ${name},\n\nvielen Dank fuer Ihre Nachricht! Wir haben Ihre Anfrage erhalten und melden uns schnellstmoeglich bei Ihnen.\n\nHerzliche Gruesse,\nDaniela Britta Hamberger\n\nFokus Schoener Leben - https://danielabrittahamberger.de`;
+
+      // Bestaetigung via Resend (gleiche API wie Daniela-Benachrichtigung)
+      const res = await fetch('https://api.resend.com/emails', {
               method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
+              headers: {
+                        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+                        'Content-Type': 'application/json',
+              },
               body: JSON.stringify({
-                        personalizations: [
-                            {
-                                          to: [{ email: String(payload.email), name }],
-                            },
-                                  ],
-                        from: {
-                                    email: env.MAIL_FROM,
-                                    name: 'Daniela Britta Hamberger',
-                        },
+                        from: env.MAIL_FROM,
+                        to: [String(payload.email)],
                         subject: confirmSubject,
-                        content: [
-                            { type: 'text/plain', value: text },
-                            { type: 'text/html', value: html },
-                                  ],
+                        html,
+                        text,
               }),
       });
-    
-      if (!res.ok && res.status !== 202) {
+
+      if (!res.ok) {
               const body = await res.text();
-              console.error(`MailChannels confirmation failed: ${res.status} ${body}`);
+              console.error(`Confirmation email failed: ${res.status} ${body}`);
       }
 }
-
 function validate(payload: BasePayload): { ok: boolean; error?: string } {
     if (payload.website && String(payload.website).trim() !== '') {
           return { ok: false, error: 'honeypot' };
