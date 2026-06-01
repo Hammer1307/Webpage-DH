@@ -19,7 +19,7 @@ export interface Env {
     ALLOWED_ORIGIN: string;
     SUBMISSIONS?: KVNamespace;
 }
-
+h
 type FormType = '1zu1' | 'teams' | 'vormerken' | 'nachricht';
 
 interface BasePayload {
@@ -298,37 +298,45 @@ async function sendMail(payload: BasePayload, env: Env): Promise<void> {
   }
 }
 
+// Bestätigungs-E-Mail an Kunden — über Cloudflare MailChannels (kostenlos, alle Adressen)
 async function sendConfirmation(payload: BasePayload, env: Env): Promise<void> {
-    if (!payload.email) return;
-
-  const name = String(payload.name ?? '');
-    const confirmSubject =
-          payload.formType === 'vormerken'
-        ? `Ihre Vormerkung ist eingegangen — ${name}`
-            : `Ihre Nachricht ist eingegangen — ${name}`;
-
-  const html = buildConfirmationHtml(payload);
-    const text = `Liebe/r ${name},\n\nvielen Dank für Ihre Nachricht! Wir haben Ihre Anfrage erhalten und melden uns schnellstmöglich bei Ihnen.\n\nHerzliche Grüße,\nDaniela Britta Hamberger\n\nFokus Schöner Leben · https://danielabrittahamberger.de`;
-
-  const res = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-                Authorization: `Bearer ${env.RESEND_API_KEY}`,
-                'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-                from: env.MAIL_FROM,
-                to: [String(payload.email)],
-                subject: confirmSubject,
-                html,
-                text,
-        }),
-  });
-
-  if (!res.ok) {
-        // Bestätigungs-E-Mail-Fehler loggen, aber nicht die Hauptantwort blockieren
-      console.error(`Confirmation mail failed: ${res.status} ${await res.text()}`);
-  }
+      if (!payload.email) return;
+    
+      const name = String(payload.name ?? '');
+      const confirmSubject =
+              payload.formType === 'vormerken'
+                ? `Ihre Vormerkung ist eingegangen — ${name}`
+                : `Ihre Nachricht ist eingegangen — ${name}`;
+    
+      const html = buildConfirmationHtml(payload);
+      const text = `Liebe/r ${name},\n\nvielen Dank für Ihre Nachricht! Wir haben Ihre Anfrage erhalten und melden uns schnellstmöglich bei Ihnen.\n\nHerzliche Grüße,\nDaniela Britta Hamberger\n\nFokus Schöner Leben · https://danielabrittahamberger.de`;
+    
+      // MailChannels — kostenlos in Cloudflare Workers, sendet an jede externe E-Mail-Adresse
+      const res = await fetch('https://api.mailchannels.net/tx/v1/send', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                        personalizations: [
+                            {
+                                          to: [{ email: String(payload.email), name }],
+                            },
+                                  ],
+                        from: {
+                                    email: env.MAIL_FROM,
+                                    name: 'Daniela Britta Hamberger',
+                        },
+                        subject: confirmSubject,
+                        content: [
+                            { type: 'text/plain', value: text },
+                            { type: 'text/html', value: html },
+                                  ],
+              }),
+      });
+    
+      if (!res.ok && res.status !== 202) {
+              const body = await res.text();
+              console.error(`MailChannels confirmation failed: ${res.status} ${body}`);
+      }
 }
 
 function validate(payload: BasePayload): { ok: boolean; error?: string } {
