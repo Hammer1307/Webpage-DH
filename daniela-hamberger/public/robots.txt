@@ -5,6 +5,6 @@ Allow: /
 Sitemap: https://danielabrittahamberger.de/sitemap-index.xml
 
 # Disallow common bot traps and dev files
+# Hinweis: /_astro/ (CSS/JS) wird bewusst NICHT gesperrt, damit Google die Seite
+# vollständig rendern und die Mobilfreundlichkeit korrekt bewerten kann.
 Disallow: /api/
-Disallow: /_astro/
-Disallow: /.well-known/

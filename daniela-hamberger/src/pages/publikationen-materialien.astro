@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, PUBLICATIONS } from '@/data/site';
 
 const description =
-  'Bücher, Workbooks, Coaching-Karten und kreative Arbeiten von Daniela Britta Hamberger. Selbstcoachingbuch "Zurück zu dir", mythologische Reise "Das Vermächtnis des Herzens" und mehr.';
+  'Bücher, Workbooks, Coaching-Karten & Kunst von Daniela Britta Hamberger – u. a. das Selbstcoachingbuch „Zurück zu dir“ und „Das Vermächtnis des Herzens“.';
 
 const breadcrumb = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -13,7 +13,7 @@ const breadcrumb = {
   ],
 };
 ---
-<BaseLayout title="Publikationen, Bücher & kreative Arbeiten" description={description} schema={breadcrumb}>
+<BaseLayout title="Bücher, Workbooks & Karten" description={description} schema={breadcrumb}>
   <img class="image-accent" src={IMAGES.publikationenSchreiben} alt="Schreiben am Tablet — Worte, die Räume öffnen können" loading="eager" />
 
   <section class="section bg-cream">

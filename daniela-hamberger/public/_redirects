@@ -1,2 +1,8 @@
 # Redirect sitemap.xml to sitemap-index.xml (for Google Search Console compatibility)
 /sitemap.xml /sitemap-index.xml 301
+
+# SEO-Konsolidierung: dünne, intern nicht verlinkte Zwillingsseiten dauerhaft
+# auf die jeweils stärkere Hauptseite umleiten (löst Keyword-Kannibalisierung,
+# Thin Content und verwaiste Seiten in einem Schritt).
+/fokus-impulse  /impulse              301
+/stimmen        /stimmen-erfahrungen  301

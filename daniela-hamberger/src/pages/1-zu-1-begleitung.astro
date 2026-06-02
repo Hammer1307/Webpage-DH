@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, COACHING_FORMATS, VENUE } from '@/data/site';
 
 const description =
-  'Persönliche 1:1 Begleitung mit Daniela Britta Hamberger — besonders für Frauen, die wieder bei sich selbst ankommen möchten. KlarheitsSitzung, KlarheitsStart und KlarheitsReset für innere Stabilität und neue Ausrichtung.';
+  'Persönliche 1:1 Begleitung für Frauen, die wieder bei sich ankommen: KlarheitsSitzung, KlarheitsStart & KlarheitsReset – online oder in Wiesbaden/Idstein.';
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -13,8 +13,19 @@ const breadcrumb = {
     { '@type': 'ListItem', position: 2, name: '1:1 Begleitung', item: `${SITE.url}/1-zu-1-begleitung` },
   ],
 };
+
+const service = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: '1:1 Begleitung & Coaching',
+  serviceType: 'Mentoring, Coaching, Mentaltraining',
+  provider: { '@id': `${SITE.url}/#person` },
+  areaServed: ['Wiesbaden', 'Idstein', 'Rhein-Main-Gebiet', 'Online'],
+  description:
+    'Persönliche 1:1 Begleitung für Frauen, die wieder bei sich ankommen: KlarheitsSitzung, KlarheitsStart und KlarheitsReset für innere Stabilität und neue Ausrichtung.',
+};
 ---
-<BaseLayout title="1:1 Begleitung" description={description} schema={breadcrumb}>
+<BaseLayout title="1:1 Begleitung" description={description} schema={[breadcrumb, service]}>
   <img class="image-accent" src={IMAGES.daniela1zu1Hero} alt="Daniela Britta Hamberger im Kornfeld — Ankommen und innere Weite" loading="eager" />
 
   <section class="section bg-cream">

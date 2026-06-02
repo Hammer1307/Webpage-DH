@@ -21,7 +21,13 @@ const {
   schema,
 } = Astro.props;
 
-const url = canonical ?? new URL(Astro.url.pathname, SITE.url).href;
+// build.format: 'file' erzeugt Pfade wie '/seite.html'. Der Canonical (und damit
+// og:url / twitter:url) muss aber immer auf die saubere, ausgelieferte URL ohne
+// '.html' zeigen — konsistent mit Sitemap und interner Verlinkung.
+let cleanPath = Astro.url.pathname.replace(/\.html$/, '');
+if (cleanPath.endsWith('/index')) cleanPath = cleanPath.slice(0, -'index'.length);
+if (cleanPath === '') cleanPath = '/';
+const url = canonical ?? new URL(cleanPath, SITE.url).href;
 const ogImageUrl = new URL(ogImage, SITE.url).href;
 const fullTitle = title.includes(SITE.name) ? title : `${title} · ${SITE.name}`;
 
