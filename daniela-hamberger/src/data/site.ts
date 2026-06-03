@@ -52,7 +52,9 @@ export const IMAGES = {
   danielaPortrait:         '/images/daniela-portrait.jpg',
   danielaPortraitStehend:  '/images/daniela-portrait-stehend.jpg',
   danielaKuenstlerin:      '/images/daniela-kuenstlerin.jpg',
-  daniela1zu1Hero:         '/images/daniela-1zu1-hero.jpg',
+  danielaWieseBluse:       '/images/daniela-wiese-bluse.jpg',
+  danielaAutorin:          '/images/daniela-autorin.jpg',
+  daniela1zu1Hero:         '/images/daniela-1zu1-hero-feld.jpg',
   danielaTeams:            '/images/daniela-teams.jpg',
   danielaCoaching:         '/images/daniela-coaching.jpg',
   danielaKontakt:          '/images/daniela-kontakt.jpg',
@@ -212,9 +214,9 @@ export const TEAM_FORMATS = [
     label: 'Mehrere Wochen',
     duration: 'Für Teams, die sich neu sortieren und bewusster ausrichten möchten',
     description:
-      'Der TeamReset ist für euch geeignet, wenn ihr spürt, dass euer Miteinander einen echten Neustart braucht. Vielleicht seid ihr ein neu entstehendes Team. Vielleicht gibt es alte Spannungen. Vielleicht ist Vertrauen verloren gegangen. Oder ihr möchtet einfach bewusster, klarer und menschlicher zusammenarbeiten.',
+      'Der TeamReset ist für euch, wenn euer Miteinander einen echten Neustart braucht – sei es als neu entstehendes Team, nach alten Spannungen, bei verlorengegangenem Vertrauen oder aus dem Wunsch heraus, bewusster und menschlicher zusammenzuarbeiten. Anders als ein einzelner Workshop ist der TeamReset ein intensiver, begleiteter Prozess. Den Anfang machen zwei vorgeschaltete Gespräche: Darin schauen wir gemeinsam genau hin und definieren, an welchen Stellschrauben sich wirklich etwas verändern soll. Ich arbeite dabei mit einem systemischen Ansatz – wir betrachten also nicht einzelne Personen, sondern das Zusammenspiel im Team als Ganzes. Auf dieser Grundlage arbeitet ihr anschließend intensiv miteinander an den Themen, die zählen: Wir klären, lösen und richten neu aus – konzentriert, ehrlich und in einem geschützten Rahmen.',
     topics:
-      'Möglicher Ablauf: Vorgespräch zur Zielklärung · intensive Team-Session oder Workshop · Follow-up nach 2–3 Wochen · erneuter Check-in nach weiteren 2–3 Wochen',
+      'Möglicher Ablauf: Zwei vorgeschaltete Gespräche zur Standortbestimmung und Zielklärung (systemischer Blick auf die Stellschrauben) · intensive gemeinsame Arbeitsphase im Team · Klären und Bearbeiten der zentralen Themen · gemeinsame Ausrichtung und Verankerung für den Alltag',
     suitableFor: '',
     price: 'individuelles Angebot nach Umfang und Zielsetzung',
     cta: 'TeamReset anfragen',
