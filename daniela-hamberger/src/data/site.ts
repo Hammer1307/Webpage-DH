@@ -55,6 +55,7 @@ export const IMAGES = {
   danielaWieseBluse:       '/images/daniela-wiese-bluse.jpg',
   danielaAutorin:          '/images/daniela-autorin.jpg',
   daniela1zu1Hero:         '/images/daniela-1zu1-hero-feld.jpg',
+  daniela1zu1Coaching:     '/images/daniela-1zu1-coaching.jpg',
   danielaTeams:            '/images/daniela-teams.jpg',
   danielaCoaching:         '/images/daniela-coaching.jpg',
   danielaKontakt:          '/images/daniela-kontakt.jpg',
@@ -91,7 +92,7 @@ export const NAV = [
 export const FOOTER_NAV = {
   angebot: [
     { label: '1:1 Begleitung', href: '/1-zu-1-begleitung' },
-    { label: 'KlarheitsReset', href: '/klarheitsreset' },
+    { label: 'Fokus KlarheitsReset', href: '/klarheitsreset' },
     { label: 'Teams & Workshops', href: '/teams-workshops' },
     { label: 'TeamBalance', href: '/teambalance' },
   ],
@@ -164,13 +165,13 @@ export const COACHING_FORMATS = [
   },
   {
     id: 'klarheitsreset',
-    name: 'KlarheitsReset',
-    duration: '2,5 Stunden intensive Begleitung, wenn etwas wirklich geklärt werden möchte',
+    name: 'Fokus KlarheitsReset',
+    duration: 'Intensive Begleitung für Frauen in Krisen- oder Umbruchphasen',
     description:
-      'Der KlarheitsReset ist für dich, wenn du spürst: Ich möchte nicht länger kreisen. Ich möchte hinschauen. Ich möchte mich sortieren. Ich möchte wieder eine klare innere Richtung finden. In einer intensiven Session nehmen wir uns Zeit für dein Anliegen. Wir betrachten innere und äußere Dynamiken, öffnen Raum für neue Perspektiven und schauen, was in dir wieder freigelegt werden möchte.',
-    suitableFor: 'Dauer: ca. 2,5 Stunden',
-    price: '390 €',
-    cta: 'KlarheitsReset buchen',
+      'Der Fokus KlarheitsReset ist für dich geeignet, wenn du gerade den Boden unter den Füßen, deinen inneren Fokus oder deine Orientierung verloren hast — beruflich, privat oder in dir selbst. In zwei vorbereitenden Online-Sitzungen schauen wir gemeinsam, wo deine wichtigsten Stellschrauben liegen. Anschließend arbeiten wir vor Ort in Idstein oder im Raum Wiesbaden intensiv mit dem, was sich bei dir zeigt — achtsam, empathisch und individuell, mit Gespräch, Körperwahrnehmung, inneren Bildern, hypnotherapeutisch inspirierten und energetischen Impulsen. Danach begleiten dich ein bis zwei Online-Coachings dabei, das Erlebte zu integrieren und nächste Schritte klarer zu setzen.',
+    suitableFor: 'Rhythmus: 2 Online-Sitzungen · Intensivzeit vor Ort · 1–2 Online-Nachbegleitungen · Ort: Idstein / Raum Wiesbaden (Unterkunft separat, Empfehlungen möglich)',
+    price: '2.111 €',
+    cta: 'Mehr über den Fokus KlarheitsReset erfahren',
     href: '/klarheitsreset',
     featured: false,
   },
@@ -210,16 +211,16 @@ export const TEAM_FORMATS = [
   },
   {
     id: 'teamreset',
-    name: 'TeamReset',
+    name: 'Team Reset Mentoring',
     label: 'Mehrere Wochen',
     duration: 'Für Teams, die sich neu sortieren und bewusster ausrichten möchten',
     description:
-      'Der TeamReset ist für euch, wenn euer Miteinander einen echten Neustart braucht – sei es als neu entstehendes Team, nach alten Spannungen, bei verlorengegangenem Vertrauen oder aus dem Wunsch heraus, bewusster und menschlicher zusammenzuarbeiten. Anders als ein einzelner Workshop ist der TeamReset ein intensiver, begleiteter Prozess. Den Anfang machen zwei vorgeschaltete Gespräche: Darin schauen wir gemeinsam genau hin und definieren, an welchen Stellschrauben sich wirklich etwas verändern soll. Ich arbeite dabei mit einem systemischen Ansatz – wir betrachten also nicht einzelne Personen, sondern das Zusammenspiel im Team als Ganzes. Auf dieser Grundlage arbeitet ihr anschließend intensiv miteinander an den Themen, die zählen: Wir klären, lösen und richten neu aus – konzentriert, ehrlich und in einem geschützten Rahmen.',
+      'Das Team Reset Mentoring ist für euch, wenn euer Miteinander einen echten Neustart braucht – sei es als neu entstehendes Team, nach alten Spannungen, bei verlorengegangenem Vertrauen oder aus dem Wunsch heraus, bewusster und menschlicher zusammenzuarbeiten. Anders als ein einzelner Workshop ist das Team Reset Mentoring ein intensiver, begleiteter Prozess. Den Anfang machen zwei vorgeschaltete Gespräche: Darin schauen wir gemeinsam genau hin und definieren, an welchen Stellschrauben sich wirklich etwas verändern soll. Ich arbeite dabei mit einem systemischen Ansatz – wir betrachten also nicht einzelne Personen, sondern das Zusammenspiel im Team als Ganzes. Auf dieser Grundlage arbeitet ihr anschließend intensiv miteinander an den Themen, die zählen: Wir klären, lösen und richten neu aus – konzentriert, ehrlich und in einem geschützten Rahmen.',
     topics:
       'Möglicher Ablauf: Zwei vorgeschaltete Gespräche zur Standortbestimmung und Zielklärung (systemischer Blick auf die Stellschrauben) · intensive gemeinsame Arbeitsphase im Team · Klären und Bearbeiten der zentralen Themen · gemeinsame Ausrichtung und Verankerung für den Alltag',
     suitableFor: '',
     price: 'individuelles Angebot nach Umfang und Zielsetzung',
-    cta: 'TeamReset anfragen',
+    cta: 'Team Reset Mentoring anfragen',
     href: '/kontakt',
     featured: false,
   },
@@ -369,7 +370,7 @@ export const BOOKING_1ZU1 = [
   { title: 'Kostenfreies Orientierungsgespräch', duration: '15–30 Minuten', text: 'Für alle, die herausfinden möchten, ob und in welcher Form eine 1:1 Begleitung passt.' },
   { title: 'Klarheitsgespräch', duration: '60 Minuten', text: 'Einzelsitzung für ein konkretes Anliegen — Sortieren, Klären, nächste Schritte finden.' },
   { title: '1:1 Begleitung — Folgetermin', duration: '60 Minuten', text: 'Für bestehende Begleitungen und vertiefende Folgesitzungen.' },
-  { title: 'KlarheitsReset — intensive Einzelsitzung', duration: 'ca. 2,5 Stunden', text: 'Längere Einzelsitzung für tiefer liegende Themen, Klärung oder Neuorientierung.' },
+  { title: 'Fokus KlarheitsReset — Intensivbegleitung', duration: '2 Online-Sitzungen · Intensivzeit vor Ort · 1–2 Nachbegleitungen', text: 'Intensive Begleitung für Frauen in Krisen- oder Umbruchphasen — vor Ort in Idstein bzw. im Raum Wiesbaden.' },
 ] as const;
 
 export const BOOKING_TEAM = [
@@ -377,7 +378,7 @@ export const BOOKING_TEAM = [
   { title: 'Führungskräftecoaching', duration: 'nach Absprache', text: 'Begleitung von Führungskräften in herausfordernden Phasen, Rollenklärung, bewusste Führung.' },
   { title: 'Team-Mentoring', duration: 'nach Absprache', text: 'Längerfristige Begleitung von Teams in Veränderungs- oder Reflexionsprozessen.' },
   { title: 'TeamBalance Workshop', duration: '3–3,5 Stunden', text: 'Halbtagsformat für Klarheit, Wertschätzung und stabile Zusammenarbeit.' },
-  { title: 'TeamReset Workshop', duration: 'individuell', text: 'Tieferer Workshop für Teams in Spannungs- oder Umbruchsphasen.' },
+  { title: 'Team Reset Mentoring', duration: 'begleiteter Prozess', text: 'Begleiteter Neustart für Teams: zwei vorgeschaltete Gespräche, systemischer Blick auf die Stellschrauben, intensive gemeinsame Arbeitsphase.' },
   { title: 'Kleingruppen-Mentoring', duration: 'nach Absprache', text: 'Mentoringformat für kleinere Gruppen mit gemeinsamem Anliegen.' },
   { title: 'Impulsvortrag für Teams', duration: '60–90 Minuten', text: 'Themenimpuls für Teamtage, Konferenzen oder Gesundheitstage.' },
   { title: 'Begleitung von Veränderungsprozessen', duration: 'nach Absprache', text: 'Längere Begleitung organisationaler oder Team-Veränderungen.' },
@@ -440,5 +441,70 @@ export const IMPULSE_BEITRAEGE = [
     teaser:
       'Wenn jüngere und erfahrenere Kolleg:innen sich nicht beäugen, sondern wirklich begegnen, passiert etwas Besonderes: Neugier statt Bewertung, gegenseitiges Lernen statt Reibung. Es braucht nur einen Raum, in dem das möglich wird — und Menschen, die ihn öffnen.',
     source: 'Beitrag',
+  },
+  {
+    id: 'zeit-fuer-dich',
+    category: 'Gedanke',
+    title: 'Ich wünsche dir Zeit für dich',
+    teaser:
+      'Ich wünsche dir Zeit. Nicht nur für das, was getan werden muss — sondern Zeit, in der du wieder spürst, wer du bist.',
+    source: 'Gedanke',
+    poem: true,
+    body: [
+      `Ich wünsche dir Zeit.
+Nicht nur für das, was getan werden muss.
+Nicht nur für Pflichten, Erwartungen
+und die vielen kleinen Dinge,
+die sich jeden Tag vor dich stellen.`,
+      `Ich wünsche dir Zeit,
+in der du wieder spürst,
+wer du bist.`,
+      `Zeit, in der deine Gedanken leiser werden
+und du dich selbst wieder hören kannst —
+unter all dem Lärm,
+unter all dem Funktionieren,
+unter all dem, was du vielleicht lange getragen hast.`,
+      `Ich wünsche dir Momente,
+in denen du dir selbst mit mehr Wertschätzung begegnest.
+Nicht erst dann, wenn alles gelungen ist.
+Nicht erst dann, wenn du stark warst.
+Sondern gerade dort,
+wo du ehrlich mit dir bist.`,
+      `Ich wünsche dir Menschen,
+die dich nicht kleiner machen,
+nicht verbiegen
+und nicht in ein Bild pressen,
+das dir nicht entspricht.`,
+      `Menschen,
+die dich sehen, wie du bist.
+Die dich stärken,
+ohne dich festzuhalten.
+Die dich unterstützen,
+dein eigenes Ich-Sein mutiger zu leben.`,
+      `Ich wünsche dir die Offenheit,
+dich verändern zu dürfen.
+Nicht, weil du falsch bist,
+sondern weil Leben Bewegung ist.`,
+      `Manchmal darf etwas wachsen.
+Manchmal darf etwas gehen.
+Manchmal darfst du dich neu sortieren,
+um mehr Lebensqualität,
+mehr innere Stabilität
+und mehr Besonnenheit zu finden.`,
+      `Ich wünsche dir Freude,
+die nicht laut sein muss.
+Ein Lächeln, das von innen kommt.
+Ein Vertrauen, das langsam wächst.
+Eine Klarheit, die dich wieder aufrichtet.`,
+      `Und ich wünsche dir Zeit,
+nicht um sie festzuhalten,
+sondern um sie bewusster zu leben.`,
+      `Zeit zum Atmen.
+Zeit zum Wachsen.
+Zeit zum Lieben.
+Zeit, dich selbst wiederzufinden.`,
+      `Zeit für dein Leben.
+Und Zeit für dich.`,
+    ],
   },
 ] as const;

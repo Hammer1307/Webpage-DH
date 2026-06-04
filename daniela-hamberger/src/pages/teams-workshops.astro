@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, TEAM_FORMATS, WORKSHOP_TOPICS, VENUE } from '@/data/site';
 
 const description =
-  'Teamcoaching & Workshops für gelingendes Miteinander: Impulsvortrag, TeamBalance & TeamReset – online oder vor Ort in Wiesbaden, Idstein & Rhein-Main.';
+  'Teamcoaching & Workshops für gelingendes Miteinander: Impulsvortrag, TeamBalance & Team Reset Mentoring – online oder vor Ort in Wiesbaden, Idstein & Rhein-Main.';
 
 const breadcrumb = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -21,7 +21,7 @@ const service = {
   provider: { '@id': `${SITE.url}/#person` },
   areaServed: ['Wiesbaden', 'Idstein', 'Rhein-Main-Gebiet', 'Online'],
   description:
-    'Teamcoaching und Workshops für gelingendes Miteinander: Impulsvortrag, TeamBalance Workshop und TeamReset – online oder vor Ort im Rhein-Main-Gebiet.',
+    'Teamcoaching und Workshops für gelingendes Miteinander: Impulsvortrag, TeamBalance Workshop und Team Reset Mentoring – online oder vor Ort im Rhein-Main-Gebiet.',
 };
 ---
 <BaseLayout title="Teams & Workshops" description={description} schema={[breadcrumb, service]}>
@@ -68,13 +68,10 @@ const service = {
         <span class="eyebrow">Wo wir zusammenarbeiten</span>
         <h2>Direkt bei euch, online oder <em>in einem stimmigen Raum</em></h2>
         <p>
-          Workshops und Teamformate können je nach Anliegen online, in geeigneten Räumlichkeiten in
-          Wiesbaden oder Idstein oder direkt <strong>bei euch vor Ort</strong> im Rhein-Main-Gebiet stattfinden.
+          Wir arbeiten dort, wo es für euer Anliegen sinnvoll und stimmig ist: direkt <strong>bei euch</strong>, online oder in einem passenden Raumumfeld.
         </p>
         <p>
-          Für Teams und Organisationen komme ich nach Absprache auch zu euch — in eure Räume oder an
-          einen geeigneten externen Ort. Für kleinere Gruppen und sehr kompakte Formate kann
-          alternativ ein ruhiger Seminarraum in Wiesbaden genutzt werden, wenn das zum Anliegen passt.
+          Workshops und Teamformate können je nach Anliegen in euren Räumen oder an einem geeigneten externen Ort im Rhein-Main-Gebiet stattfinden. Für kleinere Gruppen und sehr kompakte Formate kann alternativ ein ruhiger Seminarraum in Wiesbaden genutzt werden, wenn es zum Anliegen passt.
         </p>
         <p>
           Gerade für Teamprozesse ist der Rahmen wichtig. Wenn Menschen einmal aus dem gewohnten
@@ -155,7 +152,7 @@ const service = {
 
   <section class="section bg-sage">
     <div class="container-narrow" style="text-align: center;">
-      <h2>Sprechen wir über <em>euer Team</em></h2>
+      <h2>Sprechen wir über <em>euch</em></h2>
       <p style="margin: 1rem auto 2rem; max-width: 50ch;">Ein kostenfreies Erstgespräch klärt, ob und in welcher Form eine Zusammenarbeit Sinn macht.</p>
       <button type="button" class="btn btn-gold" data-modal-open="teams" data-format="unklar">Anfrage senden</button>
     </div>

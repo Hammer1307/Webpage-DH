@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES } from '@/data/site';
 
 const description =
-  'KlarheitsReset: intensive 1:1-Session (2,5 Std., 390 €) für ein konkretes Thema – fokussiert und in Ruhe, online oder vor Ort in Wiesbaden/Idstein.';
+  'Fokus KlarheitsReset: intensive Begleitung für Frauen in Krisen- oder Umbruchphasen — zwei Online-Sitzungen, Intensivzeit vor Ort in Idstein/Wiesbaden, Nachbegleitung. 2.111 €.';
 
 const schemas = [
   {
@@ -12,21 +12,22 @@ const schemas = [
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Start', item: `${SITE.url}/` },
       { '@type': 'ListItem', position: 2, name: '1:1 Begleitung', item: `${SITE.url}/1-zu-1-begleitung` },
-      { '@type': 'ListItem', position: 3, name: 'KlarheitsReset', item: `${SITE.url}/klarheitsreset` },
+      { '@type': 'ListItem', position: 3, name: 'Fokus KlarheitsReset', item: `${SITE.url}/klarheitsreset` },
     ],
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'KlarheitsReset — Intensive 1:1 Session',
+    name: 'Fokus KlarheitsReset',
     provider: { '@type': 'Person', name: SITE.name },
-    description: 'Intensive 1:1 Session (2,5 Stunden) für tiefere Klärung eines konkreten Themas.',
-    offers: { '@type': 'Offer', price: '390', priceCurrency: 'EUR', description: '390 €' },
+    description: 'Intensive Begleitung für Frauen in Krisen- oder Umbruchphasen: zwei vorbereitende Online-Sitzungen, Intensivzeit vor Ort in Idstein bzw. im Raum Wiesbaden, ein bis zwei Online-Nachbegleitungen.',
+    areaServed: ['Idstein', 'Wiesbaden', 'Rhein-Main-Gebiet', 'Online'],
+    offers: { '@type': 'Offer', price: '2111', priceCurrency: 'EUR', description: '2.111 €' },
   },
 ];
 ---
 <BaseLayout
-  title="KlarheitsReset – Intensiv-Session"
+  title="Fokus KlarheitsReset"
   description={description}
   schema={schemas}
 >
@@ -35,49 +36,55 @@ const schemas = [
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Start</a><span>/</span>
         <a href="/1-zu-1-begleitung">1:1 Begleitung</a><span>/</span>
-        <span>KlarheitsReset</span>
+        <span>Fokus KlarheitsReset</span>
       </nav>
-      <span class="tag tag-gold">1:1 Intensiv-Session</span>
-      <h1>Klarheits<em>Reset</em></h1>
-      <h2 class="kr-subhead">Wenn du spürst, dass sich etwas klären muss.</h2>
+      <span class="tag tag-gold">Intensivbegleitung für Frauen</span>
+      <h1>Fokus Klarheits<em>Reset</em></h1>
+      <h2 class="kr-subhead">Intensive Begleitung für Frauen in Krisen- oder Umbruchphasen.</h2>
     </div>
   </section>
 
   <section class="section section-cream">
     <div class="container-narrow">
       <blockquote class="kr-quote">
-        <p>Du denkst viel nach, aber kommst innerlich nicht weiter?</p>
-        <p>Du fühlst dich erschöpft, unruhig oder blockiert?</p>
-        <p>Du stehst vor einer Entscheidung und wünschst dir mehr Klarheit?</p>
+        <p>Du hast den Boden unter den Füßen verloren?</p>
+        <p>Beruflich, privat oder in dir selbst ist gerade vieles in Bewegung?</p>
+        <p>Du wünschst dir wieder Fokus, Halt und eine klare Richtung?</p>
       </blockquote>
 
       <p>
-        Der KlarheitsReset ist eine intensive 1:1 Session für Menschen, die sich konzentriert
-        mit einem konkreten Thema auseinandersetzen möchten.
+        Der Fokus KlarheitsReset ist für dich geeignet, wenn du gerade den Boden unter den Füßen,
+        deinen inneren Fokus oder deine Orientierung verloren hast — beruflich, privat oder in dir selbst.
       </p>
       <p>
-        In einem geschützten Rahmen sortieren wir deine aktuelle Situation, betrachten innere
-        Muster und öffnen Raum für neue Perspektiven. Je nach Anliegen arbeiten wir mit
-        Gespräch, mentaler Klärung, kreativen Methoden, hypnotherapeutischen Impulsen und
-        intuitiver Prozessarbeit.
+        In zwei vorbereitenden Online-Sitzungen schauen wir gemeinsam, wo deine wichtigsten
+        Stellschrauben liegen. Anschließend arbeiten wir vor Ort in Idstein oder im Raum Wiesbaden
+        intensiv mit dem, was sich bei dir zeigt — achtsam, empathisch und individuell, mit Gespräch,
+        Körperwahrnehmung, inneren Bildern, hypnotherapeutisch inspirierten und energetischen Impulsen.
       </p>
+      <p>
+        Danach begleiten dich ein bis zwei Online-Coachings dabei, das Erlebte zu integrieren und
+        nächste Schritte klarer zu setzen.
+      </p>
+
+      {/* TODO Bildrunde: hier Bild einfügen — Frau im Kornfeld sitzend, Arme ausgebreitet, Rucksack auf dem Rücken, wirkt glücklich und befreit */}
 
       <div class="kr-facts">
         <div class="fact">
-          <h4>Dauer</h4>
-          <p>ca. 2,5 Stunden</p>
+          <h4>Rhythmus</h4>
+          <p>2 Online-Sitzungen · Intensivzeit vor Ort · 1–2 Online-Nachbegleitungen</p>
         </div>
         <div class="fact">
-          <h4>Format</h4>
-          <p>online oder vor Ort<br />nach Absprache</p>
+          <h4>Ort</h4>
+          <p>Idstein / Raum Wiesbaden</p>
         </div>
         <div class="fact">
           <h4>Investition</h4>
-          <p>390 €</p>
+          <p>2.111 €</p>
         </div>
         <div class="fact">
-          <h4>Vorab</h4>
-          <p>kostenfreies Orientierungs­gespräch (20 Min.)</p>
+          <h4>Unterkunft</h4>
+          <p>separat · Empfehlungen möglich</p>
         </div>
       </div>
     </div>
@@ -85,13 +92,13 @@ const schemas = [
 
   <section class="section section-bordeaux">
     <div class="container-narrow" style="text-align: center;">
-      <h2>Bereit für mehr Klarheit?</h2>
+      <h2>Bereit für deinen Fokus KlarheitsReset?</h2>
       <p style="margin: 1rem auto 2rem; max-width: 50ch;">
         Starte mit einem kostenfreien Orientierungsgespräch. Wir schauen gemeinsam, ob der
-        KlarheitsReset das Richtige für dich ist.
+        Fokus KlarheitsReset das Richtige für dich ist.
       </p>
       <div class="btn-group btn-group-center">
-        <button type="button" class="btn btn-gold" data-modal-open="1zu1" data-format="klarheitsreset">KlarheitsReset anfragen</button>
+        <button type="button" class="btn btn-gold" data-modal-open="1zu1" data-format="klarheitsreset">Fokus KlarheitsReset anfragen</button>
         <button type="button" class="btn btn-outline" style="color: var(--color-cream); border-color: var(--color-gold-pale);" data-modal-open="1zu1" data-format="orientierung">Kostenfreies Gespräch buchen</button>
       </div>
       <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.75;">

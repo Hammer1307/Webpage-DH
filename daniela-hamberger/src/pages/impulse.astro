@@ -74,6 +74,7 @@ const breadcrumb = {
             <span class="beitrag-cat">{b.category}</span>
             <h3>{b.title}</h3>
             <p>{b.teaser}</p>
+            <a href={`/impulse/${b.id}`} class="btn btn-secondary beitrag-link">Beitrag ansehen</a>
             <p class="beitrag-source">{b.source}</p>
           </article>
         ))}
@@ -93,17 +94,11 @@ const breadcrumb = {
     <div class="container split-grid">
       <div>
         <span class="eyebrow">Audio &amp; Video</span>
-        <h2>Geführte Audio-Impulse, <em>Fantasiereisen und Videos</em></h2>
+        <h2>Audio-Impulse und Videos <em>für dich</em></h2>
         <p>
-          Geführte <strong>Audio-Impulse, Fantasiereisen und innere Reisen</strong>
-          unterstützen dich dabei, zur Ruhe zu kommen, Stabilität zu finden und
-          wieder mehr Verbindung zu dir selbst aufzubauen.
-        </p>
-        <p>
-          Elemente aus der <strong>Progressiven Muskelentspannung nach Jacobson</strong>
-          und verwandten Entspannungsverfahren können helfen, körperliche Anspannung
-          bewusster wahrzunehmen und Schritt für Schritt mehr innere und äußere
-          Entspannung zu entwickeln.
+          Hier findest du geführte <strong>Fantasie- und innere Reisen</strong>, meditative Impulse,
+          <strong>Progressive Muskelentspannung nach Jacobson</strong> sowie körperorientierte Übungen,
+          die dich dabei unterstützen können, wieder mehr innere und äußere Balance zu finden.
         </p>
         <p>
           Geplante Formate: kurze Audio-Impulse für den Alltag, geführte
@@ -194,6 +189,7 @@ const breadcrumb = {
     margin-top: 0.5rem !important;
     flex: 0 0 auto !important;
   }
+  .beitrag-link { align-self: flex-start; margin-top: 0.25rem; }
   .beitrag-foot {
     text-align: center;
     padding-top: 1.25rem;

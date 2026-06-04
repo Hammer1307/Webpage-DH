@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, BOOKING_1ZU1, BOOKING_TEAM, CONTACT, VENUE, IMAGES } from '@/data/site';
 
 const description =
-  'Kontakt & Buchung bei Daniela Britta Hamberger: kostenfreies Orientierungsgespräch, KlarheitsReset & Teamvorgespräch – online oder in Wiesbaden/Idstein.';
+  'Kontakt & Buchung bei Daniela Britta Hamberger: kostenfreies Orientierungsgespräch, Fokus KlarheitsReset & Teamvorgespräch – online oder in Wiesbaden/Idstein.';
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -27,7 +27,7 @@ const breadcrumb = {
       <span class="eyebrow">Kontakt &amp; Buchung</span>
       <h1>Lass uns schauen, <em>was für dich passt</em></h1>
       <p class="lead">
-        Du möchtest herausfinden, ob eine 1:1 Begleitung, ein KlarheitsReset oder ein
+        Du möchtest herausfinden, ob eine 1:1 Begleitung, ein Fokus KlarheitsReset oder ein
         Teamformat passend ist?
       </p>
     </div>
@@ -60,7 +60,7 @@ const breadcrumb = {
         </p>
       </header>
 
-      <h3 class="booking-group-title">Für Einzelpersonen — 1:1 Begleitung</h3>
+      <h3 class="booking-group-title">1:1 Begleitung für Frauen</h3>
       <div class="booking-grid">
         {BOOKING_1ZU1.map((b) => (
           <article class="booking-card">
@@ -71,7 +71,7 @@ const breadcrumb = {
         ))}
       </div>
 
-      <h3 class="booking-group-title">Für Teams &amp; Organisationen</h3>
+      <h3 class="booking-group-title">Mentoring, Workshops und Vorträge für Teams</h3>
       <div class="booking-grid">
         {BOOKING_TEAM.map((b) => (
           <article class="booking-card">
@@ -89,13 +89,12 @@ const breadcrumb = {
     <div class="container venue-grid">
       <div class="venue-text">
         <span class="eyebrow">Kontakt &amp; Räumlichkeiten</span>
-        <h2>Vor Ort in <em>Wiesbaden</em></h2>
+        <h2>Online &amp; vor Ort bei euch, in <em>Wiesbaden und Idstein</em></h2>
         <p class="lead">
-          Termine finden online, telefonisch oder nach Absprache vor Ort statt.
+          Meine Begleitungen und Formate finden je nach Anliegen online, telefonisch, bei dir bzw. euch vor Ort oder in stimmigen Räumlichkeiten in Wiesbaden bzw. Idstein statt.
         </p>
         <p>
-          Für ausgewählte Begleitungen, Workshops und Teamformate nutze ich stimmige
-          Räumlichkeiten in Wiesbaden, unter anderem den <strong>{VENUE.name}</strong>.
+          Für ausgewählte Termine nutze ich unter anderem den <strong>{VENUE.name}</strong> in Wiesbaden.
         </p>
         <address class="venue-address">
           <strong>{VENUE.name}</strong><br />

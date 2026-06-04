@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, COACHING_FORMATS, VENUE } from '@/data/site';
 
 const description =
-  'Persönliche 1:1 Begleitung für Frauen, die wieder bei sich ankommen: KlarheitsSitzung, KlarheitsStart & KlarheitsReset – online oder in Wiesbaden/Idstein.';
+  'Persönliche 1:1 Begleitung für Frauen, die wieder bei sich ankommen: KlarheitsSitzung, KlarheitsStart & Fokus KlarheitsReset – online oder in Wiesbaden/Idstein.';
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -22,11 +22,11 @@ const service = {
   provider: { '@id': `${SITE.url}/#person` },
   areaServed: ['Wiesbaden', 'Idstein', 'Rhein-Main-Gebiet', 'Online'],
   description:
-    'Persönliche 1:1 Begleitung für Frauen, die wieder bei sich ankommen: KlarheitsSitzung, KlarheitsStart und KlarheitsReset für innere Stabilität und neue Ausrichtung.',
+    'Persönliche 1:1 Begleitung für Frauen, die wieder bei sich ankommen: KlarheitsSitzung, KlarheitsStart und Fokus KlarheitsReset für innere Stabilität und neue Ausrichtung.',
 };
 ---
 <BaseLayout title="1:1 Begleitung" description={description} schema={[breadcrumb, service]}>
-  <img class="image-accent" src={IMAGES.daniela1zu1Hero} alt="Frau mit weit geöffneten Armen in einem sommerlichen Feld bei Sonnenuntergang — Aufatmen und bei sich ankommen" loading="eager" />
+  <img class="image-accent" src={IMAGES.publikationenSchreiben} alt="Handlettering „you are what matters“ auf einem Tablet — du stehst im Mittelpunkt" loading="eager" />
 
   <section class="section bg-cream">
     <div class="container-narrow">
@@ -38,13 +38,12 @@ const service = {
       </header>
 
       <h2>Vielleicht kennst du das:</h2>
-      <ul class="check-list">
-        <li>Du funktionierst viel, aber innerlich bist du müde.</li>
-        <li>Du bist für andere da, aber verlierst dich selbst aus dem Blick.</li>
-        <li>Du spürst, dass sich etwas verändern möchte, weißt aber noch nicht genau, wie.</li>
-        <li>Du hast dich angepasst, zurückgenommen oder zu oft über deine eigenen Grenzen hinweggegangen.</li>
-        <li>Du suchst wieder mehr Halt, Orientierung und Vertrauen in dich selbst.</li>
-      </ul>
+      <p>
+        Du funktionierst viel, aber innerlich wirst du müde. Du bist für andere da, verlierst dich selbst aber immer mehr aus dem Blick. Vielleicht hast du dich lange angepasst, zurückgenommen oder bist zu oft über deine eigenen Grenzen hinweggegangen — manchmal bewusst, manchmal fast unbemerkt.
+      </p>
+      <p>
+        Vielleicht hat dich auch eine Krise, Trauer, Trennung oder Scheidung aus der Bahn geworfen. Du spürst, dass sich etwas verändern möchte, aber der nächste Schritt ist noch nicht klar. Du suchst wieder Halt, Orientierung, Vertrauen in dich selbst — und einen neuen Zugang zu Positivität und Lebensfreude.
+      </p>
 
       <p>
         In meiner 1:1 Begleitung begleite ich dich dabei, wieder mehr bei dir anzukommen. Nicht durch Druck. Nicht durch fertige Antworten. Sondern durch einen geschützten Raum, in dem du dich selbst wieder klarer wahrnehmen darfst.
@@ -63,13 +62,9 @@ const service = {
       <div>
         <span class="eyebrow">Was in dir wieder sichtbar werden darf</span>
         <h2>In der Begleitung schauen wir <em>gemeinsam</em></h2>
-        <ul class="check-list">
-          <li>Wo stehst du gerade?</li>
-          <li>Was bewegt dich wirklich?</li>
-          <li>Was raubt dir Kraft?</li>
-          <li>Was möchtest du nicht länger mittragen?</li>
-          <li>Und was darf in dir wieder stärker werden?</li>
-        </ul>
+        <p>
+          In der Begleitung schauen wir gemeinsam, was dich gerade belastet, was du nicht länger allein tragen möchtest und welche inneren wie äußeren Schritte dir wieder mehr Klarheit und Stabilität geben können.
+        </p>
         <h3 style="margin-top: 2rem;">Dabei kann entstehen:</h3>
         <ul class="benefits-grid">
           <li>mehr innere Ruhe und Stabilität</li>
@@ -86,7 +81,7 @@ const service = {
         </div>
       </div>
       <figure class="split-image">
-        <img src={IMAGES.begleitungMeditation} alt="Frau in stiller Achtsamkeit vor weiter Landschaft — bei sich ankommen" loading="lazy" />
+        <img src={IMAGES.daniela1zu1Coaching} alt="Daniela Britta Hamberger im 1:1 Coaching-Gespräch mit einer Klientin" loading="lazy" />
       </figure>
     </div>
   </section>
@@ -94,12 +89,12 @@ const service = {
   <section class="section bg-cream">
     <div class="container-narrow">
       <span class="eyebrow">Wie ich arbeite</span>
-      <h2>Mensch im Mittelpunkt, <em>nicht die Methode</em></h2>
+      <h2>Der Mensch im Mittelpunkt, <em>nicht die Methode</em></h2>
       <p>
         Ich verbinde meine langjährige pädagogische Erfahrung mit Mentaltraining, Bewusstseinsarbeit, Achtsamkeit, einem systemischen Blick und weiteren ganzheitlichen Ansätzen. <a href="/ueber-mich#methoden">Mehr zu meinen Methoden →</a>
       </p>
       <p>
-        Manche Themen zeigen sich im Gespräch. Andere werden über innere Bilder, Körperwahrnehmung, alte Überzeugungen, Beziehungen oder wiederkehrende Muster sichtbar.
+        Manche Themen zeigen sich im Gespräch. Andere werden über innere Bilder, Körperwahrnehmung, hypnotherapeutisch inspirierte Impulse, alte Überzeugungen oder körperliche Blockaden sichtbar.
       </p>
       <p>
         Im Mittelpunkt steht nicht die Methode, sondern du: dein Anliegen, dein Tempo und das, was für dich gerade stimmig ist.
@@ -110,10 +105,31 @@ const service = {
   <section class="section bg-cream-soft">
     <div class="container split-grid">
       <figure class="split-image">
-        <img src={IMAGES.begleitungNebelweg} alt="Weicher Lichtweg im Wald — ein Raum, in dem etwas klarer werden darf" loading="lazy" />
+        <img src={IMAGES.begleitungNebelweg} alt="Weicher Lichtweg durch Nebel — Schritt für Schritt wieder Orientierung finden" loading="lazy" />
       </figure>
       <div>
-        <span class="eyebrow">Online oder vor Ort in Wiesbaden</span>
+        <span class="eyebrow">Wenn sich eine Phase wie Nebel anfühlt</span>
+        <h2>Du musst nicht im <em>Nebel</em> bleiben</h2>
+        <p>
+          Manchmal fühlt sich eine Lebensphase an, als würdest du im Nebel feststecken. Du spürst, dass etwas nicht mehr stimmig ist, aber der nächste Schritt ist noch nicht klar. In meiner Begleitung geht es darum, dir wieder Orientierung zu geben — Schritt für Schritt, mit Klarheit, Bewusstsein und einem Blick für das, was in dir gesehen werden möchte.
+        </p>
+        <p>
+          Du musst nicht im Nebel bleiben. Manchmal braucht es eine führende Hand, einen neuen Impuls oder jemanden, der mit dir ein Stück des Weges geht. Gerne unterstütze ich dich fokussiert, empathisch und auf Augenhöhe dabei, damit anstehende Schritte wieder aus dem Nebel heraus ins Sichtbare führen.
+        </p>
+        <p>
+          Nicht jede Veränderung beginnt mit einem großen Knall. Manchmal reicht ein kleiner Impuls, ein neuer Blickwinkel oder ein Moment, in dem etwas innerlich hängen bleibt. Genau daraus kann Bewegung entstehen — in dir, zwischen Menschen und manchmal auch ein Stück darüber hinaus.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream-soft">
+    <div class="container split-grid">
+      <figure class="split-image">
+        <img src={IMAGES.raumMeditation} alt="Ruhiger Seminarraum — ein Ort, an dem du nicht funktionieren musst" loading="lazy" />
+      </figure>
+      <div>
+        <span class="eyebrow">Online oder vor Ort in Wiesbaden und Idstein</span>
         <h2>Ein Ort, an dem du nicht <em>funktionieren musst</em></h2>
         <p>
           Deine 1:1 Begleitung kann online, telefonisch oder nach Absprache vor Ort in Wiesbaden bzw. Idstein stattfinden — auf Wunsch komme ich auch in geeignete Räume im Rhein-Main-Gebiet.
@@ -172,7 +188,7 @@ const service = {
 
   <section class="section bg-sage">
     <div class="container-narrow" style="text-align: center;">
-      <h2>Ein erster Schritt zu <em>mehr Klarheit</em></h2>
+      <h2>Ein erster Schritt zu <em>dir zurück</em></h2>
       <p style="margin: 1rem auto 2rem; max-width: 50ch;">Buche ein kostenfreies Orientierungsgespräch (15–30 Minuten). Unverbindlich, ohne Verpflichtung.</p>
       <button type="button" class="btn btn-gold" data-modal-open="1zu1" data-format="orientierung">Orientierungsgespräch buchen</button>
     </div>
