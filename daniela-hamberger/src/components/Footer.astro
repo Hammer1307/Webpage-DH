@@ -1,5 +1,5 @@
 ---
-import { SITE, CONTACT, VENUE, FOOTER_NAV, SOCIAL } from '@/data/site';
+import { SITE, VENUE, FOOTER_NAV, SOCIAL } from '@/data/site';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -45,8 +45,7 @@ const year = new Date().getFullYear();
         </div>
         <div class="nav-col">
           <h4>Kontakt</h4>
-          <p class="contact-line"><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></p>
-          <p class="contact-line"><a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}>{CONTACT.phone}</a></p>
+          <p class="contact-line"><button type="button" class="footer-contact-link" data-modal-open="nachricht">E-Mail schreiben</button></p>
           <div class="social">
             <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
@@ -102,6 +101,17 @@ const year = new Date().getFullYear();
   .nav-col a:hover { color: var(--color-clay-pale); }
   .contact-line { margin-bottom: 0.4rem; font-size: 0.88rem; color: rgba(245, 239, 230, 0.75); }
   .contact-line a { color: rgba(245, 239, 230, 0.75); }
+  .footer-contact-link {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: rgba(245, 239, 230, 0.75);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .footer-contact-link:hover { color: var(--color-paper, #fff); }
 
   .social { display: flex; gap: 0.85rem; margin-top: 1rem; color: var(--color-clay-pale); }
   .social a { display: inline-flex; color: var(--color-clay-pale); opacity: 0.85; transition: opacity var(--transition); }

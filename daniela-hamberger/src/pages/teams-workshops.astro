@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, TEAM_FORMATS, WORKSHOP_TOPICS, VENUE } from '@/data/site';
 
 const description =
-  'Teamcoaching & Workshops für gelingendes Miteinander: Impulsvortrag, TeamBalance & Team Reset Mentoring – online oder vor Ort in Wiesbaden, Idstein & Rhein-Main.';
+  'Teamcoaching & Workshops für gelingendes Miteinander: Impulsvortrag, TeamBalance & Team Reset Mentoring – vor Ort in Wiesbaden, Idstein & Rhein-Main.';
 
 const breadcrumb = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -19,13 +19,13 @@ const service = {
   name: 'Teamcoaching & Workshops',
   serviceType: 'Teamentwicklung, Workshops, Impulsvortrag, Führungskräftecoaching',
   provider: { '@id': `${SITE.url}/#person` },
-  areaServed: ['Wiesbaden', 'Idstein', 'Rhein-Main-Gebiet', 'Online'],
+  areaServed: ['Wiesbaden', 'Idstein', 'Rhein-Main-Gebiet'],
   description:
-    'Teamcoaching und Workshops für gelingendes Miteinander: Impulsvortrag, TeamBalance Workshop und Team Reset Mentoring – online oder vor Ort im Rhein-Main-Gebiet.',
+    'Teamcoaching und Workshops für gelingendes Miteinander: Impulsvortrag, TeamBalance Workshop und Team Reset Mentoring – vor Ort im Rhein-Main-Gebiet.',
 };
 ---
 <BaseLayout title="Teams & Workshops" description={description} schema={[breadcrumb, service]}>
-  <img class="image-accent image-accent--portrait-source" src={IMAGES.danielaTeams} alt="Daniela Britta Hamberger am Flipchart — Klarheit und neue Perspektiven für Teams" loading="eager" />
+  <img class="image-accent image-accent--portrait-source" src={IMAGES.teamsHighfive} alt="Lächelnde Frau, die mit zwei Personen abklatscht — gelingendes Miteinander im Team" loading="eager" />
 
   <section class="section bg-cream">
     <div class="container-narrow">
@@ -66,9 +66,9 @@ const service = {
     <div class="container split-grid">
       <div>
         <span class="eyebrow">Wo wir zusammenarbeiten</span>
-        <h2>Direkt bei euch, online oder <em>in einem stimmigen Raum</em></h2>
+        <h2>Direkt bei euch oder <em>in einem stimmigen Raum</em></h2>
         <p>
-          Wir arbeiten dort, wo es für euer Anliegen sinnvoll und stimmig ist: direkt <strong>bei euch</strong>, online oder in einem passenden Raumumfeld.
+          Wir arbeiten dort, wo es für euer Anliegen sinnvoll und stimmig ist: direkt <strong>bei euch</strong> oder in einem passenden Raumumfeld.
         </p>
         <p>
           Workshops und Teamformate können je nach Anliegen in euren Räumen oder an einem geeigneten externen Ort im Rhein-Main-Gebiet stattfinden. Für kleinere Gruppen und sehr kompakte Formate kann alternativ ein ruhiger Seminarraum in Wiesbaden genutzt werden, wenn es zum Anliegen passt.

@@ -18,7 +18,8 @@ export const SITE = {
 export const CONTACT = {
   email: 'info@danielabrittahamberger.de',
   emailShort: 'info@danielahamberger.de',
-  phone: '+49 6126 71705',
+  // phone bewusst nicht veröffentlicht — Kontakt nur per E-Mail / Kontaktformular
+  // phone: '',
   street: 'Schwalbacher Straße 30A',
   postalCode: '65510',
   city: 'Idstein',
@@ -56,7 +57,10 @@ export const IMAGES = {
   danielaAutorin:          '/images/daniela-autorin.jpg',
   daniela1zu1Hero:         '/images/daniela-1zu1-hero-feld.jpg',
   daniela1zu1Coaching:     '/images/daniela-1zu1-coaching.jpg',
+  klarheitsresetFeld:      '/images/klarheitsreset-feld.jpg',
+  visionLandschaft:        '/images/vision-landschaft.jpg',
   danielaTeams:            '/images/daniela-teams.jpg',
+  teamsHighfive:           '/images/teams-highfive.jpg',
   danielaCoaching:         '/images/daniela-coaching.jpg',
   danielaKontakt:          '/images/daniela-kontakt.jpg',
   // Atmosphäre
@@ -168,9 +172,9 @@ export const COACHING_FORMATS = [
     name: 'Fokus KlarheitsReset',
     duration: 'Intensive Begleitung für Frauen in Krisen- oder Umbruchphasen',
     description:
-      'Der Fokus KlarheitsReset ist für dich geeignet, wenn du gerade den Boden unter den Füßen, deinen inneren Fokus oder deine Orientierung verloren hast — beruflich, privat oder in dir selbst. In zwei vorbereitenden Online-Sitzungen schauen wir gemeinsam, wo deine wichtigsten Stellschrauben liegen. Anschließend arbeiten wir vor Ort in Idstein oder im Raum Wiesbaden intensiv mit dem, was sich bei dir zeigt — achtsam, empathisch und individuell, mit Gespräch, Körperwahrnehmung, inneren Bildern, hypnotherapeutisch inspirierten und energetischen Impulsen. Danach begleiten dich ein bis zwei Online-Coachings dabei, das Erlebte zu integrieren und nächste Schritte klarer zu setzen.',
+      'Der Fokus KlarheitsReset ist für dich geeignet, wenn du gerade den Boden unter den Füßen, deinen inneren Fokus oder deine Orientierung verloren hast — beruflich, privat oder in dir selbst. In zwei vorbereitenden Online-Sitzungen schauen wir gemeinsam, wo deine wichtigsten Stellschrauben liegen. Anschließend arbeiten wir vor Ort in Idstein oder im Raum Wiesbaden intensiv mit dem, was sich bei dir zeigt — achtsam, empathisch und individuell, mit Gespräch, Körperwahrnehmung, inneren Bildern, hypnotherapeutischen Ansätzen oder Hypnose sowie energetischen Impulsen. Danach begleiten dich ein bis zwei Online-Coachings dabei, das Erlebte zu integrieren und nächste Schritte klarer zu setzen.',
     suitableFor: 'Rhythmus: 2 Online-Sitzungen · Intensivzeit vor Ort · 1–2 Online-Nachbegleitungen · Ort: Idstein / Raum Wiesbaden (Unterkunft separat, Empfehlungen möglich)',
-    price: '2.111 €',
+    price: '1.099 €',
     cta: 'Mehr über den Fokus KlarheitsReset erfahren',
     href: '/klarheitsreset',
     featured: false,
@@ -323,7 +327,7 @@ export const IMPULSE_TOPICS = [
   { name: 'Gelingendes Miteinander', text: 'Impulse für Beziehungen, Teams, Gruppen, Familie, Beruf und Kommunikation auf Augenhöhe.' },
   { name: 'Natur & Bewusstsein', text: 'Gedanken zu Naturverbundenheit, Verantwortung, Sinn, innerem Wachstum und dem Platz des Menschen im größeren Ganzen.' },
   { name: 'Bücher & Schreibprozesse', text: 'Einblicke in meine Buchprojekte, Figuren, Themen, Schreibprozesse und Hintergründe.' },
-  { name: 'Audio & Video', text: 'Audio-Impulse, kurze Videos, geführte Gedankenreisen, Fantasiereisen und Reflexionsübungen für innere Ordnung, Ruhe und neue Perspektiven.' },
+  { name: 'Audio & Video', text: 'Audio-Impulse und kurze Videos — unter anderem mit meditativen Elementen, Fantasiereisen und inneren Heilreisen, Progressiver Muskelentspannung nach Jacobson sowie Übungen zur Körperwahrnehmung.' },
 ] as const;
 
 // Stimmen — bestehende Stimmen behalten

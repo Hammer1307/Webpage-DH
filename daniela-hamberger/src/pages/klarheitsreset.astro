@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES } from '@/data/site';
 
 const description =
-  'Fokus KlarheitsReset: intensive Begleitung für Frauen in Krisen- oder Umbruchphasen — zwei Online-Sitzungen, Intensivzeit vor Ort in Idstein/Wiesbaden, Nachbegleitung. 2.111 €.';
+  'Fokus KlarheitsReset: intensive Begleitung für Frauen in Krisen- oder Umbruchphasen — zwei Online-Sitzungen, Intensivzeit vor Ort in Idstein/Wiesbaden, Nachbegleitung. 1.099 €.';
 
 const schemas = [
   {
@@ -22,7 +22,7 @@ const schemas = [
     provider: { '@type': 'Person', name: SITE.name },
     description: 'Intensive Begleitung für Frauen in Krisen- oder Umbruchphasen: zwei vorbereitende Online-Sitzungen, Intensivzeit vor Ort in Idstein bzw. im Raum Wiesbaden, ein bis zwei Online-Nachbegleitungen.',
     areaServed: ['Idstein', 'Wiesbaden', 'Rhein-Main-Gebiet', 'Online'],
-    offers: { '@type': 'Offer', price: '2111', priceCurrency: 'EUR', description: '2.111 €' },
+    offers: { '@type': 'Offer', price: '1099', priceCurrency: 'EUR', description: '1.099 €' },
   },
 ];
 ---
@@ -42,6 +42,9 @@ const schemas = [
       <h1>Fokus Klarheits<em>Reset</em></h1>
       <h2 class="kr-subhead">Intensive Begleitung für Frauen in Krisen- oder Umbruchphasen.</h2>
     </div>
+    <figure class="kr-hero-image">
+      <img src={IMAGES.klarheitsresetFeld} alt="Frau mit weit geöffneten Armen und Rucksack sitzt in einem sonnigen Feld — Aufatmen, Freiheit und ein innerer Neustart" loading="eager" />
+    </figure>
   </section>
 
   <section class="section section-cream">
@@ -60,19 +63,31 @@ const schemas = [
         In zwei vorbereitenden Online-Sitzungen schauen wir gemeinsam, wo deine wichtigsten
         Stellschrauben liegen. Anschließend arbeiten wir vor Ort in Idstein oder im Raum Wiesbaden
         intensiv mit dem, was sich bei dir zeigt — achtsam, empathisch und individuell, mit Gespräch,
-        Körperwahrnehmung, inneren Bildern, hypnotherapeutisch inspirierten und energetischen Impulsen.
+        Körperwahrnehmung, inneren Bildern, hypnotherapeutischen Ansätzen oder Hypnose sowie
+        energetischen Impulsen.
+      </p>
+      <p>
+        Die Intensivzeit vor Ort umfasst <strong>zwei aufeinanderfolgende Tage mit jeweils etwa drei
+        Stunden</strong> gemeinsamer Arbeit. Diese beiden Tage sind bewusst als Auszeit gedacht: Du
+        trittst für einen Moment aus deinem Alltag heraus, gönnst dir Raum nur für dich und vollziehst
+        in dieser Zeit ein <strong>inneres Reset</strong> — in Ruhe, ohne funktionieren zu müssen, mit
+        voller Aufmerksamkeit für das, was sich gerade zeigen darf.
+      </p>
+      <p>
+        Wenn du es einrichten kannst, lohnt es sich, diese Tage auch drumherum als kleine Auszeit zu
+        gestalten — mit etwas Abstand zu Terminen und Verpflichtungen, damit das Erlebte nachwirken kann.
       </p>
       <p>
         Danach begleiten dich ein bis zwei Online-Coachings dabei, das Erlebte zu integrieren und
-        nächste Schritte klarer zu setzen.
+        nächste Schritte klarer zu setzen. Es geht nicht darum, in kurzer Zeit alles zu lösen, sondern
+        wieder spürbar Boden, Fokus und eine klare Richtung zu finden — und mit konkreten nächsten
+        Schritten aus dieser intensiven Zeit herauszugehen.
       </p>
-
-      {/* TODO Bildrunde: hier Bild einfügen — Frau im Kornfeld sitzend, Arme ausgebreitet, Rucksack auf dem Rücken, wirkt glücklich und befreit */}
 
       <div class="kr-facts">
         <div class="fact">
           <h4>Rhythmus</h4>
-          <p>2 Online-Sitzungen · Intensivzeit vor Ort · 1–2 Online-Nachbegleitungen</p>
+          <p>2 Online-Sitzungen · Vor Ort: ca. 3 Std. an 2 Tagen · 1–2 Online-Nachbegleitungen</p>
         </div>
         <div class="fact">
           <h4>Ort</h4>
@@ -80,7 +95,7 @@ const schemas = [
         </div>
         <div class="fact">
           <h4>Investition</h4>
-          <p>2.111 €</p>
+          <p>1.099 €</p>
         </div>
         <div class="fact">
           <h4>Unterkunft</h4>
@@ -124,6 +139,17 @@ const schemas = [
   .kr-hero h1 em {
     font-style: italic;
     color: var(--color-gold-deep);
+  }
+  .kr-hero-image {
+    max-width: 1100px;
+    margin: 2.5rem auto 0;
+    padding: 0 1.5rem;
+  }
+  .kr-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    display: block;
   }
   .kr-subhead {
     font-family: var(--font-display);
