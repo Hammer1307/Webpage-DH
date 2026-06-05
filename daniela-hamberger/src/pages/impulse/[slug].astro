@@ -9,6 +9,8 @@ export async function getStaticPaths() {
 const { b } = Astro.props;
 const paragraphs = ('body' in b && b.body) ? b.body : [b.teaser];
 const isPoem = ('poem' in b && b.poem) ? true : false;
+const beitragImage = ('image' in b && b.image) ? b.image : null;
+const beitragImageAlt = ('imageAlt' in b && b.imageAlt) ? b.imageAlt : b.title;
 
 const description = b.teaser.length > 155 ? b.teaser.slice(0, 152) + '…' : b.teaser;
 
@@ -45,6 +47,12 @@ const schemas = [
         <span class="beitrag-cat">{b.category}</span>
         <h1>{b.title}</h1>
 
+        {beitragImage && (
+          <figure class="beitrag-image">
+            <img src={beitragImage} alt={beitragImageAlt} loading="lazy" />
+          </figure>
+        )}
+
         <div class:list={['beitrag-body', { 'is-poem': isPoem }]}>
           {paragraphs.map((p) => <p>{p}</p>)}
         </div>
@@ -62,6 +70,18 @@ const schemas = [
 
 <style>
   .beitrag-detail { margin-top: 1.5rem; }
+  .beitrag-image {
+    margin: 0 0 1.75rem;
+    border-radius: var(--radius-l);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+  }
+  .beitrag-image img {
+    width: 100%;
+    max-height: 22rem;
+    object-fit: cover;
+    display: block;
+  }
   .beitrag-cat {
     font-size: 0.72rem;
     letter-spacing: 0.18em;

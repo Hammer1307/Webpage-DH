@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SITE, IMAGES, METHODEN_LISTE, VENUE } from '@/data/site';
+import { SITE, IMAGES, HOME_STIMMEN, VENUE } from '@/data/site';
 
 const description =
   'Mentorin & Coach in Wiesbaden, Idstein und online. Fokus Schöner Leben: innere Stabilität, Klarheit und gelingendes Miteinander für Frauen & Teams.';
@@ -13,18 +13,17 @@ const description =
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
-        <span class="eyebrow">Mentoring für Frauen · Mentoring, Workshops und Vorträge für Teams</span>
+        <span class="eyebrow">Mentoring für Frauen · Workshops &amp; Vorträge für Teams</span>
 
-        <h1 class="hero-title">Wenn du spürst:<br /><em>Es darf wieder klarer werden</em></h1>
+        <h1 class="hero-title"><em>Es darf wieder klarer werden.</em></h1>
 
         <p class="hero-lead">
           Innere Ordnung. Neue Klarheit. Freude am Leben.
         </p>
 
         <p class="hero-body">
-          Ich begleite <strong>Frauen in 1:1-Sessions</strong> und <strong>Teams</strong> dabei,
-          wieder mehr Klarheit, Bewusstsein und innere Stabilität zu finden — online sowie vor Ort
-          in Wiesbaden, Idstein oder nach Absprache bei euch im Rhein-Main-Gebiet.
+          Mentoring für Frauen und Begleitung für Teams — für innere Stabilität, Klarheit und ein
+          gelingendes Miteinander. Online sowie vor Ort in Wiesbaden und Idstein.
         </p>
 
         <div class="hero-actions">
@@ -38,6 +37,26 @@ const description =
 
       <div class="hero-visual">
         <img src={IMAGES.danielaHeroPortrait} alt="Daniela Britta Hamberger — Mentorin für innere Stabilität und bewusste Entwicklung" class="hero-photo" loading="eager" fetchpriority="high" />
+      </div>
+    </div>
+  </section>
+
+  {/* ============== ZWEI-WEGE-GABELUNG — Für dich / Für euer Team ============== */}
+  <section class="section-tight zweiwege">
+    <div class="container">
+      <div class="zweiwege-grid">
+        <article class="weg-box">
+          <span class="weg-box-label">Für dich persönlich</span>
+          <h2>1:1 Begleitung</h2>
+          <p>Für Frauen, die wieder bei sich ankommen, neu sortieren oder klarer entscheiden möchten.</p>
+          <a href="/1-zu-1-begleitung" class="btn btn-secondary">Zur 1:1 Begleitung</a>
+        </article>
+        <article class="weg-box">
+          <span class="weg-box-label">Für euer Team</span>
+          <h2>Teams &amp; Workshops</h2>
+          <p>Workshops und Impulsvorträge für Teams und Organisationen — für alle, die ihr Miteinander stärken möchten, unabhängig davon, wer im Team sitzt.</p>
+          <a href="/teams-workshops" class="btn btn-secondary">Zu Teams &amp; Workshops</a>
+        </article>
       </div>
     </div>
   </section>
@@ -69,7 +88,7 @@ const description =
           <span class="service-card-label">03 — Zum Mitnehmen</span>
           <h3>Bücher &amp; Karten</h3>
           <p>Selbstcoaching-Buch <em>Zurück zu dir</em>, mythologische Weisheitsgeschichte <em>Das Vermächtnis des Herzens</em> und Coaching-Karten — in Vorbereitung.</p>
-          <p class="service-card-price">Bei Erscheinen informieren lassen</p>
+          <p class="service-card-price">In Vorbereitung</p>
           <a href="/publikationen-materialien" class="service-card-link">Zu den Publikationen →</a>
         </article>
       </div>
@@ -107,13 +126,70 @@ const description =
     </div>
   </section>
 
-  {/* ============== METHODENLEISTE — nur einmal ============== */}
+  {/* ============== USP — Warum mit mir arbeiten ============== */}
+  <section class="section-tight usp-section">
+    <div class="container">
+      <div class="usp-head">
+        <span class="eyebrow">Warum mit mir arbeiten</span>
+      </div>
+      <div class="usp-grid">
+        <article class="usp-card">
+          <h3>Pädagogische Wurzeln statt Schema F.</h3>
+          <p>Viele Jahre war ich Lehrerin in der Sekundarstufe&nbsp;I. Menschen wirklich zu begleiten, ihnen zuzuhören und sie ein Stück ihres Weges zu führen, ist für mich kein Lehrbuchwissen, sondern echte Erfahrung aus dem Alltag mit Menschen.</p>
+        </article>
+        <article class="usp-card">
+          <h3>Der Mensch im Mittelpunkt, nicht die Methode.</h3>
+          <p>Ich richte mich nach dir, deinem Anliegen und deinem Tempo — und nicht nach einem festen Programm, das für alle gleich abläuft.</p>
+        </article>
+        <article class="usp-card">
+          <h3>Ein Ort, an dem du nicht funktionieren musst.</h3>
+          <p>Ein geschützter Raum ohne Druck und ohne fertige Antworten. Hier darfst du einfach erst mal ankommen.</p>
+        </article>
+        <article class="usp-card">
+          <h3>Da, wo es für dich passt.</h3>
+          <p>Unsere 1:1-Begleitung findet online oder vor Ort in Wiesbaden und Idstein statt. Für Teams und Organisationen komme ich nach Absprache auch direkt zu euch ins Rhein-Main-Gebiet.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {/* ============== STIMMEN — Karussell ============== */}
+  <section class="section bg-cream-soft stimmen-carousel-section">
+    <div class="container">
+      <div class="stimmen-head">
+        <span class="eyebrow">Stimmen &amp; Erfahrungen</span>
+        <h2>Was Menschen <em>mitnehmen</em></h2>
+      </div>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track" data-carousel-track>
+          {HOME_STIMMEN.map((s) => (
+            <figure class="carousel-slide">
+              <blockquote>{s.text}</blockquote>
+              <figcaption>— {s.author}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <div class="carousel-controls">
+          <button type="button" class="carousel-btn" data-carousel-prev aria-label="Vorherige Stimme">←</button>
+          <div class="carousel-dots" data-carousel-dots></div>
+          <button type="button" class="carousel-btn" data-carousel-next aria-label="Nächste Stimme">→</button>
+        </div>
+      </div>
+      <p class="stimmen-more">
+        <a href="/stimmen-erfahrungen">Alle Stimmen &amp; Erfahrungen →</a>
+      </p>
+    </div>
+  </section>
+
+  {/* ============== METHODEN IN KLARTEXT ============== */}
   <section class="section-tight methoden-leiste">
     <div class="container">
       <div class="ornament"><span>Mein Begleitansatz</span></div>
-      <ul class="methoden-list">
-        {METHODEN_LISTE.map((m) => <li>{m}</li>)}
-      </ul>
+      <p class="methoden-klartext">
+        In meiner Arbeit verbinde ich pädagogische Erfahrung mit Mentaltraining, Achtsamkeit und
+        positiver Psychologie — immer mit Blick darauf, was dir gerade wirklich hilft. Welche
+        Methoden zum Einsatz kommen, richtet sich nach dir.
+      </p>
       <p class="methoden-link">
         <a href="/ueber-mich#methoden">Mehr zu meinen Methoden →</a>
       </p>
@@ -416,4 +492,215 @@ const description =
   @media (max-width: 860px) {
     .standorte-grid { grid-template-columns: 1fr; }
   }
+
+  /* ============== ZWEI-WEGE-GABELUNG ============== */
+  .zweiwege { background: var(--color-cream); padding-block: clamp(1.5rem, 3vw, 2.5rem); }
+  .zweiwege-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .weg-box {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-top: 4px solid var(--color-sage);
+    border-radius: var(--radius-l);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 280ms, box-shadow 280ms;
+  }
+  .weg-box:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+  .weg-box-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-clay);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .weg-box h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--color-ink);
+    margin: 0 0 0.75rem;
+  }
+  .weg-box p { color: var(--color-ink-soft); line-height: 1.6; margin-bottom: 1.5rem; max-width: none; flex: 1; }
+  @media (max-width: 760px) {
+    .zweiwege-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============== USP-BLOCK ============== */
+  .usp-section { background: var(--color-cream); border-top: 1px solid var(--color-line-soft); padding-block: clamp(2rem, 4vw, 3rem); }
+  .usp-head { text-align: center; margin-bottom: 1.75rem; }
+  .usp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .usp-card {
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-m);
+    padding: 1.5rem 1.5rem 1.35rem;
+  }
+  .usp-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--color-sage-deep);
+    margin: 0 0 0.6rem;
+    line-height: 1.2;
+  }
+  .usp-card p { font-size: 0.93rem; color: var(--color-ink-soft); line-height: 1.6; margin: 0; max-width: none; }
+  @media (max-width: 760px) {
+    .usp-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============== STIMMEN-KARUSSELL ============== */
+  .stimmen-carousel-section { border-top: 1px solid var(--color-line-soft); }
+  .stimmen-head { text-align: center; margin-bottom: 2rem; }
+  .stimmen-head h2 { margin: 0.5rem 0 0; }
+  .carousel { max-width: 46rem; margin: 0 auto; }
+  .carousel-track {
+    position: relative;
+    min-height: 11rem;
+  }
+  .carousel-slide {
+    margin: 0;
+    text-align: center;
+    padding: 0 1rem;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .carousel-slide.is-active { opacity: 1; pointer-events: auto; position: relative; }
+  .carousel-slide blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    line-height: 1.5;
+    color: var(--color-ink);
+    font-style: italic;
+    margin: 0 0 1rem;
+    border: none;
+    padding: 0;
+  }
+  .carousel-slide blockquote::before { content: '„'; }
+  .carousel-slide blockquote::after { content: '"'; }
+  .carousel-slide figcaption {
+    font-size: 0.9rem;
+    color: var(--color-sage-deep);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .carousel-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-line);
+    background: var(--color-paper);
+    color: var(--color-sage-deep);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 240ms, border-color 240ms, color 240ms;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-btn:hover { background: var(--color-sage); color: #fff; border-color: var(--color-sage); }
+  .carousel-dots { display: flex; gap: 0.45rem; }
+  .carousel-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-line);
+    cursor: pointer;
+    padding: 0;
+    transition: background 240ms, transform 240ms;
+  }
+  .carousel-dot.is-active { background: var(--color-clay); transform: scale(1.25); }
+  .stimmen-more { text-align: center; margin-top: 1.75rem; }
+  .stimmen-more a { color: var(--color-sage-deep); font-weight: 500; text-decoration: none; }
+  .stimmen-more a:hover { color: var(--color-ink); }
+
+  /* Methoden-Klartext */
+  .methoden-klartext {
+    text-align: center;
+    max-width: 60ch;
+    margin: 0 auto 1rem;
+    color: var(--color-ink-soft);
+    line-height: 1.7;
+    font-size: 1.02rem;
+  }
 </style>
+
+<script>
+  // Stimmen-Karussell: automatisch laufend, pausiert bei Hover/Fokus, manuell navigierbar
+  function initCarousel() {
+    const root = document.querySelector('[data-carousel]');
+    if (!root) return;
+    const track = root.querySelector('[data-carousel-track]');
+    const slides = Array.from(root.querySelectorAll('.carousel-slide'));
+    const dotsWrap = root.querySelector('[data-carousel-dots]');
+    const prev = root.querySelector('[data-carousel-prev]');
+    const next = root.querySelector('[data-carousel-next]');
+    if (!track || slides.length === 0) return;
+
+    let current = 0;
+    let timer = null;
+    const INTERVAL = 6000;
+
+    // Punkte erzeugen
+    const dots = slides.map((_, i) => {
+      const d = document.createElement('button');
+      d.type = 'button';
+      d.className = 'carousel-dot';
+      d.setAttribute('aria-label', `Stimme ${i + 1}`);
+      d.addEventListener('click', () => { go(i); restart(); });
+      dotsWrap && dotsWrap.appendChild(d);
+      return d;
+    });
+
+    function go(i) {
+      current = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle('is-active', idx === current));
+      dots.forEach((d, idx) => d.classList.toggle('is-active', idx === current));
+    }
+    function advance() { go(current + 1); }
+    function start() { timer = window.setInterval(advance, INTERVAL); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function restart() { stop(); start(); }
+
+    prev && prev.addEventListener('click', () => { go(current - 1); restart(); });
+    next && next.addEventListener('click', () => { go(current + 1); restart(); });
+
+    // Pause bei Hover und Tastatur-Fokus
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', start);
+
+    // Respektiere reduzierte Bewegung
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    go(0);
+    if (!reduce) start();
+  }
+
+  document.addEventListener('DOMContentLoaded', initCarousel);
+  document.addEventListener('astro:page-load', initCarousel);
+</script>

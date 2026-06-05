@@ -77,6 +77,12 @@ const schemas = [
         Wenn du es einrichten kannst, lohnt es sich, diese Tage auch drumherum als kleine Auszeit zu
         gestalten — mit etwas Abstand zu Terminen und Verpflichtungen, damit das Erlebte nachwirken kann.
       </p>
+
+      <figure class="kr-stimmung">
+        <img src={IMAGES.klarheitsresetInnehalten} alt="Frau sitzt ruhig in der Natur und blickt in die Weite — Innehalten und Ankommen" loading="lazy" />
+        <figcaption>Stimmungsbild — Raum zum Innehalten und Ankommen</figcaption>
+      </figure>
+
       <p>
         Danach begleiten dich ein bis zwei Online-Coachings dabei, das Erlebte zu integrieren und
         nächste Schritte klarer zu setzen. Es geht nicht darum, in kurzer Zeit alles zu lösen, sondern
@@ -205,5 +211,23 @@ const schemas = [
     font-size: 1.1rem;
     margin: 0;
     line-height: 1.4;
+  }
+  .kr-stimmung {
+    margin: 2rem 0;
+  }
+  .kr-stimmung img {
+    width: 100%;
+    max-height: 24rem;
+    object-fit: cover;
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-card);
+    display: block;
+  }
+  .kr-stimmung figcaption {
+    font-size: 0.78rem;
+    color: var(--color-ink-muted);
+    font-style: italic;
+    text-align: center;
+    margin-top: 0.5rem;
   }
 </style>

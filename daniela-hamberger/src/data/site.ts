@@ -39,8 +39,8 @@ export const VENUE = {
 } as const;
 
 export const SOCIAL = {
-  instagram: 'https://instagram.com/fokus_schoener_leben',
-  instagramHandle: '@fokus_schoener_leben',
+  instagram: 'https://instagram.com/danielabrittahamberger',
+  instagramHandle: '@danielabrittahamberger',
   linkedin: 'https://www.linkedin.com/in/danielabrittahamberger',
 } as const;
 
@@ -80,6 +80,13 @@ export const IMAGES = {
   visionNatur:             '/images/vision-natur.jpg',
   kontaktGespraech:        '/images/kontakt-gespraech.jpg',
   freilegen:               '/images/freilegen.jpg',
+  // Neue Bilder (Relaunch)
+  danielaImagefoto:        '/images/daniela-imagefoto.jpg',          // Über mich — Imagefoto
+  klarheitsresetInnehalten:'/images/klarheitsreset-innehalten.jpg',  // KlarheitsReset Stimmungsbild
+  impulsHappiness:         '/images/impuls-happiness.jpg',           // Impuls Hoffnung & Happiness
+  stimmungWohnraum:        '/images/stimmung-wohnraum.jpg',          // 1:1 Stimmungsbild 1
+  stimmungSessel:          '/images/stimmung-sessel.jpg',            // 1:1 Stimmungsbild 2
+  seminarraumSchoeneAussichten: '/images/seminarraum-schoene-aussichten.jpg', // 1:1 Stimmungsbild 3 (realer Raum)
 } as const;
 
 // Hauptnavigation — exakt nach Briefing
@@ -360,6 +367,18 @@ export const STIMMEN = [
   },
 ] as const;
 
+// Stimmen-Auswahl für das Startseiten-Karussell (Mischung 1:1 / Teams / Stil, namentlich & anonym)
+export const HOME_STIMMEN = [
+  { text: 'Ich kam mit einem Kopf voller Gedanken und ging mit dem Gefühl, wieder atmen zu können. Daniela hat nichts übergestülpt, sondern mir geholfen, meine eigene Klarheit wiederzufinden.', author: 'Nina, KlarheitsStart' },
+  { text: 'Ich hatte das Gefühl, nur noch zu funktionieren. In der Begleitung durfte ich zum ersten Mal seit Langem wieder sortieren, was eigentlich meins ist — und was ich nur mitgetragen habe.', author: 'Claudia, 1:1 Begleitung' },
+  { text: 'Nach meiner Trennung war alles durcheinander: Gedanken, Gefühle, Alltag. Die Sitzungen haben mir geholfen, wieder Boden unter den Füßen zu bekommen und den nächsten Schritt nicht nur zu denken, sondern wirklich zu gehen.', author: 'Sabine, nach einer privaten Umbruchphase' },
+  { text: 'Der Fokus KlarheitsReset war intensiv, aber auf eine gute Weise. Ich hatte Zeit, Abstand vom Alltag zu bekommen, hinzuschauen und das, was sich gezeigt hat, auch wirklich wirken zu lassen.', author: 'Anonym, Fokus KlarheitsReset' },
+  { text: 'Unser Team war vorher müde, gereizt und irgendwie festgefahren. Im Workshop konnten Dinge ausgesprochen werden, ohne dass es eskaliert ist. Das war für uns ein wichtiger Wendepunkt.', author: 'Thomas, Teamleiter' },
+  { text: 'Wir haben gelacht, nachgedacht und an ein paar Stellen auch geschluckt. Genau diese Mischung hat den Workshop so wertvoll gemacht.', author: 'Teilnehmer, Teamformat' },
+  { text: 'Daniela hat unser Team mit viel Feingefühl durch schwierige Themen geführt. Klar, strukturiert und trotzdem menschlich.', author: 'Leitungskraft, soziale Einrichtung' },
+  { text: 'Daniela ist warmherzig, klar und angenehm uneitel. Sie muss nichts beweisen — und genau dadurch entsteht ein Raum, in dem man sich traut, ehrlich zu werden.', author: 'Anja, 1:1 Begleitung' },
+] as const;
+
 // Stiftung — bleibt
 export const STIFTUNG_BEREICHE = [
   { title: 'Umwelt & Artenschutz', text: 'Schutz bedrohter Arten und natürlicher Lebensräume' },
@@ -404,47 +423,111 @@ export const WORKSHOP_TOPICS = [
   { title: 'Zusammenarbeit stärken', text: 'Praktische Übungen und Reflexionen für ein tragfähigeres Miteinander.' },
 ] as const;
 
-// 5 kuratierte Impulse-Beiträge (PLATZHALTER — bitte mit den besten Original-Posts von LinkedIn/Instagram ersetzen)
+// Blog-Beiträge „Fokus Impulse" — je Beitrag eigene URL /impulse/{id}, mit Langversion (body)
 export const IMPULSE_BEITRAEGE = [
   {
-    id: 'dankbarkeit',
+    id: 'generationen-verbinden-statt-vergleichen',
+    category: 'Gelingendes Miteinander',
+    title: 'Generationen verbinden statt vergleichen',
+    teaser:
+      'Ob im Berufsleben, in Familien oder in unserer Gesellschaft – oft werden Generationen miteinander verglichen. Dabei liegt die eigentliche Stärke nicht in den Unterschieden, sondern im Miteinander. Junge Menschen bringen neue Ideen, Offenheit und Veränderungsbereitschaft mit. Erfahrene Menschen verfügen über Wissen, Gelassenheit und einen wertvollen Blick für Zusammenhänge. Gemeinsam können sie voneinander lernen und wachsen. Vielleicht brauchen wir weniger Vergleiche und mehr Begegnungen.',
+    source: 'Beitrag',
+    body: [
+      'Ob im Unternehmen, in der Familie oder in unserer Gesellschaft: Oft sprechen wir über Generationen, als müssten sie gegeneinander antreten.',
+      'Die Jungen gelten als innovativ, flexibel und digital. Die Älteren als erfahren, zuverlässig und besonnen. Doch diese Einteilung greift zu kurz.',
+      'Jede Generation bringt Fähigkeiten, Erfahrungen und Sichtweisen mit, die für unsere gemeinsame Zukunft wichtig sind. Junge Menschen hinterfragen bestehende Strukturen und bringen neue Ideen ein. Ältere Menschen verfügen über Erfahrung, Menschenkenntnis und oft über die Fähigkeit, auch in schwierigen Situationen Ruhe zu bewahren.',
+      'Gerade in einer Zeit, in der sich unsere Arbeitswelt rasant verändert, brauchen wir beides: Mut zur Veränderung und Erfahrung im Umgang mit Veränderungen.',
+      'Studien zeigen, dass vielfältige Teams häufig erfolgreicher sind als sehr homogene Gruppen. Unterschiedliche Perspektiven fördern Kreativität, bessere Entscheidungen und nachhaltigere Lösungen.',
+      'Dabei geht es nicht darum, wer recht hat oder wer moderner ist. Es geht darum, voneinander zu lernen.',
+      'Vielleicht liegt die Zukunft nicht darin, Generationen zu vergleichen, sondern darin, sie miteinander ins Gespräch zu bringen. Denn wenn Erfahrung auf Neugier trifft und Wissen auf Offenheit, entsteht etwas Wertvolles: gegenseitiger Respekt, gemeinsames Wachstum und eine Kultur des Miteinanders.',
+      'Eine starke Gesellschaft braucht nicht die eine oder andere Generation. Sie braucht alle.',
+    ],
+  },
+  {
+    id: 'dankbarkeitsstein',
     category: 'Dankbarkeit',
     title: 'Der Dankbarkeitsstein',
     teaser:
       'Manchmal reicht ein kleiner Stein in der Hosentasche, um den Tag zu drehen. Ein winziger Anker für einen bewussten Moment, wenn der Alltag uns mit sich reißt. Wofür darfst du heute dankbar sein — bevor du weitergehst?',
     source: 'Beitrag',
+    body: [
+      'Manchmal braucht es nicht viel, um wieder bei dir anzukommen. Einen Moment. Einen Atemzug. Einen kleinen Stein in deiner Tasche.',
+      'Ein Dankbarkeitsstein kann ein stiller Begleiter durch deinen Alltag sein. Immer wenn du ihn berührst, darfst du kurz innehalten und dich fragen: Wofür bin ich gerade dankbar? Vielleicht für einen freundlichen Blick. Für einen warmen Kaffee. Für ein Gespräch. Für deine Gesundheit. Für einen Moment Ruhe mitten im Trubel.',
+      'Dankbarkeit bedeutet nicht, schwierige Dinge schönzureden. Sie bedeutet auch nicht, Probleme zu ignorieren. Sie richtet den Blick nur bewusst auf das, was trotz allem trägt. Gerade in einer Zeit, in der vieles schnell, laut und fordernd geworden ist, kann Dankbarkeit wie ein kleiner innerer Anker wirken.',
+      'Auch aus der positiven Psychologie wissen wir: Wer regelmäßig Dankbarkeit übt, stärkt häufig die Wahrnehmung für das Gute im eigenen Leben. Nicht, weil dadurch alles leicht wird. Sondern weil unser Gehirn lernt, nicht nur Mangel, Druck und To-do-Listen zu registrieren, sondern auch Verbindung, Wert, Halt und kleine Glücksmomente.',
+      'Vielleicht suchst du dir heute einen kleinen Stein. Einen, der gut in deiner Hand liegt. Trage ihn bei dir. Und jedes Mal, wenn du ihn spürst, frage dich: Was ist heute nicht selbstverständlich?',
+      'Vielleicht beginnt genau dort ein anderer Blick auf deinen Tag.',
+    ],
   },
   {
-    id: 'waldbaden',
+    id: 'waldbaden-klarheit',
     category: 'Naturverbundenheit',
     title: 'Was Waldbaden mit Klarheit zu tun hat',
     teaser:
       'Wir verbringen täglich Stunden vor Bildschirmen — und wundern uns, dass der Kopf nicht zur Ruhe kommt. Schon zwanzig Minuten im Wald, ohne Aufgabe, ohne Ziel, verändern messbar etwas in uns. Was bräuchtest du heute, um wirklich anzukommen?',
     source: 'Beitrag',
+    body: [
+      'Wir leben in einer Zeit, in der unser Kopf selten wirklich still wird. Nachrichten, Termine, Erwartungen, Bildschirme, Entscheidungen — vieles wirkt gleichzeitig auf uns ein. Oft merken wir erst spät, wie sehr unser inneres System unter Daueranspannung steht. Der Wald kann hier ein Gegenraum sein.',
+      'Waldbaden bedeutet nicht, sportlich durch den Wald zu laufen. Es bedeutet, bewusst einzutauchen: langsamer werden, riechen, hören, sehen, fühlen. Den Boden unter den Füßen spüren. Das Licht zwischen den Bäumen wahrnehmen. Den eigenen Atem wieder bemerken.',
+      'In Japan wird diese Praxis Shinrin Yoku genannt — das bewusste Baden in der Atmosphäre des Waldes. Studien weisen darauf hin, dass Aufenthalte im Wald Stress reduzieren und das Nervensystem beruhigen können. Für mich ist daran besonders wichtig: Der Wald verlangt nichts. Er bewertet nicht. Er funktioniert nicht nach Leistung, Tempo oder Optimierung.',
+      'Gerade darin liegt für mich seine besondere Kraft: Der Wald schafft einen Raum, in dem sich vieles ordnen darf, ohne dass wir aktiv danach suchen müssen.',
+      'Wenn du im Wald bist, darf dein Blick wieder weiter werden. Gedanken, die sich vorher eng angefühlt haben, bekommen Raum. Entscheidungen müssen nicht sofort getroffen werden. Manchmal reicht es, da zu sein. Schritt für Schritt. Atemzug für Atemzug.',
+      'Klarheit entsteht nicht immer durch noch mehr Nachdenken. Manchmal entsteht sie, wenn wir aus dem Gedankenkarussell aussteigen und wieder in Verbindung kommen — mit dem Körper, mit der Natur und mit dem, was in uns oft leise ist, aber besonders wahrhaftig.',
+      'Vielleicht gehst du beim nächsten Mal ohne Ziel in den Wald. Nicht, um etwas zu schaffen. Sondern um dich selbst wieder besser wahrzunehmen – mit all deinen Sinnen.',
+    ],
   },
   {
-    id: 'wertschaetzung-aelter',
-    category: 'Wertschätzung im Arbeitsleben',
-    title: 'Ältere Arbeitnehmer:innen — übersehene Schätze',
-    teaser:
-      'Wer dreißig Jahre Erfahrung mitbringt, hat etwas, das keine Stellenanzeige der Welt einfangen kann: Ruhe in Stürmen, Gespür für Menschen, Wissen um Wiederholungsmuster. Was wäre, wenn wir diesen Erfahrungsschatz aktiv in unseren Teams sichtbar machen würden?',
-    source: 'Beitrag',
-  },
-  {
-    id: 'menschlichkeit',
+    id: 'menschlichkeit-kein-soft-skill',
     category: 'Menschlichkeit im Arbeitsleben',
     title: 'Menschlichkeit ist kein Soft Skill',
     teaser:
       'In vielen Organisationen wird Menschlichkeit als „nice to have" behandelt. Dabei ist sie die Voraussetzung dafür, dass Menschen überhaupt langfristig gut zusammenarbeiten können. Klarheit, Wertschätzung, ehrliche Kommunikation — das sind keine Extras. Das ist das Fundament.',
     source: 'Beitrag',
+    body: [
+      'Wenn in Unternehmen über Erfolg gesprochen wird, stehen häufig Zahlen, Strategien, Prozesse und Effizienz im Mittelpunkt. Das ist verständlich und wichtig. Doch oft wird übersehen, dass hinter jeder Kennzahl Menschen stehen. Menschen, die sich gesehen fühlen möchten. Menschen, die Anerkennung brauchen. Menschen, die Belastungen tragen, die von außen nicht immer sichtbar sind.',
+      'Lange Zeit wurde Menschlichkeit im Berufsleben als etwas betrachtet, das „nice to have" ist. Etwas, das man sich leisten kann, wenn Zeit dafür bleibt. Heute zeigt sich immer deutlicher: Menschlichkeit ist kein Zusatz. Sie ist eine Voraussetzung für nachhaltigen Erfolg.',
+      'Studien aus der Organisationspsychologie zeigen seit Jahren, dass Vertrauen, Wertschätzung und psychologische Sicherheit einen erheblichen Einfluss auf Motivation, Leistungsfähigkeit und Zusammenarbeit haben. Teams arbeiten erfolgreicher, wenn Menschen Fragen stellen dürfen, Fehler ansprechen können und sich nicht permanent schützen müssen.',
+      'Menschlichkeit bedeutet dabei nicht, Konflikten aus dem Weg zu gehen. Im Gegenteil. Sie bedeutet, auch schwierige Themen respektvoll anzusprechen. Klar zu kommunizieren. Grenzen zu setzen und gleichzeitig die Würde des anderen zu achten.',
+      'Gerade in einer Zeit, in der Digitalisierung, Fachkräftemangel und Veränderungsdruck viele Unternehmen fordern, wird ein Faktor immer wichtiger: die Qualität der zwischenmenschlichen Beziehungen.',
+      'Vielleicht sollten wir deshalb häufiger fragen: Wie gehen wir miteinander um? Wie sprechen wir miteinander? Und was bleibt von unserem Handeln zurück, wenn die Zahlen des Quartals längst vergessen sind?',
+      'Menschlichkeit kostet oft weniger als gedacht. Ihr Fehlen dagegen kann sehr teuer werden.',
+    ],
   },
   {
-    id: 'generationen',
-    category: 'Generationen verbinden',
-    title: 'Jung trifft erfahren — was möglich wird',
+    id: 'hoffnung-happiness-positive-gedanken',
+    category: 'Klarheit & Lebensfreude',
+    title: 'Hoffnung, Happiness und die Kraft positiver Gedanken',
     teaser:
-      'Wenn jüngere und erfahrenere Kolleg:innen sich nicht beäugen, sondern wirklich begegnen, passiert etwas Besonderes: Neugier statt Bewertung, gegenseitiges Lernen statt Reibung. Es braucht nur einen Raum, in dem das möglich wird — und Menschen, die ihn öffnen.',
+      'Unser Alltag ist häufig geprägt von Nachrichten, Terminen, Sorgen und Erwartungen. Umso wichtiger ist es, kleine Quellen der Zuversicht bewusst wahrzunehmen. Hoffnung ist dabei weit mehr als bloßes Wunschdenken. Sie hilft uns, Chancen zu erkennen, neue Perspektiven zu entwickeln und auch in schwierigen Zeiten handlungsfähig zu bleiben. Manchmal beginnen positive Veränderungen mit einem einzigen Gedanken.',
     source: 'Beitrag',
+    image: '/images/impuls-happiness.jpg',
+    imageAlt: 'Gelber Pfeil mit dem Schriftzug „Happiness" auf Pflastersteinen — ein Hinweis Richtung Zuversicht',
+    body: [
+      'Hoffnung wird häufig unterschätzt. Manche Menschen halten sie für naiv oder unrealistisch. Doch Hoffnung gehört zu den stärksten inneren Ressourcen, die wir besitzen.',
+      'Hoffnung bedeutet nicht, Probleme zu ignorieren oder Schwierigkeiten auszublenden. Hoffnung bedeutet, trotz Herausforderungen daran zu glauben, dass Entwicklung möglich ist.',
+      'Unser Gehirn ist von Natur aus darauf ausgerichtet, Gefahren schneller wahrzunehmen als Positives. Dieses sogenannte Negativitätsprinzip war früher überlebenswichtig. Heute führt es jedoch oft dazu, dass wir uns stärker auf Probleme als auf Möglichkeiten konzentrieren. Deshalb kann es hilfreich sein, Positivität bewusst zu trainieren.',
+      'Kleine Post-its mit stärkenden Botschaften. Ein Satz am Badezimmerspiegel. Ein Lied, das gute Erinnerungen weckt. Ein Dankbarkeitstagebuch. Ein freundlicher Gedanke über uns selbst. All diese kleinen Impulse können dazu beitragen, unsere Aufmerksamkeit neu auszurichten.',
+      'Auch positive Glaubenssätze spielen dabei eine wichtige Rolle. Statt „Ich schaffe das sowieso nicht" könnte ein neuer Gedanke lauten: „Ich darf Schritt für Schritt wachsen." Statt „Ich bin nicht gut genug" vielleicht: „Ich bin wertvoll, so wie ich bin." Natürlich lösen solche Sätze nicht alle Probleme. Doch sie beeinflussen, wie wir über uns selbst denken und wie wir Herausforderungen begegnen.',
+      'Happiness bedeutet dabei nicht, ständig glücklich zu sein. Es bedeutet vielmehr, Lebensfreude, Sinn, Verbundenheit und Zuversicht bewusst wahrzunehmen.',
+      'Vielleicht beginnt ein erfüllteres Leben nicht mit einer großen Veränderung. Vielleicht beginnt es mit einem kleinen Gedanken. Mit einem freundlichen Blick auf dich selbst. Mit einem Moment der Dankbarkeit. Mit Hoffnung.',
+    ],
+  },
+  {
+    id: 'resilienz-bedeutet-nicht-alles-auszuhalten',
+    category: 'Achtsamkeit & Stressresilienz',
+    title: 'Resilienz bedeutet nicht, alles auszuhalten',
+    teaser:
+      'Viele Menschen glauben, Resilienz bedeute, immer stark sein zu müssen. Doch wahre innere Stärke zeigt sich oft ganz anders. Resilienz bedeutet nicht, Belastungen einfach auszuhalten oder Gefühle zu unterdrücken. Sie bedeutet, Herausforderungen anzunehmen, auf die eigenen Bedürfnisse zu achten und nach schwierigen Zeiten wieder zurück in die eigene Kraft zu finden. Manchmal beginnt Stärke genau dort, wo wir uns erlauben, verletzlich zu sein.',
+    source: 'Beitrag',
+    body: [
+      'Resilienz ist zu einem Begriff geworden, der heute häufig verwendet wird. Doch oft wird er missverstanden. Viele Menschen verbinden damit die Vorstellung, immer stark sein zu müssen, niemals zu zweifeln und jede Herausforderung allein bewältigen zu können. Doch Resilienz bedeutet etwas anderes.',
+      'Resiliente Menschen erleben genauso Unsicherheit, Enttäuschungen, Stress oder Krisen wie andere Menschen auch. Der Unterschied liegt nicht darin, dass sie weniger belastet werden. Der Unterschied liegt darin, wie sie mit Belastungen umgehen.',
+      'Resilienz bedeutet, die eigenen Grenzen wahrzunehmen. Sie bedeutet, Hilfe anzunehmen, wenn sie gebraucht wird. Sie bedeutet, sich nach schwierigen Zeiten wieder aufzurichten und Schritt für Schritt den eigenen Weg weiterzugehen.',
+      'Dabei spielen viele Faktoren eine Rolle: soziale Beziehungen, Selbstfürsorge, Optimismus, Selbstvertrauen und die Fähigkeit, Herausforderungen als Entwicklungsmöglichkeiten zu betrachten.',
+      'Vielleicht kennst du Situationen, in denen du rückblickend festgestellt hast, dass du stärker warst, als du selbst geglaubt hast. Genau dort zeigt sich oft Resilienz. Nicht im perfekten Funktionieren. Sondern im menschlichen Weitergehen.',
+      'Gerade in einer Zeit voller Veränderungen, hoher Anforderungen und permanenter Erreichbarkeit wird Resilienz immer wichtiger. Sie hilft uns, nicht nur leistungsfähig zu bleiben, sondern auch mit uns selbst verbunden zu bleiben.',
+      'Denn wahre Stärke bedeutet nicht, alles auszuhalten. Wahre Stärke bedeutet, gut für sich selbst zu sorgen.',
+    ],
   },
   {
     id: 'zeit-fuer-dich',
