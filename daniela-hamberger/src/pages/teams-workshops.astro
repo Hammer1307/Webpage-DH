@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, TEAM_FORMATS, WORKSHOP_TOPICS, VENUE } from '@/data/site';
+import Zier from '@/components/Zier.astro';
 
 const description =
   'Teamcoaching & Workshops für gelingendes Miteinander: Impulsvortrag, TeamBalance & Team Reset Mentoring – vor Ort in Wiesbaden, Idstein & Rhein-Main.';
@@ -34,6 +35,7 @@ const service = {
         <span class="eyebrow">Für Teams &amp; Organisationen</span>
         <h1>Miteinander, das <em>wieder wirkt</em></h1>
         <p class="lead">Wenn ihr wieder klarer, wertschätzender und menschlicher miteinander arbeiten möchtet.</p>
+        <Zier variant="blatt" />
       </header>
     </div>
   </section>
@@ -57,6 +59,9 @@ const service = {
         </p>
         <p>
           Dabei geht es nicht darum, dass alle gleich werden. Es geht darum, Unterschiedlichkeit besser zu verstehen, Brücken zu bauen und wieder mehr Verbindung im Team entstehen zu lassen.
+        </p>
+        <p>
+          Auch <strong>Führungskräfte</strong> begleite ich gezielt — in ihrer Rolle, in einer gesunden Selbstführung und in einem Führungsstil, der klar in der Sache und wertschätzend im Ton bleibt. Mit Schwerpunkt auf <span class="gold-akzent">Resilienz</span>, Stressmanagement und Burnout-Prävention.
         </p>
       </div>
     </div>
@@ -152,7 +157,7 @@ const service = {
 
   <section class="section bg-sage">
     <div class="container-narrow" style="text-align: center;">
-      <h2>Sprechen wir über <em>euch</em></h2>
+      <h2>Lasst uns <em>sprechen</em></h2>
       <p style="margin: 1rem auto 2rem; max-width: 50ch;">Ein kostenfreies Erstgespräch klärt, ob und in welcher Form eine Zusammenarbeit Sinn macht.</p>
       <button type="button" class="btn btn-gold" data-modal-open="teams" data-format="unklar">Anfrage senden</button>
     </div>

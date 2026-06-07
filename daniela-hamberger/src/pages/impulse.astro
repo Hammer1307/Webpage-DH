@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, IMPULSE_TOPICS, IMPULSE_BEITRAEGE, SOCIAL } from '@/data/site';
+import Zier from '@/components/Zier.astro';
 
 const description =
   'Fokus Impulse: Blog, Gedanken, Audio & Video für innere Ordnung, Klarheit und gelingendes Miteinander – von Daniela Britta Hamberger.';
@@ -23,6 +24,7 @@ const breadcrumb = {
         <span class="eyebrow">Gedanken &amp; Impulse</span>
         <h1>Kleine Impulse,<br /><em>die etwas öffnen</em></h1>
         <p class="lead">Für innere Ordnung, Klarheit und gelingendes Miteinander.</p>
+        <Zier variant="ranke" />
       </header>
 
       <p>Hier teile ich Gedanken, Texte und Impulse zu Themen, die mich bewegen und meine Arbeit prägen: innere Stabilität, Achtsamkeit, Stressresilienz, Wertschätzung, Empathie, Naturverbundenheit, Bewusstsein, Lebensfreude und gelingendes Miteinander.</p>

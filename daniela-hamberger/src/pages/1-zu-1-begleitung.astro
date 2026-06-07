@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, COACHING_FORMATS, VENUE } from '@/data/site';
+import Zier from '@/components/Zier.astro';
 
 const description =
   'Persönliche 1:1 Begleitung für Frauen, die wieder bei sich ankommen: KlarheitsSitzung, KlarheitsStart & Fokus KlarheitsReset – online oder in Wiesbaden/Idstein.';
@@ -35,6 +36,7 @@ const service = {
         <span class="eyebrow">Für Frauen</span>
         <h1>Wieder bei <em>dir</em> ankommen</h1>
         <p class="lead">Besonders für Frauen, die wieder bei sich selbst ankommen möchten.</p>
+        <Zier variant="herz" />
       </header>
 
       <h2>Vielleicht kennst du das:</h2>
@@ -191,7 +193,8 @@ const service = {
 
   <section class="section bg-sage">
     <div class="container-narrow" style="text-align: center;">
-      <h2>Ein erster Schritt zu <em>dir zurück</em></h2>
+      <h2>Ein erster <em>Schritt</em></h2>
+      <p class="leitsatz-script-light">Für ein Leben, das sich echt und stimmig anfühlt.</p>
       <p style="margin: 1rem auto 2rem; max-width: 50ch;">Buche ein kostenfreies Orientierungsgespräch (15–30 Minuten). Unverbindlich, ohne Verpflichtung.</p>
       <button type="button" class="btn btn-gold" data-modal-open="1zu1" data-format="orientierung">Orientierungsgespräch buchen</button>
     </div>
@@ -202,6 +205,16 @@ const service = {
   .page-intro { text-align: center; margin-bottom: 2.5rem; }
   .page-intro h1 { margin: 0.5rem 0 1rem; }
   .page-intro .lead { margin: 0 auto; }
+
+  .leitsatz-script-light {
+    font-family: var(--font-script);
+    font-weight: 600;
+    color: var(--color-cream);
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin: 0.75rem auto 0;
+    opacity: 0.95;
+  }
 
   .check-list { list-style: none; padding: 0; margin: 1.5rem 0 1rem; }
   .check-list li { padding: 0.65rem 0 0.65rem 1.6rem; border-bottom: 1px solid var(--color-line-soft); position: relative; color: var(--color-ink); }

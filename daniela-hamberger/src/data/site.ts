@@ -409,7 +409,9 @@ export const BOOKING_TEAM = [
 
 // Konkrete Workshop-Themen für Teams & Organisationen
 export const WORKSHOP_TOPICS = [
-  { title: 'Stressresilienz im Arbeitsalltag', text: 'Wie ihr im Alltag Stressmuster früher erkennt und gemeinsam stabiler werdet.' },
+  { title: 'Stressresilienz im Arbeitsalltag', text: 'Wie ihr im Alltag Stressmuster früher erkennt und gemeinsam stabiler werdet — mit Methoden aus Resilienztraining und Stressmanagement.' },
+  { title: 'Führungskräfte begleiten', text: 'Begleitung für Führungskräfte: Klarheit in der Rolle, gesunde Selbstführung und ein Führungsstil, der wertschätzend und tragfähig zugleich ist.' },
+  { title: 'Burnout-Prävention', text: 'Frühe Warnsignale erkennen, Belastung gesund regulieren und Routinen entwickeln, die langfristig stabil halten.' },
   { title: 'Bewusste Kommunikation', text: 'Was Worte bewirken — und wie ihr klarer, wertschätzender und ehrlicher miteinander sprecht.' },
   { title: 'Wertschätzung im Team', text: 'Wie Wertschätzung im Alltag spürbar wird, nicht nur als Wort, sondern als Haltung.' },
   { title: 'Besseres Miteinander', text: 'Räume für ehrlichen Austausch, Verbindung und ein menschlicheres Miteinander.' },

@@ -44,6 +44,7 @@
 
   /* === Schrift (v1) === */
   --font-display: 'Instrument Serif', 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Dancing Script', 'Instrument Serif', cursive;
   --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* === Skala (fluid) === */
@@ -175,6 +176,12 @@ ul, ol { color: var(--color-ink-soft); line-height: 1.65; }
   transform: translateY(-1px);
 }
 .script { font-family: var(--font-display); font-style: italic; color: var(--color-sage-deep); }
+.script-akzent { font-family: var(--font-script); font-weight: 600; color: var(--color-clay-deep); font-style: normal; line-height: 1.2; }
+
+/* Relaunch-Zusatz: goldene Akzentwörter & Schreibschrift-Leitsätze (global, leicht entfernbar) */
+.gold-akzent { color: var(--color-clay-deep); font-style: italic; font-family: var(--font-display); font-weight: 500; }
+.leitsatz-script { text-align: center; font-family: var(--font-script); font-weight: 600; color: var(--color-clay-deep); font-size: 1.7rem; line-height: 1.3; margin: 0.6rem auto 0.3rem; }
+.btn-center { text-align: center; margin-top: 1.5rem; }
 
 /* ============================================================ LAYOUT ============================================================ */
 .container { width: 100%; max-width: var(--container-max); margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 2.5rem); }

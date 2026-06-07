@@ -1,6 +1,7 @@
 ---
 // Modale für drei Anfrage-Typen
 // Wird einmalig in BaseLayout eingebunden, über data-attribute Triggern geöffnet.
+import Zier from '@/components/Zier.astro';
 ---
 {/* ============ Modal: 1:1 Anfrage ============ */}
 <dialog id="modal-1zu1" class="modal" aria-labelledby="modal-1zu1-title" aria-modal="true">
@@ -11,6 +12,7 @@
       <span class="eyebrow">Für Frauen · 1:1</span>
       <h2 id="modal-1zu1-title">Anfrage <em>1:1 Begleitung</em></h2>
       <p>Schreib mir gerne — ich melde mich in der Regel innerhalb von 1–2 Werktagen.</p>
+      <Zier variant="herz" />
     </header>
 
     <form class="modal-form" data-form="1zu1" novalidate>
@@ -170,6 +172,7 @@
       <span class="eyebrow">Freie Nachricht</span>
       <h2 id="modal-nachricht-title">Schreib mir eine <em>Nachricht</em></h2>
       <p>Wenn dein Anliegen nicht ins 1:1- oder Teamformular passt — schreib mir gerne direkt. Ich melde mich in der Regel innerhalb von 1–2 Werktagen.</p>
+      <Zier variant="blatt" />
     </header>
 
     <form class="modal-form" data-form="nachricht" novalidate>

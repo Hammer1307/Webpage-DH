@@ -87,3 +87,62 @@ Build erneut erfolgreich getestet (25 Seiten, keine Fehler).
 ## Separate Dokumente (im Ordner ../ ausgeliefert)
 - „Gefunden werden — Google & LinkedIn" (Anleitung)
 - „Social Media & Markenauftritt" (aktualisiert)
+
+---
+
+# Dritte Runde — Gestaltung & Bilder (7. Juni 2026)
+
+Build erneut fehlerfrei (25 Seiten).
+
+## Bilder (Startseite)
+- Hero-Bild (daniela-hero-portrait.jpg): weiße Ränder oben/unten entfernt, unten auf Handhöhe gekürzt (unnatürliche KI-Finger nicht mehr sichtbar).
+- Teaser-Bild „Ich bin Daniela" (daniela-wiese-bluse.jpg): oberer weißer Rand entfernt.
+
+## Neues Ornament-System (Komponente src/components/Zier.astro)
+- Ersetzt das frühere „Apfel"-Zeichen durch ein feines goldenes Linien-Ornament.
+- Drei Varianten: blatt, herz, ranke (SVG, in Markenfarbe).
+- Zielgruppengerecht eingesetzt:
+  - 1:1 / Frauen: Herz erlaubt, wärmer.
+  - Teams / Workshops: nur Blatt/Ranke, KEIN Herz, sachlich.
+  - Startseite/Impulse: Blatt/Ranke, kein Herz (gemischtes Publikum).
+
+## Schreibschrift (Dancing Script, SIL OFL — kommerziell frei)
+- Selbst gehostet: public/fonts/dancingscript-500.woff2, @font-face in fonts.css.
+- CSS-Variable --font-script, Klassen .leitsatz-script / .leitsatz-script-light / .script-akzent.
+- Sparsam eingesetzt: „Bewusst. Klar. Verbunden." (Startseite), „Für ein Leben, das sich echt und stimmig anfühlt." (1:1-Abschluss).
+
+## Goldene Akzentwörter (.gold-akzent, global)
+- Einzelne Schlüsselwörter (echt, stimmig, Fokus Schöner Leben) im Clay-/Goldton.
+
+## Kontaktformular zielgruppengerecht
+- 1:1-Formular: Herz-Ornament (Frauen).
+- Nachricht-Formular: Blatt-Ornament.
+- Teams-Formular: bewusst ohne Ornament (sachlich), Formular bleibt klar/funktional.
+
+## Reversibilität
+- Alle Stil-Elemente sind als eigene Klassen/Komponente gekapselt (.gold-akzent, .leitsatz-script, Zier.astro). Zum Entfernen genügt es, die <Zier />-Aufrufe bzw. die Klassen zurückzunehmen.
+
+---
+
+# Favicon (7. Juni 2026)
+- Neues Favicon: vereinfachte Lotusblüte (gold auf creme), angelehnt ans Logo.
+- Ersetzt das bisherige „d"-Zeichen.
+- Dateien: public/favicon.svg (scharf in jeder Größe), public/favicon.ico (ältere Browser), public/apple-touch-icon.png (180×180, Handy-Homescreen).
+- Im Head verlinkt (SEO.astro): svg + ico-Fallback + apple-touch-icon.
+
+---
+
+# SEO-Erweiterung: Coaching-Schwerpunkte (7. Juni 2026)
+
+## Unsichtbar (Schema-Markup, SEO.astro)
+- knowsAbout & serviceType erweitert: Lifecoaching, Führungskräfte-Coaching, Führungskräfteentwicklung, Resilienz, Resilienztraining, Stressmanagement, Burnout-Prävention/-Prophylaxe.
+
+## Sichtbar (gekonnt eingewoben)
+- Startseite (Begleitansatz): Schwerpunkte Resilienz, Stressmanagement, Burnout-Prävention ergänzt.
+- Teams-Seite: Absatz zur gezielten Begleitung von Führungskräften (Rolle, Selbstführung, Führungsstil) + Schwerpunkte.
+- Workshop-Themen: „Führungskräfte begleiten" und „Burnout-Prävention" neu; Stressresilienz-Thema um Stressmanagement/Resilienztraining ergänzt.
+- Meta-Description der Startseite um Führungskräfte + Schwerpunkte erweitert.
+
+## Bewusst NICHT verwendet
+- „Lifecoach" nur im SEO-Hintergrund (nicht sichtbar prominent), da der Begriff die seriöse Positionierung schwächen könnte.
+- Keine „Experten/Spezialisten"-Titel — stattdessen „Begleitung mit Schwerpunkt …" (seriöser und belastbar).

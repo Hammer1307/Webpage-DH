@@ -50,10 +50,12 @@ const personSchema = {
     addressCountry: CONTACT.countryCode,
   },
   knowsAbout: [
-    'Mentoring', 'Coaching', 'Mentaltraining', 'Bewusstseinsarbeit',
+    'Mentoring', 'Coaching', 'Lifecoaching', 'Mentaltraining', 'Bewusstseinsarbeit',
     'Achtsamkeit', 'Hypnose', 'Positive Psychologie', 'Entspannungspädagogik',
     'Systemische Arbeit', 'PSYCH-K®', 'Bioenergetik',
-    'Teamentwicklung', 'Führungskräftecoaching', 'Stressresilienz',
+    'Teamentwicklung', 'Führungskräftecoaching', 'Führungskräfteentwicklung',
+    'Resilienz', 'Resilienztraining', 'Stressresilienz', 'Stressmanagement',
+    'Burnout-Prävention', 'Burnout-Prophylaxe',
   ],
   knowsLanguage: ['de-DE'],
 };
@@ -93,8 +95,9 @@ const businessSchema = {
     { '@type': 'Country', name: 'Deutschland' },
   ],
   serviceType: [
-    'Coaching', 'Mentoring', 'Lebensberatung', 'Mentaltraining',
-    'Teamcoaching', 'Workshops', 'Stressresilienz',
+    'Coaching', 'Mentoring', 'Lifecoaching', 'Lebensberatung', 'Mentaltraining',
+    'Teamcoaching', 'Führungskräfte-Coaching', 'Workshops',
+    'Resilienz', 'Resilienztraining', 'Stressmanagement', 'Burnout-Prävention',
   ],
   knowsLanguage: ['de-DE'],
 };
@@ -136,6 +139,7 @@ const allSchemas = [personSchema, businessSchema, ...extra];
 <meta name="theme-color" content="#3d4e3f" media="(prefers-color-scheme: dark)" />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
 {/* Selbst-gehostete Fonts (DSGVO-konform, kein Drittanbieter-Request an Google) */}
