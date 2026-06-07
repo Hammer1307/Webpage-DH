@@ -146,3 +146,9 @@ Build erneut fehlerfrei (25 Seiten).
 ## Bewusst NICHT verwendet
 - „Lifecoach" nur im SEO-Hintergrund (nicht sichtbar prominent), da der Begriff die seriöse Positionierung schwächen könnte.
 - Keine „Experten/Spezialisten"-Titel — stattdessen „Begleitung mit Schwerpunkt …" (seriöser und belastbar).
+
+---
+
+# Fix: kursive Wörter auf grünem Balken unsichtbar (7. Juni 2026)
+- Problem: In Überschriften auf dem grünen Balken (.bg-sage) war das kursive <em>-Wort dunkelgrün auf grünem Grund — dadurch unsichtbar ("Ein erster" ohne "Schritt", "Lasst uns" ohne "sprechen").
+- Lösung: Regel in global.css ergänzt — .bg-sage h1/h2/h3/h4 em wird jetzt in hellem Clay/Creme (--color-clay-pale) dargestellt, klar lesbar.

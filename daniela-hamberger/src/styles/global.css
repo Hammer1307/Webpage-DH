@@ -289,6 +289,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 .bg-sage h1, .bg-sage h2, .bg-sage h3, .bg-sage h4 { color: var(--color-cream); }
 .bg-sage p, .bg-sage li, .bg-sage address, .bg-sage span { color: rgba(245, 239, 230, 0.92); }
 .bg-sage strong, .bg-sage b { color: var(--color-cream); }
+.bg-sage h1 em, .bg-sage h2 em, .bg-sage h3 em, .bg-sage h4 em { color: var(--color-clay-pale); }
 .bg-sage a:not(.btn) { color: var(--color-cream); text-decoration: underline; text-underline-offset: 3px; }
 .bg-sage a:not(.btn):hover { color: var(--color-clay-pale); }
 .bg-sage .eyebrow { color: var(--color-sage-pale); }
