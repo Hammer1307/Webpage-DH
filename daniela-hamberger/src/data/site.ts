@@ -181,7 +181,7 @@ export const COACHING_FORMATS = [
     description:
       'Der Fokus KlarheitsReset ist für dich geeignet, wenn du gerade den Boden unter den Füßen, deinen inneren Fokus oder deine Orientierung verloren hast — beruflich, privat oder in dir selbst. In zwei vorbereitenden Online-Sitzungen schauen wir gemeinsam, wo deine wichtigsten Stellschrauben liegen. Anschließend arbeiten wir vor Ort in Idstein oder im Raum Wiesbaden intensiv mit dem, was sich bei dir zeigt — achtsam, empathisch und individuell, mit Gespräch, Körperwahrnehmung, inneren Bildern, hypnotherapeutischen Ansätzen oder Hypnose sowie energetischen Impulsen. Danach begleiten dich ein bis zwei Online-Coachings dabei, das Erlebte zu integrieren und nächste Schritte klarer zu setzen.',
     suitableFor: 'Rhythmus: 2 Online-Sitzungen · Intensivzeit vor Ort · 1–2 Online-Nachbegleitungen · Ort: Idstein / Raum Wiesbaden (Unterkunft separat, Empfehlungen möglich)',
-    price: '1.099 €',
+    price: '1.999 €',
     cta: 'Mehr über den Fokus KlarheitsReset erfahren',
     href: '/klarheitsreset',
     featured: false,

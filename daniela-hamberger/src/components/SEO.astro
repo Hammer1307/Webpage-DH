@@ -63,7 +63,7 @@ const businessSchema = {
   '@type': 'ProfessionalService',
   '@id': `${SITE.url}/#business`,
   name: SITE.name,
-  alternateName: SITE.brand,
+  alternateName: [SITE.brand, 'Daniela Hamberger Coaching & Mentoring'],
   description: SITE.description,
   url: SITE.url,
   email: CONTACT.email,
@@ -77,8 +77,26 @@ const businessSchema = {
     addressRegion: CONTACT.region,
     addressCountry: CONTACT.countryCode,
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 50.2185,
+    longitude: 8.2671,
+  },
   founder: { '@id': `${SITE.url}/#person` },
-  areaServed: { '@type': 'Country', name: 'Deutschland' },
+  areaServed: [
+    { '@type': 'City', name: 'Wiesbaden' },
+    { '@type': 'City', name: 'Idstein' },
+    { '@type': 'City', name: 'Taunusstein' },
+    { '@type': 'City', name: 'Eppstein' },
+    { '@type': 'AdministrativeArea', name: 'Rhein-Main-Gebiet' },
+    { '@type': 'AdministrativeArea', name: 'Hessen' },
+    { '@type': 'Country', name: 'Deutschland' },
+  ],
+  serviceType: [
+    'Coaching', 'Mentoring', 'Lebensberatung', 'Mentaltraining',
+    'Teamcoaching', 'Workshops', 'Stressresilienz',
+  ],
+  knowsLanguage: ['de-DE'],
 };
 
 const extra = schema ? (Array.isArray(schema) ? schema : [schema]) : [];

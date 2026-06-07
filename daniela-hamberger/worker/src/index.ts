@@ -126,6 +126,7 @@ function buildHtml(payload: BasePayload): string {
                   fmtField('Telefon', payload.phone),
                   fmtField('Betreff', payload.subject),
                   fmtField('Nachricht', payload.message),
+                  fmtField('Informieren über', Array.isArray(payload.topics) ? (payload.topics as string[]).join(', ') : payload.topics),
                   fmtField('Datenschutz-Einverständnis', payload.consent),
                 ].join('');
     }
@@ -245,6 +246,7 @@ function buildPlainText(payload: BasePayload): string {
         pushField('Telefon', payload.phone);
         pushField('Betreff', payload.subject);
         pushField('Nachricht', payload.message);
+        pushField('Informieren über', Array.isArray(payload.topics) ? (payload.topics as string[]).join(', ') : payload.topics);
   }
     pushField('Datenschutz-Einverständnis', payload.consent);
     return lines.join('\n');

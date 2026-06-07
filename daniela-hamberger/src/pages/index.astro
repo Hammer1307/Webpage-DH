@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, HOME_STIMMEN, VENUE } from '@/data/site';
 
 const description =
-  'Mentorin & Coach in Wiesbaden, Idstein und online. Fokus Schöner Leben: innere Stabilität, Klarheit und gelingendes Miteinander für Frauen & Teams.';
+  'Coaching & Mentoring in Wiesbaden, Idstein und online. Daniela Britta Hamberger begleitet Frauen und Teams zu innerer Stabilität, Klarheit und einem gelingenden Miteinander — Fokus Schöner Leben.';
 ---
 <BaseLayout
   title={`${SITE.name} · ${SITE.brand}`}
@@ -41,26 +41,6 @@ const description =
     </div>
   </section>
 
-  {/* ============== ZWEI-WEGE-GABELUNG — Für dich / Für euer Team ============== */}
-  <section class="section-tight zweiwege">
-    <div class="container">
-      <div class="zweiwege-grid">
-        <article class="weg-box">
-          <span class="weg-box-label">Für dich persönlich</span>
-          <h2>1:1 Begleitung</h2>
-          <p>Für Frauen, die wieder bei sich ankommen, neu sortieren oder klarer entscheiden möchten.</p>
-          <a href="/1-zu-1-begleitung" class="btn btn-secondary">Zur 1:1 Begleitung</a>
-        </article>
-        <article class="weg-box">
-          <span class="weg-box-label">Für euer Team</span>
-          <h2>Teams &amp; Workshops</h2>
-          <p>Workshops und Impulsvorträge für Teams und Organisationen — für alle, die ihr Miteinander stärken möchten, unabhängig davon, wer im Team sitzt.</p>
-          <a href="/teams-workshops" class="btn btn-secondary">Zu Teams &amp; Workshops</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
   {/* ============== SERVICE-STRIP — Was bietet Daniela konkret? ============== */}
   <section class="section-tight service-strip">
     <div class="container">
@@ -78,8 +58,8 @@ const description =
 
         <article class="service-card">
           <span class="service-card-label">02 — Für Teams</span>
-          <h3>Workshops &amp; Vorträge</h3>
-          <p>TeamBalance, Team Reset Mentoring und Impulsvorträge für Teams, Einrichtungen und Organisationen, die ihr Miteinander stärken möchten.</p>
+          <h3>Workshops, Vorträge &amp; Mentoring</h3>
+          <p>TeamBalance, Team Reset Mentoring und Impulsvorträge für Teams, Einrichtungen und Organisationen, die ihr Miteinander stärken möchten — für alle, unabhängig davon, wer im Team sitzt.</p>
           <p class="service-card-price">Impulsvortrag <strong>ab 450 €</strong> · TeamBalance <strong>ab 890 €</strong></p>
           <a href="/teams-workshops" class="service-card-link">Zu Teams &amp; Workshops →</a>
         </article>
@@ -126,11 +106,30 @@ const description =
     </div>
   </section>
 
+  {/* ============== MEIN BEGLEITANSATZ (Methoden in Klartext) ============== */}
+  <section class="section-tight methoden-leiste">
+    <div class="container">
+      <div class="ornament"><span>Mein Begleitansatz</span></div>
+      <p class="zier-ornament" aria-hidden="true">&#10086;</p>
+      <p class="methoden-klartext">
+        In meiner Arbeit verbinde ich pädagogische Erfahrung mit Mentaltraining, Achtsamkeit und
+        positiver Psychologie — immer mit Blick darauf, was dir gerade wirklich hilft. Welche
+        Methoden zum Einsatz kommen, richtet sich nach dir. Mein roter Faden bleibt dabei immer
+        derselbe: <span class="gold-akzent">Fokus Schöner Leben</span> — der Blick auf das, was dein
+        Leben wieder <span class="gold-akzent">echter</span> und <span class="gold-akzent">stimmiger</span> macht.
+      </p>
+      <p class="methoden-link btn-center">
+        <a href="/ueber-mich#methoden" class="btn btn-secondary">Mehr zu meinen Methoden</a>
+      </p>
+    </div>
+  </section>
+
   {/* ============== USP — Warum mit mir arbeiten ============== */}
   <section class="section-tight usp-section">
     <div class="container">
       <div class="usp-head">
         <span class="eyebrow">Warum mit mir arbeiten</span>
+        <p class="zier-ornament" aria-hidden="true">&#10086;</p>
       </div>
       <div class="usp-grid">
         <article class="usp-card">
@@ -159,6 +158,7 @@ const description =
       <div class="stimmen-head">
         <span class="eyebrow">Stimmen &amp; Erfahrungen</span>
         <h2>Was Menschen <em>mitnehmen</em></h2>
+        <p class="zier-ornament" aria-hidden="true">&#10086;</p>
       </div>
       <div class="carousel" data-carousel>
         <div class="carousel-track" data-carousel-track>
@@ -175,23 +175,8 @@ const description =
           <button type="button" class="carousel-btn" data-carousel-next aria-label="Nächste Stimme">→</button>
         </div>
       </div>
-      <p class="stimmen-more">
-        <a href="/stimmen-erfahrungen">Alle Stimmen &amp; Erfahrungen →</a>
-      </p>
-    </div>
-  </section>
-
-  {/* ============== METHODEN IN KLARTEXT ============== */}
-  <section class="section-tight methoden-leiste">
-    <div class="container">
-      <div class="ornament"><span>Mein Begleitansatz</span></div>
-      <p class="methoden-klartext">
-        In meiner Arbeit verbinde ich pädagogische Erfahrung mit Mentaltraining, Achtsamkeit und
-        positiver Psychologie — immer mit Blick darauf, was dir gerade wirklich hilft. Welche
-        Methoden zum Einsatz kommen, richtet sich nach dir.
-      </p>
-      <p class="methoden-link">
-        <a href="/ueber-mich#methoden">Mehr zu meinen Methoden →</a>
+      <p class="stimmen-more btn-center">
+        <a href="/stimmen-erfahrungen" class="btn btn-secondary">Alle Stimmen &amp; Erfahrungen</a>
       </p>
     </div>
   </section>
@@ -646,6 +631,31 @@ const description =
     color: var(--color-ink-soft);
     line-height: 1.7;
     font-size: 1.02rem;
+  }
+
+  /* ============================================================
+     RELAUNCH-ZUSATZ — goldene Akzente & Ornamente
+     (bewusst als eigene, leicht entfernbare Klassen gekapselt:
+      .gold-akzent · .zier-ornament · .btn-center)
+     ============================================================ */
+  .gold-akzent {
+    color: var(--color-clay-deep, #9C6644);
+    font-style: italic;
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+  .zier-ornament {
+    text-align: center;
+    color: var(--color-clay, #B97F5A);
+    font-size: 1.1rem;
+    line-height: 1;
+    margin: 0.6rem auto 0.2rem;
+    opacity: 0.7;
+    letter-spacing: 0.3em;
+  }
+  .btn-center {
+    text-align: center;
+    margin-top: 1.5rem;
   }
 </style>
 

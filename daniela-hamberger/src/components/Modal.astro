@@ -199,12 +199,28 @@
         <textarea id="f4-message" name="message" rows="6" required placeholder="Schreib mir, was dich beschäftigt, was du wissen möchtest oder wo ich dich unterstützen kann."></textarea>
       </div>
 
+      <fieldset class="form-row form-topics">
+        <legend>Worüber möchtest du informiert werden? <span class="opt">(optional, Mehrfachauswahl)</span></legend>
+        <div class="topic-grid">
+          <label class="topic-chip"><input type="checkbox" name="topics" value="Workshops & Vorträge" /> <span>Neue Workshops &amp; Vorträge</span></label>
+          <label class="topic-chip"><input type="checkbox" name="topics" value="Publikationen" /> <span>Bücher, Karten &amp; Materialien</span></label>
+          <label class="topic-chip"><input type="checkbox" name="topics" value="Impulse" /> <span>Impulse &amp; neue Beiträge</span></label>
+        </div>
+      </fieldset>
+
       <div class="form-row form-check">
         <input type="checkbox" id="f4-consent" name="consent" required />
         <label for="f4-consent">
           Ich habe die <a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden.<span aria-hidden="true">*</span>
         </label>
       </div>
+
+      <p class="form-privacy-note">
+        Wenn du dich für Informationen vorgemerkt hast, kannst du dich jederzeit wieder austragen und
+        vollständig löschen lassen — eine kurze Nachricht genügt, und jede Info-Mail enthält einen
+        Abmeldelink. Deine Daten werden ausschließlich für die gewünschten Informationen genutzt und
+        nicht weitergegeben.
+      </p>
 
       <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
@@ -452,6 +468,42 @@
     text-underline-offset: 2px;
   }
 
+  /* Themen-Auswahl (Mehrfach) */
+  .form-topics { border: none; padding: 0; margin: 0; }
+  .form-topics legend {
+    font-size: 0.9rem;
+    color: var(--color-ink-soft);
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+  .topic-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .topic-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.85rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-pill, 999px);
+    background: var(--color-paper);
+    font-size: 0.88rem;
+    color: var(--color-ink-soft);
+    cursor: pointer;
+    transition: border-color 200ms, background 200ms;
+  }
+  .topic-chip:has(input:checked) {
+    border-color: var(--color-sage);
+    background: var(--color-cream);
+    color: var(--color-sage-deep);
+    font-weight: 500;
+  }
+  .topic-chip input { accent-color: var(--color-sage-deep); }
+  .form-privacy-note {
+    font-size: 0.8rem;
+    color: var(--color-ink-muted);
+    line-height: 1.55;
+    margin: 0.25rem 0 0.5rem;
+  }
+
   /* Honeypot — vor Bots versteckt */
   .hp-field {
     position: absolute;
@@ -656,6 +708,10 @@
         fd.forEach((value, key) => {
           if (key === 'consent' || key === 'notifyAll') {
             payload[key] = true;
+          } else if (key === 'topics') {
+            // Mehrfachauswahl: als Array sammeln
+            if (!Array.isArray(payload.topics)) payload.topics = [];
+            payload.topics.push(value);
           } else {
             payload[key] = value;
           }
