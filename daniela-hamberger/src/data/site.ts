@@ -87,6 +87,8 @@ export const IMAGES = {
   stimmungWohnraum:        '/images/stimmung-wohnraum.jpg',          // 1:1 Stimmungsbild 1
   stimmungSessel:          '/images/stimmung-sessel.jpg',            // 1:1 Stimmungsbild 2
   seminarraumSchoeneAussichten: '/images/seminarraum-schoene-aussichten.jpg', // 1:1 Stimmungsbild 3 (realer Raum)
+  impulsKlassenzimmer:     '/images/impuls-klassenzimmer.jpg',       // Impuls Klassenzimmer/Social Media
+  impulsKneipe:            '/images/impuls-kneipe.jpg',              // Impuls Kneipe/Gesellschaft
 } as const;
 
 // Hauptnavigation — exakt nach Briefing
@@ -94,7 +96,7 @@ export const NAV = [
   { label: '1:1 Begleitung', href: '/1-zu-1-begleitung' },
   { label: 'Teams', href: '/teams-workshops' },
   { label: 'Publikationen', href: '/publikationen-materialien' },
-  { label: 'Impulse', href: '/impulse' },
+  { label: 'Impulse & Beiträge', href: '/impulse' },
   { label: 'Über mich', href: '/ueber-mich' },
   { label: 'Kontakt', href: '/kontakt' },
 ] as const;
@@ -427,6 +429,52 @@ export const WORKSHOP_TOPICS = [
 
 // Blog-Beiträge „Fokus Impulse" — je Beitrag eigene URL /impulse/{id}, mit Langversion (body)
 export const IMPULSE_BEITRAEGE = [
+  {
+    id: 'weniger-scrollen-mehr-hinschauen',
+    category: 'Schule & Miteinander',
+    title: 'Weniger scrollen. Mehr hinschauen.',
+    teaser:
+      'Dritte Stunde, neunte Klasse, irgendwo im Rhein-Main-Gebiet. Statt „Globalisierung und Medien" wird es an diesem Morgen ein ganz anderes Thema — über das ständige Vergleichen mit dem, was online perfekt aussieht, über echtes Miteinander und darüber, warum manche Momente leiser sind als die inszenierten, aber oft genau die sind, auf die es ankommt.',
+    source: 'Geschichte',
+    image: '/images/impuls-klassenzimmer.jpg',
+    imageAlt: 'Lehrer an der Tafel vor einer neunten Klasse — Fragen zu echtem Miteinander',
+    body: [
+      'Es war Dienstagmorgen, dritte Stunde, Gesamtschule irgendwo im Rhein-Main-Gebiet. Herr Keller stand vor seiner neunten Klasse und schaute in Gesichter, die vieles gleichzeitig konnten: müde aussehen, genervt wirken, heimlich aufs Handy schielen und trotzdem so tun, als hätten sie alles im Griff. Also eigentlich ganz normale Neuntklässler.',
+      'Auf dem Stundenplan stand Gesellschaftslehre. Eigentlich wäre „Globalisierung und Medien" dran gewesen. Aber wer länger Klassenlehrer ist, weiß: Manchmal steht im Klassenbuch ein Thema, und im Raum sitzt ein ganz anderes. In den letzten Wochen hatte es geknirscht — Missverständnisse im Klassenchat, zwei Schülerinnen, die nicht mehr nebeneinander sitzen wollten, ein blöder Spruch, der „nur Spaß" gewesen sein sollte.',
+      '„Heute machen wir mal etwas anderes", sagte er und setzte sich auf die Tischkante. „Mir fällt auf, dass viele von euch ständig Welten vergleichen. Das eigene Leben mit dem, was man online sieht. Das eigene Wochenende mit einer Serie. Und dann entsteht schnell das Gefühl: Woanders ist alles cooler. Hier ist alles kompliziert. Und das eigene Leben wirkt wie die langweilige Probeversion."',
+      '„Aber ist doch manchmal auch so", meldete sich Lea. „Ja", sagte Herr Keller. „Und manchmal ist Kritik auch richtig. Man darf Dinge blöd finden. Aber die Frage ist: Vergleichen wir fair? Oder vergleichen wir unseren normalen Dienstag mit dem Highlight-Video von jemand anderem?"',
+      'Er ging zur Tafel und schrieb drei Wörter: Online. Außen. Echt. „Online ist das, was wir sehen. Außen ist das, was wir glauben, dass andere haben. Echt ist das, was tatsächlich in unserem Leben passiert. Und jetzt die unbequeme Frage: Wie oft suchen wir im Außen etwas, das wir eigentlich im echten Leben vermissen? Anerkennung. Zugehörigkeit. Bestätigung. Bedeutung."',
+      'Es wurde ruhiger. Nicht dramatisch, kein Filmmoment. Aber einige schauten jetzt wirklich hin. „Ich sage nicht: Handy weg, Social Media böse. Ich schaue selbst Serien, manchmal zu viele. Aber kritisch wird es, wenn wir das echte Leben nur noch als Unterbrechung vom Bildschirm empfinden. Wenn Gespräche stören, weil gerade ein Clip läuft. Wenn man Menschen neben sich übersieht, aber Fremde im Internet stundenlang beobachtet."',
+      '„Manchmal traut man sich halt nicht", sagte Mara leise. „Das verstehe ich", antwortete er ruhig. „Gespräche können schwierig sein. Genau deshalb üben wir das. Nicht, weil ihr perfekt sein müsst, sondern weil Beziehung Arbeit ist. Freundschaft ist Arbeit. Klassengemeinschaft ist Arbeit."',
+      'Er schrieb neue Fragen an die Tafel: Was tut mir gut? Was tut anderen gut? Was macht unsere Klasse stärker? Wo brauchen wir mehr Respekt statt Reaktion? „Es geht nicht darum, immer einer Meinung zu sein. Aber darum, dass wir nicht sofort in Extreme rutschen. Eine Demokratie, eine Klasse, jede Gemeinschaft lebt davon, dass man Unterschiede aushält und trotzdem menschlich bleibt."',
+      'Vielleicht, sagte er, brauchen wir wieder mehr echte Momente. Nicht perfekt, nicht inszeniert. Ein Gespräch auf dem Schulhof. Eine Entschuldigung, die nicht mit „War doch nur Spaß" beginnt. Ein Blick dafür, wenn jemand stiller wird. Dann nahm er den Stift und schrieb darunter: Weniger scrollen. Mehr hinschauen.',
+      'Am Ende der Stunde sollten alle anonym auf einen Zettel schreiben, was sie sich für die Klasse wünschten. „Weniger Lästern." „Dass man Fehler machen darf." „Dass man nicht immer Angst haben muss, ausgelacht zu werden." „Mehr echte Gespräche."',
+      'Als es klingelte, sprang niemand dramatisch verändert auf. Keine Filmmusik, keine perfekte Szene. Aber zwei Schülerinnen, die seit Tagen nicht miteinander gesprochen hatten, blieben kurz stehen. „Können wir nachher mal reden?", fragte die eine. Die andere nickte. Herr Keller sah es nur aus dem Augenwinkel. Und dachte: Vielleicht sind die echten Momente manchmal leiser als die inszenierten. Aber oft sind sie genau die, auf die es ankommt.',
+    ],
+  },
+  {
+    id: 'was-eine-stabile-gesellschaft-wirklich-braucht',
+    category: 'Gesellschaft & Menschlichkeit',
+    title: 'Was eine stabile Gesellschaft wirklich braucht',
+    teaser:
+      'Ein Abend in einer kleinen Stammkneipe, an dem niemand geplant hatte, tiefgründig zu werden. Zwischen Wein, Brezeln und Nieselregen entsteht ein Gespräch über Bildung, mentale Gesundheit, Zusammenhalt — und darüber, dass eine stabile Gesellschaft vielleicht genau dort beginnt: an einem kleinen Tisch, wenn Menschen sich zuhören und Widerspruch möglich bleibt.',
+    source: 'Geschichte',
+    image: '/images/impuls-kneipe.jpg',
+    imageAlt: 'Menschen im Gespräch an einem Tisch in einer kleinen Kneipe',
+    body: [
+      'Es war einer dieser Abende in der kleinen Stammkneipe um die Ecke, an denen niemand wirklich geplant hatte, tiefgründig zu werden. Eigentlich wollte man nur kurz ein Glas Wein trinken, eine Kleinigkeit essen und sich darüber beschweren, dass draußen schon wieder Nieselregen war.',
+      '„Typisch Deutschland", sagte Frank. „Mai. Acht Grad. Regen. Und im Radio diskutieren sie, ob wir zu negativ sind." — „Sind wir ja auch", sagte Sabine trocken. „Aber immerhin konsequent." Gelächter am Tisch.',
+      '„Wenn ihr mich fragt", sagte Mehmet, „wir reden über alles. Klima, Krieg, Wirtschaft, Bildung, Migration, Pflege, mentale Gesundheit. Aber irgendwie reden wir selten miteinander. Meistens nur übereinander." — „Oder gegeneinander", ergänzte Daniela. „Alle sind erschöpft. Alle haben Meinungen. Viele haben Angst. Und dann wundern wir uns, dass die Stimmung kippt."',
+      'Es ging um Schule. „Ich kenne Lehrerinnen, die sind nachmittags nicht müde, die sind leer", sagte Sabine. „Da geht es um Dauerüberforderung." — „Und die Kinder gleich mit", sagte Daniela. „Wir sparen an Bildung und wundern uns später, dass uns die Rechnung präsentiert wird." Mehmet lachte kurz: „Für kaputte Systeme zahlen wir später meistens mehr. Nur dann nennen wir es nicht Investition, sondern Krise."',
+      '„Bildung müsste doch viel mehr sein als Stoff durchbringen", sagte Daniela. „Kinder brauchen auch: Wie gehe ich mit Stress um? Wie löse ich Konflikte? Wie rede ich, ohne gleich zu verletzen? Wie halte ich aus, dass jemand anders denkt als ich?" — „Das wäre übrigens auch für Erwachsene ein Pflichtfach", grinste Frank.',
+      'Dann sagte Daniela leiser: „Wir sind technisch so vernetzt wie nie. Und trotzdem fühlen sich viele innerlich allein. Alle sollen funktionieren, schön sein, leistungsfähig, gesund, erfolgreich — und bitte dabei nicht jammern." — „Und wenn man doch jammert", sagte Frank, „sagt jemand: Denk positiv." — „Ja. Und das ist zu einfach. Positivität darf kein Pflaster sein, das man über echte Probleme klebt. Aber nur noch negativ zu schauen, macht uns auch nicht handlungsfähiger."',
+      '„Was hält eine Gesellschaft zusammen?", fragte Daniela. „Nicht nur Gesetze. Nicht nur Geld. Nicht nur Systeme. Sondern Menschen, die noch bereit sind, einander zuzuhören." — „Zuhören ist aber aus der Mode gekommen", schnaubte Frank. „Heute wartet man eher darauf, dass der andere Luft holt, damit man selbst weitersenden kann." Mehmet hob die Hand: „Ich beantrage ein neues Grundrecht: erst nachfragen, dann etikettieren."',
+      '„Ich glaube, eine stabile Gesellschaft braucht drei Dinge besonders", sagte Daniela. „Bildung, die Menschen stärkt. Berufe, die tragen, müssen selbst getragen werden. Und eine Kultur, in der es normal ist, sich Hilfe zu holen, bevor gar nichts mehr geht." Pflege, Medizin, Kitas, soziale Arbeit — „da brennen viele aus, während sie andere auffangen", sagte Sabine. „Wer andere trägt, darf nicht dauerhaft selbst unter der Last zusammenbrechen."',
+      '„Unterstützung zu suchen ist nicht schwach", sagte Daniela. „Es ist verantwortungsvoll. Für sich selbst. Und oft auch für die Menschen, mit denen man lebt und arbeitet. Prävention ist nicht nur Blutdruck messen und Gemüse essen. Prävention ist auch: rechtzeitig merken, wann ich mich verliere. Wann mein Alltag mir mehr Energie nimmt, als er mir gibt."',
+      'Draußen spiegelte sich das Licht der Straßenlaternen auf dem nassen Asphalt. Drinnen wirkte diese kleine Kneipe für einen Moment wie ein Gegenentwurf zu all dem Lärm da draußen. Nicht perfekt. Nicht konfliktfrei. Aber echt. „Vielleicht brauchen wir genau solche Orte wieder mehr", sagte Sabine. „Wo man sagen darf: Ich sehe das anders. Und trotzdem bleibt man sitzen."',
+      'Eine stabile Gesellschaft entsteht nicht nur in Parlamenten oder großen Reden. Sie beginnt manchmal an einem kleinen Tisch in einer Kneipe um die Ecke. Wenn Menschen sich zuhören. Wenn Widerspruch möglich bleibt. Wenn Humor die Schärfe nimmt. Wenn jemand sagt: „Ich sehe das anders" — und trotzdem ein Platz frei bleibt. Mehr Bildung, die Menschen stärkt. Mehr Rückhalt für die, die andere tragen. Mehr Mut zur Prävention. Mehr echte Gespräche. Nicht perfekt. Aber ehrlich. Und vielleicht ist das schon ein Anfang.',
+    ],
+  },
   {
     id: 'generationen-verbinden-statt-vergleichen',
     category: 'Gelingendes Miteinander',

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, STIMMEN, CONTACT } from '@/data/site';
+import Zier from '@/components/Zier.astro';
 
 const description =
   'Stimmen und Erfahrungen zu Begleitungen, Workshops, Büchern und Impulsen von Daniela Britta Hamberger — veröffentlicht mit ausdrücklicher Zustimmung.';
@@ -29,6 +30,7 @@ const teams = STIMMEN.filter(s => s.category === 'Workshops & Teamcoaching');
       </nav>
       <span class="eyebrow">Stimmen &amp; Erfahrungen</span>
       <h1>Was Menschen <em>erlebt haben</em></h1>
+      <Zier variant="blatt" />
       <p class="lead">
         Rückmeldungen zu Begleitungen, Workshops, Büchern und Impulsen.
       </p>

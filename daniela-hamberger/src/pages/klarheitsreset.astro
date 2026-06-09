@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES } from '@/data/site';
+import Zier from '@/components/Zier.astro';
 
 const description =
   'Fokus KlarheitsReset: intensive Begleitung für Frauen in Krisen- oder Umbruchphasen — zwei Online-Sitzungen, Intensivzeit vor Ort in Idstein/Wiesbaden, Nachbegleitung. 1.999 €.';
@@ -41,6 +42,7 @@ const schemas = [
       <span class="tag tag-gold">Intensivbegleitung für Frauen</span>
       <h1>Fokus Klarheits<em>Reset</em></h1>
       <h2 class="kr-subhead">Intensive Begleitung für Frauen in Krisen- oder Umbruchphasen.</h2>
+      <Zier variant="herz" />
     </div>
     <figure class="kr-hero-image">
       <img src={IMAGES.klarheitsresetFeld} alt="Frau mit weit geöffneten Armen und Rucksack sitzt in einem sonnigen Feld — Aufatmen, Freiheit und ein innerer Neustart" loading="eager" />

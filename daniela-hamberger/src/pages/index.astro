@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, HOME_STIMMEN, VENUE } from '@/data/site';
 import Zier from '@/components/Zier.astro';
+import GruenSpruch from '@/components/GruenSpruch.astro';
 
 const description =
   'Coaching & Mentoring in Wiesbaden, Idstein und online: Begleitung für Frauen, Teams und Führungskräfte — Schwerpunkte Resilienz, Stressmanagement und Burnout-Prävention. Fokus Schöner Leben.';
@@ -183,6 +184,13 @@ const description =
       </p>
     </div>
   </section>
+
+  <div class="container-narrow">
+    <GruenSpruch
+      spruch="Für ein Leben, das sich echt und stimmig anfühlt."
+      zusatz="Bewusstsein · Klarheit · Verbindung · Lebensfreude"
+    />
+  </div>
 
   {/* ============== STANDORTE — kompakt, nicht venue-fokussiert ============== */}
   <section class="section bg-cream standorte-section">

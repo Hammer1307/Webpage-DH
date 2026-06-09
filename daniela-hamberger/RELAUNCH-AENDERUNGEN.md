@@ -152,3 +152,32 @@ Build erneut fehlerfrei (25 Seiten).
 # Fix: kursive Wörter auf grünem Balken unsichtbar (7. Juni 2026)
 - Problem: In Überschriften auf dem grünen Balken (.bg-sage) war das kursive <em>-Wort dunkelgrün auf grünem Grund — dadurch unsichtbar ("Ein erster" ohne "Schritt", "Lasst uns" ohne "sprechen").
 - Lösung: Regel in global.css ergänzt — .bg-sage h1/h2/h3/h4 em wird jetzt in hellem Clay/Creme (--color-clay-pale) dargestellt, klar lesbar.
+
+---
+
+# Vierte Runde — Gestaltung verfeinert & neue Beiträge (8. Juni 2026)
+
+## Ornamente neu gezeichnet (Zier.astro)
+- Sauberere, klar erkennbare SVG-Motive: Ranke (mit Mittelknospe + geschwungenen Armen), Blatt (mit Mittelrippe), Herz.
+- Etwas markanter (Deckkraft/Kontrast erhöht).
+- Zielgruppengerecht: Herz nur bei Frauen-Angeboten (1:1, KlarheitsReset), sonst Blatt/Ranke.
+- Ornamente nun auch auf KlarheitsReset, Publikationen, Stimmen, Kontakt.
+
+## Schrift
+- Goldene Akzentwörter (.gold-akzent) etwas größer (1.06em), bündig mit Fließtext.
+- Leitsatz „Bewusst. Klar. Verbunden." jetzt golden + kursiv (Serifenschrift) statt Schreibschrift — kein fremd wirkendes „B" mehr.
+- 1:1-Abschluss-Leitsatz ebenfalls auf kursive Serifenschrift umgestellt (konsistent).
+
+## Verweis-Links
+- Inline-Textlinks im Fließtext jetzt klar als anklickbar erkennbar (Clay-/Goldton, unterstrichen).
+
+## Navigation
+- „Impulse" → „Impulse & Beiträge".
+
+## Zwei neue Blog-Beiträge (mit eigenen URLs + Bild)
+- „Weniger scrollen. Mehr hinschauen." (Schule & Miteinander, Klassenzimmer-Bild).
+- „Was eine stabile Gesellschaft wirklich braucht" (Gesellschaft & Menschlichkeit, Kneipen-Bild).
+- Jeweils Kurzfassung in der Übersicht, Langfassung auf eigener Seite.
+
+## Bildnachweise
+- Neuer Abschnitt „KI-generierte Bilder" (ChatGPT) für die beiden neuen Beitragsbilder.

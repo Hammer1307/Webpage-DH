@@ -1,0 +1,29 @@
+---
+// Kleine, leicht schräg gesetzte handschriftliche Randnotiz mit Herz —
+// wie eine persönliche Anmerkung am Rand. Dezent, sparsam einsetzen.
+// Props: text (Pflicht).
+interface Props { text: string; }
+const { text } = Astro.props;
+---
+<p class="randnotiz">
+  <svg class="rn-herz" viewBox="0 0 24 22" width="18" height="16" fill="currentColor" aria-hidden="true">
+    <path d="M12 20S2.5 13.8 2.5 7.6C2.5 4.4 4.8 2 7.8 2c1.9 0 3.3 1 4.2 2.5C12.9 3 14.3 2 16.2 2 19.2 2 21.5 4.4 21.5 7.6 21.5 13.8 12 20 12 20z"/>
+  </svg>
+  <span>{text}</span>
+</p>
+
+<style>
+  .randnotiz {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-script, cursive);
+    font-weight: 600;
+    color: var(--color-clay-deep, #9C6644);
+    font-size: 1.35rem;
+    line-height: 1.3;
+    transform: rotate(-2.2deg);
+    margin: 1.4rem 0 0.6rem;
+  }
+  .rn-herz { color: var(--color-clay, #B97F5A); flex: none; }
+</style>

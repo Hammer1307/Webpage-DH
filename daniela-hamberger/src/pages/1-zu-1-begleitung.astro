@@ -2,6 +2,8 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SITE, IMAGES, COACHING_FORMATS, VENUE } from '@/data/site';
 import Zier from '@/components/Zier.astro';
+import GruenSpruch from '@/components/GruenSpruch.astro';
+import Randnotiz from '@/components/Randnotiz.astro';
 
 const description =
   'Persönliche 1:1 Begleitung für Frauen, die wieder bei sich ankommen: KlarheitsSitzung, KlarheitsStart & Fokus KlarheitsReset – online oder in Wiesbaden/Idstein.';
@@ -53,11 +55,19 @@ const service = {
       <p>
         Es geht um innere Stabilität, Selbstwert, Abgrenzung, Orientierung, Lebensfreude und die Rückverbindung mit dem, was in dir bereits angelegt ist.
       </p>
+      <Randnotiz text="Du bist nicht zu viel. Und nicht zu wenig. Du bist genau richtig." />
       <div class="btn-group">
         <button type="button" class="btn btn-primary" data-modal-open="1zu1" data-format="orientierung">Kostenfreies Orientierungsgespräch buchen</button>
       </div>
     </div>
   </section>
+
+  <div class="container-narrow">
+    <GruenSpruch
+      spruch="Manchmal ist der mutigste Schritt, bei sich selbst anzukommen."
+      zusatz="Du musst den Weg nicht allein gehen — ich begleite dich dabei."
+    />
+  </div>
 
   <section class="section bg-cream-deep">
     <div class="container split-grid">
@@ -207,7 +217,9 @@ const service = {
   .page-intro .lead { margin: 0 auto; }
 
   .leitsatz-script-light {
-    font-family: var(--font-script);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
     font-weight: 600;
     color: var(--color-cream);
     font-size: 1.6rem;

@@ -145,18 +145,37 @@ function buildHtml(payload: BasePayload): string {
 }
 
 function buildConfirmationHtml(payload: BasePayload): string {
-    const name = escape(payload.name ?? '');
+    const name = escape((payload.name ?? '').split(' ')[0] || payload.name || '');
     const formType = payload.formType;
 
   const subjectLine =
         formType === 'vormerken'
-        ? 'Ihre Vormerkung ist eingegangen'
-          : 'Ihre Nachricht ist eingegangen';
+        ? 'Schön, dass du dich vorgemerkt hast'
+        : formType === '1zu1'
+        ? 'Schön, dass du den ersten Schritt gehst'
+        : formType === 'teams'
+        ? 'Danke für eure Anfrage'
+          : 'Deine Nachricht ist angekommen';
 
+  // Persönlicher Einleitungstext je nach Anliegen
   const intro =
         formType === 'vormerken'
-        ? `vielen Dank für Ihre Vormerkung! Wir haben Ihre Anfrage erhalten und melden uns schnellstmöglich bei Ihnen.`
-          : `vielen Dank für Ihre Nachricht! Wir haben Ihre Anfrage erhalten und melden uns schnellstmöglich bei Ihnen.`;
+        ? `vielen Dank, dass du dich vorgemerkt hast. Ich melde mich bei dir, sobald es Neues gibt — und freue mich, dass du dabei sein möchtest.`
+        : formType === '1zu1'
+        ? `danke für deine Anfrage zur 1:1 Begleitung. Ich habe sie erhalten und melde mich in der Regel innerhalb von 1–2 Werktagen persönlich bei dir. Es braucht oft Mut, sich auf den Weg zu machen — schön, dass du ihn gehst.`
+        : formType === 'teams'
+        ? `vielen Dank für eure Anfrage. Ich habe sie erhalten und melde mich in der Regel innerhalb von 1–2 Werktagen bei euch, damit wir gemeinsam schauen, was zu eurem Team passt.`
+          : `danke für deine Nachricht. Ich habe sie erhalten und melde mich in der Regel innerhalb von 1–2 Werktagen persönlich bei dir.`;
+
+  // Verweis auf Inhalte je nach Anliegen (Hand-in-Hand-Verlinkung)
+  const hinweis =
+        formType === 'teams'
+        ? `Bis dahin findest du mögliche Formate und Workshop-Themen jederzeit auf meiner Website.`
+        : formType === 'vormerken'
+        ? `Bis dahin findest du Impulse und Beiträge zum Stöbern auf meiner Website.`
+          : `Bis dahin kannst du gern in meinen Impulsen &amp; Beiträgen stöbern — vielleicht ist schon etwas dabei, das dich begleitet.`;
+
+  const leitsatz = 'Für ein Leben, das sich echt und stimmig anfühlt.';
 
   return `<!doctype html>
   <html lang="de">
@@ -165,16 +184,10 @@ function buildConfirmationHtml(payload: BasePayload): string {
     <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f5efe6;padding:40px 20px;">
         <tr><td align="center">
               <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
-
-                      <!-- Logo -->
-                              <tr><td align="center" style="padding-bottom:32px;">
+                      <tr><td align="center" style="padding-bottom:32px;">
                                         <img src="${LOGO_URL}" alt="Daniela Britta Hamberger — Fokus Schöner Leben" width="120" style="display:block;width:120px;height:auto;" />
                                                 </td></tr>
-
-                                                        <!-- Card -->
                                                                 <tr><td style="background:#ffffff;border-radius:12px;padding:48px 48px 40px;box-shadow:0 2px 16px rgba(0,0,0,0.06);">
-
-                                                                          <!-- Heading -->
                                                                                     <table width="100%" cellpadding="0" cellspacing="0">
                                                                                                 <tr><td style="padding-bottom:8px;">
                                                                                                               <p style="margin:0;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8a9e8c;font-weight:600;">Daniela Britta Hamberger</p>
@@ -182,25 +195,21 @@ function buildConfirmationHtml(payload: BasePayload): string {
                                                                                                                                       <tr><td style="padding-bottom:32px;border-bottom:1px solid #e8dfd0;">
                                                                                                                                                     <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:400;color:#2d3d2e;line-height:1.3;">${subjectLine}</h1>
                                                                                                                                                                 </td></tr>
-                                                                                                                                                                
-                                                                                                                                                                            <!-- Body -->
-                                                                                                                                                                                        <tr><td style="padding-top:32px;padding-bottom:32px;">
-                                                                                                                                                                                                      <p style="margin:0 0 16px;font-size:16px;line-height:1.7;color:#3a4a3b;">Liebe/r ${name},</p>
-                                                                                                                                                                                                                    <p style="margin:0 0 16px;font-size:16px;line-height:1.7;color:#3a4a3b;">${intro}</p>
-                                                                                                                                                                                                                                  <p style="margin:0;font-size:16px;line-height:1.7;color:#3a4a3b;">Herzliche Grüße,<br><strong style="color:#2d3d2e;">Daniela Britta Hamberger</strong></p>
-                                                                                                                                                                                                                                              </td></tr>
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                          <!-- Divider -->
-                                                                                                                                                                                                                                                                      <tr><td style="padding-bottom:24px;border-top:1px solid #e8dfd0;"></td></tr>
-                                                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                  <!-- Footer -->
-                                                                                                                                                                                                                                                                                              <tr><td>
+                                                                                                                                                                        <tr><td style="padding-top:32px;padding-bottom:24px;">
+                                                                                                                                                                                      <p style="margin:0 0 16px;font-size:16px;line-height:1.7;color:#3a4a3b;">Liebe/r ${name},</p>
+                                                                                                                                                                                                    <p style="margin:0 0 16px;font-size:16px;line-height:1.7;color:#3a4a3b;">${intro}</p>
+                                                                                                                                                                                                                  <p style="margin:0 0 16px;font-size:16px;line-height:1.7;color:#3a4a3b;">${hinweis}</p>
+                                                                                                                                                                                                                                <p style="margin:0;font-size:16px;line-height:1.7;color:#3a4a3b;">Herzliche Grüße<br><strong style="color:#2d3d2e;">Daniela</strong></p>
+                                                                                                                                                                                                                                            </td></tr>
+                                                                                                                                                                                                                                                        <tr><td style="padding:20px 0 8px;border-top:1px solid #e8dfd0;">
+                                                                                                                                                                                                                                                                      <p style="margin:0;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:17px;color:#9c6644;text-align:center;">${leitsatz}</p>
+                                                                                                                                                                                                                                                                                  </td></tr>
+                                                                                                                                                                                                                                                                                              <tr><td style="padding-top:24px;">
                                                                                                                                                                                                                                                                                                             <p style="margin:0;font-size:12px;color:#a0a8a0;line-height:1.6;text-align:center;">
                                                                                                                                                                                                                                                                                                                             Fokus Schöner Leben · <a href="https://danielabrittahamberger.de" style="color:#6b8a6e;text-decoration:none;">danielabrittahamberger.de</a>
                                                                                                                                                                                                                                                                                                                                           </p>
                                                                                                                                                                                                                                                                                                                                                       </td></tr>
                                                                                                                                                                                                                                                                                                                                                                 </table>
-                                                                                                                                                                                                                                                                                                                                                                
                                                                                                                                                                                                                                                                                                                                                                         </td></tr>
                                                                                                                                                                                                                                                                                                                                                                               </table>
                                                                                                                                                                                                                                                                                                                                                                                   </td></tr>
@@ -270,7 +279,7 @@ function getSubject(payload: BasePayload): string {
             : payload.formType === 'nachricht' && payload.subject
         ? `: ${payload.subject}`
             : '';
-    return `${prefix} Neue Anfrage${name}${extra}`;
+    return `[FSL-Website] ${prefix} Neue Anfrage${name}${extra}`;
 }
 
 async function sendMail(payload: BasePayload, env: Env): Promise<void> {
